@@ -238,99 +238,25 @@
     }
   };
   
-  // Convert theme colors to CSS variables (with optional runtime overrides)
-  export function themeToCSSVariables(theme: Theme, overrides?: Partial<ThemeColors>): Record<string, string> {
-    const colors: ThemeColors = { ...theme.colors, ...(overrides || {}) } as ThemeColors;
-    return {
-      // Core PayMyDine variables (for backward compatibility)
-      '--paymydine-primary': colors.primary,
-      '--paymydine-secondary': colors.secondary,
-      '--paymydine-accent': colors.accent,
-      '--paymydine-background': colors.background,
-      
-      // Legacy PayDine variables (for existing components)
-      '--paydine-champagne': colors.primary,
-      '--paydine-rose-beige': colors.secondary,
-      '--paydine-elegant-gray': colors.textPrimary,
-      '--paydine-soft-white': colors.background,
-      '--paydine-muted-gray': colors.textSecondary,
-      '--paydine-border': colors.border,
-      
-      // New semantic variables
-      '--theme-primary': colors.primary,
-      '--theme-secondary': colors.secondary,
-      '--theme-accent': colors.accent,
-      '--theme-background': colors.background,
-      '--theme-text-primary': colors.textPrimary,
-      '--theme-text-secondary': colors.textSecondary,
-      '--theme-text-muted': colors.textMuted,
-      '--theme-border': colors.border,
-      '--theme-input': colors.input,
-      '--theme-button': colors.button,
-      '--theme-button-hover': colors.buttonHover,
-      '--theme-menu-item-bg': colors.menuItemBackground,
-      '--theme-menu-item-border': colors.menuItemBorder,
-      '--theme-category-active': colors.categoryActive,
-      '--theme-category-inactive': colors.categoryInactive,
-      '--theme-price': colors.priceColor,
-      '--theme-cart-bg': colors.cartBackground,
-      '--theme-cart-border': colors.cartBorder,
-      '--theme-payment-button': colors.paymentButton,
-      '--theme-payment-button-hover': colors.paymentButtonHover,
-      '--theme-success': colors.success,
-      '--theme-warning': colors.warning,
-      '--theme-error': colors.error,
-      '--theme-info': colors.info,
+  // Convert theme config to CSS file key
+  export function getThemeKeyFromConfig(config: any): string {
+    // Map admin theme names to CSS file keys
+    const themeMapping: Record<string, string> = {
+      'Clean Light Theme': 'clean-light',
+      'Modern Dark Theme': 'modern-dark', 
+      'Gold Luxury Theme': 'gold-luxury',
+      'Vibrant Colors Theme': 'vibrant-colors',
+      'Minimal Theme': 'minimal',
+      // Also support direct keys
+      'clean-light': 'clean-light',
+      'modern-dark': 'modern-dark',
+      'gold-luxury': 'gold-luxury', 
+      'vibrant-colors': 'vibrant-colors',
+      'minimal': 'minimal'
     };
-  }
-  
-  // Apply theme to document
-  export function applyTheme(themeId: string, overrides?: Partial<ThemeColors>): void {
-    const theme = themes[themeId];
-    if (!theme) {
-      console.warn(`Theme ${themeId} not found, falling back to clean-light`);
-      applyTheme('clean-light', overrides);
-      return;
-    }
     
-    const cssVars = themeToCSSVariables(theme, overrides);
-    Object.entries(cssVars).forEach(([key, value]) => {
-      document.documentElement.style.setProperty(key, value);
-    });
-  // Toggle dark class to allow global overrides for dark designs
-  const isDark = themeId === 'modern-dark' || themeId === 'gold-luxury';
-  document.documentElement.classList.toggle('theme-dark', isDark);
-  if (isDark) {
-    const bg = getComputedStyle(document.documentElement).getPropertyValue('--theme-background') || '#0B0F14';
-    // Programmatic matte dark + vignette to guarantee effect regardless of CSS bundling
-    const matteVignette = `radial-gradient(1200px 600px at 20% 0%, rgba(231,203,169,0.07), transparent 60%),
-radial-gradient(900px 500px at 80% 10%, rgba(239,199,177,0.06), transparent 60%),
-radial-gradient(1200px 800px at 50% 120%, rgba(0,0,0,0.70), transparent 70%),
-radial-gradient(1200px 800px at -20% -20%, rgba(0,0,0,0.60), transparent 70%),
-radial-gradient(1200px 800px at 120% -20%, rgba(0,0,0,0.60), transparent 70%), ${bg.trim()}`;
-    document.body.style.background = matteVignette;
-  } else {
-    // Restore clean background on light themes
-    document.body.style.background = '';
-    document.body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-background') || '#FAFAFA';
-  }
+    // Extract theme from config object
+    const themeName = config?.theme || config?.themeName || config?.themeConfig || 'Clean Light Theme';
     
-    // Store current theme in localStorage (only on client side)
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('paymydine-theme', themeId);
-    }
-  }
-  
-  // Get current theme from localStorage (SSR safe)
-  export function getCurrentTheme(): string {
-    if (typeof window === 'undefined') {
-      return 'clean-light'; // Default for SSR
-    }
-    return localStorage.getItem('paymydine-theme') || 'clean-light';
-  }
-  
-  // Initialize theme on app load
-  export function initializeTheme(): void {
-    const currentTheme = getCurrentTheme();
-    applyTheme(currentTheme);
+    return themeMapping[themeName] || 'clean-light';
   }
