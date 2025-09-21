@@ -1,0 +1,19 @@
+:root {
+  --theme-id: clean-light;
+  --theme-primary: #E7CBA9;
+  --theme-secondary: #EFC7B1;
+  --theme-accent: #3B3B3B;
+  --theme-background: #FAFAFA;
+  --theme-surface: #FFFFFF;
+  --theme-text-primary: #3B3B3B;
+  --theme-text-secondary: #7E7E7E;
+  --theme-border: #EDEDED;
+  --theme-input: #FFFFFF;
+  --theme-text-on-input: #000000;
+  --theme-button: #E7CBA9;
+  --theme-menu-item-bg: #FFFFFF;
+  --theme-menu-item-border: #F3F4F6;
+  --theme-icon-accent: var(--theme-primary);
+  --theme-text-on-accent: #000000;
+}
+html, body { background: var(--theme-background); color: var(--theme-text-primary); }
