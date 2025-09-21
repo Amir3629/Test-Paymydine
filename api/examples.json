@@ -1,0 +1,107 @@
+{
+  "count_endpoint": {
+    "url": "GET /admin/notifications-api/count",
+    "response": {
+      "ok": true,
+      "new": 5
+    }
+  },
+  "list_endpoint": {
+    "url": "GET /admin/notifications-api/",
+    "response": {
+      "ok": true,
+      "items": [
+        {
+          "id": 94,
+          "type": "table_note",
+          "title": "Note from table 06",
+          "table_id": "31",
+          "table_name": "table 06",
+          "payload": "{\"note\":\"lknln\"}",
+          "status": "new",
+          "created_at": "2025-09-15 00:32:10",
+          "updated_at": "2025-09-15 00:32:10"
+        },
+        {
+          "id": 93,
+          "type": "waiter_call",
+          "title": "Waiter called from table 06",
+          "table_id": "31",
+          "table_name": "table 06",
+          "payload": "{\"message\":\".\"}",
+          "status": "new",
+          "created_at": "2025-09-15 00:32:02",
+          "updated_at": "2025-09-15 00:32:02"
+        },
+        {
+          "id": 92,
+          "type": "valet_request",
+          "title": "Valet request from table 06",
+          "table_id": "31",
+          "table_name": "table 06",
+          "payload": "{\"name\":\"jgfj\",\"license_plate\":\"ugh\",\"car_make\":\"nb\",\"car_model\":null,\"color\":null}",
+          "status": "seen",
+          "created_at": "2025-09-15 00:30:44",
+          "updated_at": "2025-09-15 00:31:31"
+        }
+      ]
+    }
+  },
+  "waiter_call_creation": {
+    "url": "POST /api/v1/waiter-call",
+    "payload": {
+      "table_id": "26",
+      "message": "Need napkins"
+    },
+    "response": {
+      "ok": true,
+      "message": "Waiter called successfully",
+      "id": 123
+    }
+  },
+  "table_note_creation": {
+    "url": "POST /api/v1/table-notes",
+    "payload": {
+      "table_id": "26",
+      "note": "Customer wants extra napkins",
+      "timestamp": "2025-09-15T00:32:10.000Z"
+    },
+    "response": {
+      "ok": true,
+      "message": "Note submitted successfully",
+      "id": 124
+    }
+  },
+  "valet_request_creation": {
+    "url": "POST /api/v1/valet-request",
+    "payload": {
+      "table_id": "26",
+      "name": "John Doe",
+      "license_plate": "ABC123",
+      "car_make": "BMW"
+    },
+    "response": {
+      "ok": true,
+      "message": "Valet request submitted",
+      "id": 125
+    }
+  },
+  "mark_seen": {
+    "url": "PATCH /admin/notifications-api/94",
+    "payload": {
+      "status": "seen"
+    },
+    "response": {
+      "ok": true,
+      "id": 94,
+      "status": "seen"
+    }
+  },
+  "mark_all_seen": {
+    "url": "PATCH /admin/notifications-api/mark-all-seen",
+    "payload": {},
+    "response": {
+      "ok": true
+    }
+  }
+}

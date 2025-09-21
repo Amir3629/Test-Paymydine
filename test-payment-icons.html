@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Icons Test</title>
+</head>
+<body>
+    <h1>Payment Icons Test</h1>
+    <p>Testing absolute URLs for payment icons:</p>
+    
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <div>
+            <h3>COD (PNG)</h3>
+            <img src="http://127.0.0.1:3000/images/payments/cod.png" alt="COD" width="100" height="60" style="border: 1px solid #ccc;">
+        </div>
+        
+        <div>
+            <h3>PayPal (PNG)</h3>
+            <img src="http://127.0.0.1:3000/images/payments/paypal.png" alt="PayPal" width="100" height="60" style="border: 1px solid #ccc;">
+        </div>
+        
+        <div>
+            <h3>Stripe (PNG)</h3>
+            <img src="http://127.0.0.1:3000/images/payments/stripe.png" alt="Stripe" width="100" height="60" style="border: 1px solid #ccc;">
+        </div>
+        
+        <div>
+            <h3>Google Pay (PNG)</h3>
+            <img src="http://127.0.0.1:3000/images/payments/google_pay.png" alt="Google Pay" width="100" height="60" style="border: 1px solid #ccc;">
+        </div>
+        
+        <div>
+            <h3>Apple Pay (PNG)</h3>
+            <img src="http://127.0.0.1:3000/images/payments/apple_pay.png" alt="Apple Pay" width="100" height="60" style="border: 1px solid #ccc;">
+        </div>
+        
+        <div>
+            <h3>Square (PNG)</h3>
+            <img src="http://127.0.0.1:3000/images/payments/square.png" alt="Square" width="100" height="60" style="border: 1px solid #ccc;">
+        </div>
+    </div>
+    
+    <script>
+        // Test the payment icon helper function
+        console.log('Testing payment icon helper...');
+        
+        // Simulate the helper function
+        const KNOWN = new Set([
+            "cod", "paypal", "stripe", "authorizenetaim", "google_pay", "apple_pay", "square"
+        ]);
+        
+        const PNG_ONLY = new Set(["apple_pay", "google_pay"]);
+        
+        const ORIGIN = "http://127.0.0.1:3000";
+        
+        function makePath(rel) {
+            return ORIGIN ? `${ORIGIN}${rel}` : rel;
+        }
+        
+        function iconForPayment(code) {
+            const key = (code || "").trim();
+            if (!KNOWN.has(key)) return makePath("/images/payments/default.svg");
+            const ext = PNG_ONLY.has(key) ? "png" : "svg";
+            return makePath(`/images/payments/${key}.${ext}`);
+        }
+        
+        // Test all payment codes
+        const codes = ["cod", "paypal", "stripe", "authorizenetaim", "google_pay", "apple_pay", "square"];
+        codes.forEach(code => {
+            const url = iconForPayment(code);
+            console.log(`${code}: ${url}`);
+        });
+    </script>
+</body>
+</html>

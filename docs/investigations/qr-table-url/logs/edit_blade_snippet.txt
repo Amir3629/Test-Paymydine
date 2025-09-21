@@ -1,0 +1,15 @@
+35-        $site_url = request()->getSchemeAndHttpHost();
+36-        // FIXED: Point QR codes to Next.js frontend instead of old system
+37-        $frontend_url = env('FRONTEND_URL', 'http://127.0.0.1:8001');
+38:        $qr_redirect_url = $frontend_url . '/table/' . $table_id . '?' . http_build_query([
+39-            'location' => $location_id,
+40-            'guest' => $max_capacity,
+41-            'date' => $date,
+--
+43-            'qr' => $qr_code->qr_code,
+44-            'table' => $table_id
+45-        ]);
+46:$qr_code_url = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' . urlencode($qr_redirect_url);
+47-
+48-        $qr_code_image = file_get_contents($qr_code_url);
+49-        $base64_qr_code = base64_encode($qr_code_image);

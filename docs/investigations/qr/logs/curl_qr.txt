@@ -1,0 +1,11 @@
+HTTP/1.1 400 Bad Request
+Host: 127.0.0.1:8000
+Connection: close
+X-Powered-By: PHP/8.1.33
+Cache-Control: no-cache, private
+Date: Thu, 18 Sep 2025 01:44:31 GMT
+Content-Type: application/json
+Vary: Origin
+Set-Cookie: paymydine_session=eyJpdiI6ImdyZ0lNRVBoRm5MakN0ekRPanZaN0E9PSIsInZhbHVlIjoiT2dHQnNiWGJrdmxkMWZIMVluV3RucjY3VkVKWXlQaWRlTjNoMVJKTmNkOGYycExMQ1g4VGF6YWY0TWExbC9EbFZpQlM3VzZTb3pYZVpBN2FRWDM4dlk1ankrZVNFaFFBSURhelFSajNaOVYvVXRPUGJIdko0aStkT2NOVm9LY0YiLCJtYWMiOiJhMzI4NTQwMDYyZGQ5MjgzNWY2NzJlN2UxNGEzNWFiMWNkNDQ1YTg2MWY4YjI1NWEyOGRmNTA4MjU1ZDZjNTVjIiwidGFnIjoiIn0%3D; expires=Thu, 18-Sep-2025 03:44:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+{"success":false,"error":"table_id is required"}

@@ -1,0 +1,2 @@
+Table	Create Table
+ti_waiter_calls	CREATE TABLE `ti_waiter_calls` (\n  `id` int unsigned NOT NULL AUTO_INCREMENT,\n  `table_id` int unsigned NOT NULL,\n  `message` text,\n  `status` enum('pending','resolved') DEFAULT 'pending',\n  `created_at` timestamp NULL DEFAULT NULL,\n  `updated_at` timestamp NULL DEFAULT NULL,\n  PRIMARY KEY (`id`),\n  KEY `table_id` (`table_id`),\n  KEY `status` (`status`)\n) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

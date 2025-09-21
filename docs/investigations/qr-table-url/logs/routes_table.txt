@@ -1,0 +1,3 @@
+|        | POST     | api/v1/api/v1/table-notes                      |                     | Closure                                                      | web        |
+|        | GET|HEAD | api/v1/current-table                           |                     | Closure                                                      | web        |
+|        | GET|HEAD | api/v1/table-info                              |                     | Closure                                                      | web        |

@@ -1,0 +1,3 @@
+routes/api.php:145:        Route::get('/table-info', [TableController::class, 'getTableInfo']);
+app/admin/routes.php:824:    Route::get('/table-info', function (Request $request) {
+app/main/routes.php:197:                Route::get('/table-info', function () {

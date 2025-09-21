@@ -1,0 +1,15 @@
+routes/api.php:22:Route::middleware(['cors'])->group(function () {
+app/admin/classes/AdminController.php:191:            return Response::make(lang('admin::lang.alert_invalid_csrf_token'), 403);
+app/admin/language/en/lang.php:112:    'alert_invalid_csrf_token' => 'Invalid security token, please reload the page and try again.',
+app/admin/controllers/Login.php:25:        $this->middleware('throttle:'.config('system.authRateLimiter', '6,1'));
+app/admin/views/new.blade.php:17:    <meta name="csrf-token" content="{{ csrf_token() }}">
+app/admin/views/new.blade.php:511:                    @csrf
+app/admin/views/new.blade.php:618:                         @csrf
+app/admin/views/new.blade.php:831:                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
+app/admin/views/_layouts/default.blade.php:5:    <meta name="csrf-token" content="{{ csrf_token() }}">
+app/admin/views/settings.blade.php:208:                                                    @csrf
+app/admin/views/login.blade.php:44:                                @csrf
+app/admin/views/orders/create.blade.php:34:<meta name="csrf-token" content="{{ csrf_token() }}">
+app/admin/views/orders/create.blade.php:2053:                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+app/admin/widgets/filter/filter.blade.php:15:        @csrf
+app/Http/Kernel.php:29:        'cors' => \App\Http\Middleware\CorsMiddleware::class,

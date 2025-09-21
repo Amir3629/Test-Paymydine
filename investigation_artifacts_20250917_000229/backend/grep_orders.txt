@@ -1,0 +1,266 @@
+routes/api.php:135:        Route::post('/orders', [OrderController::class, 'store']);
+routes/api.php:136:        Route::get('/orders/{orderId}', [OrderController::class, 'show']);
+routes/api.php:137:        Route::patch('/orders/{orderId}', [OrderController::class, 'update']);
+routes/api.php:138:        Route::get('/orders', [OrderController::class, 'index']);
+app/admin/dashboardwidgets/Charts.php:99:                        'label' => 'lang:admin::lang.dashboard.charts.text_orders',
+app/admin/dashboardwidgets/Statistics.php:200:     * Return the total number of orders placed
+app/admin/dashboardwidgets/Statistics.php:215:     * Return the total number of completed orders
+app/admin/dashboardwidgets/Statistics.php:231:     * Return the total number of delivery orders
+app/admin/dashboardwidgets/Statistics.php:251:     * Return the total number of collection orders
+app/admin/database/migrations/2021_10_25_010000_add_foreign_key_constraints_to_tables.php:135:                ['orders', 'order_id', 'nullable' => false, 'cascadeOnDelete' => true],
+app/admin/database/migrations/2021_10_25_010000_add_foreign_key_constraints_to_tables.php:139:                ['orders', 'order_id', 'nullable' => false, 'cascadeOnDelete' => true],
+app/admin/database/migrations/2021_10_25_010000_add_foreign_key_constraints_to_tables.php:143:                ['orders', 'order_id', 'nullable' => false, 'cascadeOnDelete' => true],
+app/admin/database/migrations/2021_10_25_010000_add_foreign_key_constraints_to_tables.php:145:            'orders' => [
+app/admin/database/migrations/2021_10_25_010000_add_foreign_key_constraints_to_tables.php:154:                ['orders', 'order_id', 'nullable' => false, 'cascadeOnDelete' => true],
+app/admin/database/migrations/2021_01_04_010000_add_order_time_is_asap_on_orders_table.php:13:        Schema::table('orders', function (Blueprint $table) {
+app/admin/database/migrations/2020_04_16_000300_drop_stale_unused_columns.php:13:        Schema::table('orders', function (Blueprint $table) {
+app/admin/database/migrations/2018_01_19_000300_add_hash_columns_on_orders_reservations_table.php:10: * Add hash column on orders and reservations table
+app/admin/database/migrations/2018_01_19_000300_add_hash_columns_on_orders_reservations_table.php:16:        Schema::table('orders', function (Blueprint $table) {
+app/admin/database/migrations/2021_10_22_010000_make_primary_key_bigint_all_tables.php:32:            'orders' => 'order_id',
+app/admin/database/migrations/2023_01_10_000400_add_delivery_comment_orders_table.php:13:        if (Schema::hasColumn('orders', 'delivery_comment'))
+app/admin/database/migrations/2023_01_10_000400_add_delivery_comment_orders_table.php:16:        Schema::table('orders', function (Blueprint $table) {
+app/admin/database/migrations/2023_01_10_000400_add_delivery_comment_orders_table.php:23:        Schema::table('orders', function (Blueprint $table) {
+app/admin/database/migrations/2021_09_06_010000_add_timestamps_to_tables.php:48:        Schema::table('orders', function (Blueprint $table) {
+app/admin/database/migrations/2021_11_28_000300_create_stocks_table.php:39:            $table->foreign('order_id')->references('order_id')->on('orders')->cascadeOnDelete()->cascadeOnUpdate();
+app/admin/database/migrations/2018_04_12_000300_modify_columns_on_orders_reservations_table.php:10: * Modify columns on orders and reservations table
+app/admin/database/migrations/2018_04_12_000300_modify_columns_on_orders_reservations_table.php:18:        Schema::table('orders', function (Blueprint $table) {
+app/admin/database/migrations/2022_06_30_010000_drop_foreign_key_constraints_on_all_tables.php:100:                ['orders', 'order_id', 'nullable' => false, 'cascadeOnDelete' => true],
+app/admin/database/migrations/2022_06_30_010000_drop_foreign_key_constraints_on_all_tables.php:104:                ['orders', 'order_id', 'nullable' => false, 'cascadeOnDelete' => true],
+app/admin/database/migrations/2022_06_30_010000_drop_foreign_key_constraints_on_all_tables.php:108:                ['orders', 'order_id', 'nullable' => false, 'cascadeOnDelete' => true],
+app/admin/database/migrations/2022_06_30_010000_drop_foreign_key_constraints_on_all_tables.php:110:            'orders' => [
+app/admin/database/migrations/2022_06_30_010000_drop_foreign_key_constraints_on_all_tables.php:119:                ['orders', 'order_id', 'nullable' => false, 'cascadeOnDelete' => true],
+app/admin/database/migrations/2020_05_31_000300_drop_more_unused_columns.php:27:        Schema::table('orders', function (Blueprint $table) {
+app/admin/database/migrations/2020_05_31_000300_drop_more_unused_columns.php:63:                'future_orders' => [
+app/admin/database/migrations/2020_05_31_000300_drop_more_unused_columns.php:64:                    'enable_delivery' => array_get($options, 'future_orders', 0),
+app/admin/database/migrations/2020_05_31_000300_drop_more_unused_columns.php:65:                    'enable_collection' => array_get($options, 'future_orders', 0),
+app/admin/database/migrations/2020_02_25_000300_create_assignable_logs_table.php:23:        Schema::table('orders', function (Blueprint $table) {
+app/admin/activitytypes/AssigneeUpdated.php:94:            ? 'admin::lang.orders.activity_event_log_assigned_title'
+app/admin/activitytypes/AssigneeUpdated.php:103:        $url = $activity->type == self::ORDER_ASSIGNED_TYPE ? 'orders' : 'reservations';
+app/admin/activitytypes/AssigneeUpdated.php:116:            ? 'admin::lang.orders.activity_event_log_assigned'
+app/admin/activitytypes/StatusUpdated.php:91:            ? 'admin::lang.orders.activity_event_log_title'
+app/admin/activitytypes/StatusUpdated.php:97:        $url = $activity->type == self::ORDER_UPDATED_TYPE ? 'orders' : 'reservations';
+app/admin/activitytypes/StatusUpdated.php:107:            ? 'admin::lang.orders.activity_event_log'
+app/admin/language/en/lang.php:126:    'text_see_all_orders' => 'See all orders',
+app/admin/language/en/lang.php:319:        'text_tab_orders' => 'Orders',
+app/admin/language/en/lang.php:448:            'text_orders' => 'Orders',
+app/admin/language/en/lang.php:455:        'column_total_orders' => '# Orders',
+app/admin/language/en/lang.php:508:        'text_all_orders' => 'all',
+app/admin/language/en/lang.php:560:        'error_no_zero_total' => 'The %s can not be a value zero on conditions other than \'on all orders\'.',
+app/admin/language/en/lang.php:573:        'help_delivery_areas' => 'Set delivery conditions to specific geographical area/boundaries. Delivery areas are applied in the order in which they appear. Every location must have at least one delivery area to accept delivery orders.',
+app/admin/language/en/lang.php:714:    'orders' => [
+app/admin/language/en/lang.php:722:        'text_empty' => 'There are no orders available.',
+app/admin/language/en/lang.php:839:        'orders' => 'Edit orders',
+app/admin/language/en/lang.php:840:        'delete_orders' => 'Delete orders',
+app/admin/language/en/lang.php:842:        'assign_orders' => 'Assign orders',
+app/admin/language/en/lang.php:848:        'statuses' => 'Manage orders and reservations statuses',
+app/admin/language/en/lang.php:941:        'help_auto_assign' => 'Allocate and control the number of orders assigned to staff in this group.',
+app/admin/language/en/lang.php:942:        'help_round_robin' => 'Assign orders to the staff who are online in a circular fashion.',
+app/admin/language/en/lang.php:943:        'help_load_balanced' => 'Limit the number of orders a staff can handle simultaneously.',
+app/admin/language/en/lang.php:944:        'help_load_balanced_limit' => 'Maximum number of orders per staff.',
+app/admin/language/en/lang.php:989:        'help_groups' => 'Specify which groups the staff should belong to. Segmenting agents into groups lets you easily assign orders.',
+app/admin/language/en/lang.php:990:        'help_location' => 'Specify which locations the staff should belong to. The staff can ONLY view menus, categories, orders, and reservations attached to the selected location(s). Does not apply to super admins',
+app/admin/models/old_Orders_model.php:38:    protected $table = 'orders';
+app/admin/models/old_Orders_model.php:320:     * Return the dates of all orders
+app/admin/models/old_Orders_model.php:472:        $data['order_payment'] = $model->payment_method->name ?? lang('admin::lang.orders.text_no_payment');
+app/admin/models/old_Orders_model.php:509:        $data['order_address'] = lang('admin::lang.orders.text_collection_order_type');
+app/admin/models/Reviews_model.php:58:        'orders' => 'Admin\Models\Orders_model',
+app/admin/models/Reviews_model.php:65:            'orders' => 'lang:admin::lang.reviews.text_order',
+app/admin/models/config/stocks_model.php:10:                'title' => 'lang:admin::lang.orders.label_order_id',
+app/admin/models/config/orders_model.php:5:        'prompt' => 'lang:admin::lang.orders.text_filter_search',
+app/admin/models/config/orders_model.php:10:            'label' => 'lang:admin::lang.orders.text_filter_assignee',
+app/admin/models/config/orders_model.php:36:            'label' => 'lang:admin::lang.orders.text_filter_order_type',
+app/admin/models/config/orders_model.php:43:            'label' => 'lang:admin::lang.orders.text_filter_payment',
+app/admin/models/config/orders_model.php:62:            'href' => 'orders/create',
+app/admin/models/config/orders_model.php:82:            'href' => 'orders/edit/{order_id}',
+app/admin/models/config/orders_model.php:90:        'label' => 'lang:admin::lang.orders.column_location',
+app/admin/models/config/orders_model.php:97:        'label' => 'lang:admin::lang.orders.column_customer_name',
+app/admin/models/config/orders_model.php:107:        'label' => 'lang:admin::lang.orders.label_time_is_asap',
+app/admin/models/config/orders_model.php:114:        'label' => 'lang:admin::lang.orders.column_time',
+app/admin/models/config/orders_model.php:118:        'label' => 'lang:admin::lang.orders.column_date',
+app/admin/models/config/orders_model.php:130:        'label' => 'lang:admin::lang.orders.column_payment',
+app/admin/models/config/orders_model.php:137:        'label' => 'lang:admin::lang.orders.column_assignee',
+app/admin/models/config/orders_model.php:145:        'label' => 'lang:admin::lang.orders.column_assignee_group',
+app/admin/models/config/orders_model.php:153:        'label' => 'lang:admin::lang.orders.column_total',
+app/admin/models/config/orders_model.php:183:            'href' => 'orders',
+app/admin/models/config/orders_model.php:210:        'path' => 'orders/form/info',
+app/admin/models/config/orders_model.php:224:    'defaultTab' => 'lang:admin::lang.orders.text_tab_general',
+app/admin/models/config/orders_model.php:228:            'path' => 'orders/form/order_menus',
+app/admin/models/config/orders_model.php:231:            'label' => 'lang:admin::lang.orders.text_customer',
+app/admin/models/config/orders_model.php:233:            'path' => 'orders/form/field_customer',
+app/admin/models/config/orders_model.php:236:            'label' => 'lang:admin::lang.orders.text_restaurant',
+app/admin/models/config/orders_model.php:238:            'path' => 'orders/form/field_location',
+app/admin/models/config/orders_model.php:242:            'path' => 'orders/form/order_details',
+app/admin/models/config/orders_model.php:246:            'tab' => 'lang:admin::lang.orders.text_status_history',
+app/admin/models/config/orders_model.php:252:                    'title' => 'lang:admin::lang.orders.column_time_date',
+app/admin/models/config/orders_model.php:258:                    'title' => 'lang:admin::lang.orders.column_comment',
+app/admin/models/config/orders_model.php:261:                    'title' => 'lang:admin::lang.orders.column_notify',
+app/admin/models/config/orders_model.php:264:                    'title' => 'lang:admin::lang.orders.column_staff',
+app/admin/models/config/orders_model.php:269:            'tab' => 'lang:admin::lang.orders.text_payment_logs',
+app/admin/models/config/orders_model.php:275:                    'title' => 'lang:admin::lang.orders.column_time_date',
+app/admin/models/config/orders_model.php:278:                    'title' => 'lang:admin::lang.orders.label_payment_method',
+app/admin/models/config/orders_model.php:281:                    'title' => 'lang:admin::lang.orders.column_comment',
+app/admin/models/config/customers_model.php:231:        'orders' => [
+app/admin/models/config/customers_model.php:232:            'tab' => 'lang:admin::lang.customers.text_tab_orders',
+app/admin/models/config/customers_model.php:242:                    'title' => 'lang:admin::lang.orders.column_customer_name',
+app/admin/models/config/customers_model.php:251:                    'title' => 'lang:admin::lang.orders.column_total',
+app/admin/models/config/customers_model.php:254:                    'title' => 'lang:admin::lang.orders.column_time',
+app/admin/models/config/customers_model.php:257:                    'title' => 'lang:admin::lang.orders.column_date',
+app/admin/models/config/location_areas_model.php:94:                                'all' => 'lang:admin::lang.locations.text_all_orders',
+app/admin/models/Orders_model.php:38:    protected $table = 'orders';
+app/admin/models/Orders_model.php:346:     * Return the dates of all orders
+app/admin/models/Orders_model.php:498:        $data['order_payment'] = $model->payment_method->name ?? lang('admin::lang.orders.text_no_payment');
+app/admin/models/Orders_model.php:535:        $data['order_address'] = lang('admin::lang.orders.text_collection_order_type');
+app/admin/models/Customers_model.php:38:            'orders' => ['Admin\Models\Orders_model'],
+app/admin/models/Customers_model.php:200:     * Update guest orders, address and reservations
+app/admin/models/Customers_model.php:215:            if ($orders = Orders_model::where('email', $customer_email)->get()) {
+app/admin/models/Customers_model.php:216:                foreach ($orders as $row) {
+app/admin/formwidgets/statuseditor/info.blade.php:18:            {{ lang('admin::lang.orders.label_assign_staff') }}
+app/admin/routes.php:109:        Route::get('/orders/get-table-statuses', function () {
+app/admin/routes.php:111:                $tableStatuses = DB::table('orders')
+app/admin/routes.php:112:                    ->join('statuses', 'orders.status_id', '=', 'statuses.status_id')
+app/admin/routes.php:113:                    ->join('tables', 'orders.order_type', '=', 'tables.table_id')
+app/admin/routes.php:128:                    ->where('orders.status_id', '!=', 10) // Exclude paid orders
+app/admin/routes.php:129:                    ->orderBy('orders.created_at', 'desc')
+app/admin/routes.php:132:                    ->map(function ($orders) {
+app/admin/routes.php:133:                        return $orders->first(); // Get the most recent order for each table
+app/admin/routes.php:150:        Route::get('/orders/get-cashier-url', function (Request $request) {
+app/admin/routes.php:170:        })->name('admin.orders.getCashierUrl');
+app/admin/routes.php:257:    Route::post('/orders/save-table-layout', function (Request $request) {
+app/admin/routes.php:286:        Route::get('/orders/get-table-qr-url', function (Request $request) {
+app/admin/routes.php:569:    Route::post('/orders', function (Request $request) {
+app/admin/routes.php:604:            $orderNumber = DB::table('orders')->max('order_id') + 1;
+app/admin/routes.php:624:            $orderId = DB::table('orders')->insertGetId([
+app/admin/routes.php:720:            $order = DB::table('orders')
+app/admin/routes.php:721:                ->leftJoin('statuses', 'orders.status_id', '=', 'statuses.status_id')
+app/admin/routes.php:722:                ->where('orders.order_id', $orderId)
+app/admin/routes.php:724:                    'orders.order_id',
+app/admin/routes.php:725:                    'orders.status_id',
+app/admin/routes.php:727:                    'orders.updated_at'
+app/admin/routes.php:795:            $updated = DB::table('orders')
+app/admin/ServiceProvider.php:376:                        'orders' => [
+app/admin/ServiceProvider.php:378:                            'class' => 'orders',
+app/admin/ServiceProvider.php:379:                            'href' => admin_url('orders'),
+app/admin/ServiceProvider.php:566:            'orders' => 'Admin\Models\Orders_model',
+app/admin/ServiceProvider.php:686:                    'label' => 'admin::lang.permissions.orders', 'group' => 'admin::lang.permissions.name',
+app/admin/ServiceProvider.php:689:                    'label' => 'admin::lang.permissions.delete_orders', 'group' => 'admin::lang.permissions.name',
+app/admin/ServiceProvider.php:692:                    'label' => 'admin::lang.permissions.assign_orders', 'group' => 'admin::lang.permissions.name',
+app/admin/controllers/QrRedirectController.php:27:        $orders = DB::table('orders')->where('order_type', $table->table_name)->get();
+app/admin/controllers/QrRedirectController.php:28:        $statusIds = $orders->pluck('status_id')->unique();
+app/admin/controllers/QrRedirectController.php:34:foreach ($orders as $order) {
+app/admin/controllers/QrRedirectController.php:40:        // If no matching orders, redirect to default menu
+app/admin/controllers/Orders.php:23:            'title' => 'lang:admin::lang.orders.text_title',
+app/admin/controllers/Orders.php:24:            'emptyMessage' => 'lang:admin::lang.orders.text_empty',
+app/admin/controllers/Orders.php:26:            'configFile' => 'orders_model',
+app/admin/controllers/Orders.php:31:        'name' => 'lang:admin::lang.orders.text_form_name',
+app/admin/controllers/Orders.php:36:            'redirect' => 'orders/edit/{order_id}',
+app/admin/controllers/Orders.php:37:            'redirectClose' => 'orders',
+app/admin/controllers/Orders.php:38:            'redirectNew' => 'orders/create',
+app/admin/controllers/Orders.php:42:            'redirect' => 'orders/edit/{order_id}',
+app/admin/controllers/Orders.php:43:            'redirectClose' => 'orders',
+app/admin/controllers/Orders.php:47:            'redirect' => 'orders',
+app/admin/controllers/Orders.php:50:            'redirect' => 'orders',
+app/admin/controllers/Orders.php:52:        'configFile' => 'orders_model',
+app/admin/controllers/Orders.php:65:        AdminMenu::setContext('orders', 'sales');
+app/admin/controllers/Orders.php:111:            throw new ApplicationException(lang('admin::lang.orders.alert_invoice_not_generated'));
+app/admin/views/orders/form/order_menus.blade.php:5:            <th width="65%" class="border-top-0">@lang('admin::lang.orders.column_name_option')</th>
+app/admin/views/orders/form/order_menus.blade.php:6:            <th class="text-center border-top-0">@lang('admin::lang.orders.column_quantity')</th>
+app/admin/views/orders/form/order_menus.blade.php:7:            <th class="text-left border-top-0">@lang('admin::lang.orders.column_price')</th>
+app/admin/views/orders/form/order_menus.blade.php:8:            <th class="text-right border-top-0">@lang('admin::lang.orders.column_total')</th>
+app/admin/views/orders/form/order_menus.blade.php:59:                        <span class="text-muted">({{ $formModel->total_items }} @lang('admin::lang.orders.label_total_items'))</span>
+app/admin/views/orders/form/form_tabs.blade.php:42:                                        <h5 class="card-title">@lang('admin::lang.orders.label_comment')</h5>
+app/admin/views/orders/form/form_tabs.blade.php:50:                                        <h5 class="card-title">@lang('admin::lang.orders.label_delivery_comment')</h5>
+app/admin/views/orders/form/info.blade.php:4:            @lang('admin::lang.orders.label_order_id')
+app/admin/views/orders/form/info.blade.php:10:            @lang('admin::lang.orders.label_order_type')
+app/admin/views/orders/form/info.blade.php:16:            @lang('admin::lang.orders.label_order_date_time')
+app/admin/views/orders/form/info.blade.php:21:                <span class="small text-muted">(@lang('admin::lang.orders.text_asap'))</span>
+app/admin/views/orders/form/order_details.blade.php:6:                <td class="text-muted">@lang('admin::lang.orders.label_payment_method')</td>
+app/admin/views/orders/form/order_details.blade.php:11:            <td class="text-muted">@lang('admin::lang.orders.label_invoice')</td>
+app/admin/views/orders/form/order_details.blade.php:16:                        href="{{ admin_url('orders/invoice/'.$formModel->order_id) }}"
+app/admin/views/orders/form/order_details.blade.php:25:            <td class="text-muted">@lang('admin::lang.orders.label_date_added')</td>
+app/admin/views/orders/form/order_details.blade.php:29:            <td class="text-muted">@lang('admin::lang.orders.label_date_modified')</td>
+app/admin/views/orders/form/order_details.blade.php:33:            <td class="text-muted">@lang('admin::lang.orders.label_ip_address')</td>
+app/admin/views/orders/form/order_details.blade.php:37:            <td class="text-muted">@lang('admin::lang.orders.label_user_agent')</td>
+app/admin/views/orders/form/field_customer.blade.php:23:        <h5 class="card-title">@lang('admin::lang.orders.label_delivery_address')</h5>
+app/admin/views/orders/invoice.blade.php:5:    <title>{!! $model->invoice_number.' - '.lang('admin::lang.orders.text_invoice').' - '.setting('site_name') !!}</title>
+app/admin/views/orders/invoice.blade.php:19:                <h3 class="pull-right">@lang('admin::lang.orders.label_order_id')&nbsp;#{{$model->order_id}}</h3>
+app/admin/views/orders/invoice.blade.php:20:                <h2>@lang('admin::lang.orders.text_invoice')</h2>
+app/admin/views/orders/invoice.blade.php:33:            <strong>@lang('admin::lang.orders.text_restaurant')</strong><br>
+app/admin/views/orders/invoice.blade.php:51:                <strong>@lang('admin::lang.orders.text_customer')</strong><br>
+app/admin/views/orders/invoice.blade.php:56:                    <strong>@lang('admin::lang.orders.text_deliver_to')</strong><br>
+app/admin/views/orders/invoice.blade.php:63:                <strong>@lang('admin::lang.orders.text_invoice_no')</strong><br>
+app/admin/views/orders/invoice.blade.php:67:                <strong>@lang('admin::lang.orders.text_invoice_date')</strong><br>
+app/admin/views/orders/invoice.blade.php:73:                <strong>@lang('admin::lang.orders.text_payment')</strong><br>
+app/admin/views/orders/invoice.blade.php:77:                <strong>@lang('admin::lang.orders.text_order_date')</strong><br>
+app/admin/views/orders/invoice.blade.php:91:                            <b>@lang('admin::lang.orders.column_name_option')</b>
+app/admin/views/orders/invoice.blade.php:93:                        <th class="text-left"><b>@lang('admin::lang.orders.column_price')</b>hhhhhhhhhhhh</th>
+app/admin/views/orders/invoice.blade.php:94:                        <th class="text-right"><b>@lang('admin::lang.orders.column_total')</b></th>
+app/admin/views/orders/invoice.blade.php:155:            <p class="text-center">@lang('admin::lang.orders.text_invoice_thank_you')</p>
+app/admin/views/orders/create.blade.php:36:    <a class="btn btn-primary" href="<?php echo site_url('/'); ?>/admin/orders/" tabindex="0"><i class="fa fa"></i>Back
+app/admin/views/orders/create.blade.php:300:$unavailableTables = DB::table('orders')
+app/admin/views/orders/create.blade.php:360:                        // Get actual order status for this table from the admin orders panel
+app/admin/views/orders/create.blade.php:361:                        $tableOrder = DB::table('orders')
+app/admin/views/orders/create.blade.php:363:                            ->where('status_id', '!=', 10) // Exclude paid orders (status 10)
+app/admin/views/orders/create.blade.php:2049:        fetch('/admin/orders/save-table-layout', {
+app/admin/views/orders/create.blade.php:2137:        fetch('/admin/orders/get-table-statuses')
+app/admin/views/orders/old_create.blade.php:2:    <a class="btn btn-primary" href="<?php echo site_url('/'); ?>/admin/orders/" tabindex="0"><i class="fa fa"></i>Back
+app/admin/views/orders/old_create.blade.php:265:$unavailableTables = DB::table('orders')
+app/system/database/migrations/2016_11_29_000300_optimize_tables_columns.php:254:    protected function _optimize_orders()
+app/system/database/migrations/2015_03_25_000001_create_tables.php:15: *  menu_options, options, options_values, menu_options, orders,
+app/system/database/migrations/2015_03_25_000001_create_tables.php:16: *  orders, order_menus, order_options, order_totals, pages, permalinks,
+app/system/database/migrations/2015_03_25_000001_create_tables.php:407:    protected function _create_orders()
+app/Http/Controllers/TenantApiController.php:245:            $orderId = DB::table('ti_orders')->insertGetId([
+app/Http/Controllers/TenantApiController.php:307:            $order = DB::table('ti_orders')
+app/Http/Controllers/TenantApiController.php:308:                ->join('ti_statuses', 'ti_orders.order_status', '=', 'ti_statuses.status_id')
+app/Http/Controllers/TenantApiController.php:309:                ->where('ti_orders.order_id', $orderId)
+app/Http/Controllers/TenantApiController.php:311:                    'ti_orders.order_id as id',
+app/Http/Controllers/TenantApiController.php:312:                    'ti_orders.customer_name',
+app/Http/Controllers/TenantApiController.php:313:                    'ti_orders.order_total as total',
+app/Http/Controllers/TenantApiController.php:314:                    'ti_orders.order_type',
+app/Http/Controllers/TenantApiController.php:315:                    'ti_orders.comment',
+app/Http/Controllers/TenantApiController.php:316:                    'ti_orders.date_added as created_at',
+app/Http/Controllers/TenantApiController.php:341:     * Get user orders (placeholder - would need customer authentication)
+app/Http/Controllers/TenantApiController.php:347:            // For now, return recent orders
+app/Http/Controllers/TenantApiController.php:348:            $orders = DB::table('ti_orders')
+app/Http/Controllers/TenantApiController.php:349:                ->join('ti_statuses', 'ti_orders.order_status', '=', 'ti_statuses.status_id')
+app/Http/Controllers/TenantApiController.php:350:                ->orderBy('ti_orders.date_added', 'desc')
+app/Http/Controllers/TenantApiController.php:353:                    'ti_orders.order_id as id',
+app/Http/Controllers/TenantApiController.php:354:                    'ti_orders.customer_name',
+app/Http/Controllers/TenantApiController.php:355:                    'ti_orders.order_total as total',
+app/Http/Controllers/TenantApiController.php:356:                    'ti_orders.order_type',
+app/Http/Controllers/TenantApiController.php:357:                    'ti_orders.date_added as created_at',
+app/Http/Controllers/TenantApiController.php:362:            foreach ($orders as $order) {
+app/Http/Controllers/TenantApiController.php:366:            return Response::json(['orders' => $orders]);
+app/Http/Controllers/TenantApiController.php:368:            return Response::json(['error' => 'Failed to fetch orders'], 500);
+app/Http/Controllers/Api/OrderController.php:49:            $orderId = DB::table('ti_orders')->insertGetId([
+app/Http/Controllers/Api/OrderController.php:150:            $order = DB::table('ti_orders')
+app/Http/Controllers/Api/OrderController.php:151:                ->leftJoin('ti_tables', 'ti_orders.table_id', '=', 'ti_tables.table_id')
+app/Http/Controllers/Api/OrderController.php:152:                ->leftJoin('ti_statuses', 'ti_orders.status_id', '=', 'ti_statuses.status_id')
+app/Http/Controllers/Api/OrderController.php:153:                ->where('ti_orders.order_id', $orderId)
+app/Http/Controllers/Api/OrderController.php:155:                    'ti_orders.*',
+app/Http/Controllers/Api/OrderController.php:235:            $updated = DB::table('ti_orders')
+app/Http/Controllers/Api/OrderController.php:259:     * Get all orders (for admin)
+app/Http/Controllers/Api/OrderController.php:264:            $query = DB::table('ti_orders')
+app/Http/Controllers/Api/OrderController.php:265:                ->leftJoin('ti_tables', 'ti_orders.table_id', '=', 'ti_tables.table_id')
+app/Http/Controllers/Api/OrderController.php:266:                ->leftJoin('ti_statuses', 'ti_orders.status_id', '=', 'ti_statuses.status_id')
+app/Http/Controllers/Api/OrderController.php:268:                    'ti_orders.*',
+app/Http/Controllers/Api/OrderController.php:273:                ->orderBy('ti_orders.created_at', 'desc');
+app/Http/Controllers/Api/OrderController.php:277:                $query->where('ti_orders.status_id', $request->status_id);
+app/Http/Controllers/Api/OrderController.php:282:                $query->whereDate('ti_orders.order_date', $request->date);
+app/Http/Controllers/Api/OrderController.php:285:            $orders = $query->paginate(20);
+app/Http/Controllers/Api/OrderController.php:288:                'orders' => $orders->items(),
+app/Http/Controllers/Api/OrderController.php:290:                    'current_page' => $orders->currentPage(),
+app/Http/Controllers/Api/OrderController.php:291:                    'last_page' => $orders->lastPage(),
+app/Http/Controllers/Api/OrderController.php:292:                    'per_page' => $orders->perPage(),
+app/Http/Controllers/Api/OrderController.php:293:                    'total' => $orders->total()
+app/Http/Controllers/Api/OrderController.php:299:                'error' => 'Failed to fetch orders',
+app/Http/Controllers/Api/OrderController.php:311:        $number = DB::table('ti_orders')->max('order_id') + 1;
+app/Http/Controllers/Api/OrderController.php:329:            $order = DB::table('ti_orders')
+app/Http/Controllers/Api/OrderController.php:330:                ->leftJoin('ti_statuses', 'ti_orders.status_id', '=', 'ti_statuses.status_id')
+app/Http/Controllers/Api/OrderController.php:331:                ->where('ti_orders.order_id', $orderId)
+app/Http/Controllers/Api/OrderController.php:333:                    'ti_orders.order_id',
+app/Http/Controllers/Api/OrderController.php:334:                    'ti_orders.status_id',
+app/Http/Controllers/Api/OrderController.php:336:                    'ti_orders.updated_at'
+app/Http/Controllers/Api/OrderController.php:391:            $updated = DB::table('ti_orders')
+app/main/language/en/lang.php:235:        'orders' => [
+app/main/routes.php:248:                Route::post('/orders', function () {
+app/main/routes.php:261:                        $orderId = DB::table('orders')->insertGetId([

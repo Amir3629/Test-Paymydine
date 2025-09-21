@@ -1,0 +1,5 @@
+total 15408
+drwxr-xr-x@ 4 amir  staff   128B Sep 16 15:00 .
+drwxr-xr-x@ 8 amir  staff   256B Sep 16 15:00 ..
+-rwxr-xr-x@ 1 amir  staff    14B Sep 16 15:00 .gitignore
+-rwxrwxr-x@ 1 amir  staff   6.6M Sep 17 00:02 system.log

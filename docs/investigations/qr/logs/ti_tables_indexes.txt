@@ -1,0 +1,3 @@
+Table	Non_unique	Key_name	Seq_in_index	Column_name	Collation	Cardinality	Sub_part	Packed	Null	Index_type	Comment	Index_comment	Visible	Expression
+ti_tables	0	PRIMARY	1	table_id	A	4	NULL	NULL		BTREE			YES	NULL
+ti_tables	0	uq_ti_tables_table_no	1	table_no	A	1	NULL	NULL	YES	BTREE			YES	NULL

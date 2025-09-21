@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Host: 127.0.0.1:8000
+Connection: close
+X-Powered-By: PHP/8.1.33
+Cache-Control: no-cache, private
+Date: Thu, 18 Sep 2025 01:52:16 GMT
+Content-Type: application/json
+Vary: Origin
+Set-Cookie: paymydine_session=eyJpdiI6InU0azRTM0NZN2VIdHZVOE1ISmRsOXc9PSIsInZhbHVlIjoiOGxRanpvcU1aS3RBMG1PTEQrd2JtbFJMQnhVM1FhaEY3YVdHeUQ5QzJCS0thS21JdUhQVmlUbmZ2SDJlcGlxdE1jNzM0TFBUY1ZlbThFMFpXSlZ5ckNBMExXWlRBbzBLZ1JrekJLM3d6dklkTnh2RFlsa3NyZysrQ3g1SEF5VGsiLCJtYWMiOiJlYTM4MzMzZTA5YjUyOTY0MWQ2MGQxMTgyMmYxNzg1ZGZmYWNiYzhiM2YyNDJlNmQ4OWNkODE5ZTYwZTYxYzEwIiwidGFnIjoiIn0%3D; expires=Thu, 18-Sep-2025 03:52:16 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+{"success":true,"data":{"table_id":28,"table_name":"Table 4","location_id":1,"qr_code":"ms28AeaKPP","min_capacity":4,"max_capacity":4,"status":1}}
