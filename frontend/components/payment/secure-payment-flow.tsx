@@ -263,14 +263,13 @@ backgroundColor: 'var(--theme-surface)',
           <div className="flex items-center justify-between p-3 rounded-xl" style={{ backgroundColor: 'rgba(231,203,169,0.08)' }}>
             <div className="flex items-center space-x-2">
               <Users className="h-4 w-4" style={{ color: 'var(--theme-button, #E7CBA9)' }} />
-              <span className="font-medium text-xs" style={{ color: 'var(--theme-text-primary, #F3F4F6)' }}>{t("splitBill")}</span>
+              <span className="font-medium text-xs" className="text-[var(--theme-text-primary)]">{t("splitBill")}</span>
             </div>
             <Button
               variant={isSplitting ? "default" : "outline"}
               size="sm"
               onClick={() => setIsSplitting(!isSplitting)}
-              className="text-xs"
-              style={isSplitting ? { backgroundColor: 'var(--theme-button, #E7CBA9)', color: '#1B1F27' } : { borderColor: 'var(--theme-menu-item-border, #223042)' }}
+              className={`text-xs ${isSplitting ? "bg-[var(--theme-button)] text-[var(--theme-text-on-accent)]" : "border-[var(--theme-menu-item-border)]"}`}
             >
               {isSplitting ? "ON" : "OFF"}
             </Button>

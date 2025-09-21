@@ -125,7 +125,7 @@ export default function ValetPage() {
                   transition={{ duration: 0.3, delay: 0.6 }}
                 >
                   <Button 
-                    className="w-full bg-paydine-champagne hover:bg-paydine-rose-beige text-paydine-elegant-gray transition-colors"
+                    className="w-full bg-[var(--theme-button)] hover:bg-[var(--theme-button)]/90 text-[var(--theme-text-on-accent)] transition-colors"
                     size="lg"
                     type="submit"
                     disabled={isSubmitting}
@@ -162,7 +162,7 @@ export default function ValetPage() {
               </p>
               
               <Button
-                className="bg-paydine-champagne hover:bg-paydine-rose-beige text-paydine-elegant-gray transition-colors"
+                className="bg-[var(--theme-button)] hover:bg-[var(--theme-button)]/90 text-[var(--theme-text-on-accent)] transition-colors"
                 size="lg"
                 onClick={() => window.location.href = '/'}
               >
