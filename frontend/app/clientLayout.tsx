@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
 import { saveSubscription } from "./actions"
 import { useThemeStore } from "@/store/theme-store"
+import ThemeCSSLoader from "@/components/theme-css-loader"
 import "@/lib/i18n" // Import i18n configuration
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -33,33 +34,13 @@ export default function ClientLayout({
   className: string
 }) {
   const [mounted, setMounted] = useState(false)
-  const { loadSettings, getCSSVariables, settings } = useThemeStore()
+  const { loadSettings } = useThemeStore()
 
   useEffect(() => {
     setMounted(true)
     // Load theme settings from admin panel
     loadSettings()
-    // Ensure a class is present for CSS scope and legacy token mapping
-    if (typeof document !== 'undefined') {
-      document.documentElement.classList.add('theme-vars')
-    }
   }, [loadSettings])
-
-  useEffect(() => {
-    if (mounted) {
-      // Apply CSS variables when settings change
-      const cssVars = getCSSVariables()
-      Object.entries(cssVars).forEach(([key, value]) => {
-        document.documentElement.style.setProperty(key, value)
-      })
-      
-      // Update meta theme-color based on primary color
-      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
-      if (metaThemeColor) {
-        metaThemeColor.setAttribute('content', settings.primary_color)
-      }
-    }
-  }, [mounted, getCSSVariables, settings.primary_color])
 
   // Use suppressHydrationWarning on the body element
   return (
@@ -67,6 +48,7 @@ export default function ClientLayout({
       className={cn(className, inter.variable, playfairDisplay.variable)}
       suppressHydrationWarning
     >
+      <ThemeCSSLoader />
       {children}
       <Toaster />
     </div>

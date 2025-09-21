@@ -284,37 +284,9 @@
     };
   }
   
-  // Apply theme to document
+  // Apply theme to document (neutralized - no global mutations)
   export function applyTheme(themeId: string, overrides?: Partial<ThemeColors>): void {
-    const theme = themes[themeId];
-    if (!theme) {
-      console.warn(`Theme ${themeId} not found, falling back to clean-light`);
-      applyTheme('clean-light', overrides);
-      return;
-    }
-    
-    const cssVars = themeToCSSVariables(theme, overrides);
-    Object.entries(cssVars).forEach(([key, value]) => {
-      document.documentElement.style.setProperty(key, value);
-    });
-  // Toggle dark class to allow global overrides for dark designs
-  const isDark = themeId === 'modern-dark' || themeId === 'gold-luxury';
-  document.documentElement.classList.toggle('theme-dark', isDark);
-  if (isDark) {
-    const bg = getComputedStyle(document.documentElement).getPropertyValue('--theme-background') || '#0B0F14';
-    // Programmatic matte dark + vignette to guarantee effect regardless of CSS bundling
-    const matteVignette = `radial-gradient(1200px 600px at 20% 0%, rgba(231,203,169,0.07), transparent 60%),
-radial-gradient(900px 500px at 80% 10%, rgba(239,199,177,0.06), transparent 60%),
-radial-gradient(1200px 800px at 50% 120%, rgba(0,0,0,0.70), transparent 70%),
-radial-gradient(1200px 800px at -20% -20%, rgba(0,0,0,0.60), transparent 70%),
-radial-gradient(1200px 800px at 120% -20%, rgba(0,0,0,0.60), transparent 70%), ${bg.trim()}`;
-    document.body.style.background = matteVignette;
-  } else {
-    // Restore clean background on light themes
-    document.body.style.background = '';
-    document.body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-background') || '#FAFAFA';
-  }
-    
+    // Theme application is now handled by ThemeCSSLoader component
     // Store current theme in localStorage (only on client side)
     if (typeof window !== 'undefined') {
       localStorage.setItem('paymydine-theme', themeId);
