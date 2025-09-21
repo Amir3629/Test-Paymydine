@@ -9,8 +9,6 @@ import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
 import { saveSubscription } from "./actions"
 import { useThemeStore } from "@/store/theme-store"
-import ThemeStylesheet from "@/components/theme-stylesheet"
-import { getThemeKeyFromConfig } from "@/lib/theme-system"
 import "@/lib/i18n" // Import i18n configuration
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -35,38 +33,42 @@ export default function ClientLayout({
   className: string
 }) {
   const [mounted, setMounted] = useState(false)
-  const { loadSettings, settings } = useThemeStore()
+  const { loadSettings, getCSSVariables, settings } = useThemeStore()
 
   useEffect(() => {
     setMounted(true)
     // Load theme settings from admin panel
     loadSettings()
+    // Ensure a class is present for CSS scope and legacy token mapping
+    if (typeof document !== 'undefined') {
+      document.documentElement.classList.add('theme-vars')
+    }
   }, [loadSettings])
 
   useEffect(() => {
     if (mounted) {
+      // Apply CSS variables when settings change
+      const cssVars = getCSSVariables()
+      Object.entries(cssVars).forEach(([key, value]) => {
+        document.documentElement.style.setProperty(key, value)
+      })
+      
       // Update meta theme-color based on primary color
       const metaThemeColor = document.querySelector('meta[name="theme-color"]')
       if (metaThemeColor) {
         metaThemeColor.setAttribute('content', settings.primary_color)
       }
     }
-  }, [mounted, settings.primary_color])
-
-  // Get theme key from settings
-  const themeKey = getThemeKeyFromConfig(settings)
+  }, [mounted, getCSSVariables, settings.primary_color])
 
   // Use suppressHydrationWarning on the body element
   return (
-    <>
-      <ThemeStylesheet themeKey={themeKey} />
-      <div 
-        className={cn(className, inter.variable, playfairDisplay.variable)}
-        suppressHydrationWarning
-      >
-        {children}
-        <Toaster />
-      </div>
-    </>
+    <div 
+      className={cn(className, inter.variable, playfairDisplay.variable)}
+      suppressHydrationWarning
+    >
+      {children}
+      <Toaster />
+    </div>
   )
 }

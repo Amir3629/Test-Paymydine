@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { apiClient } from '@/lib/api-client'
-import { themes, type Theme } from '@/lib/theme-system'
+import { themes, applyTheme, getCurrentTheme, type Theme } from '@/lib/theme-system'
 
 export interface ThemeSettings {
   theme_id: string
@@ -23,6 +23,7 @@ interface ThemeStore {
   setTheme: (themeId: string) => void
   loadSettings: () => Promise<void>
   updateSettings: (settings: Partial<ThemeSettings>) => Promise<void>
+  getCSSVariables: () => Record<string, string>
 }
 
 const defaultSettings: ThemeSettings = {
@@ -45,7 +46,8 @@ export const useThemeStore = create<ThemeStore>()(
       setTheme: (themeId: string) => {
         console.log('🎨 ThemeStore: Setting theme to:', themeId)
         set({ currentTheme: themeId })
-        // Theme will be applied via CSS file loading in clientLayout
+        // Apply without overrides (they will be passed during loadSettings if provided)
+        applyTheme(themeId)
       },
 
       loadSettings: async () => {
@@ -73,11 +75,21 @@ export const useThemeStore = create<ThemeStore>()(
               isLoading: false 
             })
             
-            // Set the theme from settings
+            // Apply the theme from settings
             const themeId = response.data.theme_id || 'clean-light'
-            console.log('🎨 ThemeStore: Setting theme from API:', themeId)
+            console.log('🎨 ThemeStore: Applying theme from API:', themeId)
+            // Pass color overrides if present
+            // Build safe overrides. Avoid forcing a light background over dark presets.
+            const overrides: any = {}
+            if (response.data.primary_color) overrides.primary = response.data.primary_color
+            if (response.data.secondary_color) overrides.secondary = response.data.secondary_color
+            if (response.data.accent_color) overrides.accent = response.data.accent_color
+            // Only honor background override for light themes. Dark themes rely on preset matte backgrounds.
+            if (response.data.background_color && themeId !== 'modern-dark' && themeId !== 'gold-luxury') {
+              overrides.background = response.data.background_color
+            }
             set({ currentTheme: themeId })
-            // Theme will be applied via CSS file loading in clientLayout
+            applyTheme(themeId, overrides)
           } else {
             console.log('⚠️ ThemeStore: No data in response')
             set({ isLoading: false })
@@ -96,7 +108,7 @@ export const useThemeStore = create<ThemeStore>()(
               settings: { ...state.settings, ...newSettings }
             }))
             
-            // If theme_id changed, set the new theme
+            // If theme_id changed, apply the new theme
             if (newSettings.theme_id) {
               get().setTheme(newSettings.theme_id)
             }
@@ -108,6 +120,15 @@ export const useThemeStore = create<ThemeStore>()(
         }
       },
 
+      getCSSVariables: () => {
+        const { currentTheme, availableThemes } = get()
+        const theme = availableThemes[currentTheme]
+        if (!theme) return {}
+        
+        // Import the themeToCSSVariables function
+        const { themeToCSSVariables } = require('@/lib/theme-system')
+        return themeToCSSVariables(theme)
+      }
     }),
     {
       name: 'paymydine-theme-store',
