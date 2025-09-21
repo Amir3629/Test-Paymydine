@@ -4,32 +4,7 @@
  
 @layer base {
   :root {
-    /* Theme Variables - Will be dynamically set by theme system */
-    --theme-primary: #E7CBA9;
-    --theme-secondary: #EFC7B1;
-    --theme-accent: #3B3B3B;
-    --theme-background: #FAFAFA;
-    --theme-text-primary: #3B3B3B;
-    --theme-text-secondary: #7E7E7E;
-    --theme-text-muted: #9CA3AF;
-    --theme-border: #EDEDED;
-    --theme-input: #FFFFFF;
-    --theme-button: #E7CBA9;
-    --theme-button-hover: #D4B89A;
-    --theme-menu-item-bg: #FFFFFF;
-    --theme-menu-item-border: #F3F4F6;
-    --theme-category-active: #E7CBA9;
-    --theme-category-inactive: #9CA3AF;
-    --theme-price: #EFC7B1;
-    --theme-cart-bg: #FAFAFA;
-    --theme-cart-border: #EDEDED;
-    --theme-payment-button: #E7CBA9;
-    --theme-payment-button-hover: #D4B89A;
-    --theme-success: #10B981;
-    --theme-warning: #F59E0B;
-    --theme-error: #EF4444;
-    --theme-info: #3B82F6;
-    
+    /* Theme variables are now loaded via per-theme CSS files */
     /* Legacy variables for backward compatibility */
     --paymydine-primary: var(--theme-primary);
     --paymydine-secondary: var(--theme-secondary);
