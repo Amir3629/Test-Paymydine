@@ -1,0 +1,49 @@
+:root {
+  /* Core palette for components already using var(...) */
+  --theme-background: #ffffff;
+  --theme-surface: var(--theme-background);
+  --theme-border: #e5e7eb;
+
+  --theme-accent-light: #F4C2A0;  /* light rose used across app */
+  --theme-text-on-accent: #000000; /* black on rose */
+
+  --theme-text-primary: #111827;   /* override per theme */
+  --theme-text-secondary: #6b7280; /* override per theme */
+  --theme-text-muted: #9ca3af;     /* override per theme */
+
+  /* Form controls */
+  --form-input-bg: #ffffff;
+  --form-input-text: #000000;
+}
+
+/* Global body color pair */
+html, body {
+  background-color: var(--theme-background);
+  color: var(--theme-text-primary);
+}
+
+/* Guarantee legible text in white fields across app */
+input[type], textarea, select {
+  background-color: var(--form-input-bg) !important;
+  color: var(--form-input-text) !important;
+}
+
+/* Utilities already used in app */
+.bg-accent-light { background-color: var(--theme-accent-light) !important; }
+.text-on-accent { color: var(--theme-text-on-accent) !important; }
+.bg-surface     { background-color: var(--theme-surface) !important; }
+
+/* Optional: help outlines/borders respect theme */
+.border-theme   { border-color: var(--theme-border) !important; }
+
+/* ===== minimal.css ===== */
+:root {
+  --theme-background: #111213;
+  --theme-surface: #111213;
+  --theme-border: #2A2B2D;
+  --theme-text-primary: #E5E7EB;
+  --theme-text-secondary: #cbd5e1;
+  --theme-text-muted: #94a3b8;
+  --form-input-bg: #ffffff;
+  --form-input-text: #000000;
+}
