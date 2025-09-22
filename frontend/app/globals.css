@@ -672,5 +672,105 @@ html.theme-dark:root[data-theme="modern-dark"] .backdrop-blur-lg {
   background-color: rgba(10, 14, 18, 0.7) !important;
 }
 
-/* Cart badge number colors - now using theme-aware --theme-background variable */
-/* The inline style color: var(--theme-background) will now work correctly */
+/* ULTRA AGGRESSIVE CART BADGE NUMBER COLOR FIX */
+/* Target every possible selector combination with maximum specificity */
+
+/* Gold Luxury Theme - Cart Badge Number */
+:root[data-theme="gold-luxury"] .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne.flex.items-center.justify-center.rounded-full,
+:root[data-theme="gold-luxury"] span.absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne,
+:root[data-theme="gold-luxury"] .bg-paydine-champagne.absolute.-top-1.-right-1,
+html.theme-dark:root[data-theme="gold-luxury"] .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne,
+html.theme-dark:root[data-theme="gold-luxury"] span.absolute.-top-1.-right-1,
+html.theme-dark:root[data-theme="gold-luxury"] .bg-paydine-champagne span,
+html .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne[style*="var(--theme-background)"],
+body .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne {
+  color: #0F0B05 !important;
+}
+
+/* Vibrant Colors Theme - Cart Badge Number */
+:root[data-theme="vibrant-colors"] .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne.flex.items-center.justify-center.rounded-full,
+:root[data-theme="vibrant-colors"] span.absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne,
+:root[data-theme="vibrant-colors"] .bg-paydine-champagne.absolute.-top-1.-right-1,
+html.theme-dark:root[data-theme="vibrant-colors"] .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne,
+html.theme-dark:root[data-theme="vibrant-colors"] span.absolute.-top-1.-right-1,
+html.theme-dark:root[data-theme="vibrant-colors"] .bg-paydine-champagne span,
+html .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne[style*="var(--theme-background)"],
+body .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne {
+  color: #e2ceb1 !important;
+}
+
+/* Minimal Theme - Cart Badge Number */
+:root[data-theme="minimal"] .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne.flex.items-center.justify-center.rounded-full,
+:root[data-theme="minimal"] span.absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne,
+:root[data-theme="minimal"] .bg-paydine-champagne.absolute.-top-1.-right-1,
+html.theme-dark:root[data-theme="minimal"] .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne,
+html.theme-dark:root[data-theme="minimal"] span.absolute.-top-1.-right-1,
+html.theme-dark:root[data-theme="minimal"] .bg-paydine-champagne span,
+html .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne[style*="var(--theme-background)"],
+body .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne {
+  color: #FEFCF8 !important;
+}
+
+/* Modern Dark Theme - Cart Badge Number */
+:root[data-theme="modern-dark"] .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne.flex.items-center.justify-center.rounded-full,
+:root[data-theme="modern-dark"] span.absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne,
+:root[data-theme="modern-dark"] .bg-paydine-champagne.absolute.-top-1.-right-1,
+html.theme-dark:root[data-theme="modern-dark"] .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne,
+html.theme-dark:root[data-theme="modern-dark"] span.absolute.-top-1.-right-1,
+html.theme-dark:root[data-theme="modern-dark"] .bg-paydine-champagne span,
+html .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne[style*="var(--theme-background)"],
+body .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne {
+  color: #0A0E12 !important;
+}
+
+/* Clean Light Theme - Cart Badge Number */
+:root[data-theme="clean-light"] .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne.flex.items-center.justify-center.rounded-full,
+:root[data-theme="clean-light"] span.absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne,
+:root[data-theme="clean-light"] .bg-paydine-champagne.absolute.-top-1.-right-1,
+html.theme-dark:root[data-theme="clean-light"] .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne,
+html.theme-dark:root[data-theme="clean-light"] span.absolute.-top-1.-right-1,
+html.theme-dark:root[data-theme="clean-light"] .bg-paydine-champagne span,
+html .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne[style*="var(--theme-background)"],
+body .absolute.-top-1.-right-1.w-5.h-5.bg-paydine-champagne {
+  color: #FAFAFA !important;
+}
+
+/* NUCLEAR OPTION - Target the specific class with maximum aggression */
+.cart-badge-number {
+  color: var(--theme-background) !important;
+}
+
+:root[data-theme="gold-luxury"] .cart-badge-number,
+html.theme-dark:root[data-theme="gold-luxury"] .cart-badge-number,
+html .cart-badge-number[data-theme="gold-luxury"],
+body .cart-badge-number[data-theme="gold-luxury"] {
+  color: #0F0B05 !important;
+}
+
+:root[data-theme="vibrant-colors"] .cart-badge-number,
+html.theme-dark:root[data-theme="vibrant-colors"] .cart-badge-number,
+html .cart-badge-number[data-theme="vibrant-colors"],
+body .cart-badge-number[data-theme="vibrant-colors"] {
+  color: #e2ceb1 !important;
+}
+
+:root[data-theme="minimal"] .cart-badge-number,
+html.theme-dark:root[data-theme="minimal"] .cart-badge-number,
+html .cart-badge-number[data-theme="minimal"],
+body .cart-badge-number[data-theme="minimal"] {
+  color: #FEFCF8 !important;
+}
+
+:root[data-theme="modern-dark"] .cart-badge-number,
+html.theme-dark:root[data-theme="modern-dark"] .cart-badge-number,
+html .cart-badge-number[data-theme="modern-dark"],
+body .cart-badge-number[data-theme="modern-dark"] {
+  color: #0A0E12 !important;
+}
+
+:root[data-theme="clean-light"] .cart-badge-number,
+html.theme-dark:root[data-theme="clean-light"] .cart-badge-number,
+html .cart-badge-number[data-theme="clean-light"],
+body .cart-badge-number[data-theme="clean-light"] {
+  color: #FAFAFA !important;
+}
