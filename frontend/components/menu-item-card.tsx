@@ -69,7 +69,8 @@ export function MenuItemCard({ item, onSelect }: MenuItemCardProps) {
           <Button
             size="icon"
             variant="ghost"
-            className="rounded-full bg-paydine-rose-beige/50 hover:bg-paydine-champagne text-paydine-elegant-gray w-10 h-10"
+            className="rounded-full bg-paydine-rose-beige/50 hover:bg-paydine-champagne w-10 h-10"
+            style={{ color: 'var(--theme-background)' }}
             onClick={handleAddToCart}
           >
             <Plus className="h-5 w-5" />

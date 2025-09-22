@@ -80,15 +80,17 @@ export function CartSheet() {
                             size="icon"
                             variant="ghost"
                             className="h-7 w-7 rounded-full hover:bg-paydine-champagne/30"
+                            style={{ color: 'var(--theme-background)' }}
                             onClick={() => updateQuantity(item.id, quantity - 1)}
                           >
                             <Minus className="h-3 w-3" />
                           </Button>
-                          <span className="w-6 text-center font-semibold text-sm">{quantity}</span>
+                          <span className="w-6 text-center font-semibold text-sm" style={{ color: 'var(--theme-background)' }}>{quantity}</span>
                           <Button
                             size="icon"
                             variant="ghost"
                             className="h-7 w-7 rounded-full hover:bg-paydine-champagne/30"
+                            style={{ color: 'var(--theme-background)' }}
                             onClick={() => updateQuantity(item.id, quantity + 1)}
                           >
                             <Plus className="h-3 w-3" />

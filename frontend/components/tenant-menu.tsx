@@ -167,7 +167,7 @@ export function TenantMenu() {
                         >
                           <Minus className="h-4 w-4" />
                         </Button>
-                        <span className="min-w-[20px] text-center">
+                        <span className="min-w-[20px] text-center" style={{ color: 'var(--theme-background)' }}>
                           {getItemQuantity(item.id)}
                         </span>
                         <Button
