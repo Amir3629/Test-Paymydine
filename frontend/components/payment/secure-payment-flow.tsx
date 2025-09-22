@@ -232,12 +232,7 @@ export function SecurePaymentFlow({ isOpen, onOpenChange }: SecurePaymentFlowPro
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent
-        className="p-0 max-w-md rounded-3xl overflow-hidden max-h-[85vh] flex flex-col"
-        style={{
-          backgroundColor: 'var(--theme-input, #121923)',
-          borderColor: 'var(--theme-menu-item-border, #223042)',
-          color: 'var(--theme-text-primary, #F3F4F6)'
-        }}
+        className="p-0 max-w-md rounded-3xl overflow-hidden max-h-[85vh] flex flex-col surface"
       >
         <DialogHeader className="p-4 pb-2" style={{ background: 'linear-gradient(90deg, rgba(231,203,169,0.10), transparent)' }}>
           <DialogTitle className="font-serif text-lg text-center flex items-center justify-center gap-2">

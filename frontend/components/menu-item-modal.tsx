@@ -34,7 +34,7 @@ export function MenuItemModal({ item, onClose }: MenuItemModalProps) {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ type: "spring", stiffness: 200, damping: 20 }}
-            className="relative bg-[#FDF8F7] rounded-3xl shadow-2xl w-full max-w-md overflow-hidden"
+            className="relative surface rounded-3xl shadow-2xl w-full max-w-md overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
