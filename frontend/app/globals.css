@@ -567,10 +567,12 @@ html.theme-dark [data-radix-dialog-content],
 :root[data-theme="modern-dark"] .fixed.inset-0.z-50 button:has-text("20%") {
   background: linear-gradient(135deg, #F0C6B1, #E7CBA9) !important;
   color: #1A202C !important;
-  border: 2px solid #F0C6B1 !important;
-  box-shadow: 0 4px 12px rgba(240, 198, 177, 0.3) !important;
+  border: 3px solid #F0C6B1 !important;
+  box-shadow: 0 4px 12px rgba(240, 198, 177, 0.5), inset 0 0 0 1px #F0C6B1 !important;
   transform: scale(1.05) !important;
   font-weight: 600 !important;
+  outline: 2px solid #F0C6B1 !important;
+  outline-offset: 1px !important;
 }
 
 :root[data-theme="gold-luxury"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
@@ -581,10 +583,12 @@ html.theme-dark [data-radix-dialog-content],
 :root[data-theme="gold-luxury"] .fixed.inset-0.z-50 button:has-text("20%") {
   background: linear-gradient(135deg, #FFF8DC, #FFD700) !important;
   color: #1A202C !important;
-  border: 2px solid #FFD700 !important;
-  box-shadow: 0 4px 12px rgba(255, 248, 220, 0.4) !important;
+  border: 3px solid #FFD700 !important;
+  box-shadow: 0 4px 12px rgba(255, 248, 220, 0.5), inset 0 0 0 1px #FFD700 !important;
   transform: scale(1.05) !important;
   font-weight: 600 !important;
+  outline: 2px solid #FFD700 !important;
+  outline-offset: 1px !important;
 }
 
 :root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
@@ -613,6 +617,16 @@ html.theme-dark [data-radix-dialog-content],
   box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3) !important;
   transform: scale(1.05) !important;
   font-weight: 600 !important;
+}
+
+/* MINIMAL THEME - FORCE WHITE TEXT ON SELECTED TIP BUTTONS */
+:root[data-theme="minimal"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"] span,
+:root[data-theme="minimal"] .fixed.inset-0.z-50 button[class*="bg-"] span,
+:root[data-theme="minimal"] .fixed.inset-0.z-50 .tip-button span,
+:root[data-theme="minimal"] .fixed.inset-0.z-50 button span {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
 }
 
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
