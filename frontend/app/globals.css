@@ -743,39 +743,6 @@ html.theme-dark [data-radix-dialog-content],
   color: inherit !important;
 }
 
-/* NUCLEAR: Target the inner div that creates the black frame */
-:root[data-theme="modern-dark"] button div.flex.items-center.gap-2,
-:root[data-theme="modern-dark"] .fixed.inset-0 button div,
-:root[data-theme="modern-dark"] button[style*="var(--theme-button"] div {
-  background: transparent !important;
-  border: none !important;
-  color: inherit !important;
-}
-
-:root[data-theme="gold-luxury"] button div.flex.items-center.gap-2,
-:root[data-theme="gold-luxury"] .fixed.inset-0 button div,
-:root[data-theme="gold-luxury"] button[style*="var(--theme-button"] div {
-  background: transparent !important;
-  border: none !important;
-  color: inherit !important;
-}
-
-:root[data-theme="vibrant-colors"] button div.flex.items-center.gap-2,
-:root[data-theme="vibrant-colors"] .fixed.inset-0 button div,
-:root[data-theme="vibrant-colors"] button[style*="var(--theme-button"] div {
-  background: transparent !important;
-  border: none !important;
-  color: inherit !important;
-}
-
-:root[data-theme="minimal"] button div.flex.items-center.gap-2,
-:root[data-theme="minimal"] .fixed.inset-0 button div,
-:root[data-theme="minimal"] button[style*="var(--theme-button"] div {
-  background: transparent !important;
-  border: none !important;
-  color: inherit !important;
-}
-
 /* NUCLEAR OPTION: Target payment button with inline styles */
 :root[data-theme="modern-dark"] button[style*="var(--theme-button"] {
   background: linear-gradient(135deg, #F0C6B1, #E7CBA9) !important;
@@ -838,161 +805,21 @@ html.theme-dark [data-radix-dialog-content],
   box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3) !important;
 }
 
-/* ULTIMATE NUCLEAR: Remove ALL black backgrounds from button content */
-:root[data-theme="modern-dark"] button *,
-:root[data-theme="gold-luxury"] button *,
-:root[data-theme="vibrant-colors"] button *,
-:root[data-theme="minimal"] button * {
+/* NUCLEAR: Remove the ugly black frame from payment button text */
+:root[data-theme="modern-dark"] button[style*="var(--theme-button"] div,
+:root[data-theme="modern-dark"] button.font-bold div,
+:root[data-theme="modern-dark"] .fixed.inset-0 button div.flex {
   background: transparent !important;
   border: none !important;
   color: inherit !important;
 }
 
-/* Hide the ugly Lock icon from payment buttons */
-:root[data-theme="modern-dark"] button svg[data-lucide="lock"],
-:root[data-theme="modern-dark"] button svg[data-lucide="lock-closed"],
-:root[data-theme="modern-dark"] button .h-4.w-4,
-:root[data-theme="gold-luxury"] button svg[data-lucide="lock"],
-:root[data-theme="gold-luxury"] button svg[data-lucide="lock-closed"],
-:root[data-theme="gold-luxury"] button .h-4.w-4,
-:root[data-theme="vibrant-colors"] button svg[data-lucide="lock"],
-:root[data-theme="vibrant-colors"] button svg[data-lucide="lock-closed"],
-:root[data-theme="vibrant-colors"] button .h-4.w-4,
-:root[data-theme="minimal"] button svg[data-lucide="lock"],
-:root[data-theme="minimal"] button svg[data-lucide="lock-closed"],
-:root[data-theme="minimal"] button .h-4.w-4 {
-  display: none !important;
-}
-
-/* Force text colors to inherit from button */
-:root[data-theme="modern-dark"] button span,
-:root[data-theme="modern-dark"] button div {
+:root[data-theme="gold-luxury"] button[style*="var(--theme-button"] div,
+:root[data-theme="gold-luxury"] button.font-bold div,
+:root[data-theme="gold-luxury"] .fixed.inset-0 button div.flex {
+  background: transparent !important;
+  border: none !important;
   color: inherit !important;
-}
-
-:root[data-theme="gold-luxury"] button span,
-:root[data-theme="gold-luxury"] button div {
-  color: inherit !important;
-}
-
-:root[data-theme="vibrant-colors"] button span,
-:root[data-theme="vibrant-colors"] button div {
-  color: #FFFFFF !important;
-}
-
-:root[data-theme="minimal"] button span,
-:root[data-theme="minimal"] button div {
-  color: inherit !important;
-}
-
-/* Fix toolbar icons that turned black - restore proper colors */
-:root[data-theme="modern-dark"] .text-paydine-elegant-gray,
-:root[data-theme="gold-luxury"] .text-paydine-elegant-gray,
-:root[data-theme="vibrant-colors"] .text-paydine-elegant-gray,
-:root[data-theme="minimal"] .text-paydine-elegant-gray {
-  color: var(--theme-text-primary, #1A202C) !important;
-}
-
-/* Specifically fix toolbar icons */
-:root[data-theme="modern-dark"] .h-8.w-8.text-paydine-elegant-gray,
-:root[data-theme="gold-luxury"] .h-8.w-8.text-paydine-elegant-gray,
-:root[data-theme="vibrant-colors"] .h-8.w-8.text-paydine-elegant-gray,
-:root[data-theme="minimal"] .h-8.w-8.text-paydine-elegant-gray {
-  color: var(--theme-text-primary, #1A202C) !important;
-}
-
-/* Fix HandPlatter and NotebookPen icons specifically */
-:root[data-theme="modern-dark"] svg[data-lucide="hand-platter"],
-:root[data-theme="modern-dark"] svg[data-lucide="notebook-pen"],
-:root[data-theme="modern-dark"] svg[data-lucide="shopping-cart"],
-:root[data-theme="gold-luxury"] svg[data-lucide="hand-platter"],
-:root[data-theme="gold-luxury"] svg[data-lucide="notebook-pen"],
-:root[data-theme="gold-luxury"] svg[data-lucide="shopping-cart"],
-:root[data-theme="vibrant-colors"] svg[data-lucide="hand-platter"],
-:root[data-theme="vibrant-colors"] svg[data-lucide="notebook-pen"],
-:root[data-theme="vibrant-colors"] svg[data-lucide="shopping-cart"],
-:root[data-theme="minimal"] svg[data-lucide="hand-platter"],
-:root[data-theme="minimal"] svg[data-lucide="notebook-pen"],
-:root[data-theme="minimal"] svg[data-lucide="shopping-cart"] {
-  color: var(--theme-text-primary, #1A202C) !important;
-  fill: currentColor !important;
-  stroke: currentColor !important;
-}
-
-/* NUCLEAR: Fix cart badge number to match icon color - override inline styles */
-:root[data-theme="modern-dark"] .cart-badge-number,
-:root[data-theme="modern-dark"] .absolute.-top-1.-right-1,
-:root[data-theme="modern-dark"] .bg-paydine-champagne span,
-:root[data-theme="modern-dark"] span[style*="color:"] {
-  color: var(--theme-text-primary, #1A202C) !important;
-}
-
-:root[data-theme="gold-luxury"] .cart-badge-number,
-:root[data-theme="gold-luxury"] .absolute.-top-1.-right-1,
-:root[data-theme="gold-luxury"] .bg-paydine-champagne span,
-:root[data-theme="gold-luxury"] span[style*="color:"] {
-  color: var(--theme-text-primary, #1A202C) !important;
-}
-
-:root[data-theme="vibrant-colors"] .cart-badge-number,
-:root[data-theme="vibrant-colors"] .absolute.-top-1.-right-1,
-:root[data-theme="vibrant-colors"] .bg-paydine-champagne span,
-:root[data-theme="vibrant-colors"] span[style*="color:"] {
-  color: var(--theme-text-primary, #1A202C) !important;
-}
-
-:root[data-theme="minimal"] .cart-badge-number,
-:root[data-theme="minimal"] .absolute.-top-1.-right-1,
-:root[data-theme="minimal"] .bg-paydine-champagne span,
-:root[data-theme="minimal"] span[style*="color:"] {
-  color: var(--theme-text-primary, #1A202C) !important;
-}
-
-/* FIX: Cart badge positioning and colors */
-:root[data-theme="modern-dark"] .cart-badge-number {
-  color: #1A202C !important;
-  background-color: #F0C6B1 !important;
-  position: absolute !important;
-  top: -8px !important;
-  right: -8px !important;
-  z-index: 999 !important;
-}
-
-:root[data-theme="gold-luxury"] .cart-badge-number {
-  color: #1A202C !important;
-  background-color: #FFF8DC !important;
-  position: absolute !important;
-  top: -8px !important;
-  right: -8px !important;
-  z-index: 999 !important;
-}
-
-:root[data-theme="vibrant-colors"] .cart-badge-number {
-  color: #FFFFFF !important;
-  background-color: #6b5e4f !important;
-  position: absolute !important;
-  top: -8px !important;
-  right: -8px !important;
-  z-index: 999 !important;
-}
-
-:root[data-theme="minimal"] .cart-badge-number {
-  color: #1A202C !important;
-  background-color: #87CEEB !important;
-  position: absolute !important;
-  top: -8px !important;
-  right: -8px !important;
-  z-index: 999 !important;
-}
-
-/* ALSO target the exact span with positioning */
-:root[data-theme="modern-dark"] .absolute.-top-1.-right-1,
-:root[data-theme="gold-luxury"] .absolute.-top-1.-right-1,
-:root[data-theme="vibrant-colors"] .absolute.-top-1.-right-1,
-:root[data-theme="minimal"] .absolute.-top-1.-right-1 {
-  top: -8px !important;
-  right: -8px !important;
-  z-index: 999 !important;
 }
 
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],

@@ -693,11 +693,7 @@ export function BottomActions() {
                   className="absolute -top-1 -right-1 w-5 h-5 bg-paydine-champagne flex items-center justify-center rounded-full cart-badge-number"
                   style={{ 
                     fontSize: '12px',
-                    color: '#1A202C',
-                    backgroundColor: 'var(--theme-secondary, #E7CBA9)',
-                    zIndex: 999,
-                    top: '-8px',
-                    right: '-8px'
+                    color: themeBackgroundColor
                   }}>
                   {totalItems}
                 </span>
