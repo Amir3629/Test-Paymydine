@@ -8,6 +8,7 @@ import { type TranslationKey } from "@/lib/translations"
 import { useCmsStore } from "@/store/cms-store"
 import { useCartStore, type CartItem } from "@/store/cart-store"
 import { useThemeStore } from "@/store/theme-store"
+import { applyTheme } from "@/lib/theme-system"
 import { Logo } from "@/components/logo"
 import { CartSheet } from "@/components/cart-sheet"
 import { CategoryNav } from "@/components/category-nav"
@@ -16,8 +17,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/components/ui/use-toast"
-import { applyTheme } from "@/lib/theme-system"
-import { logThemeConsistency } from "@/lib/theme-debug"
 import { HandPlatter, NotebookPen, ShoppingCart, ChevronUp, ChevronDown, Plus, Wallet, Lock, Users, Check, Minus, CreditCard, ArrowLeft, CheckCircle } from "lucide-react"
 import { OptimizedImage } from "@/components/ui/optimized-image"
 import Link from "next/link"
@@ -1591,19 +1590,13 @@ function MenuContent() {
   const [dynamicCategories, setDynamicCategories] = useState<string[]>([])
   const { menuItems } = useCmsStore()
 
-  // Theme re-application and debug logging (symmetric with homepage)
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Get current theme from localStorage or default to clean-light
-      const currentTheme = localStorage.getItem('paymydine-theme') || 'clean-light';
-      
-      // Force theme re-application
-      applyTheme(currentTheme);
-      
-      // Debug logging for theme consistency
-      logThemeConsistency("menu");
-    }
-  }, []);
+  // Debug logging for theme consistency
+  if (typeof window !== 'undefined') {
+    console.info("MENU PAGE ACTIVE FILE ✅");
+    console.log("data-theme:", document.documentElement.getAttribute('data-theme'));
+    console.log("--theme-background:", getComputedStyle(document.documentElement).getPropertyValue('--theme-background'));
+    console.log("body bg:", getComputedStyle(document.body).background);
+  }
   const { items, toggleCart, addToCart, setTableInfo } = useCartStore()
   const themeBackgroundColor = useThemeBackgroundColor()
   const { t } = useLanguageStore()
@@ -1826,7 +1819,6 @@ function MenuContent() {
   }
 
   return (
-    <div className="page--menu">
         <div className="relative min-h-screen w-full bg-theme-background pb-32">
       <header className="py-8">
         <div className="max-w-4xl mx-auto px-4">
@@ -1918,12 +1910,25 @@ function MenuContent() {
         tableName={tableName}
       />
     </div>
-    </div>
   )
 }
 
 // Main component with Suspense wrapper
 export default function ExpandingBottomToolbarMenu() {
+  // Safety net: Force theme application on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const currentTheme = localStorage.getItem('paymydine-theme') || 'clean-light';
+      applyTheme(currentTheme);
+      
+      // Debug logging for verification
+      console.info("MENU PAGE THEME SAFETY NET APPLIED");
+      console.log("Applied theme:", currentTheme);
+      console.log("--theme-background:", getComputedStyle(document.documentElement).getPropertyValue('--theme-background'));
+      console.log("body background:", getComputedStyle(document.body).background);
+    }
+  }, []);
+
   return (
     <div className="page--menu">
       <Suspense fallback={<div>Loading...</div>}>

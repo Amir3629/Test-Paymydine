@@ -8,7 +8,6 @@ import { Car, Utensils } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { applyTheme } from "@/lib/theme-system"
-import { logThemeConsistency } from "@/lib/theme-debug"
 
 const MotionLink = motion(Link)
 
@@ -16,41 +15,6 @@ const MotionLink = motion(Link)
 function HomePageContent() {
   const { t } = useLanguageStore()
   const { settings } = useCmsStore()
-
-  // Force theme re-application on mount to ensure consistency
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Get current theme from localStorage or default to clean-light
-      const currentTheme = localStorage.getItem('paymydine-theme') || 'clean-light';
-      
-      // Force theme re-application
-      applyTheme(currentTheme);
-      
-      // Debug logging for theme consistency
-      logThemeConsistency("homepage");
-    }
-  }, []);
-
-  // Hard-coded background safety net - force paint exact hex colors
-  useEffect(() => {
-    const theme = document.documentElement.getAttribute("data-theme");
-    const map: Record<string,string> = {
-      "clean-light": "#FAFAFA",
-      "modern-dark": "#0B0F14",
-      "gold-luxury": "#2C1810",
-      "vibrant-colors": "#F8FAFC",
-      "minimal": "#FFFFFF",
-    };
-    const hex = map[theme || "clean-light"];
-    if (hex) {
-      document.body.style.background = hex;            // hard paint
-      document.body.style.backgroundImage = "none";    // nuke gradients
-    }
-    return () => {
-      document.body.style.background = "";
-      document.body.style.backgroundImage = "";
-    };
-  }, []);
 
   const cardStyles = "relative flex flex-col items-center rounded-3xl p-8 sm:p-12 shadow-sm hover:shadow-xl transition duration-500 border w-72 h-56 justify-center surface-sub"
   const iconContainerStyles = "rounded-full p-6 mb-6"
@@ -148,6 +112,20 @@ function HomePageContent() {
 
 // FIXED: Main component with Suspense wrapper
 export default function HomePage() {
+  // Safety net: Force theme application on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const currentTheme = localStorage.getItem('paymydine-theme') || 'clean-light';
+      applyTheme(currentTheme);
+      
+      // Debug logging for verification
+      console.info("HOMEPAGE THEME SAFETY NET APPLIED");
+      console.log("Applied theme:", currentTheme);
+      console.log("--theme-background:", getComputedStyle(document.documentElement).getPropertyValue('--theme-background'));
+      console.log("body background:", getComputedStyle(document.body).background);
+    }
+  }, []);
+
   return (
     <div className="page--home">
       <Suspense fallback={

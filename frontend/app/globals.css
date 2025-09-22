@@ -98,19 +98,45 @@
     background: var(--theme-background);
   }
   
-  /* Symmetric hardening for both pages */
-  .page--home,
-  .page--menu {
-    background: var(--theme-background) !important;
-  }
-  
-  .page--home > div,
-  .page--menu > div {
-    background: var(--theme-background) !important;
-  }
-  
   body {
     @apply text-foreground;
+  }
+
+  /* HARD-LOCK: Ensure homepage and menu page backgrounds are identical */
+  /* Clean Light Theme */
+  [data-theme="clean-light"] .page--home,
+  [data-theme="clean-light"] .page--menu {
+    background: #FAFAFA !important;
+  }
+  
+  /* Modern Dark Theme */
+  [data-theme="modern-dark"] .page--home,
+  [data-theme="modern-dark"] .page--menu {
+    background: #0A0E12 !important;
+  }
+  
+  /* Gold Luxury Theme */
+  [data-theme="gold-luxury"] .page--home,
+  [data-theme="gold-luxury"] .page--menu {
+    background: #0F0B05 !important;
+  }
+  
+  /* Vibrant Colors Theme */
+  [data-theme="vibrant-colors"] .page--home,
+  [data-theme="vibrant-colors"] .page--menu {
+    background: #e2ceb1 !important;
+  }
+  
+  /* Minimal Theme */
+  [data-theme="minimal"] .page--home,
+  [data-theme="minimal"] .page--menu {
+    background: #CFEBF7 !important;
+  }
+
+  /* Additional safety: Force page wrappers to use theme background */
+  .page--home .min-h-screen,
+  .page--menu .min-h-screen {
+    background: var(--theme-background) !important;
   }
 }
 
@@ -320,52 +346,4 @@ html[data-theme] .radix-overlay,
 html[data-theme] [data-radix-dialog-overlay],
 html[data-theme] [data-radix-sheet-overlay] {
   background: rgba(0,0,0,0.42);
-}
-
-/* ---------- HARD-LOCK PAGE BACKGROUNDS PER THEME ---------- */
-/* We target both wrappers so homepage & menu are identical.  */
-
-/* Clean Light */
-[data-theme="clean-light"] .page--home,
-[data-theme="clean-light"] .page--menu,
-[data-theme="clean-light"] .page--home > div.min-h-screen,
-[data-theme="clean-light"] .page--menu > div.min-h-screen {
-  background: #FAFAFA !important;  /* <- put the exact menu bg hex here */
-}
-
-/* Modern Dark */
-[data-theme="modern-dark"] .page--home,
-[data-theme="modern-dark"] .page--menu,
-[data-theme="modern-dark"] .page--home > div.min-h-screen,
-[data-theme="modern-dark"] .page--menu > div.min-h-screen {
-  background: #0B0F14 !important;  /* exact menu bg hex */
-}
-
-/* Gold Luxury */
-[data-theme="gold-luxury"] .page--home,
-[data-theme="gold-luxury"] .page--menu,
-[data-theme="gold-luxury"] .page--home > div.min-h-screen,
-[data-theme="gold-luxury"] .page--menu > div.min-h-screen {
-  background: #2C1810 !important;  /* exact menu bg hex (cocoa) */
-}
-
-/* Vibrant Colors */
-[data-theme="vibrant-colors"] .page--home,
-[data-theme="vibrant-colors"] .page--menu,
-[data-theme="vibrant-colors"] .page--home > div.min-h-screen,
-[data-theme="vibrant-colors"] .page--menu > div.min-h-screen {
-  background: #F8FAFC !important;  /* exact menu bg hex */
-}
-
-/* Minimal */
-[data-theme="minimal"] .page--home,
-[data-theme="minimal"] .page--menu,
-[data-theme="minimal"] .page--home > div.min-h-screen,
-[data-theme="minimal"] .page--menu > div.min-h-screen {
-  background: #FFFFFF !important;  /* exact menu bg hex */
-}
-
-/* Absolute last-resort: kill any leftover gradient/background painting */
-.page--home, .page--menu {
-  background-image: none !important;
 }
