@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect } from "react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Users, Wallet, Check, CreditCard, Lock, ArrowLeft } from "lucide-react"
+import { Users, Wallet, Check, CreditCard, ArrowLeft } from "lucide-react"
 import { useCartStore, type CartItem } from "@/store/cart-store"
 import { useLanguageStore } from "@/store/language-store"
 import { useCmsStore } from "@/store/cms-store"
@@ -442,7 +442,7 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
         onClick={handlePayment}
         disabled={isLoading || !isFormValid()}
         className="w-full font-bold py-3 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl"
-        style={{ backgroundColor: 'var(--theme-button, #E7CBA9)', color: 'var(--theme-text-primary, #1B1F27)' }}
+        style={{ backgroundColor: 'var(--theme-button, #E7CBA9)', color: '#1B1F27' }}
         onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'var(--theme-button-hover, #D6B890)' }}
         onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'var(--theme-button, #E7CBA9)' }}
       >
@@ -452,9 +452,9 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
             Processing...
           </div>
         ) : (
-          <div className="flex items-center gap-2">
+          <span>
             {getButtonText()}
-          </div>
+          </span>
         )}
       </Button>
     )
