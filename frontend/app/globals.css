@@ -820,9 +820,11 @@ html.theme-dark [data-radix-dialog-content],
   color: inherit !important;
 }
 
-/* REMOVE LOCK ICON ONLY from payment button */
+/* REMOVE LOCK ICON ONLY from payment button - ALL THEMES */
 :root[data-theme] button[style*="var(--theme-button"] svg[data-lucide="lock"],
-:root[data-theme] button.font-bold.py-3 svg[data-lucide="lock"] {
+:root[data-theme] button.font-bold.py-3 svg[data-lucide="lock"],
+:root[data-theme] button svg[data-lucide="lock"],
+:root[data-theme] button .h-4.w-4[data-lucide="lock"] {
   display: none !important;
 }
 
