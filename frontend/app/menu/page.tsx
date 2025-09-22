@@ -766,7 +766,11 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="w-full max-w-md bg-white rounded-3xl shadow-xl border border-paydine-champagne/30 overflow-hidden flex flex-col max-h-[90vh]"
+        className="w-full max-w-md rounded-3xl shadow-xl border border-paydine-champagne/30 overflow-hidden flex flex-col max-h-[90vh]"
+        style={{
+          backgroundColor: 'var(--page-bg, #FAFAFA)',
+          color: 'var(--theme-text-primary, #1A202C)'
+        }}
       >
         {/* Header with close button */}
         <div className="p-4 pb-2 bg-gradient-to-r from-paydine-champagne/10 to-paydine-rose-beige/10 flex justify-between items-center">

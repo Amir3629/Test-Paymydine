@@ -395,35 +395,96 @@ html.theme-dark [data-radix-dialog-content],
   color: #1A202C !important;
 }
 
-/* BILL/ORDER MODAL OVERRIDES - BACKGROUND ONLY */
+/* BILL/ORDER MODAL OVERRIDES - TARGET EXACT STRUCTURE */
 :root[data-theme="modern-dark"] .fixed.inset-0.z-50 .bg-white.rounded-3xl {
   background-color: #0B0F14 !important;
+  color: #F3F4F6 !important;
   border: 1px solid #223042 !important;
 }
 
 :root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .bg-white.rounded-3xl {
   background-color: #0E0B05 !important;
+  color: #FFF8DC !important;
   border: 1px solid #4A3C00 !important;
 }
 
-/* REMOVED - This was affecting Bestellübersicht content */
+/* NUCLEAR OPTION - MORE AGGRESSIVE TARGETING */
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .w-full.max-w-md.bg-white.rounded-3xl,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .bg-white,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 [class*="bg-white"],
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .rounded-3xl {
+  background-color: #0B0F14 !important;
+  color: #F3F4F6 !important;
+  border: 1px solid #223042 !important;
+}
+
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .w-full.max-w-md.bg-white.rounded-3xl,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .bg-white,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 [class*="bg-white"],
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .rounded-3xl {
+  background-color: #0E0B05 !important;
+  color: #FFF8DC !important;
+  border: 1px solid #4A3C00 !important;
+}
 
 :root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .bg-white.rounded-3xl {
   background-color: #e2ceb1 !important;
+  color: #4A3C00 !important;
   border: 1px solid #6b5e4f !important;
 }
 
 :root[data-theme="minimal"] .fixed.inset-0.z-50 .bg-white.rounded-3xl {
   background-color: #CFEBF7 !important;
+  color: #1A202C !important;
   border: 1px solid #87CEEB !important;
 }
 
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 .bg-white.rounded-3xl {
   background-color: #FAFAFA !important;
+  color: #1A202C !important;
   border: 1px solid #E2E8F0 !important;
 }
 
-/* REMOVED - Text overrides were affecting Bestellübersicht content */
+/* BILL MODAL TEXT OVERRIDES */
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .bg-white.rounded-3xl h2,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .bg-white.rounded-3xl h3,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .bg-white.rounded-3xl p,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .bg-white.rounded-3xl span,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .bg-white.rounded-3xl div {
+  color: #F3F4F6 !important;
+}
+
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .bg-white.rounded-3xl h2,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .bg-white.rounded-3xl h3,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .bg-white.rounded-3xl p,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .bg-white.rounded-3xl span,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .bg-white.rounded-3xl div {
+  color: #FFF8DC !important;
+}
+
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .bg-white.rounded-3xl h2,
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .bg-white.rounded-3xl h3,
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .bg-white.rounded-3xl p,
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .bg-white.rounded-3xl span,
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .bg-white.rounded-3xl div {
+  color: #4A3C00 !important;
+}
+
+:root[data-theme="minimal"] .fixed.inset-0.z-50 .bg-white.rounded-3xl h2,
+:root[data-theme="minimal"] .fixed.inset-0.z-50 .bg-white.rounded-3xl h3,
+:root[data-theme="minimal"] .fixed.inset-0.z-50 .bg-white.rounded-3xl p,
+:root[data-theme="minimal"] .fixed.inset-0.z-50 .bg-white.rounded-3xl span,
+:root[data-theme="minimal"] .fixed.inset-0.z-50 .bg-white.rounded-3xl div {
+  color: #1A202C !important;
+}
+
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 .bg-white.rounded-3xl h2,
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 .bg-white.rounded-3xl h3,
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 .bg-white.rounded-3xl p,
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 .bg-white.rounded-3xl span,
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 .bg-white.rounded-3xl div {
+  color: #1A202C !important;
+}
 
 /* BILL MODAL INPUT FIELDS - BLACK TEXT FOR READABILITY */
 :root[data-theme="modern-dark"] .fixed.inset-0.z-50 input,
@@ -471,7 +532,16 @@ html.theme-dark [data-radix-dialog-content],
   background-color: #FFFFFF !important;
 }
 
-/* REMOVED - This was causing issues with Bestellübersicht */
+/* ULTRA AGGRESSIVE - CATCH ALL POSSIBLE MODAL STRUCTURES */
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 * {
+  background-color: #0B0F14 !important;
+  color: #F3F4F6 !important;
+}
+
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 * {
+  background-color: #0E0B05 !important;
+  color: #FFF8DC !important;
+}
 
 /* BUT KEEP INPUT FIELDS WHITE WITH BLACK TEXT */
 :root[data-theme="modern-dark"] .fixed.inset-0.z-50 input,
@@ -559,30 +629,31 @@ html.theme-dark [data-radix-dialog-content],
   text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
 }
 
-/* TIP BUTTONS ONLY - WARM AND SUBTLE COLORS */
-:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"] {
-  background: #E7CBA9 !important;
-  color: #1A202C !important;
-  border: 2px solid #E7CBA9 !important;
-  box-shadow: 0 2px 8px rgba(231, 203, 169, 0.3) !important;
-  font-weight: 600 !important;
+/* NUCLEAR OPTION - TARGET EVERYTHING POSSIBLE */
+:root[data-theme="modern-dark"] button,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button {
+  border: 3px solid #F0C6B1 !important;
+  outline: 2px solid #F0C6B1 !important;
+  outline-offset: 1px !important;
 }
 
-:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"] {
-  background: #FFF8DC !important;
-  color: #1A202C !important;
-  border: 2px solid #FFF8DC !important;
-  box-shadow: 0 2px 8px rgba(255, 248, 220, 0.3) !important;
-  font-weight: 600 !important;
+:root[data-theme="gold-luxury"] button,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 button {
+  border: 3px solid #FFD700 !important;
+  outline: 2px solid #FFD700 !important;
+  outline-offset: 1px !important;
 }
 
-:root[data-theme="minimal"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"] {
-  background: #87CEEB !important;
+:root[data-theme="minimal"] button,
+:root[data-theme="minimal"] .fixed.inset-0.z-50 button {
   color: #FFFFFF !important;
-  border: 2px solid #87CEEB !important;
-  box-shadow: 0 2px 8px rgba(135, 206, 235, 0.3) !important;
-  font-weight: 600 !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.2) !important;
+}
+
+:root[data-theme="minimal"] button span,
+:root[data-theme="minimal"] .fixed.inset-0.z-50 button span {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
 }
 
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
