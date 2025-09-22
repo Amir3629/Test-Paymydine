@@ -121,19 +121,20 @@
   }
 
   /* PROTECTION: Ensure individual elements keep their original styling */
-  [data-theme] .card,
-  [data-theme] .surface,
-  [data-theme] .surface-sub,
-  [data-theme] button,
-  [data-theme] .icon,
-  [data-theme] .logo,
-  [data-theme] h1,
-  [data-theme] h2,
-  [data-theme] h3,
-  [data-theme] p,
-  [data-theme] span,
-  [data-theme] div[class*="card"],
-  [data-theme] div[class*="surface"],
+  /* Only protect specific elements, not the main page background */
+  [data-theme] .card:not(.min-h-screen),
+  [data-theme] .surface:not(.min-h-screen),
+  [data-theme] .surface-sub:not(.min-h-screen),
+  [data-theme] button:not(.min-h-screen),
+  [data-theme] .icon:not(.min-h-screen),
+  [data-theme] .logo:not(.min-h-screen),
+  [data-theme] h1:not(.min-h-screen),
+  [data-theme] h2:not(.min-h-screen),
+  [data-theme] h3:not(.min-h-screen),
+  [data-theme] p:not(.min-h-screen),
+  [data-theme] span:not(.min-h-screen),
+  [data-theme] div[class*="card"]:not(.min-h-screen),
+  [data-theme] div[class*="surface"]:not(.min-h-screen),
   [data-theme] .bg-white,
   [data-theme] .bg-gray-50,
   [data-theme] .bg-gray-100,
@@ -167,8 +168,8 @@
   [data-theme] .bg-neutral-500,
   [data-theme] .bg-zinc-500,
   [data-theme] .bg-slate-500 {
-    background: initial !important;
-    background-color: initial !important;
+    background: unset !important;
+    background-color: unset !important;
   }
   
   body {
@@ -182,30 +183,35 @@
   [data-theme="clean-light"] .page--home .min-h-screen,
   [data-theme="clean-light"] .page--menu .min-h-screen {
     background: #FAFAFA !important;
+    background-color: #FAFAFA !important;
   }
   
   /* Modern Dark Theme */
   [data-theme="modern-dark"] .page--home .min-h-screen,
   [data-theme="modern-dark"] .page--menu .min-h-screen {
     background: #0A0E12 !important;
+    background-color: #0A0E12 !important;
   }
   
   /* Gold Luxury Theme */
   [data-theme="gold-luxury"] .page--home .min-h-screen,
   [data-theme="gold-luxury"] .page--menu .min-h-screen {
     background: #0F0B05 !important;
+    background-color: #0F0B05 !important;
   }
   
   /* Vibrant Colors Theme */
   [data-theme="vibrant-colors"] .page--home .min-h-screen,
   [data-theme="vibrant-colors"] .page--menu .min-h-screen {
     background: #e2ceb1 !important;
+    background-color: #e2ceb1 !important;
   }
   
   /* Minimal Theme */
   [data-theme="minimal"] .page--home .min-h-screen,
   [data-theme="minimal"] .page--menu .min-h-screen {
     background: #CFEBF7 !important;
+    background-color: #CFEBF7 !important;
   }
 
   /* Additional safety: Force bg-theme-background class to use exact colors - only for page backgrounds */
