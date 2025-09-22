@@ -805,77 +805,19 @@ html.theme-dark [data-radix-dialog-content],
   box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3) !important;
 }
 
-/* NUCLEAR: Remove the ugly black frame from payment button text */
+/* ONLY remove black frame from payment button text - DO NOT TOUCH ANYTHING ELSE */
 :root[data-theme="modern-dark"] button[style*="var(--theme-button"] div,
-:root[data-theme="modern-dark"] button.font-bold div,
-:root[data-theme="modern-dark"] .fixed.inset-0 button div.flex {
+:root[data-theme="modern-dark"] button.font-bold.py-3 div {
   background: transparent !important;
   border: none !important;
   color: inherit !important;
 }
 
 :root[data-theme="gold-luxury"] button[style*="var(--theme-button"] div,
-:root[data-theme="gold-luxury"] button.font-bold div,
-:root[data-theme="gold-luxury"] .fixed.inset-0 button div.flex {
+:root[data-theme="gold-luxury"] button.font-bold.py-3 div {
   background: transparent !important;
   border: none !important;
   color: inherit !important;
-}
-
-/* Remove the Lock icon from payment buttons */
-:root[data-theme] button[style*="var(--theme-button"] svg,
-:root[data-theme] button.font-bold svg,
-:root[data-theme] .fixed.inset-0 button svg,
-:root[data-theme] button svg[data-lucide="lock"],
-:root[data-theme] button .h-4.w-4 {
-  display: none !important;
-}
-
-/* Fix Bestellübersicht plus/minus icons in bill card ONLY */
-:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .bg-white.rounded-3xl button svg,
-:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .bg-white.rounded-3xl .w-3.h-3,
-:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .bg-white.rounded-3xl svg[data-lucide="plus"],
-:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .bg-white.rounded-3xl svg[data-lucide="minus"] {
-  color: #0B0F14 !important;
-  fill: #0B0F14 !important;
-  stroke: #0B0F14 !important;
-}
-
-:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .bg-white.rounded-3xl button svg,
-:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .bg-white.rounded-3xl .w-3.h-3,
-:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .bg-white.rounded-3xl svg[data-lucide="plus"],
-:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .bg-white.rounded-3xl svg[data-lucide="minus"] {
-  color: #0E0B05 !important;
-  fill: #0E0B05 !important;
-  stroke: #0E0B05 !important;
-}
-
-:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .bg-white.rounded-3xl button svg,
-:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .bg-white.rounded-3xl .w-3.h-3,
-:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .bg-white.rounded-3xl svg[data-lucide="plus"],
-:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .bg-white.rounded-3xl svg[data-lucide="minus"] {
-  color: #e2ceb1 !important;
-  fill: #e2ceb1 !important;
-  stroke: #e2ceb1 !important;
-}
-
-:root[data-theme="minimal"] .fixed.inset-0.z-50 .bg-white.rounded-3xl button svg,
-:root[data-theme="minimal"] .fixed.inset-0.z-50 .bg-white.rounded-3xl .w-3.h-3,
-:root[data-theme="minimal"] .fixed.inset-0.z-50 .bg-white.rounded-3xl svg[data-lucide="plus"],
-:root[data-theme="minimal"] .fixed.inset-0.z-50 .bg-white.rounded-3xl svg[data-lucide="minus"] {
-  color: #CFEBF7 !important;
-  fill: #CFEBF7 !important;
-  stroke: #CFEBF7 !important;
-}
-
-/* Clean Light keeps original black */
-:root[data-theme="clean-light"] .fixed.inset-0.z-50 .bg-white.rounded-3xl button svg,
-:root[data-theme="clean-light"] .fixed.inset-0.z-50 .bg-white.rounded-3xl .w-3.h-3,
-:root[data-theme="clean-light"] .fixed.inset-0.z-50 .bg-white.rounded-3xl svg[data-lucide="plus"],
-:root[data-theme="clean-light"] .fixed.inset-0.z-50 .bg-white.rounded-3xl svg[data-lucide="minus"] {
-  color: #000000 !important;
-  fill: #000000 !important;
-  stroke: #000000 !important;
 }
 
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
