@@ -743,6 +743,68 @@ html.theme-dark [data-radix-dialog-content],
   color: inherit !important;
 }
 
+/* NUCLEAR OPTION: Target payment button with inline styles */
+:root[data-theme="modern-dark"] button[style*="var(--theme-button"] {
+  background: linear-gradient(135deg, #F0C6B1, #E7CBA9) !important;
+  color: #1A202C !important;
+  border: 2px solid #F0C6B1 !important;
+  box-shadow: 0 4px 12px rgba(240, 198, 177, 0.3) !important;
+}
+
+:root[data-theme="gold-luxury"] button[style*="var(--theme-button"] {
+  background: linear-gradient(135deg, #D4AF37, #B8860B) !important;
+  color: #FFFFFF !important;
+  border: 2px solid #D4AF37 !important;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3) !important;
+}
+
+:root[data-theme="vibrant-colors"] button[style*="var(--theme-button"] {
+  background: linear-gradient(135deg, #6b5e4f, #8B7355) !important;
+  color: #FFFFFF !important;
+  border: 2px solid #6b5e4f !important;
+  box-shadow: 0 4px 12px rgba(107, 94, 79, 0.3) !important;
+}
+
+:root[data-theme="minimal"] button[style*="var(--theme-button"] {
+  background: linear-gradient(135deg, #87CEEB, #4682B4) !important;
+  color: #FFFFFF !important;
+  border: 2px solid #87CEEB !important;
+  box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3) !important;
+}
+
+/* ULTRA AGGRESSIVE: Target any button with font-bold class in payment context */
+:root[data-theme="modern-dark"] .fixed.inset-0 button.font-bold,
+:root[data-theme="modern-dark"] button.font-bold.py-3 {
+  background: linear-gradient(135deg, #F0C6B1, #E7CBA9) !important;
+  color: #1A202C !important;
+  border: 2px solid #F0C6B1 !important;
+  box-shadow: 0 4px 12px rgba(240, 198, 177, 0.3) !important;
+}
+
+:root[data-theme="gold-luxury"] .fixed.inset-0 button.font-bold,
+:root[data-theme="gold-luxury"] button.font-bold.py-3 {
+  background: linear-gradient(135deg, #D4AF37, #B8860B) !important;
+  color: #FFFFFF !important;
+  border: 2px solid #D4AF37 !important;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3) !important;
+}
+
+:root[data-theme="vibrant-colors"] .fixed.inset-0 button.font-bold,
+:root[data-theme="vibrant-colors"] button.font-bold.py-3 {
+  background: linear-gradient(135deg, #6b5e4f, #8B7355) !important;
+  color: #FFFFFF !important;
+  border: 2px solid #6b5e4f !important;
+  box-shadow: 0 4px 12px rgba(107, 94, 79, 0.3) !important;
+}
+
+:root[data-theme="minimal"] .fixed.inset-0 button.font-bold,
+:root[data-theme="minimal"] button.font-bold.py-3 {
+  background: linear-gradient(135deg, #87CEEB, #4682B4) !important;
+  color: #FFFFFF !important;
+  border: 2px solid #87CEEB !important;
+  box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3) !important;
+}
+
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 .tip-button,
