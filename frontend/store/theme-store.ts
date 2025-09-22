@@ -46,8 +46,28 @@ export const useThemeStore = create<ThemeStore>()(
       setTheme: (themeId: string) => {
         console.log('🎨 ThemeStore: Setting theme to:', themeId)
         set({ currentTheme: themeId })
-        // Apply without overrides (they will be passed during loadSettings if provided)
-        applyTheme(themeId)
+        
+        // NUCLEAR OPTION: Force exact background colors
+        const themeColors = {
+          'clean-light': '#FAFAFA',
+          'modern-dark': '#0A0E12',
+          'gold-luxury': '#0F0B05',
+          'vibrant-colors': '#e2ceb1',
+          'minimal': '#CFEBF7'
+        }
+        
+        const bgColor = themeColors[themeId as keyof typeof themeColors]
+        if (bgColor) {
+          console.log('🚀 ThemeStore: Forcing background color:', bgColor)
+          // Force background on body and html
+          if (typeof document !== 'undefined') {
+            document.body.style.background = bgColor
+            document.documentElement.style.background = bgColor
+          }
+        }
+        
+        // Apply theme with forced background
+        applyTheme(themeId, bgColor ? { background: bgColor } : {})
       },
 
       loadSettings: async () => {
@@ -84,8 +104,8 @@ export const useThemeStore = create<ThemeStore>()(
             if (response.data.primary_color) overrides.primary = response.data.primary_color
             if (response.data.secondary_color) overrides.secondary = response.data.secondary_color
             if (response.data.accent_color) overrides.accent = response.data.accent_color
-            // Only honor background override for light themes. Dark themes rely on preset matte backgrounds.
-            if (response.data.background_color && themeId !== 'modern-dark' && themeId !== 'gold-luxury') {
+            // Apply background override for all themes
+            if (response.data.background_color) {
               overrides.background = response.data.background_color
             }
             set({ currentTheme: themeId })
