@@ -893,27 +893,22 @@ html.theme-dark [data-radix-dialog-content],
   color: #FFFFFF !important;
 }
 
-/* EXTREME NUCLEAR: Remove Lock icon from ALL payment buttons */
-:root[data-theme] button svg[data-lucide="lock"],
-:root[data-theme] button .h-4.w-4,
-:root[data-theme] button svg,
-:root[data-theme] .fixed.inset-0 button svg,
-:root[data-theme] button[style*="var(--theme-button"] svg,
-:root[data-theme] button.font-bold svg {
+/* PRECISE FIX: Remove Lock icon ONLY and fix text colors ONLY */
+:root[data-theme] button[style*="var(--theme-button"] svg[data-lucide="lock"],
+:root[data-theme] button[style*="var(--theme-button"] .h-4.w-4[data-lucide="lock"],
+:root[data-theme] button.font-bold svg[data-lucide="lock"],
+:root[data-theme] button.font-bold .h-4.w-4[data-lucide="lock"] {
   display: none !important;
-  visibility: hidden !important;
 }
 
-/* EXTREME NUCLEAR: Force text colors on payment button text specifically */
-:root[data-theme="modern-dark"] button[style*="var(--theme-button"] *:not(svg),
-:root[data-theme="modern-dark"] button.font-bold *:not(svg),
-:root[data-theme="modern-dark"] .fixed.inset-0 button *:not(svg) {
+/* Fix text colors ONLY - target text content specifically */
+:root[data-theme="modern-dark"] button[style*="var(--theme-button"] div:not(:has(svg)),
+:root[data-theme="modern-dark"] button.font-bold div:not(:has(svg)) {
   color: #000000 !important;
 }
 
-:root[data-theme="vibrant-colors"] button[style*="var(--theme-button"] *:not(svg),
-:root[data-theme="vibrant-colors"] button.font-bold *:not(svg),
-:root[data-theme="vibrant-colors"] .fixed.inset-0 button *:not(svg) {
+:root[data-theme="vibrant-colors"] button[style*="var(--theme-button"] div:not(:has(svg)),
+:root[data-theme="vibrant-colors"] button.font-bold div:not(:has(svg)) {
   color: #FFFFFF !important;
 }
 
