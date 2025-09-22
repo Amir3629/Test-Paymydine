@@ -467,6 +467,52 @@ html.theme-dark [data-radix-dialog-content],
   color: #1A202C !important;
 }
 
+/* BILL MODAL INPUT FIELDS - BLACK TEXT FOR READABILITY */
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 input,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 textarea,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 select,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .form-input,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .form-textarea {
+  color: #000000 !important;
+  background-color: #FFFFFF !important;
+}
+
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 input,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 textarea,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 select,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .form-input,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .form-textarea {
+  color: #000000 !important;
+  background-color: #FFFFFF !important;
+}
+
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 input,
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 textarea,
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 select,
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .form-input,
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .form-textarea {
+  color: #000000 !important;
+  background-color: #FFFFFF !important;
+}
+
+:root[data-theme="minimal"] .fixed.inset-0.z-50 input,
+:root[data-theme="minimal"] .fixed.inset-0.z-50 textarea,
+:root[data-theme="minimal"] .fixed.inset-0.z-50 select,
+:root[data-theme="minimal"] .fixed.inset-0.z-50 .form-input,
+:root[data-theme="minimal"] .fixed.inset-0.z-50 .form-textarea {
+  color: #000000 !important;
+  background-color: #FFFFFF !important;
+}
+
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 input,
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 textarea,
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 select,
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 .form-input,
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 .form-textarea {
+  color: #000000 !important;
+  background-color: #FFFFFF !important;
+}
+
 html.theme-dark .waiter-modal .btn-primary,
 html.theme-dark .note-modal .btn-primary,
 html.theme-dark [data-radix-dialog-content] button[type="submit"],
