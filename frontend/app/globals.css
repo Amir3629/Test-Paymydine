@@ -453,7 +453,9 @@ html.theme-dark:root[data-theme="minimal"] [data-radix-dialog-content] button[ty
 
 /* Enhanced price colors for each theme */
 :root[data-theme="gold-luxury"] .text-paydine-rose-beige,
-html.theme-dark:root[data-theme="gold-luxury"] .text-paydine-rose-beige {
+html.theme-dark:root[data-theme="gold-luxury"] .text-paydine-rose-beige,
+:root[data-theme="gold-luxury"] [class*="text-paydine-rose-beige"],
+html.theme-dark:root[data-theme="gold-luxury"] [class*="text-paydine-rose-beige"] {
   color: var(--theme-priceColor, #FFF8DC) !important;
 }
 
@@ -469,5 +471,26 @@ html.theme-dark:root[data-theme="minimal"] .text-paydine-rose-beige {
 
 :root[data-theme="modern-dark"] .text-paydine-rose-beige,
 html.theme-dark:root[data-theme="modern-dark"] .text-paydine-rose-beige {
+  color: var(--theme-priceColor, #E8B4A0) !important;
+}
+
+/* More specific price color selectors for better coverage */
+:root[data-theme="gold-luxury"] .text-lg.font-semibold,
+html.theme-dark:root[data-theme="gold-luxury"] .text-lg.font-semibold {
+  color: var(--theme-priceColor, #FFF8DC) !important;
+}
+
+:root[data-theme="vibrant-colors"] .text-lg.font-semibold,
+html.theme-dark:root[data-theme="vibrant-colors"] .text-lg.font-semibold {
+  color: var(--theme-priceColor, #4ECDC4) !important;
+}
+
+:root[data-theme="minimal"] .text-lg.font-semibold,
+html.theme-dark:root[data-theme="minimal"] .text-lg.font-semibold {
+  color: var(--theme-priceColor, #4A5568) !important;
+}
+
+:root[data-theme="modern-dark"] .text-lg.font-semibold,
+html.theme-dark:root[data-theme="modern-dark"] .text-lg.font-semibold {
   color: var(--theme-priceColor, #E8B4A0) !important;
 }

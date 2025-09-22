@@ -330,6 +330,8 @@
     document.body.style.background = matteVignette;
   } else {
     // Enhanced backgrounds for light themes
+    const lightBg = getComputedStyle(document.documentElement).getPropertyValue('--theme-background') || '#FAFAFA';
+    
     if (themeId === 'vibrant-colors') {
       // Vibrant Colors: Warm coral and turquoise gradient
       const vibrantGradient = `linear-gradient(135deg, 
@@ -340,7 +342,7 @@
         rgba(255,107,107,0.05) 100%), 
         radial-gradient(circle at 20% 80%, rgba(255,107,107,0.12), transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(78,205,196,0.08), transparent 50%),
-        ${bg.trim()}`;
+        ${lightBg.trim()}`;
       document.body.style.background = vibrantGradient;
     } else if (themeId === 'minimal') {
       // Minimal: Elegant warm cream gradient
@@ -352,12 +354,12 @@
         rgba(45,55,72,0.02) 100%), 
         radial-gradient(circle at 30% 70%, rgba(45,55,72,0.04), transparent 60%),
         radial-gradient(circle at 70% 30%, rgba(113,128,150,0.03), transparent 60%),
-        ${bg.trim()}`;
+        ${lightBg.trim()}`;
       document.body.style.background = minimalGradient;
     } else {
       // Clean Light and other light themes: Simple background
       document.body.style.background = '';
-      document.body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-background') || '#FAFAFA';
+      document.body.style.backgroundColor = lightBg;
     }
   }
     
