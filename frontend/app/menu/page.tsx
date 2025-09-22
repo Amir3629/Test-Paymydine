@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/components/ui/use-toast"
-import { HandPlatter, NotebookPen, ShoppingCart, ChevronUp, ChevronDown, Plus, Wallet, Lock, Users, Check, Minus, CreditCard, ArrowLeft, CheckCircle } from "lucide-react"
+import { HandPlatter, NotebookPen, ShoppingCart, ChevronUp, ChevronDown, Plus, Wallet, Users, Check, Minus, CreditCard, ArrowLeft, CheckCircle } from "lucide-react"
 import { OptimizedImage } from "@/components/ui/optimized-image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
@@ -749,10 +749,9 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
             Processing...
           </div>
         ) : (
-          <div className="flex items-center gap-2">
-            <Lock className="h-4 w-4" />
+          <span>
             {getButtonText()}
-          </div>
+          </span>
         )}
       </Button>
     )

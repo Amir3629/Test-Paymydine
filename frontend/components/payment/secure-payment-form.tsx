@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { PaymentSecurity, PaymentData, PaymentResult } from "@/lib/payment-service"
-import { Lock, CreditCard, AlertCircle, CheckCircle } from "lucide-react"
+import { Lock, CreditCard, AlertCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface SecurePaymentFormProps {
@@ -622,10 +622,9 @@ export function CashPaymentForm({
             Recording...
           </div>
         ) : (
-          <div className="flex items-center gap-2">
-            <CheckCircle className="h-4 w-4" />
+          <span>
             Confirm Cash Payment
-          </div>
+          </span>
         )}
       </Button>
     </div>
