@@ -452,10 +452,14 @@ export function BottomActions() {
         <div
           className="
             relative flex flex-col w-full h-full
-            bg-white/70 backdrop-blur-lg
+            backdrop-blur-lg
             rounded-[2.5rem] shadow-2xl border border-white/30 ring-1 ring-paydine-champagne/10
           "
-          style={{ minHeight: 76, height: "100%" }}
+          style={{ 
+            minHeight: 76, 
+            height: "100%",
+            backgroundColor: "rgba(var(--theme-background-rgb, 255, 255, 255), 0.7)"
+          }}
         >
           {/* Arrow for expanding/collapsing bill */}
           {showBillArrow && (

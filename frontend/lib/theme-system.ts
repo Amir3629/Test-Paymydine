@@ -1,5 +1,14 @@
  // Theme System for PayMyDine
-  export interface ThemeColors {
+
+// Helper function to convert hex to RGB
+function hexToRgb(hex: string): string {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result 
+    ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}`
+    : '255, 255, 255'; // fallback to white
+}
+
+export interface ThemeColors {
     // Primary colors
     primary: string;
     secondary: string;
@@ -280,6 +289,7 @@
       '--theme-cart-border': colors.cartBorder,
       '--theme-payment-button': colors.paymentButton,
       '--theme-payment-button-hover': colors.paymentButtonHover,
+      '--theme-background-rgb': hexToRgb(colors.background),
       '--theme-success': colors.success,
       '--theme-warning': colors.warning,
       '--theme-error': colors.error,
