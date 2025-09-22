@@ -408,6 +408,25 @@ html.theme-dark [data-radix-dialog-content],
   border: 1px solid #4A3C00 !important;
 }
 
+/* NUCLEAR OPTION - MORE AGGRESSIVE TARGETING */
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .w-full.max-w-md.bg-white.rounded-3xl,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .bg-white,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 [class*="bg-white"],
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .rounded-3xl {
+  background-color: #0B0F14 !important;
+  color: #F3F4F6 !important;
+  border: 1px solid #223042 !important;
+}
+
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .w-full.max-w-md.bg-white.rounded-3xl,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .bg-white,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 [class*="bg-white"],
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .rounded-3xl {
+  background-color: #0E0B05 !important;
+  color: #FFF8DC !important;
+  border: 1px solid #4A3C00 !important;
+}
+
 :root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .bg-white.rounded-3xl {
   background-color: #e2ceb1 !important;
   color: #4A3C00 !important;
@@ -511,6 +530,32 @@ html.theme-dark [data-radix-dialog-content],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 .form-textarea {
   color: #000000 !important;
   background-color: #FFFFFF !important;
+}
+
+/* ULTRA AGGRESSIVE - CATCH ALL POSSIBLE MODAL STRUCTURES */
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 * {
+  background-color: #0B0F14 !important;
+  color: #F3F4F6 !important;
+}
+
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 * {
+  background-color: #0E0B05 !important;
+  color: #FFF8DC !important;
+}
+
+/* BUT KEEP INPUT FIELDS WHITE WITH BLACK TEXT */
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 input,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 textarea,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 select {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 input,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 textarea,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 select {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
 }
 
 html.theme-dark .waiter-modal .btn-primary,
