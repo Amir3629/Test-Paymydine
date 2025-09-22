@@ -338,6 +338,63 @@ html.theme-dark [data-radix-dialog-content],
   border: 1px solid var(--theme-border, #223042);
 }
 
+/* AGGRESSIVE MODAL OVERRIDES - TARGET EXACT MODAL STRUCTURE */
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 .rounded-3xl.shadow-2xl {
+  background-color: #0B0F14 !important;
+  color: #F3F4F6 !important;
+  border: 1px solid #223042 !important;
+}
+
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .rounded-3xl.shadow-2xl {
+  background-color: #0E0B05 !important;
+  color: #FFF8DC !important;
+  border: 1px solid #4A3C00 !important;
+}
+
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .rounded-3xl.shadow-2xl {
+  background-color: #e2ceb1 !important;
+  color: #4A3C00 !important;
+  border: 1px solid #6b5e4f !important;
+}
+
+:root[data-theme="minimal"] .fixed.inset-0.z-50 .rounded-3xl.shadow-2xl {
+  background-color: #CFEBF7 !important;
+  color: #1A202C !important;
+  border: 1px solid #87CEEB !important;
+}
+
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 .rounded-3xl.shadow-2xl {
+  background-color: #FAFAFA !important;
+  color: #1A202C !important;
+  border: 1px solid #E2E8F0 !important;
+}
+
+/* MODAL TEXT OVERRIDES */
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 h3,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 p {
+  color: #F3F4F6 !important;
+}
+
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 h3,
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 p {
+  color: #FFF8DC !important;
+}
+
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 h3,
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 p {
+  color: #4A3C00 !important;
+}
+
+:root[data-theme="minimal"] .fixed.inset-0.z-50 h3,
+:root[data-theme="minimal"] .fixed.inset-0.z-50 p {
+  color: #1A202C !important;
+}
+
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 h3,
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 p {
+  color: #1A202C !important;
+}
+
 html.theme-dark .waiter-modal .btn-primary,
 html.theme-dark .note-modal .btn-primary,
 html.theme-dark [data-radix-dialog-content] button[type="submit"],
