@@ -532,35 +532,43 @@ html.theme-dark:root[data-theme="modern-dark"] .text-center span {
   color: var(--theme-background, #0A0E12) !important;
 }
 
-/* Specific targeting for menu item plus buttons only */
-:root[data-theme="gold-luxury"] .bg-paydine-rose-beige\/50 svg,
-:root[data-theme="gold-luxury"] .bg-paydine-rose-beige\/50 span,
-html.theme-dark:root[data-theme="gold-luxury"] .bg-paydine-rose-beige\/50 svg,
-html.theme-dark:root[data-theme="gold-luxury"] .bg-paydine-rose-beige\/50 span {
+/* Target menu item plus buttons with exact class matching */
+:root[data-theme="gold-luxury"] .rounded-full.bg-paydine-rose-beige\/50 svg,
+:root[data-theme="gold-luxury"] .rounded-full.bg-paydine-rose-beige\/50 span,
+:root[data-theme="gold-luxury"] .rounded-full.bg-paydine-rose-beige\/50 *,
+html.theme-dark:root[data-theme="gold-luxury"] .rounded-full.bg-paydine-rose-beige\/50 svg,
+html.theme-dark:root[data-theme="gold-luxury"] .rounded-full.bg-paydine-rose-beige\/50 span,
+html.theme-dark:root[data-theme="gold-luxury"] .rounded-full.bg-paydine-rose-beige\/50 * {
   color: var(--theme-background, #0F0B05) !important;
   fill: var(--theme-background, #0F0B05) !important;
 }
 
-:root[data-theme="vibrant-colors"] .bg-paydine-rose-beige\/50 svg,
-:root[data-theme="vibrant-colors"] .bg-paydine-rose-beige\/50 span,
-html.theme-dark:root[data-theme="vibrant-colors"] .bg-paydine-rose-beige\/50 svg,
-html.theme-dark:root[data-theme="vibrant-colors"] .bg-paydine-rose-beige\/50 span {
+:root[data-theme="vibrant-colors"] .rounded-full.bg-paydine-rose-beige\/50 svg,
+:root[data-theme="vibrant-colors"] .rounded-full.bg-paydine-rose-beige\/50 span,
+:root[data-theme="vibrant-colors"] .rounded-full.bg-paydine-rose-beige\/50 *,
+html.theme-dark:root[data-theme="vibrant-colors"] .rounded-full.bg-paydine-rose-beige\/50 svg,
+html.theme-dark:root[data-theme="vibrant-colors"] .rounded-full.bg-paydine-rose-beige\/50 span,
+html.theme-dark:root[data-theme="vibrant-colors"] .rounded-full.bg-paydine-rose-beige\/50 * {
   color: var(--theme-background, #e2ceb1) !important;
   fill: var(--theme-background, #e2ceb1) !important;
 }
 
-:root[data-theme="minimal"] .bg-paydine-rose-beige\/50 svg,
-:root[data-theme="minimal"] .bg-paydine-rose-beige\/50 span,
-html.theme-dark:root[data-theme="minimal"] .bg-paydine-rose-beige\/50 svg,
-html.theme-dark:root[data-theme="minimal"] .bg-paydine-rose-beige\/50 span {
+:root[data-theme="minimal"] .rounded-full.bg-paydine-rose-beige\/50 svg,
+:root[data-theme="minimal"] .rounded-full.bg-paydine-rose-beige\/50 span,
+:root[data-theme="minimal"] .rounded-full.bg-paydine-rose-beige\/50 *,
+html.theme-dark:root[data-theme="minimal"] .rounded-full.bg-paydine-rose-beige\/50 svg,
+html.theme-dark:root[data-theme="minimal"] .rounded-full.bg-paydine-rose-beige\/50 span,
+html.theme-dark:root[data-theme="minimal"] .rounded-full.bg-paydine-rose-beige\/50 * {
   color: var(--theme-background, #FEFCF8) !important;
   fill: var(--theme-background, #FEFCF8) !important;
 }
 
-:root[data-theme="modern-dark"] .bg-paydine-rose-beige\/50 svg,
-:root[data-theme="modern-dark"] .bg-paydine-rose-beige\/50 span,
-html.theme-dark:root[data-theme="modern-dark"] .bg-paydine-rose-beige\/50 svg,
-html.theme-dark:root[data-theme="modern-dark"] .bg-paydine-rose-beige\/50 span {
+:root[data-theme="modern-dark"] .rounded-full.bg-paydine-rose-beige\/50 svg,
+:root[data-theme="modern-dark"] .rounded-full.bg-paydine-rose-beige\/50 span,
+:root[data-theme="modern-dark"] .rounded-full.bg-paydine-rose-beige\/50 *,
+html.theme-dark:root[data-theme="modern-dark"] .rounded-full.bg-paydine-rose-beige\/50 svg,
+html.theme-dark:root[data-theme="modern-dark"] .rounded-full.bg-paydine-rose-beige\/50 span,
+html.theme-dark:root[data-theme="modern-dark"] .rounded-full.bg-paydine-rose-beige\/50 * {
   color: var(--theme-background, #0A0E12) !important;
   fill: var(--theme-background, #0A0E12) !important;
 }
