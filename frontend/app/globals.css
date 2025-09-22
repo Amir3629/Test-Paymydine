@@ -820,6 +820,40 @@ html.theme-dark [data-radix-dialog-content],
   color: inherit !important;
 }
 
+/* Remove Lock icon from payment button ONLY */
+:root[data-theme="modern-dark"] button[style*="var(--theme-button"] svg,
+:root[data-theme="modern-dark"] button.font-bold.py-3 svg,
+:root[data-theme="modern-dark"] button[style*="var(--theme-button"] .h-4.w-4,
+:root[data-theme="modern-dark"] button.font-bold.py-3 .h-4.w-4 {
+  display: none !important;
+}
+
+:root[data-theme="gold-luxury"] button[style*="var(--theme-button"] svg,
+:root[data-theme="gold-luxury"] button.font-bold.py-3 svg,
+:root[data-theme="gold-luxury"] button[style*="var(--theme-button"] .h-4.w-4,
+:root[data-theme="gold-luxury"] button.font-bold.py-3 .h-4.w-4 {
+  display: none !important;
+}
+
+/* ULTRA AGGRESSIVE: Remove black background from payment button text container */
+:root[data-theme="modern-dark"] button[style*="var(--theme-button"] div.flex,
+:root[data-theme="modern-dark"] button.font-bold.py-3 div.flex {
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+:root[data-theme="gold-luxury"] button[style*="var(--theme-button"] div.flex,
+:root[data-theme="gold-luxury"] button.font-bold.py-3 div.flex {
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 .tip-button,
