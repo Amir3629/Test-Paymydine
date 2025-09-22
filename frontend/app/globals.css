@@ -321,3 +321,51 @@ html[data-theme] [data-radix-dialog-overlay],
 html[data-theme] [data-radix-sheet-overlay] {
   background: rgba(0,0,0,0.42);
 }
+
+/* ---------- HARD-LOCK PAGE BACKGROUNDS PER THEME ---------- */
+/* We target both wrappers so homepage & menu are identical.  */
+
+/* Clean Light */
+[data-theme="clean-light"] .page--home,
+[data-theme="clean-light"] .page--menu,
+[data-theme="clean-light"] .page--home > div.min-h-screen,
+[data-theme="clean-light"] .page--menu > div.min-h-screen {
+  background: #FAFAFA !important;  /* <- put the exact menu bg hex here */
+}
+
+/* Modern Dark */
+[data-theme="modern-dark"] .page--home,
+[data-theme="modern-dark"] .page--menu,
+[data-theme="modern-dark"] .page--home > div.min-h-screen,
+[data-theme="modern-dark"] .page--menu > div.min-h-screen {
+  background: #0B0F14 !important;  /* exact menu bg hex */
+}
+
+/* Gold Luxury */
+[data-theme="gold-luxury"] .page--home,
+[data-theme="gold-luxury"] .page--menu,
+[data-theme="gold-luxury"] .page--home > div.min-h-screen,
+[data-theme="gold-luxury"] .page--menu > div.min-h-screen {
+  background: #2C1810 !important;  /* exact menu bg hex (cocoa) */
+}
+
+/* Vibrant Colors */
+[data-theme="vibrant-colors"] .page--home,
+[data-theme="vibrant-colors"] .page--menu,
+[data-theme="vibrant-colors"] .page--home > div.min-h-screen,
+[data-theme="vibrant-colors"] .page--menu > div.min-h-screen {
+  background: #F8FAFC !important;  /* exact menu bg hex */
+}
+
+/* Minimal */
+[data-theme="minimal"] .page--home,
+[data-theme="minimal"] .page--menu,
+[data-theme="minimal"] .page--home > div.min-h-screen,
+[data-theme="minimal"] .page--menu > div.min-h-screen {
+  background: #FFFFFF !important;  /* exact menu bg hex */
+}
+
+/* Absolute last-resort: kill any leftover gradient/background painting */
+.page--home, .page--menu {
+  background-image: none !important;
+}

@@ -31,6 +31,27 @@ function HomePageContent() {
     }
   }, []);
 
+  // Hard-coded background safety net - force paint exact hex colors
+  useEffect(() => {
+    const theme = document.documentElement.getAttribute("data-theme");
+    const map: Record<string,string> = {
+      "clean-light": "#FAFAFA",
+      "modern-dark": "#0B0F14",
+      "gold-luxury": "#2C1810",
+      "vibrant-colors": "#F8FAFC",
+      "minimal": "#FFFFFF",
+    };
+    const hex = map[theme || "clean-light"];
+    if (hex) {
+      document.body.style.background = hex;            // hard paint
+      document.body.style.backgroundImage = "none";    // nuke gradients
+    }
+    return () => {
+      document.body.style.background = "";
+      document.body.style.backgroundImage = "";
+    };
+  }, []);
+
   const cardStyles = "relative flex flex-col items-center rounded-3xl p-8 sm:p-12 shadow-sm hover:shadow-xl transition duration-500 border w-72 h-56 justify-center surface-sub"
   const iconContainerStyles = "rounded-full p-6 mb-6"
 
