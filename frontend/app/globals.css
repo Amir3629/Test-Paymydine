@@ -865,6 +865,34 @@ html.theme-dark [data-radix-dialog-content],
   color: #FFFFFF !important;
 }
 
+/* NUCLEAR OPTION: Force text colors with multiple selectors */
+:root[data-theme="modern-dark"] .fixed.inset-0 button,
+:root[data-theme="modern-dark"] .fixed.inset-0 button *,
+:root[data-theme="modern-dark"] button[style*="backgroundColor"],
+:root[data-theme="modern-dark"] button[style*="backgroundColor"] * {
+  color: #000000 !important;
+}
+
+:root[data-theme="vibrant-colors"] .fixed.inset-0 button,
+:root[data-theme="vibrant-colors"] .fixed.inset-0 button *,
+:root[data-theme="vibrant-colors"] button[style*="backgroundColor"],
+:root[data-theme="vibrant-colors"] button[style*="backgroundColor"] * {
+  color: #FFFFFF !important;
+}
+
+/* ULTRA NUCLEAR: Target all text in payment modal */
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button span,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button div {
+  color: #000000 !important;
+}
+
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 button,
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 button span,
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 button div {
+  color: #FFFFFF !important;
+}
+
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 .tip-button,
