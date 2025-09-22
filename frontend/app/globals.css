@@ -636,10 +636,10 @@ html.theme-dark [data-radix-dialog-content],
 }
 
 :root[data-theme="gold-luxury"] .fixed.inset-0.z-50 .bg-paydine-champagne.text-paydine-elegant-gray {
-  background: linear-gradient(135deg, #FFF8DC, #FFD700) !important;
-  color: #1A202C !important;
-  border: 2px solid #FFF8DC !important;
-  box-shadow: 0 2px 8px rgba(255, 248, 220, 0.4) !important;
+  background: linear-gradient(135deg, #D4AF37, #B8860B) !important;
+  color: #FFFFFF !important;
+  border: 2px solid #D4AF37 !important;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3) !important;
 }
 
 :root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 .bg-paydine-champagne.text-paydine-elegant-gray {
