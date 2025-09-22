@@ -904,12 +904,12 @@ html.theme-dark [data-radix-dialog-content],
 /* Fix text colors ONLY - target text content specifically */
 :root[data-theme="modern-dark"] button[style*="var(--theme-button"] div:not(:has(svg)),
 :root[data-theme="modern-dark"] button.font-bold div:not(:has(svg)) {
-  color: #000000 !important;
+  color: #F8FAFC !important; /* Modern Dark textPrimary */
 }
 
 :root[data-theme="vibrant-colors"] button[style*="var(--theme-button"] div:not(:has(svg)),
 :root[data-theme="vibrant-colors"] button.font-bold div:not(:has(svg)) {
-  color: #FFFFFF !important;
+  color: #1E293B !important; /* Vibrant Colors textPrimary */
 }
 
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],

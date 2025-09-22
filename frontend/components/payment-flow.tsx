@@ -442,7 +442,7 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
         onClick={handlePayment}
         disabled={isLoading || !isFormValid()}
         className="w-full font-bold py-3 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl"
-        style={{ backgroundColor: 'var(--theme-button, #E7CBA9)', color: '#1B1F27' }}
+        style={{ backgroundColor: 'var(--theme-button, #E7CBA9)', color: 'var(--theme-text-primary, #1B1F27)' }}
         onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'var(--theme-button-hover, #D6B890)' }}
         onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'var(--theme-button, #E7CBA9)' }}
       >
@@ -453,7 +453,6 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
           </div>
         ) : (
           <div className="flex items-center gap-2">
-            <Lock className="h-4 w-4" />
             {getButtonText()}
           </div>
         )}
