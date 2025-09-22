@@ -41,8 +41,14 @@
     --paydine-soft-white: var(--theme-background);
     --paydine-muted-gray: var(--theme-text-secondary);
     --paydine-border: var(--theme-border);
-    
-    /* Default CSS variables */
+  }
+
+  /* Theme category active text color utility class */
+  .text-theme-category-active {
+    color: var(--theme-category-active) !important;
+  }
+  
+  /* Default CSS variables */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
