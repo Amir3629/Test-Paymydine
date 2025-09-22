@@ -39,7 +39,8 @@ export default function ValetPage() {
   }
 
   return (
-    <div className="min-h-screen p-4 sm:p-6">
+    <div className="page--valet">
+      <div className="min-h-screen p-4 sm:p-6">
       <div className="max-w-md mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -183,6 +184,7 @@ export default function ValetPage() {
           <p>{t("valetTicket")}</p>
         </motion.div>
       </div>
+    </div>
     </div>
   )
 } 

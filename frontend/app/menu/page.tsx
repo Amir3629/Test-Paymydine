@@ -1864,8 +1864,10 @@ function MenuContent() {
 // Main component with Suspense wrapper
 export default function ExpandingBottomToolbarMenu() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <MenuContent />
-    </Suspense>
+    <div className="page--menu">
+      <Suspense fallback={<div>Loading...</div>}>
+        <MenuContent />
+      </Suspense>
+    </div>
   )
 } 

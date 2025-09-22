@@ -213,3 +213,39 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+/* === Dev-Only scoped theme backgrounds for 3 pages === */
+/* Defaults (clean-light) are harmless if data-theme is missing */
+:root {
+  --page-bg: #FAFAFA; /* default clean-light background */
+}
+
+/* Per-theme background colors — ONLY affect pages with .page--* classes */
+:root[data-theme="clean-light"] {
+  --page-bg: #FAFAFA;
+}
+
+:root[data-theme="modern-dark"] {
+  --page-bg: #0B0F14; /* or your modern-dark background color */
+}
+
+:root[data-theme="gold-luxury"] {
+  --page-bg: #0E0B05; /* pick your gold base; adjust later */
+}
+
+:root[data-theme="vibrant-colors"] {
+  --page-bg: #FFFFFF; /* vibrant base */
+}
+
+:root[data-theme="minimal"] {
+  --page-bg: #FFFFFF; /* minimal base */
+}
+
+/* Only update the background color for the 3 target pages */
+.page--home,
+.page--menu,
+.page--valet {
+  background: var(--page-bg) !important;
+  /* ensure content still looks correct */
+  min-height: 100dvh;
+}

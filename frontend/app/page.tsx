@@ -114,14 +114,16 @@ function HomePageContent() {
 // FIXED: Main component with Suspense wrapper
 export default function HomePage() {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen bg-theme flex flex-col items-center justify-center p-4">
-        <div className="text-center">
-          <div className="text-lg text-paydine-elegant-gray">Loading...</div>
+    <div className="page--home">
+      <Suspense fallback={
+        <div className="min-h-screen bg-theme flex flex-col items-center justify-center p-4">
+          <div className="text-center">
+            <div className="text-lg text-paydine-elegant-gray">Loading...</div>
+          </div>
         </div>
-      </div>
-    }>
-      <HomePageContent />
-    </Suspense>
+      }>
+        <HomePageContent />
+      </Suspense>
+    </div>
   )
 }
