@@ -32,7 +32,10 @@ function HomePageContent() {
           animate="animate"
         >
           <motion.div
-            className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-paydine-champagne/30 to-paydine-rose-beige/30 opacity-0 group-hover:opacity-100 blur transition duration-500"
+            className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 blur transition duration-500"
+            style={{ 
+              background: `linear-gradient(to right, var(--theme-primary)/30, var(--theme-secondary)/30)` 
+            }}
             variants={{
               hover: { scale: 1.1 },
               initial: { scale: 0.9 }
@@ -59,9 +62,14 @@ function HomePageContent() {
                 }
               }}
             >
-              <Utensils className="w-10 h-10" style={{ color: 'var(--theme-text-primary)' }} />
+              <Utensils className="w-10 h-10" style={{ color: 'var(--theme-secondary)' }} />
             </motion.div>
-            <h2 className="text-2xl font-medium" style={{ color: 'var(--theme-text-primary)' }}>{t("menuCard")}</h2>
+            <h2 className="text-2xl font-medium" style={{ color: 'var(--theme-primary)' }}>
+              {t("menuCard")}
+              <span className="block text-sm font-normal mt-1" style={{ color: 'var(--theme-accent)' }}>
+                {t("menuCardDescription") || "Browse our menu"}
+              </span>
+            </h2>
           </motion.div>
         </MotionLink>
 
@@ -73,7 +81,10 @@ function HomePageContent() {
           animate="animate"
         >
           <motion.div
-            className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-paydine-champagne/30 to-paydine-rose-beige/30 opacity-0 group-hover:opacity-100 blur transition duration-500"
+            className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 blur transition duration-500"
+            style={{ 
+              background: `linear-gradient(to right, var(--theme-primary)/30, var(--theme-secondary)/30)` 
+            }}
             variants={{
               hover: { scale: 1.1 },
               initial: { scale: 0.9 }
@@ -100,9 +111,14 @@ function HomePageContent() {
                 }
               }}
             >
-              <Car className="w-10 h-10" style={{ color: 'var(--theme-text-primary)' }} />
+              <Car className="w-10 h-10" style={{ color: 'var(--theme-secondary)' }} />
             </motion.div>
-            <h2 className="text-2xl font-medium" style={{ color: 'var(--theme-text-primary)' }}>{t("valetParking")}</h2>
+            <h2 className="text-2xl font-medium" style={{ color: 'var(--theme-primary)' }}>
+              {t("valetParking")}
+              <span className="block text-sm font-normal mt-1" style={{ color: 'var(--theme-accent)' }}>
+                {t("valetParkingDescription") || "Valet service"}
+              </span>
+            </h2>
           </motion.div>
         </MotionLink>
       </div>
@@ -153,7 +169,7 @@ export default function HomePage() {
       <Suspense fallback={
         <div className="min-h-screen bg-theme-background flex flex-col items-center justify-center p-4">
           <div className="text-center">
-            <div className="text-lg" style={{ color: 'var(--theme-text-primary)' }}>Loading...</div>
+            <div className="text-lg" style={{ color: 'var(--theme-primary)' }}>Loading...</div>
           </div>
         </div>
       }>
