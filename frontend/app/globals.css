@@ -832,6 +832,24 @@ html.theme-dark [data-radix-dialog-content],
   color: inherit !important;
 }
 
+/* NUCLEAR OPTION: Remove black background from payment button text in ALL contexts */
+:root[data-theme] button[class*="bg-gradient-to-r"] span,
+:root[data-theme] button[class*="bg-gradient-to-r"] div,
+:root[data-theme] button span,
+:root[data-theme] button div {
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+}
+
+/* ULTRA SPECIFIC: Target payment button text containers */
+:root[data-theme] button:has-text("Confirm Cash Payment") span,
+:root[data-theme] button:has-text("Confirm Cash Payment") div,
+:root[data-theme] button:has-text("Confirm Cash Payment") {
+  background: transparent !important;
+  border: none !important;
+}
+
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 .tip-button,
