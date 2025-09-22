@@ -182,9 +182,13 @@ function OrderItemWithOptions({
               e.stopPropagation();
               addToCart(cartItem.item, -1);
             }}
-            className="w-5 h-5 rounded-full bg-paydine-rose-beige flex items-center justify-center hover:bg-paydine-champagne transition-colors"
+            className="w-5 h-5 rounded-full flex items-center justify-center transition-colors"
+            style={{ 
+              backgroundColor: 'var(--theme-secondary)',
+              color: 'var(--theme-background)'
+            }}
           >
-            <Minus className="w-3 h-3 text-paydine-elegant-gray" />
+            <Minus className="w-3 h-3" style={{ color: 'var(--theme-background)' }} />
           </button>
           <span className="text-paydine-elegant-gray font-semibold min-w-[48px] text-center">
             {formatCurrency(getTotalPrice())}
@@ -194,9 +198,13 @@ function OrderItemWithOptions({
               e.stopPropagation();
               addToCart(cartItem.item, 1);
             }}
-            className="w-5 h-5 rounded-full bg-paydine-rose-beige flex items-center justify-center hover:bg-paydine-champagne transition-colors"
+            className="w-5 h-5 rounded-full flex items-center justify-center transition-colors"
+            style={{ 
+              backgroundColor: 'var(--theme-secondary)',
+              color: 'var(--theme-background)'
+            }}
           >
-            <Plus className="w-3 h-3 text-paydine-elegant-gray" />
+            <Plus className="w-3 h-3" style={{ color: 'var(--theme-background)' }} />
           </button>
         </div>
       </div>
@@ -1029,18 +1037,23 @@ function ExpandingToolbarMenuItemCard({ item, onSelect, onFirstAdd }: { item: Me
             <Button
               size="icon"
               variant="ghost"
-              className="rounded-full bg-paydine-rose-beige text-paydine-elegant-gray hover:text-paydine-elegant-gray hover:bg-paydine-rose-beige w-12 h-12 font-bold text-lg"
+              className="rounded-full w-12 h-12 font-bold text-lg"
+              style={{ 
+                backgroundColor: 'var(--theme-secondary)',
+                color: 'var(--theme-background)',
+                border: '1px solid var(--theme-border)'
+              }}
               onClick={handleAdd}
             >
               {quantity > 0 ? (
-                <span className="text-lg font-bold text-paydine-elegant-gray">{quantity}</span>
+                <span className="text-lg font-bold" style={{ color: 'var(--theme-background)' }}>{quantity}</span>
               ) : (
-                <Plus className="h-5 w-5 text-paydine-elegant-gray" />
+                <Plus className="h-5 w-5" style={{ color: 'var(--theme-background)' }} />
               )}
               <span className="sr-only">Add to cart</span>
             </Button>
             {quantity > 0 && (
-              <span className="absolute -top-2 -right-2 text-paydine-rose-beige text-base font-bold">
+              <span className="absolute -top-2 -right-2 text-base font-bold" style={{ color: 'var(--theme-secondary)' }}>
                 +
               </span>
             )}
@@ -1270,8 +1283,12 @@ function ExpandingBottomToolbar({
             <ShoppingCart className="h-8 w-8 text-paydine-elegant-gray" />
             {totalItems > 0 && (
               <span 
-                className="absolute -top-2 -right-2 bg-paydine-rose-beige font-bold rounded-full h-7 w-7 flex items-center justify-center shadow-md"
-                style={{ color: themeBackgroundColor, fontSize: '12px' }}>
+                className="absolute -top-2 -right-2 font-bold rounded-full h-7 w-7 flex items-center justify-center shadow-md"
+                style={{ 
+                  backgroundColor: 'var(--theme-secondary)',
+                  color: 'var(--theme-background)',
+                  fontSize: '12px' 
+                }}>
                 {totalItems}
               </span>
             )}
