@@ -15,7 +15,7 @@ function HomePageContent() {
   const { t } = useLanguageStore()
   const { settings } = useCmsStore()
 
-  const cardStyles = "relative flex flex-col items-center rounded-3xl p-8 sm:p-12 shadow-sm hover:shadow-xl transition duration-500 border w-72 h-56 justify-center"
+  const cardStyles = "relative flex flex-col items-center rounded-3xl p-8 sm:p-12 shadow-sm hover:shadow-xl transition duration-500 border w-72 h-56 justify-center surface-sub"
   const iconContainerStyles = "rounded-full p-6 mb-6"
 
   return (
@@ -39,7 +39,6 @@ function HomePageContent() {
           />
           <motion.div
             className={cardStyles}
-            style={{ backgroundColor: 'var(--theme-background)', borderColor: 'var(--theme-border)' }}
             variants={{
               hover: { y: -8 },
               initial: { y: 0 }
@@ -81,7 +80,6 @@ function HomePageContent() {
           />
           <motion.div
             className={cardStyles}
-            style={{ backgroundColor: 'var(--theme-background)', borderColor: 'var(--theme-border)' }}
             variants={{
               hover: { y: -8 },
               initial: { y: 0 }
