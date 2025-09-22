@@ -175,7 +175,7 @@ export default function ValetPage() {
         
         <motion.div 
           className="mt-4 text-sm text-paydine-muted-gray rounded-xl p-4 dark-surface"
-          style={{ border: '1px solid var(--theme-menu-item-border, #223042)' }}
+          style={{ backgroundColor: '#222529', border: '1px solid var(--theme-menu-item-border, #223042)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}

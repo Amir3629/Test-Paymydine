@@ -220,41 +220,35 @@ input[type="number"] {
   --page-bg: #FAFAFA; /* default clean-light background */
 }
 
-/* Background Unification - Global per-theme backgrounds */
-:root[data-theme="clean-light"] body,
+/* Per-theme background colors — ONLY affect pages with .page--* classes */
 :root[data-theme="clean-light"] .page--home,
 :root[data-theme="clean-light"] .page--menu,
 :root[data-theme="clean-light"] .page--valet {
-  background-color: #FAFAFA;
+  --page-bg: #FAFAFA;
 }
 
-:root[data-theme="modern-dark"] body,
 :root[data-theme="modern-dark"] .page--home,
 :root[data-theme="modern-dark"] .page--menu,
 :root[data-theme="modern-dark"] .page--valet {
-  background-color: #0B0F14;
-  color: var(--theme-text-primary, #F3F4F6);
+  --page-bg: #0A0E12; /* Deep charcoal with blue undertones */
 }
 
-:root[data-theme="gold-luxury"] body,
 :root[data-theme="gold-luxury"] .page--home,
 :root[data-theme="gold-luxury"] .page--menu,
 :root[data-theme="gold-luxury"] .page--valet {
-  background-color: #0E0B05;
+  --page-bg: #0F0B05; /* Deep warm black */
 }
 
-:root[data-theme="vibrant-colors"] body,
 :root[data-theme="vibrant-colors"] .page--home,
 :root[data-theme="vibrant-colors"] .page--menu,
 :root[data-theme="vibrant-colors"] .page--valet {
-  background-color: #FFFFFF;
+  --page-bg: #F8FAFC; /* Cool white with subtle tint */
 }
 
-:root[data-theme="minimal"] body,
 :root[data-theme="minimal"] .page--home,
 :root[data-theme="minimal"] .page--menu,
 :root[data-theme="minimal"] .page--valet {
-  background-color: #FFFFFF;
+  --page-bg: #FFFFFF; /* Pure white */
 }
 
 /* Only update the background color for the 3 target pages */
@@ -344,26 +338,136 @@ html.theme-dark [data-radix-dialog-content] button[type="button"],
   border: 1px solid var(--theme-border, #223042);
 }
 
-/* Dark surface utility for modals and cards */
-:root[data-theme="modern-dark"] .dark-surface {
-  background-color: var(--theme-input, #121923) !important;
-  border: 1px solid var(--theme-menu-item-border, #223042) !important;
-  color: var(--theme-text-primary, #F3F4F6) !important;
+/* ===== ENHANCED THEME STYLING ===== */
+
+/* Gold Luxury Theme Styling */
+:root[data-theme="gold-luxury"] .category-tab.is-active,
+html.theme-dark:root[data-theme="gold-luxury"] .category-tab.is-active {
+  color: var(--theme-category-active, var(--theme-primary));
 }
 
-/* Replace hardcoded Tailwind colors with theme tokens */
-:root[data-theme="modern-dark"] .text-gray-600,
-:root[data-theme="modern-dark"] .text-gray-500,
-:root[data-theme="modern-dark"] .text-gray-400 {
-  color: var(--theme-text-secondary, #C7CDD4) !important;
+:root[data-theme="gold-luxury"] .category-tab.is-active::after,
+html.theme-dark:root[data-theme="gold-luxury"] .category-tab.is-active::after {
+  background-color: var(--theme-category-active, var(--theme-primary));
 }
 
-:root[data-theme="modern-dark"] .bg-green-900\/20,
-:root[data-theme="modern-dark"] .bg-green-500 {
-  background-color: var(--theme-success, #10B981) !important;
+:root[data-theme="gold-luxury"] h3.font-serif,
+html.theme-dark:root[data-theme="gold-luxury"] h3.font-serif {
+  color: var(--theme-secondary, #DAA520);
 }
 
-:root[data-theme="modern-dark"] .text-green-600,
-:root[data-theme="modern-dark"] .text-green-500 {
-  color: var(--theme-success, #10B981) !important;
+:root[data-theme="gold-luxury"] [data-radix-dialog-content],
+html.theme-dark:root[data-theme="gold-luxury"] [data-radix-dialog-content] {
+  background-color: var(--theme-input, #1A1612) !important;
+  color: var(--theme-text-primary, #FFF8DC);
+  border: 1px solid var(--theme-border, #CD853F);
+}
+
+/* Vibrant Colors Theme Styling */
+:root[data-theme="vibrant-colors"] .category-tab.is-active,
+html.theme-dark:root[data-theme="vibrant-colors"] .category-tab.is-active {
+  color: var(--theme-category-active, var(--theme-primary));
+}
+
+:root[data-theme="vibrant-colors"] .category-tab.is-active::after,
+html.theme-dark:root[data-theme="vibrant-colors"] .category-tab.is-active::after {
+  background-color: var(--theme-category-active, var(--theme-primary));
+}
+
+:root[data-theme="vibrant-colors"] h3.font-serif,
+html.theme-dark:root[data-theme="vibrant-colors"] h3.font-serif {
+  color: var(--theme-primary, #FF6B6B);
+}
+
+:root[data-theme="vibrant-colors"] [data-radix-dialog-content],
+html.theme-dark:root[data-theme="vibrant-colors"] [data-radix-dialog-content] {
+  background-color: var(--theme-background, #FFFFFF) !important;
+  color: var(--theme-text-primary, #1E293B);
+  border: 1px solid var(--theme-border, #E2E8F0);
+}
+
+/* Minimal Theme Styling */
+:root[data-theme="minimal"] .category-tab.is-active,
+html.theme-dark:root[data-theme="minimal"] .category-tab.is-active {
+  color: var(--theme-category-active, var(--theme-primary));
+}
+
+:root[data-theme="minimal"] .category-tab.is-active::after,
+html.theme-dark:root[data-theme="minimal"] .category-tab.is-active::after {
+  background-color: var(--theme-category-active, var(--theme-primary));
+}
+
+:root[data-theme="minimal"] h3.font-serif,
+html.theme-dark:root[data-theme="minimal"] h3.font-serif {
+  color: var(--theme-primary, #2D3748);
+}
+
+:root[data-theme="minimal"] [data-radix-dialog-content],
+html.theme-dark:root[data-theme="minimal"] [data-radix-dialog-content] {
+  background-color: var(--theme-background, #FFFFFF) !important;
+  color: var(--theme-text-primary, #1A202C);
+  border: 1px solid var(--theme-border, #E2E8F0);
+}
+
+/* Enhanced Modern Dark Theme Styling */
+:root[data-theme="modern-dark"] .category-tab.is-active,
+html.theme-dark:root[data-theme="modern-dark"] .category-tab.is-active {
+  color: var(--theme-category-active, var(--theme-primary));
+}
+
+:root[data-theme="modern-dark"] .category-tab.is-active::after,
+html.theme-dark:root[data-theme="modern-dark"] .category-tab.is-active::after {
+  background-color: var(--theme-category-active, var(--theme-primary));
+}
+
+:root[data-theme="modern-dark"] h3.font-serif,
+html.theme-dark:root[data-theme="modern-dark"] h3.font-serif {
+  color: var(--theme-primary, #F0C6B1);
+}
+
+:root[data-theme="modern-dark"] [data-radix-dialog-content],
+html.theme-dark:root[data-theme="modern-dark"] [data-radix-dialog-content] {
+  background-color: var(--theme-input, #1E293B) !important;
+  color: var(--theme-text-primary, #F8FAFC);
+  border: 1px solid var(--theme-border, #334155);
+}
+
+/* Theme-specific button styling */
+:root[data-theme="gold-luxury"] [data-radix-dialog-content] button[type="submit"],
+html.theme-dark:root[data-theme="gold-luxury"] [data-radix-dialog-content] button[type="submit"] {
+  background-color: var(--theme-button, #FFD700);
+  color: #1A1612;
+}
+
+:root[data-theme="vibrant-colors"] [data-radix-dialog-content] button[type="submit"],
+html.theme-dark:root[data-theme="vibrant-colors"] [data-radix-dialog-content] button[type="submit"] {
+  background-color: var(--theme-button, #FF6B6B);
+  color: #FFFFFF;
+}
+
+:root[data-theme="minimal"] [data-radix-dialog-content] button[type="submit"],
+html.theme-dark:root[data-theme="minimal"] [data-radix-dialog-content] button[type="submit"] {
+  background-color: var(--theme-button, #2D3748);
+  color: #FFFFFF;
+}
+
+/* Enhanced price colors for each theme */
+:root[data-theme="gold-luxury"] .text-paydine-rose-beige,
+html.theme-dark:root[data-theme="gold-luxury"] .text-paydine-rose-beige {
+  color: var(--theme-priceColor, #DAA520) !important;
+}
+
+:root[data-theme="vibrant-colors"] .text-paydine-rose-beige,
+html.theme-dark:root[data-theme="vibrant-colors"] .text-paydine-rose-beige {
+  color: var(--theme-priceColor, #4ECDC4) !important;
+}
+
+:root[data-theme="minimal"] .text-paydine-rose-beige,
+html.theme-dark:root[data-theme="minimal"] .text-paydine-rose-beige {
+  color: var(--theme-priceColor, #4A5568) !important;
+}
+
+:root[data-theme="modern-dark"] .text-paydine-rose-beige,
+html.theme-dark:root[data-theme="modern-dark"] .text-paydine-rose-beige {
+  color: var(--theme-priceColor, #E8B4A0) !important;
 }

@@ -86,154 +86,157 @@
     'modern-dark': {
       id: 'modern-dark',
       name: 'Modern Dark',
-      description: 'Refined dark theme with warm champagne/rose accents',
+      description: 'Sophisticated dark theme with warm rose gold accents',
       colors: {
-        // Warm, elegant accents inspired by the light theme palette
-        primary: '#E7CBA9',        // Champagne
-        secondary: '#F0C6B1',      // light-rose for accents (was EFC7B1)
-        accent: '#F0E7DF',         // Soft warm light for subtle accents
-        background: '#0B0F14',     // Deep slate blue-black
+        // Elegant rose gold palette
+        primary: '#F0C6B1',        // Light rose gold
+        secondary: '#E8B4A0',      // Deeper rose gold
+        accent: '#FFE5D9',         // Soft peach accent
+        background: '#0A0E12',     // Deep charcoal with blue undertones
 
         // Text colors for dark background
-        textPrimary: '#F3F4F6',    // Near-white for strong contrast
-        textSecondary: '#C7CDD4',  // Muted cool gray
-        textMuted: '#9AA3AE',
+        textPrimary: '#F8FAFC',    // Crisp white
+        textSecondary: '#CBD5E1',  // Light slate
+        textMuted: '#94A3B8',
 
         // Surfaces and borders
-        border: '#223042',         // Desaturated blue-gray
-        input: '#121923',          // Slightly lifted from background
-        button: '#E7CBA9',         // Champagne action
-        buttonHover: '#D6B890',
+        border: '#334155',         // Medium slate
+        input: '#1E293B',          // Dark slate surface
+        button: '#F0C6B1',         // Rose gold action
+        buttonHover: '#E8B4A0',
 
         // Cards/list items
-        menuItemBackground: '#121923',
-        menuItemBorder: '#223042',
-        categoryActive: '#EFC7B1', // Rose beige for active pill/underline
-        categoryInactive: '#6B7280',
-        priceColor: '#EFC7B1',     // Keep prices in soft rose
+        menuItemBackground: '#1E293B',
+        menuItemBorder: '#334155',
+        categoryActive: '#F0C6B1', // Rose gold for active elements
+        categoryInactive: '#64748B',
+        priceColor: '#E8B4A0',     // Rose gold for prices
 
         // Cart and payment surfaces
-        cartBackground: '#121923',
-        cartBorder: '#223042',
-        paymentButton: '#E7CBA9',
-        paymentButtonHover: '#D6B890',
+        cartBackground: '#1E293B',
+        cartBorder: '#334155',
+        paymentButton: '#F0C6B1',
+        paymentButtonHover: '#E8B4A0',
 
-        // Status colors (kept vivid but readable on dark)
-        success: '#10B981',
-        warning: '#F59E0B',
-        error: '#EF4444',
-        info: '#3B82F6'
+        // Status colors (enhanced for dark theme)
+        success: '#34D399',
+        warning: '#FBBF24',
+        error: '#F87171',
+        info: '#60A5FA'
       }
     },
     
     'gold-luxury': {
       id: 'gold-luxury',
       name: 'Gold Luxury',
-      description: 'Luxurious dark theme with gold accents',
+      description: 'Opulent dark theme with rich gold and bronze accents',
       colors: {
-        primary: '#F59E0B',        // Gold
-        secondary: '#FCD34D',      // Light gold
-        accent: '#FEF3C7',         // Very light gold
-        background: '#1F2937',     // Dark gray
-        
-        textPrimary: '#FEF3C7',    // Very light gold
-        textSecondary: '#FCD34D',  // Light gold
-        textMuted: '#F59E0B',
-        
-        border: '#374151',
-        input: '#111827',
-        button: '#F59E0B',         // Gold
-        buttonHover: '#D97706',
-        
-        menuItemBackground: '#111827',
-        menuItemBorder: '#374151',
-        categoryActive: '#F59E0B', // Gold
-        categoryInactive: '#6B7280',
-        priceColor: '#FCD34D',     // Light gold
-        
-        cartBackground: '#111827',
-        cartBorder: '#374151',
-        paymentButton: '#F59E0B',  // Gold
-        paymentButtonHover: '#D97706',
-        
-        success: '#10B981',
-        warning: '#F59E0B',
-        error: '#EF4444',
-        info: '#3B82F6'
+        // Luxurious gold and bronze palette
+        primary: '#FFD700',        // Pure gold
+        secondary: '#DAA520',      // Goldenrod
+        accent: '#FFF8DC',         // Cornsilk accent
+        background: '#0F0B05',     // Deep warm black
+
+        textPrimary: '#FFF8DC',    // Warm white
+        textSecondary: '#F5DEB3',  // Wheat
+        textMuted: '#D2B48C',
+
+        border: '#CD853F',         // Peru border
+        input: '#1A1612',          // Dark warm surface
+        button: '#FFD700',         // Gold button
+        buttonHover: '#DAA520',
+
+        menuItemBackground: '#1A1612',
+        menuItemBorder: '#CD853F',
+        categoryActive: '#FFD700', // Bright gold active
+        categoryInactive: '#8B7355',
+        priceColor: '#DAA520',     // Goldenrod prices
+
+        cartBackground: '#1A1612',
+        cartBorder: '#CD853F',
+        paymentButton: '#FFD700',
+        paymentButtonHover: '#DAA520',
+
+        success: '#32CD32',
+        warning: '#FFD700',
+        error: '#FF6347',
+        info: '#1E90FF'
       }
     },
     
     'vibrant-colors': {
       id: 'vibrant-colors',
       name: 'Vibrant Colors',
-      description: 'Bright and energetic coral and turquoise theme',
+      description: 'Energetic theme with electric coral and ocean turquoise',
       colors: {
-        primary: '#EF4444',        // Coral red
-        secondary: '#10B981',      // Turquoise
-        accent: '#1F2937',         // Dark gray
-        background: '#FFFFFF',     // White
-        
-        textPrimary: '#1F2937',    // Dark gray
-        textSecondary: '#6B7280',
-        textMuted: '#9CA3AF',
-        
-        border: '#E5E7EB',
+        // Vibrant coral and turquoise palette
+        primary: '#FF6B6B',        // Electric coral
+        secondary: '#4ECDC4',      // Ocean turquoise
+        accent: '#45B7D1',         // Sky blue accent
+        background: '#F8FAFC',     // Cool white with subtle tint
+
+        textPrimary: '#1E293B',    // Deep slate
+        textSecondary: '#475569',  // Medium slate
+        textMuted: '#64748B',
+
+        border: '#E2E8F0',         // Light slate border
         input: '#FFFFFF',
-        button: '#EF4444',         // Coral red
-        buttonHover: '#DC2626',
-        
+        button: '#FF6B6B',         // Electric coral
+        buttonHover: '#FF5252',
+
         menuItemBackground: '#FFFFFF',
-        menuItemBorder: '#F3F4F6',
-        categoryActive: '#EF4444', // Coral red
-        categoryInactive: '#9CA3AF',
-        priceColor: '#10B981',     // Turquoise
-        
-        cartBackground: '#F9FAFB',
-        cartBorder: '#E5E7EB',
-        paymentButton: '#EF4444',  // Coral red
-        paymentButtonHover: '#DC2626',
-        
+        menuItemBorder: '#F1F5F9',
+        categoryActive: '#FF6B6B', // Electric coral
+        categoryInactive: '#94A3B8',
+        priceColor: '#4ECDC4',     // Ocean turquoise
+
+        cartBackground: '#F8FAFC',
+        cartBorder: '#E2E8F0',
+        paymentButton: '#FF6B6B',
+        paymentButtonHover: '#FF5252',
+
         success: '#10B981',
         warning: '#F59E0B',
         error: '#EF4444',
-        info: '#3B82F6'
+        info: '#4ECDC4'
       }
     },
     
     'minimal': {
       id: 'minimal',
       name: 'Minimal',
-      description: 'Clean black and white minimal theme',
+      description: 'Sophisticated monochrome theme with subtle gray tones',
       colors: {
-        primary: '#374151',        // Dark gray
-        secondary: '#6B7280',      // Medium gray
-        accent: '#111827',         // Very dark gray
-        background: '#FFFFFF',     // White
-        
-        textPrimary: '#111827',    // Very dark gray
-        textSecondary: '#374151',  // Dark gray
-        textMuted: '#6B7280',
-        
-        border: '#E5E7EB',
+        // Elegant monochrome palette
+        primary: '#2D3748',        // Charcoal
+        secondary: '#4A5568',      // Slate
+        accent: '#718096',         // Light slate accent
+        background: '#FFFFFF',     // Pure white
+
+        textPrimary: '#1A202C',    // Deep charcoal
+        textSecondary: '#2D3748',  // Charcoal
+        textMuted: '#718096',
+
+        border: '#E2E8F0',         // Very light gray
         input: '#FFFFFF',
-        button: '#374151',         // Dark gray
-        buttonHover: '#1F2937',
-        
+        button: '#2D3748',         // Charcoal
+        buttonHover: '#1A202C',
+
         menuItemBackground: '#FFFFFF',
-        menuItemBorder: '#F3F4F6',
-        categoryActive: '#374151', // Dark gray
-        categoryInactive: '#9CA3AF',
-        priceColor: '#6B7280',     // Medium gray
-        
-        cartBackground: '#F9FAFB',
-        cartBorder: '#E5E7EB',
-        paymentButton: '#374151',  // Dark gray
-        paymentButtonHover: '#1F2937',
-        
-        success: '#10B981',
-        warning: '#F59E0B',
-        error: '#EF4444',
-        info: '#3B82F6'
+        menuItemBorder: '#F7FAFC',
+        categoryActive: '#2D3748', // Charcoal
+        categoryInactive: '#A0AEC0',
+        priceColor: '#4A5568',     // Slate
+
+        cartBackground: '#FFFFFF',
+        cartBorder: '#E2E8F0',
+        paymentButton: '#2D3748',
+        paymentButtonHover: '#1A202C',
+
+        success: '#38A169',
+        warning: '#D69E2E',
+        error: '#E53E3E',
+        info: '#3182CE'
       }
     }
   };
@@ -300,14 +303,30 @@
   // Toggle dark class to allow global overrides for dark designs
   const isDark = themeId === 'modern-dark' || themeId === 'gold-luxury';
   document.documentElement.classList.toggle('theme-dark', isDark);
+  
   if (isDark) {
     const bg = getComputedStyle(document.documentElement).getPropertyValue('--theme-background') || '#0B0F14';
-    // Programmatic matte dark + vignette to guarantee effect regardless of CSS bundling
-    const matteVignette = `radial-gradient(1200px 600px at 20% 0%, rgba(231,203,169,0.07), transparent 60%),
-radial-gradient(900px 500px at 80% 10%, rgba(239,199,177,0.06), transparent 60%),
-radial-gradient(1200px 800px at 50% 120%, rgba(0,0,0,0.70), transparent 70%),
-radial-gradient(1200px 800px at -20% -20%, rgba(0,0,0,0.60), transparent 70%),
-radial-gradient(1200px 800px at 120% -20%, rgba(0,0,0,0.60), transparent 70%), ${bg.trim()}`;
+    let matteVignette;
+    
+    if (themeId === 'modern-dark') {
+      // Modern Dark: Rose gold accents with subtle blue undertones
+      matteVignette = `radial-gradient(1200px 600px at 20% 0%, rgba(240,198,177,0.08), transparent 60%),
+        radial-gradient(900px 500px at 80% 10%, rgba(232,180,160,0.06), transparent 60%),
+        radial-gradient(1200px 800px at 50% 120%, rgba(0,0,0,0.75), transparent 70%),
+        radial-gradient(1200px 800px at -20% -20%, rgba(0,0,0,0.65), transparent 70%),
+        radial-gradient(1200px 800px at 120% -20%, rgba(0,0,0,0.65), transparent 70%), ${bg.trim()}`;
+    } else if (themeId === 'gold-luxury') {
+      // Gold Luxury: Warm gold accents with rich bronze undertones
+      matteVignette = `radial-gradient(1200px 600px at 20% 0%, rgba(255,215,0,0.12), transparent 60%),
+        radial-gradient(900px 500px at 80% 10%, rgba(218,165,32,0.08), transparent 60%),
+        radial-gradient(1200px 800px at 50% 120%, rgba(0,0,0,0.80), transparent 70%),
+        radial-gradient(1200px 800px at -20% -20%, rgba(0,0,0,0.70), transparent 70%),
+        radial-gradient(1200px 800px at 120% -20%, rgba(0,0,0,0.70), transparent 70%), ${bg.trim()}`;
+    } else {
+      // Fallback for other dark themes
+      matteVignette = bg.trim();
+    }
+    
     document.body.style.background = matteVignette;
   } else {
     // Restore clean background on light themes
