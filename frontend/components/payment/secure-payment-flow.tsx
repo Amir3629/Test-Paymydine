@@ -234,7 +234,7 @@ export function SecurePaymentFlow({ isOpen, onOpenChange }: SecurePaymentFlowPro
       <DialogContent
         className="p-0 max-w-md rounded-3xl overflow-hidden max-h-[85vh] flex flex-col"
         style={{
-          backgroundColor: '#222529',
+          backgroundColor: 'var(--theme-input, #121923)',
           borderColor: 'var(--theme-menu-item-border, #223042)',
           color: 'var(--theme-text-primary, #F3F4F6)'
         }}
@@ -284,7 +284,7 @@ export function SecurePaymentFlow({ isOpen, onOpenChange }: SecurePaymentFlowPro
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 className="rounded-2xl p-3 overflow-hidden"
-                style={{ backgroundColor: '#222529', border: '1px solid var(--theme-menu-item-border, #223042)' }}
+                style={{ backgroundColor: 'var(--theme-input, #121923)', border: '1px solid var(--theme-menu-item-border, #223042)' }}
               >
                 <h3 className="font-semibold text-paydine-elegant-gray mb-2 text-xs">{t("selectItemsToPay")}</h3>
                 <div className="space-y-2 max-h-24 overflow-y-auto">
@@ -319,7 +319,7 @@ export function SecurePaymentFlow({ isOpen, onOpenChange }: SecurePaymentFlowPro
 
           {/* Tip Settings */}
           {tipSettings.enabled && (
-            <div className="rounded-2xl p-3" style={{ backgroundColor: '#222529', border: '1px solid var(--theme-menu-item-border, #223042)' }}>
+            <div className="rounded-2xl p-3" style={{ backgroundColor: 'var(--theme-input, #121923)', border: '1px solid var(--theme-menu-item-border, #223042)' }}>
               <h3 className="font-semibold text-paydine-elegant-gray mb-2 text-xs">{t("addTip")}</h3>
               <div className="flex gap-2">
                 {tipSettings.percentages.map((p) => (
@@ -430,7 +430,7 @@ export function SecurePaymentFlow({ isOpen, onOpenChange }: SecurePaymentFlowPro
                         <Button
                           variant="outline"
                           className="h-14 w-20 rounded-2xl shadow-sm flex items-center justify-center relative"
-                          style={{ backgroundColor: '#222529', borderColor: 'var(--theme-menu-item-border, #223042)' }}
+                          style={{ backgroundColor: 'var(--theme-input, #121923)', borderColor: 'var(--theme-menu-item-border, #223042)' }}
                           onClick={() => handlePaymentMethodSelect(method.code)}
                         >
                           <img

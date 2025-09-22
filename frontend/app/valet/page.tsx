@@ -55,7 +55,7 @@ export default function ValetPage() {
             <motion.div 
               key="form"
               className="rounded-2xl shadow-sm p-4 sm:p-6 dark-surface"
-              style={{ backgroundColor: '#222529', border: '1px solid var(--theme-menu-item-border, #223042)' }}
+              style={{ backgroundColor: 'var(--theme-input, #121923)', border: '1px solid var(--theme-menu-item-border, #223042)' }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -140,7 +140,7 @@ export default function ValetPage() {
             <motion.div
               key="success"
               className="rounded-2xl shadow-sm p-6 sm:p-8 text-center dark-surface"
-              style={{ backgroundColor: '#222529', border: '1px solid var(--theme-menu-item-border, #223042)' }}
+              style={{ backgroundColor: 'var(--theme-input, #121923)', border: '1px solid var(--theme-menu-item-border, #223042)' }}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}

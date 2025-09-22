@@ -221,23 +221,33 @@ input[type="number"] {
 }
 
 /* Per-theme background colors — ONLY affect pages with .page--* classes */
-:root[data-theme="clean-light"] {
+:root[data-theme="clean-light"] .page--home,
+:root[data-theme="clean-light"] .page--menu,
+:root[data-theme="clean-light"] .page--valet {
   --page-bg: #FAFAFA;
 }
 
-:root[data-theme="modern-dark"] {
+:root[data-theme="modern-dark"] .page--home,
+:root[data-theme="modern-dark"] .page--menu,
+:root[data-theme="modern-dark"] .page--valet {
   --page-bg: #0B0F14; /* or your modern-dark background color */
 }
 
-:root[data-theme="gold-luxury"] {
+:root[data-theme="gold-luxury"] .page--home,
+:root[data-theme="gold-luxury"] .page--menu,
+:root[data-theme="gold-luxury"] .page--valet {
   --page-bg: #0E0B05; /* pick your gold base; adjust later */
 }
 
-:root[data-theme="vibrant-colors"] {
+:root[data-theme="vibrant-colors"] .page--home,
+:root[data-theme="vibrant-colors"] .page--menu,
+:root[data-theme="vibrant-colors"] .page--valet {
   --page-bg: #FFFFFF; /* vibrant base */
 }
 
-:root[data-theme="minimal"] {
+:root[data-theme="minimal"] .page--home,
+:root[data-theme="minimal"] .page--menu,
+:root[data-theme="minimal"] .page--valet {
   --page-bg: #FFFFFF; /* minimal base */
 }
 
@@ -248,4 +258,82 @@ input[type="number"] {
   background: var(--page-bg) !important;
   /* ensure content still looks correct */
   min-height: 100dvh;
+}
+
+/* ---- modern-dark category accent ---- */
+html.theme-dark .category-tab.is-active,
+:root[data-theme="modern-dark"] .category-tab.is-active {
+  color: var(--theme-category-active, var(--theme-secondary));
+}
+
+html.theme-dark .category-tab.is-active::after,
+:root[data-theme="modern-dark"] .category-tab.is-active::after {
+  background-color: var(--theme-category-active, var(--theme-secondary));
+}
+
+/* ---- modern-dark food title in rose ---- */
+html.theme-dark .item-title,
+html.theme-dark h3.font-serif,
+:root[data-theme="modern-dark"] .item-title,
+:root[data-theme="modern-dark"] h3.font-serif {
+  color: var(--theme-secondary, #F0C6B1);
+}
+
+/* ---- modern-dark: dish details modal surface ---- */
+html.theme-dark .dish-modal,
+html.theme-dark .dish-modal .modal-content,
+html.theme-dark .bg-\[#FDF8F7\],
+:root[data-theme="modern-dark"] .dish-modal,
+:root[data-theme="modern-dark"] .dish-modal .modal-content,
+:root[data-theme="modern-dark"] .bg-\[#FDF8F7\] {
+  background-color: var(--theme-input, #121923) !important;
+  color: var(--theme-text-primary, #F3F4F6);
+  border: 1px solid var(--theme-border, #223042);
+}
+
+/* subtle inner cards inside the modal */
+html.theme-dark .dish-modal .card,
+html.theme-dark .bg-white\/80,
+html.theme-dark .bg-white\/90,
+:root[data-theme="modern-dark"] .dish-modal .card,
+:root[data-theme="modern-dark"] .bg-white\/80,
+:root[data-theme="modern-dark"] .bg-white\/90 {
+  background-color: transparent;
+  border-color: var(--theme-border, #223042);
+  color: var(--theme-text-secondary, #C7CDD4);
+}
+
+/* ---- modern-dark: waiter & note modals ---- */
+html.theme-dark .waiter-modal,
+html.theme-dark .note-modal,
+html.theme-dark .pm-dialog,
+html.theme-dark [data-radix-dialog-content],
+:root[data-theme="modern-dark"] .waiter-modal,
+:root[data-theme="modern-dark"] .note-modal,
+:root[data-theme="modern-dark"] .pm-dialog,
+:root[data-theme="modern-dark"] [data-radix-dialog-content] {
+  background-color: var(--theme-input, #121923) !important;
+  color: var(--theme-text-primary, #F3F4F6);
+  border: 1px solid var(--theme-border, #223042);
+}
+
+html.theme-dark .waiter-modal .btn-primary,
+html.theme-dark .note-modal .btn-primary,
+html.theme-dark [data-radix-dialog-content] button[type="submit"],
+:root[data-theme="modern-dark"] .waiter-modal .btn-primary,
+:root[data-theme="modern-dark"] .note-modal .btn-primary,
+:root[data-theme="modern-dark"] [data-radix-dialog-content] button[type="submit"] {
+  background-color: var(--theme-button, #E7CBA9);
+  color: #1a1a1a;
+}
+
+html.theme-dark .waiter-modal .btn-secondary,
+html.theme-dark .note-modal .btn-secondary,
+html.theme-dark [data-radix-dialog-content] button[type="button"],
+:root[data-theme="modern-dark"] .waiter-modal .btn-secondary,
+:root[data-theme="modern-dark"] .note-modal .btn-secondary,
+:root[data-theme="modern-dark"] [data-radix-dialog-content] button[type="button"] {
+  background-color: rgba(255,255,255,0.06);
+  color: var(--theme-text-secondary, #C7CDD4);
+  border: 1px solid var(--theme-border, #223042);
 }

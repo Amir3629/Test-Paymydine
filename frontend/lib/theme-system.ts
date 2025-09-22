@@ -90,7 +90,7 @@
       colors: {
         // Warm, elegant accents inspired by the light theme palette
         primary: '#E7CBA9',        // Champagne
-        secondary: '#EFC7B1',      // Rose beige (can be used for highlights)
+        secondary: '#F0C6B1',      // light-rose for accents (was EFC7B1)
         accent: '#F0E7DF',         // Soft warm light for subtle accents
         background: '#0B0F14',     // Deep slate blue-black
 

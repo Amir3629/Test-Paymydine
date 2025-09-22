@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { applyTheme } from '@/lib/theme-system';
 
 const THEMES = [
   { id: 'clean-light', label: 'Clean Light' },
@@ -10,13 +11,18 @@ const THEMES = [
   { id: 'minimal', label: 'Minimal' },
 ];
 
-// Small helper that does NOT touch your existing theme system.
-// It ONLY sets a data attribute for CSS to read.
-function applyDataTheme(themeId: string) {
-  const html = document.documentElement;
-  html.setAttribute('data-theme', themeId);
-  // keep a dev-only memory separate from your prod key
-  localStorage.setItem('paymydine-dev-theme', themeId);
+// Small helper that integrates with existing theme system
+function setDevTheme(themeId: string) {
+  try {
+    // 1) data-attr for CSS targeting
+    document.documentElement.setAttribute('data-theme', themeId);
+    
+    // 2) existing system (variables + dark class)
+    applyTheme(themeId);
+    
+    // 3) persist for dev-only
+    localStorage.setItem('paymydine-dev-theme', themeId);
+  } catch {}
 }
 
 export default function ThemeDevSwitcher() {
@@ -24,14 +30,12 @@ export default function ThemeDevSwitcher() {
 
   useEffect(() => {
     const saved = localStorage.getItem('paymydine-dev-theme');
-    const initial = saved || 'clean-light';
-    setActive(initial);
-    applyDataTheme(initial);
+    if (saved) setDevTheme(saved);
   }, []);
 
   const onPick = (id: string) => {
     setActive(id);
-    applyDataTheme(id);
+    setDevTheme(id);
   };
 
   // Floating, minimal UI (dev only)
