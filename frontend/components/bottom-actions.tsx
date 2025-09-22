@@ -20,6 +20,30 @@ import { Textarea } from "@/components/ui/textarea"
 import { type MenuItem } from "@/lib/data"
 import { formatCurrency } from "@/lib/currency"
 
+// Hook to get current theme background color
+function useThemeBackgroundColor() {
+  const [color, setColor] = useState('#FAFAFA');
+  
+  useEffect(() => {
+    const updateColor = () => {
+      if (typeof window !== 'undefined') {
+        const themeBg = getComputedStyle(document.documentElement).getPropertyValue('--theme-background').trim();
+        setColor(themeBg || '#FAFAFA');
+      }
+    };
+    
+    updateColor();
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(updateColor);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    
+    return () => observer.disconnect();
+  }, []);
+  
+  return color;
+}
+
 type ToolbarState = "collapsed" | "preview" | "expanded"
 
 type CartItem = {
@@ -401,6 +425,7 @@ export function BottomActions() {
   const [noteModalOpen, setNoteModalOpen] = useState(false)
   const [note, setNote] = useState("")
   const { toast } = useToast()
+  const themeBackgroundColor = useThemeBackgroundColor()
 
   const totalItems = items.reduce((acc, item) => acc + item.quantity, 0)
   const totalPrice = items.reduce((acc, item) => acc + (item.item.price || 0) * item.quantity, 0)
@@ -620,8 +645,12 @@ export function BottomActions() {
             >
               <ShoppingCart className="w-8 h-8 text-paydine-elegant-gray" />
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-paydine-champagne flex items-center justify-center rounded-full cart-badge-number"
-                      style={{ fontSize: '12px' }}>
+                <span 
+                  className="absolute -top-1 -right-1 w-5 h-5 bg-paydine-champagne flex items-center justify-center rounded-full cart-badge-number"
+                  style={{ 
+                    fontSize: '12px',
+                    color: themeBackgroundColor
+                  }}>
                   {totalItems}
                 </span>
               )}
