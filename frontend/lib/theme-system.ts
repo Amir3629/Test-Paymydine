@@ -319,9 +319,16 @@ export interface ThemeColors {
     const isDark = themeId === 'modern-dark' || themeId === 'gold-luxury';
     document.documentElement.classList.toggle('theme-dark', isDark);
     
-    // Let CSS own the background - no more JS/CSS tug-of-war
-    document.body.style.background = '';
-    document.body.style.backgroundColor = '';
+    // NUCLEAR OPTION: Force background colors if overrides provided
+    if (overrides?.background) {
+      console.log('🚀 applyTheme: Forcing background color:', overrides.background);
+      document.body.style.background = overrides.background;
+      document.documentElement.style.background = overrides.background;
+    } else {
+      // Let CSS own the background - no more JS/CSS tug-of-war
+      document.body.style.background = '';
+      document.body.style.backgroundColor = '';
+    }
     
     // Store current theme in localStorage (only on client side)
     if (typeof window !== 'undefined') {

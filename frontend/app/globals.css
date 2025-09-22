@@ -100,23 +100,28 @@
 
   /* NUCLEAR OPTION: Force exact background colors on html/body for each theme */
   [data-theme="clean-light"] html,
-  [data-theme="clean-light"] body {
+  [data-theme="clean-light"] body,
+  [data-theme="clean-light"] * {
     background: #FAFAFA !important;
   }
   [data-theme="modern-dark"] html,
-  [data-theme="modern-dark"] body {
+  [data-theme="modern-dark"] body,
+  [data-theme="modern-dark"] * {
     background: #0A0E12 !important;
   }
   [data-theme="gold-luxury"] html,
-  [data-theme="gold-luxury"] body {
+  [data-theme="gold-luxury"] body,
+  [data-theme="gold-luxury"] * {
     background: #0F0B05 !important;
   }
   [data-theme="vibrant-colors"] html,
-  [data-theme="vibrant-colors"] body {
+  [data-theme="vibrant-colors"] body,
+  [data-theme="vibrant-colors"] * {
     background: #e2ceb1 !important;
   }
   [data-theme="minimal"] html,
-  [data-theme="minimal"] body {
+  [data-theme="minimal"] body,
+  [data-theme="minimal"] * {
     background: #CFEBF7 !important;
   }
   
