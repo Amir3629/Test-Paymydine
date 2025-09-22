@@ -651,31 +651,31 @@ html.theme-dark:root[data-theme="modern-dark"] .backdrop-blur-lg {
   background-color: rgba(10, 14, 18, 0.7) !important;
 }
 
-/* Cart badge number colors for each theme */
-:root[data-theme="gold-luxury"] .bg-paydine-champagne span,
-:root[data-theme="gold-luxury"] .absolute.-top-1.-right-1 span,
-html.theme-dark:root[data-theme="gold-luxury"] .bg-paydine-champagne span,
-html.theme-dark:root[data-theme="gold-luxury"] .absolute.-top-1.-right-1 span {
+/* Cart badge number colors for each theme - more specific targeting */
+:root[data-theme="gold-luxury"] .absolute.-top-1.-right-1.bg-paydine-champagne,
+:root[data-theme="gold-luxury"] .bg-paydine-champagne.absolute.-top-1.-right-1,
+html.theme-dark:root[data-theme="gold-luxury"] .absolute.-top-1.-right-1.bg-paydine-champagne,
+html.theme-dark:root[data-theme="gold-luxury"] .bg-paydine-champagne.absolute.-top-1.-right-1 {
   color: var(--theme-background, #0F0B05) !important;
 }
 
-:root[data-theme="vibrant-colors"] .bg-paydine-champagne span,
-:root[data-theme="vibrant-colors"] .absolute.-top-1.-right-1 span,
-html.theme-dark:root[data-theme="vibrant-colors"] .bg-paydine-champagne span,
-html.theme-dark:root[data-theme="vibrant-colors"] .absolute.-top-1.-right-1 span {
+:root[data-theme="vibrant-colors"] .absolute.-top-1.-right-1.bg-paydine-champagne,
+:root[data-theme="vibrant-colors"] .bg-paydine-champagne.absolute.-top-1.-right-1,
+html.theme-dark:root[data-theme="vibrant-colors"] .absolute.-top-1.-right-1.bg-paydine-champagne,
+html.theme-dark:root[data-theme="vibrant-colors"] .bg-paydine-champagne.absolute.-top-1.-right-1 {
   color: var(--theme-background, #e2ceb1) !important;
 }
 
-:root[data-theme="minimal"] .bg-paydine-champagne span,
-:root[data-theme="minimal"] .absolute.-top-1.-right-1 span,
-html.theme-dark:root[data-theme="minimal"] .bg-paydine-champagne span,
-html.theme-dark:root[data-theme="minimal"] .absolute.-top-1.-right-1 span {
+:root[data-theme="minimal"] .absolute.-top-1.-right-1.bg-paydine-champagne,
+:root[data-theme="minimal"] .bg-paydine-champagne.absolute.-top-1.-right-1,
+html.theme-dark:root[data-theme="minimal"] .absolute.-top-1.-right-1.bg-paydine-champagne,
+html.theme-dark:root[data-theme="minimal"] .bg-paydine-champagne.absolute.-top-1.-right-1 {
   color: var(--theme-background, #FEFCF8) !important;
 }
 
-:root[data-theme="modern-dark"] .bg-paydine-champagne span,
-:root[data-theme="modern-dark"] .absolute.-top-1.-right-1 span,
-html.theme-dark:root[data-theme="modern-dark"] .bg-paydine-champagne span,
-html.theme-dark:root[data-theme="modern-dark"] .absolute.-top-1.-right-1 span {
+:root[data-theme="modern-dark"] .absolute.-top-1.-right-1.bg-paydine-champagne,
+:root[data-theme="modern-dark"] .bg-paydine-champagne.absolute.-top-1.-right-1,
+html.theme-dark:root[data-theme="modern-dark"] .absolute.-top-1.-right-1.bg-paydine-champagne,
+html.theme-dark:root[data-theme="modern-dark"] .bg-paydine-champagne.absolute.-top-1.-right-1 {
   color: var(--theme-background, #0A0E12) !important;
 }
