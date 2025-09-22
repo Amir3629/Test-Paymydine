@@ -854,6 +854,17 @@ html.theme-dark [data-radix-dialog-content],
   margin: 0 !important;
 }
 
+/* Fix text colors for payment button */
+:root[data-theme="modern-dark"] button[style*="var(--theme-button"],
+:root[data-theme="modern-dark"] button.font-bold.py-3 {
+  color: #000000 !important;
+}
+
+:root[data-theme="vibrant-colors"] button[style*="var(--theme-button"],
+:root[data-theme="vibrant-colors"] button.font-bold.py-3 {
+  color: #FFFFFF !important;
+}
+
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 .tip-button,
