@@ -843,6 +843,17 @@ html.theme-dark [data-radix-dialog-content],
   display: none !important;
 }
 
+/* Fix text color for Modern Dark theme payment button */
+:root[data-theme="modern-dark"] button[style*="var(--theme-button"],
+:root[data-theme="modern-dark"] button.font-bold.py-3 {
+  color: #000000 !important;
+}
+
+:root[data-theme="modern-dark"] button[style*="var(--theme-button"] div,
+:root[data-theme="modern-dark"] button.font-bold.py-3 div {
+  color: #000000 !important;
+}
+
 /* REMOVE BLACK BACKGROUND from payment button text container */
 :root[data-theme] button[style*="var(--theme-button"] div.flex,
 :root[data-theme] button.font-bold.py-3 div.flex {
