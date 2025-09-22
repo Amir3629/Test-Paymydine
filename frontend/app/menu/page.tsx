@@ -1588,6 +1588,14 @@ function MenuContent() {
   const [apiMenuItems, setApiMenuItems] = useState<MenuItem[]>([])
   const [dynamicCategories, setDynamicCategories] = useState<string[]>([])
   const { menuItems } = useCmsStore()
+
+  // Debug logging for theme consistency
+  if (typeof window !== 'undefined') {
+    console.info("MENU PAGE ACTIVE FILE ✅");
+    console.log("data-theme:", document.documentElement.getAttribute('data-theme'));
+    console.log("--theme-background:", getComputedStyle(document.documentElement).getPropertyValue('--theme-background'));
+    console.log("body bg:", getComputedStyle(document.body).background);
+  }
   const { items, toggleCart, addToCart, setTableInfo } = useCartStore()
   const themeBackgroundColor = useThemeBackgroundColor()
   const { t } = useLanguageStore()

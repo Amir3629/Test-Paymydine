@@ -15,6 +15,14 @@ function HomePageContent() {
   const { t } = useLanguageStore()
   const { settings } = useCmsStore()
 
+  // Debug logging for theme consistency
+  if (typeof window !== 'undefined') {
+    console.info("HOMEPAGE ACTIVE FILE ✅");
+    console.log("data-theme:", document.documentElement.getAttribute('data-theme'));
+    console.log("--theme-background:", getComputedStyle(document.documentElement).getPropertyValue('--theme-background'));
+    console.log("body bg:", getComputedStyle(document.body).background);
+  }
+
   const cardStyles = "relative flex flex-col items-center rounded-3xl p-8 sm:p-12 shadow-sm hover:shadow-xl transition duration-500 border w-72 h-56 justify-center surface-sub"
   const iconContainerStyles = "rounded-full p-6 mb-6"
 

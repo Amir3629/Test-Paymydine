@@ -26,16 +26,6 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#E7CBA9" />
-        <style id="dark-matte-inline">{`
-          html.theme-dark{background-color: var(--theme-background, #0B0F14);}
-          .theme-dark body{background: radial-gradient(1200px 600px at 20% 0%, rgba(231,203,169,0.07), transparent 60%),
-            radial-gradient(900px 500px at 80% 10%, rgba(239,199,177,0.06), transparent 60%),
-            radial-gradient(1200px 800px at 50% 120%, rgba(0,0,0,0.70), transparent 70%),
-            radial-gradient(1200px 800px at -20% -20%, rgba(0,0,0,0.60), transparent 70%),
-            radial-gradient(1200px 800px at 120% -20%, rgba(0,0,0,0.60), transparent 70%),
-            var(--theme-background, #0B0F14);
-          }
-        `}</style>
       </head>
       <body className={inter.className + ' text-theme'}>
         <ThemeProvider>
