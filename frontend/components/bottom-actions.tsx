@@ -620,7 +620,8 @@ export function BottomActions() {
             >
               <ShoppingCart className="w-8 h-8 text-paydine-elegant-gray" />
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-paydine-champagne text-white text-xs flex items-center justify-center rounded-full">
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-paydine-champagne text-xs flex items-center justify-center rounded-full"
+                      style={{ color: 'var(--theme-background)' }}>
                   {totalItems}
                 </span>
               )}
