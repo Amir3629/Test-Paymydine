@@ -242,7 +242,7 @@ input[type="number"] {
 :root[data-theme="vibrant-colors"] .page--home,
 :root[data-theme="vibrant-colors"] .page--menu,
 :root[data-theme="vibrant-colors"] .page--valet {
-  --page-bg: #F5F0E8; /* Cooler, darker warm beige with subtle gray undertones */
+  --page-bg: #e2ceb1; /* Cooler, darker warm beige with subtle gray undertones */
 }
 
 :root[data-theme="minimal"] .page--home,
@@ -461,7 +461,7 @@ html.theme-dark:root[data-theme="gold-luxury"] [class*="text-paydine-rose-beige"
 
 :root[data-theme="vibrant-colors"] .text-paydine-rose-beige,
 html.theme-dark:root[data-theme="vibrant-colors"] .text-paydine-rose-beige {
-  color: var(--theme-priceColor, #4ECDC4) !important;
+  color: var(--theme-priceColor, #FF8C42) !important;
 }
 
 :root[data-theme="minimal"] .text-paydine-rose-beige,
@@ -482,7 +482,7 @@ html.theme-dark:root[data-theme="gold-luxury"] .text-lg.font-semibold {
 
 :root[data-theme="vibrant-colors"] .text-lg.font-semibold,
 html.theme-dark:root[data-theme="vibrant-colors"] .text-lg.font-semibold {
-  color: var(--theme-priceColor, #4ECDC4) !important;
+  color: var(--theme-priceColor, #FF8C42) !important;
 }
 
 :root[data-theme="minimal"] .text-lg.font-semibold,

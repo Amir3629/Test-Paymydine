@@ -171,9 +171,9 @@
       colors: {
         // Vibrant coral and turquoise palette
         primary: '#FF6B6B',        // Electric coral
-        secondary: '#4ECDC4',      // Ocean turquoise
+        secondary: '#FF8C42',      // Warm orange accent
         accent: '#45B7D1',         // Sky blue accent
-        background: '#F5F0E8',     // Cooler, darker warm beige with subtle gray undertones
+        background: '#e2ceb1',     // Cooler, darker warm beige with subtle gray undertones
 
         textPrimary: '#1E293B',    // Deep slate
         textSecondary: '#475569',  // Medium slate
@@ -188,7 +188,7 @@
         menuItemBorder: '#E8E0D5',
         categoryActive: '#FF6B6B', // Electric coral
         categoryInactive: '#94A3B8',
-        priceColor: '#4ECDC4',     // Ocean turquoise
+        priceColor: '#FF8C42',     // Warm orange accent
 
         cartBackground: '#FAF7F2',
         cartBorder: '#E8E0D5',
@@ -198,7 +198,7 @@
         success: '#FF9F43',
         warning: '#F59E0B',
         error: '#EF4444',
-        info: '#4ECDC4'
+        info: '#FF8C42'
       }
     },
     
