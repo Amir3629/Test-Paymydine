@@ -242,7 +242,7 @@ input[type="number"] {
 :root[data-theme="vibrant-colors"] .page--home,
 :root[data-theme="vibrant-colors"] .page--menu,
 :root[data-theme="vibrant-colors"] .page--valet {
-  --page-bg: #FFF8F0; /* Warm cream with coral tint */
+  --page-bg: #F5F0E8; /* Cooler, darker warm beige with subtle gray undertones */
 }
 
 :root[data-theme="minimal"] .page--home,

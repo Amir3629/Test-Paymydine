@@ -173,7 +173,7 @@
         primary: '#FF6B6B',        // Electric coral
         secondary: '#4ECDC4',      // Ocean turquoise
         accent: '#45B7D1',         // Sky blue accent
-        background: '#FFF8F0',     // Warm cream with coral tint
+        background: '#F5F0E8',     // Cooler, darker warm beige with subtle gray undertones
 
         textPrimary: '#1E293B',    // Deep slate
         textSecondary: '#475569',  // Medium slate
@@ -184,14 +184,14 @@
         button: '#FF6B6B',         // Electric coral
         buttonHover: '#FF5252',
 
-        menuItemBackground: '#FFFFFF',
-        menuItemBorder: '#F1F5F9',
+        menuItemBackground: '#FAF7F2',
+        menuItemBorder: '#E8E0D5',
         categoryActive: '#FF6B6B', // Electric coral
         categoryInactive: '#94A3B8',
         priceColor: '#4ECDC4',     // Ocean turquoise
 
-        cartBackground: '#F8FAFC',
-        cartBorder: '#E2E8F0',
+        cartBackground: '#FAF7F2',
+        cartBorder: '#E8E0D5',
         paymentButton: '#FF6B6B',
         paymentButtonHover: '#FF5252',
 
@@ -333,15 +333,16 @@
     const lightBg = getComputedStyle(document.documentElement).getPropertyValue('--theme-background') || '#FAFAFA';
     
     if (themeId === 'vibrant-colors') {
-      // Vibrant Colors: Warm coral and turquoise gradient
+      // Vibrant Colors: Cooler coral and turquoise gradient with darker base
       const vibrantGradient = `linear-gradient(135deg, 
-        rgba(255,107,107,0.08) 0%, 
-        rgba(255,248,240,0.95) 25%, 
-        rgba(78,205,196,0.06) 50%, 
-        rgba(255,248,240,0.98) 75%, 
-        rgba(255,107,107,0.05) 100%), 
-        radial-gradient(circle at 20% 80%, rgba(255,107,107,0.12), transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(78,205,196,0.08), transparent 50%),
+        rgba(255,107,107,0.06) 0%, 
+        rgba(245,240,232,0.98) 25%, 
+        rgba(78,205,196,0.04) 50%, 
+        rgba(245,240,232,0.99) 75%, 
+        rgba(255,107,107,0.03) 100%), 
+        radial-gradient(circle at 20% 80%, rgba(255,107,107,0.08), transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(78,205,196,0.06), transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(69,183,209,0.03), transparent 70%),
         ${lightBg.trim()}`;
       document.body.style.background = vibrantGradient;
     } else if (themeId === 'minimal') {
