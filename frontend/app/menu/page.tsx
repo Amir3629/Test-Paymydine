@@ -35,6 +35,30 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/dialog"
+
+// Hook to get current theme background color
+function useThemeBackgroundColor() {
+  const [color, setColor] = useState('#FAFAFA');
+  
+  useEffect(() => {
+    const updateColor = () => {
+      if (typeof window !== 'undefined') {
+        const themeBg = getComputedStyle(document.documentElement).getPropertyValue('--theme-background').trim();
+        setColor(themeBg || '#FAFAFA');
+      }
+    };
+    
+    updateColor();
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(updateColor);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    
+    return () => observer.disconnect();
+  }, []);
+  
+  return color;
+}
 import { clsx } from "clsx"
 import { apiClient } from '@/lib/api-client'
 import { wsClient } from '@/lib/websocket-client'
@@ -1229,7 +1253,9 @@ function ExpandingBottomToolbar({
           >
             <ShoppingCart className="h-8 w-8 text-paydine-elegant-gray" />
             {totalItems > 0 && (
-              <span className="absolute -top-2 -right-2 bg-paydine-rose-beige text-paydine-elegant-gray text-xs font-bold rounded-full h-7 w-7 flex items-center justify-center shadow-md">
+              <span 
+                className="absolute -top-2 -right-2 bg-paydine-rose-beige font-bold rounded-full h-7 w-7 flex items-center justify-center shadow-md"
+                style={{ color: themeBackgroundColor, fontSize: '12px' }}>
                 {totalItems}
               </span>
             )}
@@ -1548,6 +1574,7 @@ function MenuContent() {
   const [dynamicCategories, setDynamicCategories] = useState<string[]>([])
   const { menuItems } = useCmsStore()
   const { items, toggleCart, addToCart, setTableInfo } = useCartStore()
+  const themeBackgroundColor = useThemeBackgroundColor()
   const { t } = useLanguageStore()
   const { toast } = useToast()
   const [isNoteModalOpen, setNoteModalOpen] = useState(false)
