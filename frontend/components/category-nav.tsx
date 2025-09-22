@@ -70,14 +70,14 @@ export function CategoryNav({ categories, selectedCategory, onSelectCategory }: 
               onClick={() => onSelectCategory(category)}
               className={cn(
                 "relative whitespace-nowrap rounded-2xl px-5 py-3 text-sm font-semibold transition-all duration-300",
-                selectedCategory === category ? "text-theme-category-active" : "text-gray-500 hover:text-theme",
+                selectedCategory === category ? "text-paydine-rose-beige" : "text-gray-500 hover:text-theme",
               )}
             >
               {selectedCategory === category && (
                 <motion.div
                   layoutId="category-underline"
                   className="absolute bottom-0 left-1/4 right-1/4 h-0.5 rounded-full"
-                  style={{ backgroundColor: 'var(--theme-category-active, var(--theme-secondary, #E7CBA9))' }}
+                  style={{ backgroundColor: 'var(--paydine-rose-beige, #E7CBA9)' }}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
