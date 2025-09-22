@@ -40,7 +40,7 @@ export default function ValetPage() {
 
   return (
     <div className="page--valet">
-      <div className="min-h-screen p-4 sm:p-6">
+      <div className="min-h-screen bg-theme-background p-4 sm:p-6">
       <div className="max-w-md mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

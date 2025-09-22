@@ -35,7 +35,6 @@ export default function RootLayout({
             radial-gradient(1200px 800px at 120% -20%, rgba(0,0,0,0.60), transparent 70%),
             var(--theme-background, #0B0F14);
           }
-          .theme-dark .bg-theme{background: transparent !important;}
         `}</style>
       </head>
       <body className={inter.className + ' text-theme'}>

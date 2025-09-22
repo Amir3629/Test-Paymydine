@@ -1810,7 +1810,7 @@ function MenuContent() {
   }
 
   return (
-    <div className="relative min-h-screen w-full bg-theme pb-32">
+        <div className="relative min-h-screen w-full bg-theme-background pb-32">
       <header className="py-8">
         <div className="max-w-4xl mx-auto px-4">
           <Logo tableNumber={tableInfo?.table_name} />

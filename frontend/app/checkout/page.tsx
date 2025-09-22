@@ -738,7 +738,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="min-h-screen bg-theme pb-8">
+      <div className="min-h-screen bg-theme-background pb-8">
       <div className="container max-w-4xl mx-auto px-4 py-8">
         <Button
           variant="ghost"

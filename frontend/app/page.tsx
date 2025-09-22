@@ -19,7 +19,7 @@ function HomePageContent() {
   const iconContainerStyles = "rounded-full p-6 mb-6"
 
   return (
-    <div className="min-h-screen bg-theme flex flex-col items-center justify-center p-4">
+        <div className="min-h-screen bg-theme-background flex flex-col items-center justify-center p-4">
       <Logo className="mb-8" />
       
       <div className="flex flex-row flex-wrap gap-6 justify-center">
@@ -116,7 +116,7 @@ export default function HomePage() {
   return (
     <div className="page--home">
       <Suspense fallback={
-        <div className="min-h-screen bg-theme flex flex-col items-center justify-center p-4">
+        <div className="min-h-screen bg-theme-background flex flex-col items-center justify-center p-4">
           <div className="text-center">
             <div className="text-lg text-paydine-elegant-gray">Loading...</div>
           </div>
