@@ -822,6 +822,15 @@ html.theme-dark [data-radix-dialog-content],
   color: inherit !important;
 }
 
+/* Remove the Lock icon from payment buttons */
+:root[data-theme] button[style*="var(--theme-button"] svg,
+:root[data-theme] button.font-bold svg,
+:root[data-theme] .fixed.inset-0 button svg,
+:root[data-theme] button svg[data-lucide="lock"],
+:root[data-theme] button .h-4.w-4 {
+  display: none !important;
+}
+
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 .tip-button,
