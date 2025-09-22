@@ -218,13 +218,22 @@ input[type="number"] {
 /* Defaults (clean-light) are harmless if data-theme is missing */
 :root {
   --page-bg: #FAFAFA; /* default clean-light background */
+  --theme-background: #FAFAFA; /* default clean-light background */
 }
 
 /* Per-theme background colors — ONLY affect pages with .page--* classes */
+:root[data-theme="clean-light"] {
+  --theme-background: #FAFAFA;
+}
+
 :root[data-theme="clean-light"] .page--home,
 :root[data-theme="clean-light"] .page--menu,
 :root[data-theme="clean-light"] .page--valet {
   --page-bg: #FAFAFA;
+}
+
+:root[data-theme="modern-dark"] {
+  --theme-background: #0A0E12; /* Deep charcoal with blue undertones */
 }
 
 :root[data-theme="modern-dark"] .page--home,
@@ -233,16 +242,28 @@ input[type="number"] {
   --page-bg: #0A0E12; /* Deep charcoal with blue undertones */
 }
 
+:root[data-theme="gold-luxury"] {
+  --theme-background: #0F0B05; /* Deep warm black */
+}
+
 :root[data-theme="gold-luxury"] .page--home,
 :root[data-theme="gold-luxury"] .page--menu,
 :root[data-theme="gold-luxury"] .page--valet {
   --page-bg: #0F0B05; /* Deep warm black */
 }
 
+:root[data-theme="vibrant-colors"] {
+  --theme-background: #e2ceb1; /* Cooler, darker warm beige with subtle gray undertones */
+}
+
 :root[data-theme="vibrant-colors"] .page--home,
 :root[data-theme="vibrant-colors"] .page--menu,
 :root[data-theme="vibrant-colors"] .page--valet {
   --page-bg: #e2ceb1; /* Cooler, darker warm beige with subtle gray undertones */
+}
+
+:root[data-theme="minimal"] {
+  --theme-background: #FEFCF8; /* Warm off-white with subtle cream tint */
 }
 
 :root[data-theme="minimal"] .page--home,
@@ -651,62 +672,5 @@ html.theme-dark:root[data-theme="modern-dark"] .backdrop-blur-lg {
   background-color: rgba(10, 14, 18, 0.7) !important;
 }
 
-/* Cart badge number colors for each theme - using unique class */
-.cart-badge-number {
-  color: var(--theme-background) !important;
-}
-
-:root[data-theme="gold-luxury"] .cart-badge-number,
-html.theme-dark:root[data-theme="gold-luxury"] .cart-badge-number {
-  color: #0F0B05 !important;
-}
-
-:root[data-theme="vibrant-colors"] .cart-badge-number,
-html.theme-dark:root[data-theme="vibrant-colors"] .cart-badge-number {
-  color: #e2ceb1 !important;
-}
-
-:root[data-theme="minimal"] .cart-badge-number,
-html.theme-dark:root[data-theme="minimal"] .cart-badge-number {
-  color: #FEFCF8 !important;
-}
-
-:root[data-theme="modern-dark"] .cart-badge-number,
-html.theme-dark:root[data-theme="modern-dark"] .cart-badge-number {
-  color: #0A0E12 !important;
-}
-
-/* ULTRA AGGRESSIVE CART BADGE COLOR OVERRIDE */
-html .cart-badge-number,
-body .cart-badge-number,
-.cart-badge-number {
-  color: var(--theme-background) !important;
-}
-
-:root[data-theme="gold-luxury"] html .cart-badge-number,
-:root[data-theme="gold-luxury"] body .cart-badge-number,
-:root[data-theme="gold-luxury"] .cart-badge-number,
-html.theme-dark:root[data-theme="gold-luxury"] .cart-badge-number {
-  color: #0F0B05 !important;
-}
-
-:root[data-theme="vibrant-colors"] html .cart-badge-number,
-:root[data-theme="vibrant-colors"] body .cart-badge-number,
-:root[data-theme="vibrant-colors"] .cart-badge-number,
-html.theme-dark:root[data-theme="vibrant-colors"] .cart-badge-number {
-  color: #e2ceb1 !important;
-}
-
-:root[data-theme="minimal"] html .cart-badge-number,
-:root[data-theme="minimal"] body .cart-badge-number,
-:root[data-theme="minimal"] .cart-badge-number,
-html.theme-dark:root[data-theme="minimal"] .cart-badge-number {
-  color: #FEFCF8 !important;
-}
-
-:root[data-theme="modern-dark"] html .cart-badge-number,
-:root[data-theme="modern-dark"] body .cart-badge-number,
-:root[data-theme="modern-dark"] .cart-badge-number,
-html.theme-dark:root[data-theme="modern-dark"] .cart-badge-number {
-  color: #0A0E12 !important;
-}
+/* Cart badge number colors - now using theme-aware --theme-background variable */
+/* The inline style color: var(--theme-background) will now work correctly */
