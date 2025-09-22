@@ -8,6 +8,7 @@ import { Car, Utensils } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { applyTheme } from "@/lib/theme-system"
+import { logThemeConsistency } from "@/lib/theme-debug"
 
 const MotionLink = motion(Link)
 
@@ -25,17 +26,8 @@ function HomePageContent() {
       // Force theme re-application
       applyTheme(currentTheme);
       
-      // Comprehensive debug logging for theme investigation
-      console.info("=== DEBUG LOG START ===");
-      console.log("Active page:", window.location.pathname);
-      console.log("data-theme:", document.documentElement.getAttribute("data-theme"));
-      console.log("--theme-background:", getComputedStyle(document.documentElement).getPropertyValue("--theme-background"));
-      console.log("body bg:", getComputedStyle(document.body).background);
-      const pageWrapper = document.querySelector('.page--home, .page--menu') || document.body;
-      console.log("wrapper bg:", getComputedStyle(pageWrapper).background);
-      console.log("Homepage main div bg:", getComputedStyle(document.querySelector('.min-h-screen.bg-theme-background'))?.background);
-      console.log("CSS var --theme-background computed:", getComputedStyle(document.documentElement).getPropertyValue('--theme-background'));
-      console.info("=== DEBUG LOG END ===");
+      // Debug logging for theme consistency
+      logThemeConsistency("homepage");
     }
   }, []);
 

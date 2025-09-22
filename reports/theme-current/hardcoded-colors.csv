@@ -1,0 +1,98 @@
+File,Line,Color,Context,Type
+frontend/components/bottom-actions.tsx,25,#FAFAFA,useState default,Hardcoded
+frontend/components/bottom-actions.tsx,38,#000000,clean-light theme,Hardcoded
+frontend/components/bottom-actions.tsx,40,#CFEBF7,minimal theme,Hardcoded
+frontend/components/bottom-actions.tsx,42,#FAFAFA,fallback color,Hardcoded
+frontend/components/bottom-actions.tsx,130,#FAFAFA,var fallback,Hardcoded
+frontend/components/bottom-actions.tsx,161,#1A202C,text color fallback,Hardcoded
+frontend/components/bottom-actions.tsx,169,#4A5568,text color fallback,Hardcoded
+frontend/components/bottom-actions.tsx,191,#1A202C,text color fallback,Hardcoded
+frontend/components/bottom-actions.tsx,194,#4A5568,text color fallback,Hardcoded
+frontend/components/bottom-actions.tsx,206,#F7FAFC,input background fallback,Hardcoded
+frontend/components/bottom-actions.tsx,207,#1A202C,input text fallback,Hardcoded
+frontend/components/bottom-actions.tsx,208,#E2E8F0,border color fallback,Hardcoded
+frontend/components/bottom-actions.tsx,307,#FAFAFA,background fallback,Hardcoded
+frontend/components/bottom-actions.tsx,337,#1A202C,text color fallback,Hardcoded
+frontend/components/bottom-actions.tsx,345,#4A5568,text color fallback,Hardcoded
+frontend/components/bottom-actions.tsx,382,#1A202C,text color fallback,Hardcoded
+frontend/components/bottom-actions.tsx,390,#4A5568,text color fallback,Hardcoded
+frontend/components/bottom-actions.tsx,408,#E2E8F0,border color fallback,Hardcoded
+frontend/components/bottom-actions.tsx,409,#F7FAFC,input background fallback,Hardcoded
+frontend/components/bottom-actions.tsx,410,#1A202C,input text fallback,Hardcoded
+frontend/components/bottom-actions.tsx,429,#E2E8F0,border color fallback,Hardcoded
+frontend/components/bottom-actions.tsx,430,#1A202C,input text fallback,Hardcoded
+frontend/components/bottom-actions.tsx,431,#F7FAFC,input background fallback,Hardcoded
+frontend/components/bottom-actions.tsx,530,#FAFAFA,background fallback,Hardcoded
+frontend/components/category-nav.tsx,80,#E7CBA9,paydine-rose-beige fallback,Hardcoded
+frontend/components/food-item-toolbar.tsx,32,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/food-item-toolbar.tsx,42,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/food-item-toolbar.tsx,52,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/food-item-toolbar.tsx,55,#1B1F27,button text color,Hardcoded
+frontend/components/menu-item-modal.tsx,37,#FDF8F7,modal background,Hardcoded
+frontend/components/payment-flow.tsx,194,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,200,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,211,#121923,theme-input fallback,Hardcoded
+frontend/components/payment-flow.tsx,211,#223042,theme-border fallback,Hardcoded
+frontend/components/payment-flow.tsx,211,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,217,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,228,#121923,theme-input fallback,Hardcoded
+frontend/components/payment-flow.tsx,228,#223042,theme-border fallback,Hardcoded
+frontend/components/payment-flow.tsx,228,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,232,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,243,#121923,theme-input fallback,Hardcoded
+frontend/components/payment-flow.tsx,243,#223042,theme-border fallback,Hardcoded
+frontend/components/payment-flow.tsx,243,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,249,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,259,#121923,theme-input fallback,Hardcoded
+frontend/components/payment-flow.tsx,259,#223042,theme-border fallback,Hardcoded
+frontend/components/payment-flow.tsx,259,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,296,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,306,#121923,theme-input fallback,Hardcoded
+frontend/components/payment-flow.tsx,306,#223042,theme-border fallback,Hardcoded
+frontend/components/payment-flow.tsx,306,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,343,#121923,theme-input fallback,Hardcoded
+frontend/components/payment-flow.tsx,343,#223042,theme-menu-item-border fallback,Hardcoded
+frontend/components/payment-flow.tsx,351,#C7CDD4,theme-text-secondary fallback,Hardcoded
+frontend/components/payment-flow.tsx,354,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,386,#121923,theme-input fallback,Hardcoded
+frontend/components/payment-flow.tsx,386,#223042,theme-menu-item-border fallback,Hardcoded
+frontend/components/payment-flow.tsx,388,#C7CDD4,theme-text-secondary fallback,Hardcoded
+frontend/components/payment-flow.tsx,391,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,445,#1B1F27,button text color,Hardcoded
+frontend/components/payment-flow.tsx,446,#D6B890,theme-button-hover fallback,Hardcoded
+frontend/components/payment-flow.tsx,447,#E7CBA9,theme-button fallback,Hardcoded
+frontend/components/payment-flow.tsx,468,#121923,theme-input fallback,Hardcoded
+frontend/components/payment-flow.tsx,469,#223042,theme-menu-item-border fallback,Hardcoded
+frontend/components/payment-flow.tsx,470,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,480,#E7CBA9,theme-button fallback,Hardcoded
+frontend/components/payment-flow.tsx,481,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment-flow.tsx,488,#1B1F27,button text color,Hardcoded
+frontend/components/payment-flow.tsx,488,#223042,theme-menu-item-border fallback,Hardcoded
+frontend/components/payment-flow.tsx,501,#121923,theme-input fallback,Hardcoded
+frontend/components/payment-flow.tsx,501,#223042,theme-menu-item-border fallback,Hardcoded
+frontend/components/payment-flow.tsx,535,#121923,theme-input fallback,Hardcoded
+frontend/components/payment-flow.tsx,535,#223042,theme-menu-item-border fallback,Hardcoded
+frontend/components/payment-flow.tsx,639,#121923,theme-input fallback,Hardcoded
+frontend/components/payment-flow.tsx,639,#223042,theme-menu-item-border fallback,Hardcoded
+frontend/components/payment-flow.tsx,677,#121923,theme-menu-item-bg fallback,Hardcoded
+frontend/components/payment-flow.tsx,677,#223042,theme-menu-item-border fallback,Hardcoded
+frontend/components/payment/secure-payment-flow.tsx,237,#121923,theme-input fallback,Hardcoded
+frontend/components/payment/secure-payment-flow.tsx,238,#223042,theme-menu-item-border fallback,Hardcoded
+frontend/components/payment/secure-payment-flow.tsx,239,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment/secure-payment-flow.tsx,265,#E7CBA9,theme-button fallback,Hardcoded
+frontend/components/payment/secure-payment-flow.tsx,266,#F3F4F6,theme-text-primary fallback,Hardcoded
+frontend/components/payment/secure-payment-flow.tsx,273,#1B1F27,button text color,Hardcoded
+frontend/components/payment/secure-payment-flow.tsx,273,#223042,theme-menu-item-border fallback,Hardcoded
+frontend/components/payment/secure-payment-flow.tsx,287,#121923,theme-input fallback,Hardcoded
+frontend/components/payment/secure-payment-flow.tsx,287,#223042,theme-menu-item-border fallback,Hardcoded
+frontend/components/payment/secure-payment-flow.tsx,322,#121923,theme-input fallback,Hardcoded
+frontend/components/payment/secure-payment-flow.tsx,322,#223042,theme-menu-item-border fallback,Hardcoded
+frontend/components/payment/secure-payment-flow.tsx,433,#121923,theme-input fallback,Hardcoded
+frontend/components/payment/secure-payment-flow.tsx,433,#223042,theme-menu-item-border fallback,Hardcoded
+frontend/components/payment/secure-payment-form.tsx,167,#424770,Stripe element color,Hardcoded
+frontend/components/payment/secure-payment-form.tsx,169,#aab7c4,Stripe element color,Hardcoded
+frontend/components/payment/secure-payment-form.tsx,173,#9e2146,Stripe element color,Hardcoded
+frontend/components/ThemeDevSwitcher.tsx,67,#fff,button text color,Hardcoded
+frontend/app/test-theme/page.tsx,60,#F5E6D3,test-secondary fallback,Hardcoded
+frontend/app/test-theme/page.tsx,62,#D4AF37,test-primary fallback,Hardcoded
+frontend/app/test-theme/page.tsx,102,#D4AF37,test-primary fallback,Hardcoded

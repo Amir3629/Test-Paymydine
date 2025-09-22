@@ -16,6 +16,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/components/ui/use-toast"
+import { applyTheme } from "@/lib/theme-system"
+import { logThemeConsistency } from "@/lib/theme-debug"
 import { HandPlatter, NotebookPen, ShoppingCart, ChevronUp, ChevronDown, Plus, Wallet, Lock, Users, Check, Minus, CreditCard, ArrowLeft, CheckCircle } from "lucide-react"
 import { OptimizedImage } from "@/components/ui/optimized-image"
 import Link from "next/link"
@@ -1589,19 +1591,17 @@ function MenuContent() {
   const [dynamicCategories, setDynamicCategories] = useState<string[]>([])
   const { menuItems } = useCmsStore()
 
-  // Comprehensive debug logging for theme investigation
+  // Theme re-application and debug logging (symmetric with homepage)
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      console.info("=== DEBUG LOG START ===");
-      console.log("Active page:", window.location.pathname);
-      console.log("data-theme:", document.documentElement.getAttribute("data-theme"));
-      console.log("--theme-background:", getComputedStyle(document.documentElement).getPropertyValue("--theme-background"));
-      console.log("body bg:", getComputedStyle(document.body).background);
-      const pageWrapper = document.querySelector('.page--home, .page--menu') || document.body;
-      console.log("wrapper bg:", getComputedStyle(pageWrapper).background);
-      console.log("Menu main div bg:", getComputedStyle(document.querySelector('.relative.min-h-screen.bg-theme-background'))?.background);
-      console.log("CSS var --theme-background computed:", getComputedStyle(document.documentElement).getPropertyValue('--theme-background'));
-      console.info("=== DEBUG LOG END ===");
+      // Get current theme from localStorage or default to clean-light
+      const currentTheme = localStorage.getItem('paymydine-theme') || 'clean-light';
+      
+      // Force theme re-application
+      applyTheme(currentTheme);
+      
+      // Debug logging for theme consistency
+      logThemeConsistency("menu");
     }
   }, []);
   const { items, toggleCart, addToCart, setTableInfo } = useCartStore()
@@ -1826,6 +1826,7 @@ function MenuContent() {
   }
 
   return (
+    <div className="page--menu">
         <div className="relative min-h-screen w-full bg-theme-background pb-32">
       <header className="py-8">
         <div className="max-w-4xl mx-auto px-4">
@@ -1916,6 +1917,7 @@ function MenuContent() {
         tableId={tableIdString}
         tableName={tableName}
       />
+    </div>
     </div>
   )
 }
