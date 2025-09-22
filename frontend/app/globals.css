@@ -663,6 +663,86 @@ html.theme-dark [data-radix-dialog-content],
   box-shadow: 0 2px 8px rgba(231, 203, 169, 0.3) !important;
 }
 
+/* === Cash Payment Button Theme Styling === */
+/* Modern Dark - Rose/beige gradient */
+:root[data-theme="modern-dark"] button[style*="var(--theme-button"] {
+  background: linear-gradient(135deg, #F0C6B1, #E7CBA9) !important;
+  color: #1A202C !important;
+  border: 2px solid #F0C6B1 !important;
+  box-shadow: 0 4px 12px rgba(240, 198, 177, 0.3) !important;
+}
+
+/* Gold Luxury - Elegant gold gradient */
+:root[data-theme="gold-luxury"] button[style*="var(--theme-button"] {
+  background: linear-gradient(135deg, #D4AF37, #B8860B) !important;
+  color: #FFFFFF !important;
+  border: 2px solid #D4AF37 !important;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* Vibrant Colors - Warm brown gradient */
+:root[data-theme="vibrant-colors"] button[style*="var(--theme-button"] {
+  background: linear-gradient(135deg, #6b5e4f, #8B7355) !important;
+  color: #FFFFFF !important;
+  border: 2px solid #6b5e4f !important;
+  box-shadow: 0 4px 12px rgba(107, 94, 79, 0.3) !important;
+}
+
+/* Minimal - Sky blue gradient */
+:root[data-theme="minimal"] button[style*="var(--theme-button"] {
+  background: linear-gradient(135deg, #87CEEB, #4682B4) !important;
+  color: #FFFFFF !important;
+  border: 2px solid #87CEEB !important;
+  box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3) !important;
+}
+
+/* Clean Light - Keep original light rose (no changes) */
+
+/* Remove black frames and ensure theme colors for all payment buttons */
+:root[data-theme="modern-dark"] button[style*="backgroundColor: 'var(--theme-button"],
+:root[data-theme="modern-dark"] .fixed.inset-0 button[class*="font-bold"],
+:root[data-theme="modern-dark"] button:has-text("Confirm Cash Payment") {
+  background: linear-gradient(135deg, #F0C6B1, #E7CBA9) !important;
+  color: #1A202C !important;
+  border: 2px solid #F0C6B1 !important;
+  box-shadow: 0 4px 12px rgba(240, 198, 177, 0.3) !important;
+}
+
+:root[data-theme="gold-luxury"] button[style*="backgroundColor: 'var(--theme-button"],
+:root[data-theme="gold-luxury"] .fixed.inset-0 button[class*="font-bold"],
+:root[data-theme="gold-luxury"] button:has-text("Confirm Cash Payment") {
+  background: linear-gradient(135deg, #D4AF37, #B8860B) !important;
+  color: #FFFFFF !important;
+  border: 2px solid #D4AF37 !important;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3) !important;
+}
+
+:root[data-theme="vibrant-colors"] button[style*="backgroundColor: 'var(--theme-button"],
+:root[data-theme="vibrant-colors"] .fixed.inset-0 button[class*="font-bold"],
+:root[data-theme="vibrant-colors"] button:has-text("Confirm Cash Payment") {
+  background: linear-gradient(135deg, #6b5e4f, #8B7355) !important;
+  color: #FFFFFF !important;
+  border: 2px solid #6b5e4f !important;
+  box-shadow: 0 4px 12px rgba(107, 94, 79, 0.3) !important;
+}
+
+:root[data-theme="minimal"] button[style*="backgroundColor: 'var(--theme-button"],
+:root[data-theme="minimal"] .fixed.inset-0 button[class*="font-bold"],
+:root[data-theme="minimal"] button:has-text("Confirm Cash Payment") {
+  background: linear-gradient(135deg, #87CEEB, #4682B4) !important;
+  color: #FFFFFF !important;
+  border: 2px solid #87CEEB !important;
+  box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3) !important;
+}
+
+/* Remove any black frames or borders from payment buttons */
+:root[data-theme]:not([data-theme="clean-light"]) button[class*="font-bold"] div,
+:root[data-theme]:not([data-theme="clean-light"]) button[style*="backgroundColor"] div {
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+}
+
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 .tip-button,
