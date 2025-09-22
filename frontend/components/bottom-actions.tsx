@@ -620,7 +620,7 @@ export function BottomActions() {
             >
               <ShoppingCart className="w-8 h-8 text-paydine-elegant-gray" />
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-paydine-champagne flex items-center justify-center rounded-full"
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-paydine-champagne flex items-center justify-center rounded-full cart-badge-number"
                       style={{ color: 'var(--theme-background)', fontSize: '12px' }}>
                   {totalItems}
                 </span>
