@@ -41,11 +41,12 @@ function useThemeBackgroundColor() {
   const [color, setColor] = useState('#FAFAFA');
   
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+    
     const updateColor = () => {
-      if (typeof window !== 'undefined') {
-        const themeBg = getComputedStyle(document.documentElement).getPropertyValue('--theme-background').trim();
-        setColor(themeBg || '#FAFAFA');
-      }
+      const themeBg = getComputedStyle(document.documentElement).getPropertyValue('--theme-background').trim();
+      setColor(themeBg || '#FAFAFA');
     };
     
     updateColor();
@@ -94,6 +95,7 @@ interface ExpandingBottomToolbarProps {
   waiterDisabled?: boolean;
   noteDisabled?: boolean;
   totalItems: number;
+  themeBackgroundColor: string;
 }
 
 interface MenuItemModalProps {
@@ -1049,6 +1051,7 @@ function ExpandingBottomToolbar({
   waiterDisabled = false,
   noteDisabled = false,
   totalItems,
+  themeBackgroundColor,
 }: ExpandingBottomToolbarProps) {
   // Heights for each state
   const collapsedHeight = 76
@@ -1860,6 +1863,7 @@ function MenuContent() {
         waiterDisabled={!tableIdString}
         noteDisabled={!tableIdString}
         totalItems={totalItems}
+        themeBackgroundColor={themeBackgroundColor}
       />
       <CartSheet />
       <MenuItemModal item={selectedItem} onClose={() => setSelectedItem(null)} />

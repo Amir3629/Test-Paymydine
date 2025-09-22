@@ -25,11 +25,12 @@ function useThemeBackgroundColor() {
   const [color, setColor] = useState('#FAFAFA');
   
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+    
     const updateColor = () => {
-      if (typeof window !== 'undefined') {
-        const themeBg = getComputedStyle(document.documentElement).getPropertyValue('--theme-background').trim();
-        setColor(themeBg || '#FAFAFA');
-      }
+      const themeBg = getComputedStyle(document.documentElement).getPropertyValue('--theme-background').trim();
+      setColor(themeBg || '#FAFAFA');
     };
     
     updateColor();
