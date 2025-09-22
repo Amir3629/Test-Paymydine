@@ -126,7 +126,13 @@ const EnhancedWaiterDialog = ({
               damping: 25
             }}
             className="rounded-3xl shadow-2xl w-full max-w-sm mx-4 overflow-hidden"
-            style={{ backgroundColor: 'var(--theme-background, #FAFAFA)' }}
+            style={{ 
+              backgroundColor: 'var(--page-bg, #FAFAFA)',
+              opacity: 0.95,
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255,255,255,0.2)',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+            }}
           >
             {/* Success State */}
             <AnimatePresence mode="wait">
@@ -152,7 +158,7 @@ const EnhancedWaiterDialog = ({
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.4 }}
                     className="text-2xl font-semibold mb-2"
-                    style={{ color: 'var(--theme-text-primary, #1A202C)' }}
+                    style={{ color: 'var(--theme-text-primary, #1A202C)', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}
                   >
                     {t("waiterComing")}
                   </motion.h3>
@@ -182,10 +188,10 @@ const EnhancedWaiterDialog = ({
                     >
                       <HandPlatter className="w-8 h-8 text-white" />
                     </motion.div>
-                    <h3 className="text-2xl font-semibold mb-2" style={{ color: 'var(--theme-text-primary, #1A202C)' }}>
+                    <h3 className="text-2xl font-semibold mb-2" style={{ color: 'var(--theme-text-primary, #1A202C)', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
                       {t("callWaiter")}
                     </h3>
-                    <p style={{ color: 'var(--theme-text-secondary, #4A5568)' }}>
+                    <p style={{ color: 'var(--theme-text-secondary, #4A5568)', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
                       {t("callWaiterConfirm")}
                     </p>
                   </div>
@@ -296,8 +302,14 @@ const EnhancedNoteDialog = ({
               damping: 30,
               duration: dialogState === "closing" ? 0.3 : 0.5
             }}
-            className="backdrop-blur-lg rounded-3xl shadow-2xl border border-white/30 w-full max-w-sm mx-4 overflow-hidden"
-            style={{ backgroundColor: 'var(--theme-background, #FAFAFA)', opacity: 0.95 }}
+            className="backdrop-blur-lg rounded-3xl shadow-2xl w-full max-w-sm mx-4 overflow-hidden"
+            style={{ 
+              backgroundColor: 'var(--page-bg, #FAFAFA)', 
+              opacity: 0.95,
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255,255,255,0.2)',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+            }}
           >
             {/* Success State */}
             <AnimatePresence>
