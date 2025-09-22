@@ -820,96 +820,19 @@ html.theme-dark [data-radix-dialog-content],
   color: inherit !important;
 }
 
-/* Remove Lock icon from payment button ONLY */
-:root[data-theme="modern-dark"] button[style*="var(--theme-button"] svg,
-:root[data-theme="modern-dark"] button.font-bold.py-3 svg,
-:root[data-theme="modern-dark"] button[style*="var(--theme-button"] .h-4.w-4,
-:root[data-theme="modern-dark"] button.font-bold.py-3 .h-4.w-4 {
-  display: none !important;
-}
-
-:root[data-theme="gold-luxury"] button[style*="var(--theme-button"] svg,
-:root[data-theme="gold-luxury"] button.font-bold.py-3 svg,
-:root[data-theme="gold-luxury"] button[style*="var(--theme-button"] .h-4.w-4,
-:root[data-theme="gold-luxury"] button.font-bold.py-3 .h-4.w-4 {
-  display: none !important;
-}
-
-/* ULTRA AGGRESSIVE: Remove black background from payment button text container */
-:root[data-theme="modern-dark"] button[style*="var(--theme-button"] div.flex,
-:root[data-theme="modern-dark"] button.font-bold.py-3 div.flex {
-  background: transparent !important;
-  border: none !important;
-  color: inherit !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-:root[data-theme="gold-luxury"] button[style*="var(--theme-button"] div.flex,
-:root[data-theme="gold-luxury"] button.font-bold.py-3 div.flex {
-  background: transparent !important;
-  border: none !important;
-  color: inherit !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Fix text colors for payment button */
-:root[data-theme="modern-dark"] button[style*="var(--theme-button"],
-:root[data-theme="modern-dark"] button.font-bold.py-3 {
-  color: #000000 !important;
-}
-
-:root[data-theme="vibrant-colors"] button[style*="var(--theme-button"],
-:root[data-theme="vibrant-colors"] button.font-bold.py-3 {
-  color: #FFFFFF !important;
-}
-
-/* NUCLEAR OPTION: Force text colors with multiple selectors */
-:root[data-theme="modern-dark"] .fixed.inset-0 button,
-:root[data-theme="modern-dark"] .fixed.inset-0 button *,
-:root[data-theme="modern-dark"] button[style*="backgroundColor"],
-:root[data-theme="modern-dark"] button[style*="backgroundColor"] * {
-  color: #000000 !important;
-}
-
-:root[data-theme="vibrant-colors"] .fixed.inset-0 button,
-:root[data-theme="vibrant-colors"] .fixed.inset-0 button *,
-:root[data-theme="vibrant-colors"] button[style*="backgroundColor"],
-:root[data-theme="vibrant-colors"] button[style*="backgroundColor"] * {
-  color: #FFFFFF !important;
-}
-
-/* ULTRA NUCLEAR: Target all text in payment modal */
-:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button,
-:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button span,
-:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button div {
-  color: #000000 !important;
-}
-
-:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 button,
-:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 button span,
-:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 button div {
-  color: #FFFFFF !important;
-}
-
-/* PRECISE FIX: Remove Lock icon ONLY and fix text colors ONLY */
+/* REMOVE LOCK ICON ONLY from payment button */
 :root[data-theme] button[style*="var(--theme-button"] svg[data-lucide="lock"],
-:root[data-theme] button[style*="var(--theme-button"] .h-4.w-4[data-lucide="lock"],
-:root[data-theme] button.font-bold svg[data-lucide="lock"],
-:root[data-theme] button.font-bold .h-4.w-4[data-lucide="lock"] {
+:root[data-theme] button.font-bold.py-3 svg[data-lucide="lock"] {
   display: none !important;
 }
 
-/* Fix text colors ONLY - target text content specifically */
-:root[data-theme="modern-dark"] button[style*="var(--theme-button"] div:not(:has(svg)),
-:root[data-theme="modern-dark"] button.font-bold div:not(:has(svg)) {
-  color: #F8FAFC !important; /* Modern Dark textPrimary */
-}
-
-:root[data-theme="vibrant-colors"] button[style*="var(--theme-button"] div:not(:has(svg)),
-:root[data-theme="vibrant-colors"] button.font-bold div:not(:has(svg)) {
-  color: #1E293B !important; /* Vibrant Colors textPrimary */
+/* REMOVE BLACK BACKGROUND from payment button text container */
+:root[data-theme] button[style*="var(--theme-button"] div.flex,
+:root[data-theme] button.font-bold.py-3 div.flex {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
