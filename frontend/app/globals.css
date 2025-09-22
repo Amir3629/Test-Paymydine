@@ -433,22 +433,134 @@ input[type="number"] {
   background: var(--theme-border);
 }
 
-/* Quantity selector buttons */
-.quantity-btn {
-  background-color: var(--theme-secondary) !important;
-  color: var(--theme-background) !important;
-  border: 1px solid var(--theme-border) !important;
+/* Quantity selector buttons - HARDCODED COLORS BY THEME */
+/* Clean Light Theme */
+[data-theme="clean-light"] button.quantity-btn,
+[data-theme="clean-light"] .quantity-btn {
+  background-color: #EFC7B1 !important; /* paydine-rose-beige */
+  color: #FAFAFA !important; /* paydine-soft-white */
+  border: 1px solid #EFC7B1 !important;
   border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  width: 48px !important;
+  height: 48px !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
 }
 
+/* Modern Dark Theme */
+[data-theme="modern-dark"] button.quantity-btn,
+[data-theme="modern-dark"] .quantity-btn {
+  background-color: #E8B4A0 !important; /* rose gold */
+  color: #0A0E12 !important; /* dark background */
+  border: 1px solid #E8B4A0 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  width: 48px !important;
+  height: 48px !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+}
+
+/* Gold Luxury Theme */
+[data-theme="gold-luxury"] button.quantity-btn,
+[data-theme="gold-luxury"] .quantity-btn {
+  background-color: #FFF8DC !important; /* cornsilk */
+  color: #0F0B05 !important; /* dark background */
+  border: 1px solid #FFF8DC !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  width: 48px !important;
+  height: 48px !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+}
+
+/* Vibrant Colors Theme */
+[data-theme="vibrant-colors"] button.quantity-btn,
+[data-theme="vibrant-colors"] .quantity-btn {
+  background-color: #FF6B6B !important; /* coral */
+  color: #e2ceb1 !important; /* warm beige */
+  border: 1px solid #FF6B6B !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  width: 48px !important;
+  height: 48px !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+}
+
+/* Minimal Theme */
+[data-theme="minimal"] button.quantity-btn,
+[data-theme="minimal"] .quantity-btn {
+  background-color: #4A90E2 !important; /* blue */
+  color: #CFEBF7 !important; /* light blue */
+  border: 1px solid #4A90E2 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  width: 48px !important;
+  height: 48px !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+}
+
+/* Hover effects */
+button.quantity-btn:hover,
 .quantity-btn:hover {
   opacity: 0.8 !important;
+  transform: scale(1.05) !important;
 }
 
-/* Cart badge */
-.cart-badge {
-  background-color: var(--theme-secondary) !important;
-  color: var(--theme-background) !important;
+button.quantity-btn:focus,
+.quantity-btn:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px var(--theme-secondary) !important;
+}
+
+/* Cart badge - HARDCODED COLORS BY THEME */
+/* Clean Light Theme */
+[data-theme="clean-light"] .cart-badge {
+  background-color: #EFC7B1 !important; /* paydine-rose-beige */
+  color: #FAFAFA !important; /* paydine-soft-white */
+}
+
+/* Modern Dark Theme */
+[data-theme="modern-dark"] .cart-badge {
+  background-color: #E8B4A0 !important; /* rose gold */
+  color: #0A0E12 !important; /* dark background */
+}
+
+/* Gold Luxury Theme */
+[data-theme="gold-luxury"] .cart-badge {
+  background-color: #FFF8DC !important; /* cornsilk */
+  color: #0F0B05 !important; /* dark background */
+}
+
+/* Vibrant Colors Theme */
+[data-theme="vibrant-colors"] .cart-badge {
+  background-color: #FF6B6B !important; /* coral */
+  color: #e2ceb1 !important; /* warm beige */
+}
+
+/* Minimal Theme */
+[data-theme="minimal"] .cart-badge {
+  background-color: #4A90E2 !important; /* blue */
+  color: #CFEBF7 !important; /* light blue */
 }
 
 /* Ensure the same backdrop in all themes; the card stays readable */
