@@ -458,7 +458,8 @@ export function BottomActions() {
           style={{ 
             minHeight: 76, 
             height: "100%",
-            backgroundColor: "rgba(var(--theme-background-rgb, 255, 255, 255), 0.7)"
+            backgroundColor: "var(--theme-background, #FAFAFA)",
+            opacity: 0.7
           }}
         >
           {/* Arrow for expanding/collapsing bill */}

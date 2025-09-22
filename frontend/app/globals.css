@@ -617,3 +617,36 @@ html.theme-dark:root[data-theme="modern-dark"] button[class*="bg-paydine-rose-be
   fill: var(--theme-background, #0A0E12) !important;
   stroke: var(--theme-background, #0A0E12) !important;
 }
+
+/* Bottom toolbar background colors for each theme */
+:root[data-theme="gold-luxury"] .backdrop-blur-lg {
+  background-color: rgba(15, 11, 5, 0.7) !important;
+}
+
+:root[data-theme="vibrant-colors"] .backdrop-blur-lg {
+  background-color: rgba(226, 206, 177, 0.7) !important;
+}
+
+:root[data-theme="minimal"] .backdrop-blur-lg {
+  background-color: rgba(254, 252, 248, 0.7) !important;
+}
+
+:root[data-theme="modern-dark"] .backdrop-blur-lg {
+  background-color: rgba(10, 14, 18, 0.7) !important;
+}
+
+html.theme-dark:root[data-theme="gold-luxury"] .backdrop-blur-lg {
+  background-color: rgba(15, 11, 5, 0.7) !important;
+}
+
+html.theme-dark:root[data-theme="vibrant-colors"] .backdrop-blur-lg {
+  background-color: rgba(226, 206, 177, 0.7) !important;
+}
+
+html.theme-dark:root[data-theme="minimal"] .backdrop-blur-lg {
+  background-color: rgba(254, 252, 248, 0.7) !important;
+}
+
+html.theme-dark:root[data-theme="modern-dark"] .backdrop-blur-lg {
+  background-color: rgba(10, 14, 18, 0.7) !important;
+}
