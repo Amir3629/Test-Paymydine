@@ -242,13 +242,13 @@ input[type="number"] {
 :root[data-theme="vibrant-colors"] .page--home,
 :root[data-theme="vibrant-colors"] .page--menu,
 :root[data-theme="vibrant-colors"] .page--valet {
-  --page-bg: #F8FAFC; /* Cool white with subtle tint */
+  --page-bg: #FFF8F0; /* Warm cream with coral tint */
 }
 
 :root[data-theme="minimal"] .page--home,
 :root[data-theme="minimal"] .page--menu,
 :root[data-theme="minimal"] .page--valet {
-  --page-bg: #FFFFFF; /* Pure white */
+  --page-bg: #FEFCF8; /* Warm off-white with subtle cream tint */
 }
 
 /* Only update the background color for the 3 target pages */
@@ -454,7 +454,7 @@ html.theme-dark:root[data-theme="minimal"] [data-radix-dialog-content] button[ty
 /* Enhanced price colors for each theme */
 :root[data-theme="gold-luxury"] .text-paydine-rose-beige,
 html.theme-dark:root[data-theme="gold-luxury"] .text-paydine-rose-beige {
-  color: var(--theme-priceColor, #DAA520) !important;
+  color: var(--theme-priceColor, #FFF8DC) !important;
 }
 
 :root[data-theme="vibrant-colors"] .text-paydine-rose-beige,

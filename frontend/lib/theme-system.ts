@@ -150,7 +150,7 @@
         menuItemBorder: '#CD853F',
         categoryActive: '#FFD700', // Bright gold active
         categoryInactive: '#8B7355',
-        priceColor: '#DAA520',     // Goldenrod prices
+        priceColor: '#FFF8DC',     // Cornsilk prices
 
         cartBackground: '#1A1612',
         cartBorder: '#CD853F',
@@ -173,7 +173,7 @@
         primary: '#FF6B6B',        // Electric coral
         secondary: '#4ECDC4',      // Ocean turquoise
         accent: '#45B7D1',         // Sky blue accent
-        background: '#F8FAFC',     // Cool white with subtle tint
+        background: '#FFF8F0',     // Warm cream with coral tint
 
         textPrimary: '#1E293B',    // Deep slate
         textSecondary: '#475569',  // Medium slate
@@ -195,7 +195,7 @@
         paymentButton: '#FF6B6B',
         paymentButtonHover: '#FF5252',
 
-        success: '#10B981',
+        success: '#FF9F43',
         warning: '#F59E0B',
         error: '#EF4444',
         info: '#4ECDC4'
@@ -211,7 +211,7 @@
         primary: '#2D3748',        // Charcoal
         secondary: '#4A5568',      // Slate
         accent: '#718096',         // Light slate accent
-        background: '#FFFFFF',     // Pure white
+        background: '#FEFCF8',     // Warm off-white with subtle cream tint
 
         textPrimary: '#1A202C',    // Deep charcoal
         textSecondary: '#2D3748',  // Charcoal
@@ -329,9 +329,36 @@
     
     document.body.style.background = matteVignette;
   } else {
-    // Restore clean background on light themes
-    document.body.style.background = '';
-    document.body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-background') || '#FAFAFA';
+    // Enhanced backgrounds for light themes
+    if (themeId === 'vibrant-colors') {
+      // Vibrant Colors: Warm coral and turquoise gradient
+      const vibrantGradient = `linear-gradient(135deg, 
+        rgba(255,107,107,0.08) 0%, 
+        rgba(255,248,240,0.95) 25%, 
+        rgba(78,205,196,0.06) 50%, 
+        rgba(255,248,240,0.98) 75%, 
+        rgba(255,107,107,0.05) 100%), 
+        radial-gradient(circle at 20% 80%, rgba(255,107,107,0.12), transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(78,205,196,0.08), transparent 50%),
+        ${bg.trim()}`;
+      document.body.style.background = vibrantGradient;
+    } else if (themeId === 'minimal') {
+      // Minimal: Elegant warm cream gradient
+      const minimalGradient = `linear-gradient(135deg, 
+        rgba(45,55,72,0.03) 0%, 
+        rgba(254,252,248,0.98) 25%, 
+        rgba(113,128,150,0.02) 50%, 
+        rgba(254,252,248,0.99) 75%, 
+        rgba(45,55,72,0.02) 100%), 
+        radial-gradient(circle at 30% 70%, rgba(45,55,72,0.04), transparent 60%),
+        radial-gradient(circle at 70% 30%, rgba(113,128,150,0.03), transparent 60%),
+        ${bg.trim()}`;
+      document.body.style.background = minimalGradient;
+    } else {
+      // Clean Light and other light themes: Simple background
+      document.body.style.background = '';
+      document.body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-background') || '#FAFAFA';
+    }
   }
     
     // Store current theme in localStorage (only on client side)
