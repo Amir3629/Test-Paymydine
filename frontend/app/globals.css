@@ -627,41 +627,56 @@ html.theme-dark [data-radix-dialog-content],
   color: #FFFFFF !important;
 }
 
-/* TIP SECTION ONLY - NICE WARM COLORS MATCHING THEME */
-:root[data-theme="modern-dark"] .fixed.inset-0.z-50 [class*="Trinkgeld"] button[class*="bg-paydine-champagne"],
-:root[data-theme="modern-dark"] .fixed.inset-0.z-50 [class*="tip"] button[class*="bg-paydine-champagne"] {
+/* NUCLEAR OPTION - TARGET ALL POSSIBLE TIP BUTTON STRUCTURES */
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button:has-text("10%"),
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button:has-text("15%"),
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button:has-text("20%"),
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button[class*="bg-"],
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button {
   background: linear-gradient(135deg, #E7CBA9, #D4AF37) !important;
   color: #1A202C !important;
   border: 2px solid #E7CBA9 !important;
   box-shadow: 0 2px 8px rgba(231, 203, 169, 0.3) !important;
 }
 
-:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 [class*="Trinkgeld"] button[class*="bg-paydine-champagne"],
-:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 [class*="tip"] button[class*="bg-paydine-champagne"] {
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 button:has-text("10%"),
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 button:has-text("15%"),
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 button:has-text("20%"),
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 button[class*="bg-"],
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 button {
   background: linear-gradient(135deg, #FFF8DC, #FFD700) !important;
   color: #1A202C !important;
   border: 2px solid #FFD700 !important;
   box-shadow: 0 2px 8px rgba(255, 248, 220, 0.4) !important;
 }
 
-:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 [class*="Trinkgeld"] button[class*="bg-paydine-champagne"],
-:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 [class*="tip"] button[class*="bg-paydine-champagne"] {
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 button:has-text("10%"),
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 button:has-text("15%"),
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 button:has-text("20%"),
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 button[class*="bg-"],
+:root[data-theme="vibrant-colors"] .fixed.inset-0.z-50 button {
   background: linear-gradient(135deg, #6b5e4f, #8B7355) !important;
   color: #FFFFFF !important;
   border: 2px solid #6b5e4f !important;
   box-shadow: 0 2px 8px rgba(107, 94, 79, 0.3) !important;
 }
 
-:root[data-theme="minimal"] .fixed.inset-0.z-50 [class*="Trinkgeld"] button[class*="bg-paydine-champagne"],
-:root[data-theme="minimal"] .fixed.inset-0.z-50 [class*="tip"] button[class*="bg-paydine-champagne"] {
+:root[data-theme="minimal"] .fixed.inset-0.z-50 button:has-text("10%"),
+:root[data-theme="minimal"] .fixed.inset-0.z-50 button:has-text("15%"),
+:root[data-theme="minimal"] .fixed.inset-0.z-50 button:has-text("20%"),
+:root[data-theme="minimal"] .fixed.inset-0.z-50 button[class*="bg-"],
+:root[data-theme="minimal"] .fixed.inset-0.z-50 button {
   background: linear-gradient(135deg, #87CEEB, #4682B4) !important;
   color: #FFFFFF !important;
   border: 2px solid #87CEEB !important;
   box-shadow: 0 2px 8px rgba(135, 206, 235, 0.3) !important;
 }
 
-:root[data-theme="clean-light"] .fixed.inset-0.z-50 [class*="Trinkgeld"] button[class*="bg-paydine-champagne"],
-:root[data-theme="clean-light"] .fixed.inset-0.z-50 [class*="tip"] button[class*="bg-paydine-champagne"] {
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 button:has-text("10%"),
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 button:has-text("15%"),
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 button:has-text("20%"),
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-"],
+:root[data-theme="clean-light"] .fixed.inset-0.z-50 button {
   background: linear-gradient(135deg, #E7CBA9, #D4AF37) !important;
   color: #1A202C !important;
   border: 2px solid #E7CBA9 !important;
