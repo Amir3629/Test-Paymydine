@@ -854,6 +854,22 @@ html.theme-dark [data-radix-dialog-content],
   color: #000000 !important;
 }
 
+/* NUCLEAR OPTION: Force black text for Modern Dark payment button */
+:root[data-theme="modern-dark"] .fixed.inset-0 button,
+:root[data-theme="modern-dark"] .fixed.inset-0 button *,
+:root[data-theme="modern-dark"] .fixed.inset-0 button span,
+:root[data-theme="modern-dark"] .fixed.inset-0 button div {
+  color: #000000 !important;
+}
+
+/* ULTRA AGGRESSIVE: Target all text in payment modal */
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button *,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button span,
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button div {
+  color: #000000 !important;
+}
+
 /* REMOVE BLACK BACKGROUND from payment button text container */
 :root[data-theme] button[style*="var(--theme-button"] div.flex,
 :root[data-theme] button.font-bold.py-3 div.flex {
