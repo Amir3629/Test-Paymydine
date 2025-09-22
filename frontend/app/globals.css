@@ -743,6 +743,39 @@ html.theme-dark [data-radix-dialog-content],
   color: inherit !important;
 }
 
+/* NUCLEAR: Target the inner div that creates the black frame */
+:root[data-theme="modern-dark"] button div.flex.items-center.gap-2,
+:root[data-theme="modern-dark"] .fixed.inset-0 button div,
+:root[data-theme="modern-dark"] button[style*="var(--theme-button"] div {
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+}
+
+:root[data-theme="gold-luxury"] button div.flex.items-center.gap-2,
+:root[data-theme="gold-luxury"] .fixed.inset-0 button div,
+:root[data-theme="gold-luxury"] button[style*="var(--theme-button"] div {
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+}
+
+:root[data-theme="vibrant-colors"] button div.flex.items-center.gap-2,
+:root[data-theme="vibrant-colors"] .fixed.inset-0 button div,
+:root[data-theme="vibrant-colors"] button[style*="var(--theme-button"] div {
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+}
+
+:root[data-theme="minimal"] button div.flex.items-center.gap-2,
+:root[data-theme="minimal"] .fixed.inset-0 button div,
+:root[data-theme="minimal"] button[style*="var(--theme-button"] div {
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+}
+
 /* NUCLEAR OPTION: Target payment button with inline styles */
 :root[data-theme="modern-dark"] button[style*="var(--theme-button"] {
   background: linear-gradient(135deg, #F0C6B1, #E7CBA9) !important;
@@ -803,6 +836,49 @@ html.theme-dark [data-radix-dialog-content],
   color: #FFFFFF !important;
   border: 2px solid #87CEEB !important;
   box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3) !important;
+}
+
+/* ULTIMATE NUCLEAR: Remove ALL black backgrounds from button content */
+:root[data-theme="modern-dark"] button *,
+:root[data-theme="gold-luxury"] button *,
+:root[data-theme="vibrant-colors"] button *,
+:root[data-theme="minimal"] button * {
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+}
+
+/* Force text and icon colors to inherit from button */
+:root[data-theme="modern-dark"] button svg,
+:root[data-theme="modern-dark"] button span,
+:root[data-theme="modern-dark"] button div {
+  color: inherit !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+:root[data-theme="gold-luxury"] button svg,
+:root[data-theme="gold-luxury"] button span,
+:root[data-theme="gold-luxury"] button div {
+  color: inherit !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+:root[data-theme="vibrant-colors"] button svg,
+:root[data-theme="vibrant-colors"] button span,
+:root[data-theme="vibrant-colors"] button div {
+  color: inherit !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+:root[data-theme="minimal"] button svg,
+:root[data-theme="minimal"] button span,
+:root[data-theme="minimal"] button div {
+  color: inherit !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
 }
 
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
