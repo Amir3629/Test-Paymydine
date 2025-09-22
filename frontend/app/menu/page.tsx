@@ -52,6 +52,8 @@ function useThemeBackgroundColor() {
       // Special case: Clean Light theme uses black text
       if (currentTheme === 'clean-light') {
         setColor('#000000');
+      } else if (currentTheme === 'minimal') {
+        setColor('#87CEEB'); // Sky Blue
       } else {
         setColor(themeBg || '#FAFAFA');
       }

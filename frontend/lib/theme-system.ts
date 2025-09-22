@@ -220,7 +220,7 @@ export interface ThemeColors {
         primary: '#2D3748',        // Charcoal
         secondary: '#4A5568',      // Slate
         accent: '#718096',         // Light slate accent
-        background: '#FEFCF8',     // Warm off-white with subtle cream tint
+        background: '#87CEEB',     // Sky Blue
 
         textPrimary: '#1A202C',    // Deep charcoal
         textSecondary: '#2D3748',  // Charcoal
