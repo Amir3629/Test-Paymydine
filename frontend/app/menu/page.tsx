@@ -1589,14 +1589,21 @@ function MenuContent() {
   const [dynamicCategories, setDynamicCategories] = useState<string[]>([])
   const { menuItems } = useCmsStore()
 
-  // Debug logging for theme consistency
-  if (typeof window !== 'undefined') {
-    console.info("MENU PAGE ACTIVE FILE ✅");
-    console.log("data-theme:", document.documentElement.getAttribute('data-theme'));
-    console.log("--theme-background:", getComputedStyle(document.documentElement).getPropertyValue('--theme-background'));
-    console.log("body bg:", getComputedStyle(document.body).background);
-    console.log("menu wrapper bg:", getComputedStyle(document.querySelector('.relative.min-h-screen')).background);
-  }
+  // Comprehensive debug logging for theme investigation
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      console.info("=== DEBUG LOG START ===");
+      console.log("Active page:", window.location.pathname);
+      console.log("data-theme:", document.documentElement.getAttribute("data-theme"));
+      console.log("--theme-background:", getComputedStyle(document.documentElement).getPropertyValue("--theme-background"));
+      console.log("body bg:", getComputedStyle(document.body).background);
+      const pageWrapper = document.querySelector('.page--home, .page--menu') || document.body;
+      console.log("wrapper bg:", getComputedStyle(pageWrapper).background);
+      console.log("Menu main div bg:", getComputedStyle(document.querySelector('.relative.min-h-screen.bg-theme-background'))?.background);
+      console.log("CSS var --theme-background computed:", getComputedStyle(document.documentElement).getPropertyValue('--theme-background'));
+      console.info("=== DEBUG LOG END ===");
+    }
+  }, []);
   const { items, toggleCart, addToCart, setTableInfo } = useCartStore()
   const themeBackgroundColor = useThemeBackgroundColor()
   const { t } = useLanguageStore()
