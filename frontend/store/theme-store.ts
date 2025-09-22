@@ -63,17 +63,41 @@ export const useThemeStore = create<ThemeStore>()(
           if (typeof document !== 'undefined') {
             document.body.style.background = bgColor
             document.documentElement.style.background = bgColor
+            
+            // Also force on all main page elements
+            const pageElements = document.querySelectorAll('.min-h-screen, .page--home, .page--menu')
+            pageElements.forEach(el => {
+              if (el instanceof HTMLElement) {
+                el.style.background = bgColor
+                el.style.backgroundColor = bgColor
+              }
+            })
           }
         }
         
         // Apply theme with forced background
         applyTheme(themeId, bgColor ? { background: bgColor } : {})
+        
+        // Store in localStorage to persist across API calls
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('paymydine-theme', themeId)
+          localStorage.setItem('paymydine-theme-forced', 'true')
+        }
       },
 
       loadSettings: async () => {
         console.log('🔄 ThemeStore: Loading settings...')
         const now = Date.now()
         const { lastFetched } = get()
+        
+        // Check if user has manually selected a theme
+        const userSelectedTheme = typeof window !== 'undefined' ? localStorage.getItem('paymydine-theme') : null
+        const isThemeForced = typeof window !== 'undefined' ? localStorage.getItem('paymydine-theme-forced') === 'true' : false
+        
+        if (isThemeForced && userSelectedTheme) {
+          console.log('🎨 ThemeStore: User has manually selected theme, skipping API override:', userSelectedTheme)
+          return
+        }
         
         // Remove the cache limit - always fetch from admin
         // if (now - lastFetched < 30000) {
@@ -95,11 +119,12 @@ export const useThemeStore = create<ThemeStore>()(
               isLoading: false 
             })
             
-            // Apply the theme from settings
-            const themeId = response.data.theme_id || 'clean-light'
-            console.log('🎨 ThemeStore: Applying theme from API:', themeId)
+            // DON'T override user's current theme selection with API response
+            // Only apply color overrides if present, but keep the current theme
+            const { currentTheme } = get()
+            console.log('🎨 ThemeStore: Keeping current theme:', currentTheme, '(API suggested:', response.data.theme_id, ')')
+            
             // Pass color overrides if present
-            // Build safe overrides. Avoid forcing a light background over dark presets.
             const overrides: any = {}
             if (response.data.primary_color) overrides.primary = response.data.primary_color
             if (response.data.secondary_color) overrides.secondary = response.data.secondary_color
@@ -108,8 +133,9 @@ export const useThemeStore = create<ThemeStore>()(
             if (response.data.background_color) {
               overrides.background = response.data.background_color
             }
-            set({ currentTheme: themeId })
-            applyTheme(themeId, overrides)
+            
+            // Apply theme with overrides but keep current theme selection
+            applyTheme(currentTheme, overrides)
           } else {
             console.log('⚠️ ThemeStore: No data in response')
             set({ isLoading: false })
