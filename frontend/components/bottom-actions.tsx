@@ -125,7 +125,8 @@ const EnhancedWaiterDialog = ({
               stiffness: 300,
               damping: 25
             }}
-            className="bg-white rounded-3xl shadow-2xl w-full max-w-sm mx-4 overflow-hidden"
+            className="rounded-3xl shadow-2xl w-full max-w-sm mx-4 overflow-hidden"
+            style={{ backgroundColor: 'var(--theme-background, #FAFAFA)' }}
           >
             {/* Success State */}
             <AnimatePresence mode="wait">
@@ -150,7 +151,8 @@ const EnhancedWaiterDialog = ({
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.4 }}
-                    className="text-2xl font-semibold text-paydine-elegant-gray mb-2"
+                    className="text-2xl font-semibold mb-2"
+                    style={{ color: 'var(--theme-text-primary, #1A202C)' }}
                   >
                     {t("waiterComing")}
                   </motion.h3>
@@ -158,7 +160,7 @@ const EnhancedWaiterDialog = ({
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.4 }}
-                    className="text-paydine-elegant-gray/80"
+                    style={{ color: 'var(--theme-text-secondary, #4A5568)' }}
                   >
                     {t("waiterCalledDesc")}
                   </motion.p>
@@ -180,10 +182,10 @@ const EnhancedWaiterDialog = ({
                     >
                       <HandPlatter className="w-8 h-8 text-white" />
                     </motion.div>
-                    <h3 className="text-2xl font-semibold text-paydine-elegant-gray mb-2">
+                    <h3 className="text-2xl font-semibold mb-2" style={{ color: 'var(--theme-text-primary, #1A202C)' }}>
                       {t("callWaiter")}
                     </h3>
-                    <p className="text-paydine-elegant-gray/80">
+                    <p style={{ color: 'var(--theme-text-secondary, #4A5568)' }}>
                       {t("callWaiterConfirm")}
                     </p>
                   </div>
@@ -193,7 +195,12 @@ const EnhancedWaiterDialog = ({
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={handleClose}
-                      className="flex-1 py-3 px-6 rounded-xl bg-gray-100 text-paydine-elegant-gray font-medium hover:bg-gray-200 transition-colors"
+                      className="flex-1 py-3 px-6 rounded-xl font-medium transition-colors"
+                      style={{ 
+                        backgroundColor: 'var(--theme-input, #F7FAFC)', 
+                        color: 'var(--theme-text-primary, #1A202C)',
+                        border: '1px solid var(--theme-border, #E2E8F0)'
+                      }}
                     >
                       {t("no")}
                     </motion.button>
@@ -289,7 +296,8 @@ const EnhancedNoteDialog = ({
               damping: 30,
               duration: dialogState === "closing" ? 0.3 : 0.5
             }}
-            className="bg-white/95 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/30 w-full max-w-sm mx-4 overflow-hidden"
+            className="backdrop-blur-lg rounded-3xl shadow-2xl border border-white/30 w-full max-w-sm mx-4 overflow-hidden"
+            style={{ backgroundColor: 'var(--theme-background, #FAFAFA)', opacity: 0.95 }}
           >
             {/* Success State */}
             <AnimatePresence>
@@ -313,7 +321,8 @@ const EnhancedNoteDialog = ({
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.4 }}
-                    className="text-xl font-semibold text-paydine-elegant-gray mb-2"
+                    className="text-xl font-semibold mb-2"
+                    style={{ color: 'var(--theme-text-primary, #1A202C)' }}
                   >
                     {t("messageReceived")}
                   </motion.h3>
@@ -321,7 +330,7 @@ const EnhancedNoteDialog = ({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.4 }}
-                    className="text-gray-600"
+                    style={{ color: 'var(--theme-text-secondary, #4A5568)' }}
                 >
                     {t("messageReceivedDesc")}
                   </motion.p>
@@ -357,7 +366,8 @@ const EnhancedNoteDialog = ({
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3, duration: 0.4 }}
-                      className="text-xl font-semibold text-paydine-elegant-gray mb-2"
+                      className="text-xl font-semibold mb-2"
+                      style={{ color: 'var(--theme-text-primary, #1A202C)' }}
                     >
                       {t("leaveNoteTitle")}
                     </motion.h3>
@@ -365,7 +375,7 @@ const EnhancedNoteDialog = ({
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4, duration: 0.4 }}
-                      className="text-gray-600"
+                      style={{ color: 'var(--theme-text-secondary, #4A5568)' }}
                     >
                       {t("leaveNoteDesc")}
                     </motion.p>
@@ -381,7 +391,12 @@ const EnhancedNoteDialog = ({
                     placeholder={t("notePlaceholder")}
                     value={note}
                     onChange={(e) => setNote(e.target.value)}
-                      className="w-full min-h-[120px] border-paydine-champagne/30 rounded-2xl resize-none focus:ring-2 focus:ring-paydine-champagne/20"
+                      className="w-full min-h-[120px] rounded-2xl resize-none focus:ring-2 focus:ring-paydine-champagne/20"
+                      style={{ 
+                        border: '1px solid var(--theme-border, #E2E8F0)',
+                        backgroundColor: 'var(--theme-input, #F7FAFC)',
+                        color: 'var(--theme-text-primary, #1A202C)'
+                      }}
                       disabled={dialogState === "sending"}
                     />
                   </motion.div>
@@ -397,7 +412,12 @@ const EnhancedNoteDialog = ({
                       whileTap={{ scale: 0.95 }}
                       onClick={handleClose}
                       disabled={dialogState === "sending"}
-                      className="flex-1 py-3 px-6 rounded-2xl border border-gray-300 text-gray-700 font-medium transition-colors hover:bg-gray-50 disabled:opacity-50"
+                      className="flex-1 py-3 px-6 rounded-2xl font-medium transition-colors disabled:opacity-50"
+                      style={{ 
+                        border: '1px solid var(--theme-border, #E2E8F0)',
+                        color: 'var(--theme-text-primary, #1A202C)',
+                        backgroundColor: 'var(--theme-input, #F7FAFC)'
+                      }}
                     >
                       {t("cancel")}
                     </motion.button>
