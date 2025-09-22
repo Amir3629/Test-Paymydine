@@ -948,25 +948,51 @@ html.theme-dark [data-radix-dialog-content],
   color: var(--theme-text-primary, #1A202C) !important;
 }
 
-/* SIMPLE FIX: Cart badge number color and positioning */
+/* FIX: Cart badge positioning and colors */
 :root[data-theme="modern-dark"] .cart-badge-number {
   color: #1A202C !important;
   background-color: #F0C6B1 !important;
+  position: absolute !important;
+  top: -8px !important;
+  right: -8px !important;
+  z-index: 999 !important;
 }
 
 :root[data-theme="gold-luxury"] .cart-badge-number {
   color: #1A202C !important;
   background-color: #FFF8DC !important;
+  position: absolute !important;
+  top: -8px !important;
+  right: -8px !important;
+  z-index: 999 !important;
 }
 
 :root[data-theme="vibrant-colors"] .cart-badge-number {
   color: #FFFFFF !important;
   background-color: #6b5e4f !important;
+  position: absolute !important;
+  top: -8px !important;
+  right: -8px !important;
+  z-index: 999 !important;
 }
 
 :root[data-theme="minimal"] .cart-badge-number {
   color: #1A202C !important;
   background-color: #87CEEB !important;
+  position: absolute !important;
+  top: -8px !important;
+  right: -8px !important;
+  z-index: 999 !important;
+}
+
+/* ALSO target the exact span with positioning */
+:root[data-theme="modern-dark"] .absolute.-top-1.-right-1,
+:root[data-theme="gold-luxury"] .absolute.-top-1.-right-1,
+:root[data-theme="vibrant-colors"] .absolute.-top-1.-right-1,
+:root[data-theme="minimal"] .absolute.-top-1.-right-1 {
+  top: -8px !important;
+  right: -8px !important;
+  z-index: 999 !important;
 }
 
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
