@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/components/ui/use-toast"
-import { HandPlatter, NotebookPen, ShoppingCart, ChevronUp, ChevronDown, Plus, Wallet, Users, Check, Minus, CreditCard, ArrowLeft, CheckCircle } from "lucide-react"
+import { HandPlatter, NotebookPen, ShoppingCart, ChevronUp, ChevronDown, Plus, Wallet, Lock, Users, Check, Minus, CreditCard, ArrowLeft, CheckCircle } from "lucide-react"
 import { OptimizedImage } from "@/components/ui/optimized-image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
@@ -749,9 +749,10 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
             Processing...
           </div>
         ) : (
-          <span>
+          <div className="flex items-center gap-2">
+            <Lock className="h-4 w-4" />
             {getButtonText()}
-          </span>
+          </div>
         )}
       </Button>
     )
@@ -765,10 +766,10 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="w-full max-w-md bg-white rounded-3xl shadow-xl border border-paydine-champagne/30 overflow-hidden flex flex-col max-h-[90vh]"
+        className="w-full max-w-md surface rounded-3xl shadow-xl overflow-hidden flex flex-col max-h-[90vh]"
       >
         {/* Header with close button */}
-        <div className="p-4 pb-2 bg-gradient-to-r from-paydine-champagne/10 to-paydine-rose-beige/10 flex justify-between items-center">
+        <div className="p-4 pb-2 surface-sub flex justify-between items-center">
           <Button
             variant="ghost"
             size="sm"
@@ -777,17 +778,17 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
           >
             <ArrowLeft className="h-5 w-5" />
           </Button>
-          <h2 className="text-lg text-paydine-elegant-gray">{t("yourOrder")}</h2>
+          <h2 className="text-lg">{t("yourOrder")}</h2>
           <div className="w-8" /> {/* Spacer for centering */}
         </div>
 
         {/* Order Summary & Payment - Scrollable Content */}
         <div className="p-4 space-y-4 overflow-y-auto flex-1">
           {/* Split Bill Toggle */}
-          <div className="flex items-center justify-between p-3 bg-paydine-rose-beige/10 rounded-xl">
+          <div className="flex items-center justify-between p-3 surface-sub rounded-xl">
             <div className="flex items-center space-x-2">
-              <Users className="h-4 w-4 text-paydine-champagne" />
-              <span className="text-paydine-elegant-gray text-xs">{t("splitBill")}</span>
+              <Users className="h-4 w-4" style={{ color: 'var(--theme-secondary)' }} />
+              <span className="text-xs muted">{t("splitBill")}</span>
             </div>
             <Button
               variant={isSplitting ? "default" : "outline"}
@@ -796,8 +797,8 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
               className={clsx(
                 "text-xs",
                 isSplitting 
-                  ? "bg-paydine-champagne text-paydine-elegant-gray hover:bg-paydine-champagne hover:text-paydine-elegant-gray" 
-                  : "border-paydine-champagne/30"
+                  ? "icon-btn--accent" 
+                  : "icon-btn"
               )}
             >
               {isSplitting ? "ON" : "OFF"}
@@ -806,29 +807,29 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
 
           {/* Items List */}
           {isSplitting ? (
-            <div className="bg-white rounded-2xl p-3 border border-paydine-champagne/20 overflow-hidden">
-              <h3 className="text-paydine-elegant-gray mb-2 text-xs">{t("selectItemsToPay")}</h3>
+            <div className="surface-sub rounded-2xl p-3 overflow-hidden">
+              <h3 className="mb-2 text-xs">{t("selectItemsToPay")}</h3>
               <div className="space-y-2 max-h-48 overflow-y-auto">
                 {allItemInstances.map((instance) => (
                   <div
                     key={instance.key}
-                    className="flex justify-between items-center text-xs p-2 rounded-lg cursor-pointer hover:bg-paydine-champagne/10"
+                    className="flex justify-between items-center text-xs p-2 rounded-lg cursor-pointer hover:bg-gray-100"
                     onClick={() => toggleItemSelection(instance)}
                   >
                     <div className="flex items-center gap-2">
                       <div
                         className={cn(
                           "w-4 h-4 rounded-md border-2 flex items-center justify-center transition-all",
-                          selectedItems[instance.key] ? "bg-paydine-champagne border-paydine-champagne" : "border-gray-300",
+                          selectedItems[instance.key] ? "icon-btn--accent" : "icon-btn",
                         )}
                       >
-                        {selectedItems[instance.key] && <Check className="w-3 h-3 text-paydine-elegant-gray" />}
+                        {selectedItems[instance.key] && <Check className="w-3 h-3" />}
                       </div>
-                      <span className="text-paydine-elegant-gray">
+                      <span>
                         {instance.item.nameKey ? t(instance.item.nameKey as TranslationKey) : instance.item.name}
                       </span>
                     </div>
-                    <span className="text-paydine-elegant-gray font-semibold">
+                    <span className="font-semibold">
             {formatCurrency(instance.price ?? 0)}
                     </span>
                   </div>
@@ -836,8 +837,8 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
               </div>
             </div>
           ) : (
-            <div className="bg-white rounded-2xl p-3 border border-paydine-champagne/20">
-              <h3 className="text-paydine-elegant-gray mb-2 text-xs">{t("orderSummary")}</h3>
+            <div className="surface-sub rounded-2xl p-3">
+              <h3 className="mb-2 text-xs">{t("orderSummary")}</h3>
               <div className="space-y-2 max-h-64 overflow-y-auto">
                 {allItems.map((cartItem) => (
                   <OrderItemWithOptions 
@@ -854,8 +855,8 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
 
           {/* Tip Section */}
           {tipSettings.enabled && (
-            <div className="bg-white rounded-2xl p-3 border border-paydine-champagne/20">
-              <h3 className="text-paydine-elegant-gray mb-2 text-xs">{t("addTip")}</h3>
+            <div className="surface-sub rounded-2xl p-3">
+              <h3 className="mb-2 text-xs">{t("addTip")}</h3>
               <div className="flex gap-2">
                 {tipSettings.percentages.map((p) => (
                   <Button
@@ -869,8 +870,8 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
                     className={clsx(
                       "text-xs",
                       tipPercentage === p && !customTip
-                        ? "bg-paydine-champagne text-paydine-elegant-gray hover:bg-paydine-champagne hover:text-paydine-elegant-gray"
-                        : "border-paydine-champagne/30"
+                        ? "tip-pill--active"
+                        : "tip-pill"
                     )}
                   >
                     {p}%
@@ -885,33 +886,34 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
                       setCustomTip(e.target.value)
                       setTipPercentage(0)
                     }}
-                    className="pl-6 border-paydine-champagne/30 text-xs h-8"
+                    className="pl-6 text-xs h-8"
+                    style={{ borderColor: 'var(--theme-border)' }}
                   />
-                  <span className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400 text-xs">$</span>
+                  <span className="absolute left-2 top-1/2 -translate-y-1/2 muted text-xs">$</span>
                 </div>
               </div>
             </div>
           )}
 
           {/* Totals */}
-          <div className="bg-white rounded-2xl p-3 space-y-1 border border-paydine-champagne/20">
-            <div className="flex justify-between text-xs text-paydine-elegant-gray">
+          <div className="surface-sub rounded-2xl p-3 space-y-1">
+            <div className="flex justify-between text-xs">
               <span>{t("subtotal")}</span>
-          <span className="font-semibold text-paydine-elegant-gray">{formatCurrency(subtotal)}</span>
+          <span className="font-semibold">{formatCurrency(subtotal)}</span>
             </div>
-            <div className="flex justify-between text-xs text-paydine-elegant-gray">
+            <div className="flex justify-between text-xs">
               <span>{t("service")}</span>
-          <span className="font-semibold text-paydine-elegant-gray">{formatCurrency(serviceCharge)}</span>
+          <span className="font-semibold">{formatCurrency(serviceCharge)}</span>
             </div>
             {tipAmount > 0 && (
-              <div className="flex justify-between text-xs text-paydine-elegant-gray">
+              <div className="flex justify-between text-xs">
                 <span>{t("tip")}</span>
-          <span className="font-semibold text-paydine-elegant-gray">{formatCurrency(tipAmount)}</span>
+          <span className="font-semibold">{formatCurrency(tipAmount)}</span>
               </div>
             )}
-            <div className="flex justify-between items-center border-t border-paydine-champagne/30 pt-2 mt-2">
-              <span className="text-base text-paydine-elegant-gray">{t("total")}</span>
-          <span className="text-base font-bold text-paydine-elegant-gray">{formatCurrency(finalTotal)}</span>
+            <div className="flex justify-between items-center divider pt-2 mt-2">
+              <span className="text-base">{t("total")}</span>
+          <span className="text-base font-bold">{formatCurrency(finalTotal)}</span>
             </div>
           </div>
 
@@ -925,18 +927,18 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
                 exit={{ opacity: 0, height: 0 }}
                 className="space-y-3 pt-2"
               >
-                <h3 className="text-paydine-elegant-gray text-center text-sm">{t("paymentMethods")}</h3>
+                <h3 className="text-center text-sm">{t("paymentMethods")}</h3>
                 <div className="flex justify-center items-center gap-3 flex-wrap">
                   {loadingPayments ? (
-                    <div className="text-paydine-elegant-gray text-sm">Loading payment methods...</div>
+                    <div className="text-sm muted">Loading payment methods...</div>
                   ) : paymentMethods.length === 0 ? (
-                    <div className="text-paydine-elegant-gray text-sm">No payment methods available</div>
+                    <div className="text-sm muted">No payment methods available</div>
                   ) : (
                     paymentMethods.map((method) => (
                       <motion.div key={method.code} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <Button
                           variant="outline"
-                          className="h-14 w-20 bg-white hover:bg-gray-50 border-gray-200 rounded-2xl shadow-sm flex items-center justify-center"
+                          className="h-14 w-20 surface-sub hover:bg-gray-50 rounded-2xl shadow-sm flex items-center justify-center"
                           onClick={() => handlePaymentMethodSelect(method.code)}
                         >
                           <img
@@ -973,7 +975,7 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
-              className="p-4 border-t border-paydine-champagne/20 bg-white"
+              className="p-4 divider surface-sub"
             >
               {renderPaymentButton()}
             </motion.div>

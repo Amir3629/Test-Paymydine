@@ -247,3 +247,64 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+/* Base surfaces used by drawers & modals */
+.surface {
+  background-color: var(--theme-input);
+  color: var(--theme-text-primary);
+  border-color: var(--theme-border);
+}
+
+.surface-sub {
+  background-color: var(--theme-cart-bg, var(--theme-input));
+  color: var(--theme-text-primary);
+  border-color: var(--theme-border);
+}
+
+/* Headings and muted */
+.surface h1, .surface h2, .surface h3 { color: var(--theme-text-primary); }
+.surface .muted, .surface .hint { color: var(--theme-text-secondary); }
+
+/* Icon buttons */
+.icon-btn {
+  background: transparent;
+  color: var(--theme-text-primary);
+  border: 1px solid var(--theme-border);
+  border-radius: 9999px;
+}
+.icon-btn--accent {
+  background: var(--theme-secondary);
+  color: var(--theme-background);
+  border-color: var(--theme-secondary);
+}
+
+/* Tip pills */
+.tip-pill {
+  background: transparent;
+  color: var(--theme-text-primary);
+  border: 1px solid var(--theme-border);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+.tip-pill--active {
+  background: var(--theme-secondary);
+  color: var(--theme-background);
+  border-color: var(--theme-secondary);
+}
+
+/* Section dividers */
+.surface .divider {
+  border-color: var(--theme-border);
+}
+
+/* Scrollbar inside drawer */
+.surface ::-webkit-scrollbar-thumb {
+  background: var(--theme-border);
+}
+
+/* Ensure the same backdrop in all themes; the card stays readable */
+html[data-theme] .radix-overlay,
+html[data-theme] [data-radix-dialog-overlay],
+html[data-theme] [data-radix-sheet-overlay] {
+  background: rgba(0,0,0,0.42);
+}

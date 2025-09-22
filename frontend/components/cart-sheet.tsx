@@ -37,9 +37,9 @@ export function CartSheet() {
   return (
     <>
       <Sheet open={isCartOpen} onOpenChange={toggleCart}>
-        <SheetContent className="w-full max-w-md flex flex-col bg-gradient-to-br from-paydine-soft-white to-paydine-soft-white/95 p-0 border-l-paydine-champagne/30">
-          <SheetHeader className="p-4 pb-2 bg-gradient-to-r from-paydine-champagne/10 to-paydine-rose-beige/10 border-b border-paydine-champagne/20">
-            <SheetTitle className="font-serif text-3xl text-paydine-elegant-gray">{t("yourOrder")}</SheetTitle>
+        <SheetContent className="w-full max-w-md flex flex-col surface p-0">
+          <SheetHeader className="p-4 pb-2 surface-sub divider">
+            <SheetTitle className="font-serif text-3xl">{t("yourOrder")}</SheetTitle>
           </SheetHeader>
           <motion.div 
             className="flex-grow overflow-y-auto p-4 space-y-2"
@@ -47,7 +47,7 @@ export function CartSheet() {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             {items.length === 0 ? (
-              <div className="text-center text-gray-500 pt-8 space-y-2">
+              <div className="text-center muted pt-8 space-y-2">
                 <p className="text-lg">{t("cartEmpty")}</p>
                 <p className="text-sm">{t("addItemsFromMenu")}</p>
               </div>
@@ -62,7 +62,7 @@ export function CartSheet() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, x: -50, transition: { duration: 0.2 } }}
-                      className="flex items-center space-x-3 p-3 bg-white/50 rounded-2xl border border-paydine-champagne/20"
+                      className="flex items-center space-x-3 p-3 surface-sub rounded-2xl"
                     >
                       <div className="relative w-14 h-14 flex-shrink-0">
                         <OptimizedImage
@@ -73,27 +73,25 @@ export function CartSheet() {
                         />
                       </div>
                       <div className="flex-grow">
-                        <h4 className="font-semibold text-paydine-elegant-gray">{itemName}</h4>
-      <p className="text-sm text-paydine-champagne font-medium">{formatCurrency(item.price)}</p>
-                        <div className="inline-flex items-center mt-1 bg-paydine-rose-beige/20 rounded-full p-1 gap-2 w-auto">
+                        <h4 className="font-semibold">{itemName}</h4>
+      <p className="text-sm font-medium" style={{ color: 'var(--theme-secondary)' }}>{formatCurrency(item.price)}</p>
+                        <div className="inline-flex items-center mt-1 surface-sub rounded-full p-1 gap-2 w-auto">
                           <Button
                             size="icon"
                             variant="ghost"
-                            className="h-7 w-7 rounded-full hover:bg-paydine-champagne/30"
-                            style={{ color: 'var(--theme-background)' }}
+                            className="h-7 w-7 rounded-full icon-btn"
                             onClick={() => updateQuantity(item.id, quantity - 1)}
                           >
-                            <Minus className="h-3 w-3" style={{ color: 'var(--theme-background)' }} />
+                            <Minus className="h-3 w-3" />
                           </Button>
-                          <span className="w-6 text-center font-semibold text-sm" style={{ color: 'var(--theme-background)' }}>{quantity}</span>
+                          <span className="w-6 text-center font-semibold text-sm">{quantity}</span>
                           <Button
                             size="icon"
                             variant="ghost"
-                            className="h-7 w-7 rounded-full hover:bg-paydine-champagne/30"
-                            style={{ color: 'var(--theme-background)' }}
+                            className="h-7 w-7 rounded-full icon-btn"
                             onClick={() => updateQuantity(item.id, quantity + 1)}
                           >
-                            <Plus className="h-3 w-3" style={{ color: 'var(--theme-background)' }} />
+                            <Plus className="h-3 w-3" />
                           </Button>
                         </div>
                       </div>
@@ -112,14 +110,18 @@ export function CartSheet() {
             )}
           </motion.div>
           {items.length > 0 && (
-            <SheetFooter className="p-4 bg-gradient-to-r from-paydine-champagne/10 to-paydine-rose-beige/10 border-t border-paydine-champagne/20 mt-auto">
+            <SheetFooter className="p-4 surface-sub divider mt-auto">
               <div className="w-full space-y-3">
-                <div className="flex justify-between font-bold text-2xl text-paydine-elegant-gray">
+                <div className="flex justify-between font-bold text-2xl">
                   <span>{t("total")}</span>
         <span>{formatCurrency(total)}</span>
                 </div>
                 <Button
-                  className="w-full bg-gradient-to-r from-paydine-champagne to-paydine-rose-beige hover:from-paydine-champagne/90 hover:to-paydine-rose-beige/90 text-paydine-elegant-gray font-bold text-lg py-4 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl"
+                  className="w-full font-bold text-lg py-4 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl"
+                  style={{ 
+                    background: 'var(--theme-button)',
+                    color: 'var(--theme-background)'
+                  }}
                   onClick={handlePlaceOrder}
                 >
                   {t("proceedToPayment")}
