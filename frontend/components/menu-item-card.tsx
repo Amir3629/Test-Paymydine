@@ -73,7 +73,7 @@ export function MenuItemCard({ item, onSelect }: MenuItemCardProps) {
             style={{ color: 'var(--theme-background)' }}
             onClick={handleAddToCart}
           >
-            <Plus className="h-5 w-5" />
+            <Plus className="h-5 w-5" style={{ color: 'var(--theme-background)' }} />
             <span className="sr-only">Add to cart</span>
           </Button>
         </div>

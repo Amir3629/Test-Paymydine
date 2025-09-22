@@ -83,7 +83,7 @@ export function CartSheet() {
                             style={{ color: 'var(--theme-background)' }}
                             onClick={() => updateQuantity(item.id, quantity - 1)}
                           >
-                            <Minus className="h-3 w-3" />
+                            <Minus className="h-3 w-3" style={{ color: 'var(--theme-background)' }} />
                           </Button>
                           <span className="w-6 text-center font-semibold text-sm" style={{ color: 'var(--theme-background)' }}>{quantity}</span>
                           <Button
@@ -93,7 +93,7 @@ export function CartSheet() {
                             style={{ color: 'var(--theme-background)' }}
                             onClick={() => updateQuantity(item.id, quantity + 1)}
                           >
-                            <Plus className="h-3 w-3" />
+                            <Plus className="h-3 w-3" style={{ color: 'var(--theme-background)' }} />
                           </Button>
                         </div>
                       </div>
