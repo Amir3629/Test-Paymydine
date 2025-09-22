@@ -442,13 +442,13 @@ html.theme-dark:root[data-theme="gold-luxury"] [data-radix-dialog-content] butto
 :root[data-theme="vibrant-colors"] [data-radix-dialog-content] button[type="submit"],
 html.theme-dark:root[data-theme="vibrant-colors"] [data-radix-dialog-content] button[type="submit"] {
   background-color: var(--theme-button, #FF6B6B);
-  color: #FFFFFF;
+  color: var(--theme-background, #e2ceb1);
 }
 
 :root[data-theme="minimal"] [data-radix-dialog-content] button[type="submit"],
 html.theme-dark:root[data-theme="minimal"] [data-radix-dialog-content] button[type="submit"] {
   background-color: var(--theme-button, #2D3748);
-  color: #FFFFFF;
+  color: var(--theme-background, #FEFCF8);
 }
 
 /* Enhanced price colors for each theme */
@@ -530,4 +530,53 @@ html.theme-dark:root[data-theme="modern-dark"] svg[data-lucide="plus"],
 html.theme-dark:root[data-theme="modern-dark"] svg[data-lucide="minus"],
 html.theme-dark:root[data-theme="modern-dark"] .text-center span {
   color: var(--theme-background, #0A0E12) !important;
+}
+
+/* More aggressive targeting for plus icons and numbers */
+:root[data-theme="gold-luxury"] .rounded-full svg,
+:root[data-theme="gold-luxury"] .rounded-full span,
+:root[data-theme="gold-luxury"] button svg,
+:root[data-theme="gold-luxury"] button span,
+html.theme-dark:root[data-theme="gold-luxury"] .rounded-full svg,
+html.theme-dark:root[data-theme="gold-luxury"] .rounded-full span,
+html.theme-dark:root[data-theme="gold-luxury"] button svg,
+html.theme-dark:root[data-theme="gold-luxury"] button span {
+  color: var(--theme-background, #0F0B05) !important;
+  fill: var(--theme-background, #0F0B05) !important;
+}
+
+:root[data-theme="vibrant-colors"] .rounded-full svg,
+:root[data-theme="vibrant-colors"] .rounded-full span,
+:root[data-theme="vibrant-colors"] button svg,
+:root[data-theme="vibrant-colors"] button span,
+html.theme-dark:root[data-theme="vibrant-colors"] .rounded-full svg,
+html.theme-dark:root[data-theme="vibrant-colors"] .rounded-full span,
+html.theme-dark:root[data-theme="vibrant-colors"] button svg,
+html.theme-dark:root[data-theme="vibrant-colors"] button span {
+  color: var(--theme-background, #e2ceb1) !important;
+  fill: var(--theme-background, #e2ceb1) !important;
+}
+
+:root[data-theme="minimal"] .rounded-full svg,
+:root[data-theme="minimal"] .rounded-full span,
+:root[data-theme="minimal"] button svg,
+:root[data-theme="minimal"] button span,
+html.theme-dark:root[data-theme="minimal"] .rounded-full svg,
+html.theme-dark:root[data-theme="minimal"] .rounded-full span,
+html.theme-dark:root[data-theme="minimal"] button svg,
+html.theme-dark:root[data-theme="minimal"] button span {
+  color: var(--theme-background, #FEFCF8) !important;
+  fill: var(--theme-background, #FEFCF8) !important;
+}
+
+:root[data-theme="modern-dark"] .rounded-full svg,
+:root[data-theme="modern-dark"] .rounded-full span,
+:root[data-theme="modern-dark"] button svg,
+:root[data-theme="modern-dark"] button span,
+html.theme-dark:root[data-theme="modern-dark"] .rounded-full svg,
+html.theme-dark:root[data-theme="modern-dark"] .rounded-full span,
+html.theme-dark:root[data-theme="modern-dark"] button svg,
+html.theme-dark:root[data-theme="modern-dark"] button span {
+  color: var(--theme-background, #0A0E12) !important;
+  fill: var(--theme-background, #0A0E12) !important;
 }
