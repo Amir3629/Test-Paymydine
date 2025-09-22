@@ -220,35 +220,41 @@ input[type="number"] {
   --page-bg: #FAFAFA; /* default clean-light background */
 }
 
-/* Per-theme background colors — ONLY affect pages with .page--* classes */
+/* Background Unification - Global per-theme backgrounds */
+:root[data-theme="clean-light"] body,
 :root[data-theme="clean-light"] .page--home,
 :root[data-theme="clean-light"] .page--menu,
 :root[data-theme="clean-light"] .page--valet {
-  --page-bg: #FAFAFA;
+  background-color: #FAFAFA;
 }
 
+:root[data-theme="modern-dark"] body,
 :root[data-theme="modern-dark"] .page--home,
 :root[data-theme="modern-dark"] .page--menu,
 :root[data-theme="modern-dark"] .page--valet {
-  --page-bg: #0B0F14; /* or your modern-dark background color */
+  background-color: #0B0F14;
+  color: var(--theme-text-primary, #F3F4F6);
 }
 
+:root[data-theme="gold-luxury"] body,
 :root[data-theme="gold-luxury"] .page--home,
 :root[data-theme="gold-luxury"] .page--menu,
 :root[data-theme="gold-luxury"] .page--valet {
-  --page-bg: #0E0B05; /* pick your gold base; adjust later */
+  background-color: #0E0B05;
 }
 
+:root[data-theme="vibrant-colors"] body,
 :root[data-theme="vibrant-colors"] .page--home,
 :root[data-theme="vibrant-colors"] .page--menu,
 :root[data-theme="vibrant-colors"] .page--valet {
-  --page-bg: #FFFFFF; /* vibrant base */
+  background-color: #FFFFFF;
 }
 
+:root[data-theme="minimal"] body,
 :root[data-theme="minimal"] .page--home,
 :root[data-theme="minimal"] .page--menu,
 :root[data-theme="minimal"] .page--valet {
-  --page-bg: #FFFFFF; /* minimal base */
+  background-color: #FFFFFF;
 }
 
 /* Only update the background color for the 3 target pages */
@@ -336,4 +342,28 @@ html.theme-dark [data-radix-dialog-content] button[type="button"],
   background-color: rgba(255,255,255,0.06);
   color: var(--theme-text-secondary, #C7CDD4);
   border: 1px solid var(--theme-border, #223042);
+}
+
+/* Dark surface utility for modals and cards */
+:root[data-theme="modern-dark"] .dark-surface {
+  background-color: var(--theme-input, #121923) !important;
+  border: 1px solid var(--theme-menu-item-border, #223042) !important;
+  color: var(--theme-text-primary, #F3F4F6) !important;
+}
+
+/* Replace hardcoded Tailwind colors with theme tokens */
+:root[data-theme="modern-dark"] .text-gray-600,
+:root[data-theme="modern-dark"] .text-gray-500,
+:root[data-theme="modern-dark"] .text-gray-400 {
+  color: var(--theme-text-secondary, #C7CDD4) !important;
+}
+
+:root[data-theme="modern-dark"] .bg-green-900\/20,
+:root[data-theme="modern-dark"] .bg-green-500 {
+  background-color: var(--theme-success, #10B981) !important;
+}
+
+:root[data-theme="modern-dark"] .text-green-600,
+:root[data-theme="modern-dark"] .text-green-500 {
+  color: var(--theme-success, #10B981) !important;
 }
