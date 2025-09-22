@@ -39,14 +39,23 @@ import {
 // Hook to get current theme background color
 function useThemeBackgroundColor() {
   const [color, setColor] = useState('#FAFAFA');
+  const [themeId, setThemeId] = useState('clean-light');
   
   useEffect(() => {
     // Only run on client side
     if (typeof window === 'undefined') return;
     
     const updateColor = () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'clean-light';
       const themeBg = getComputedStyle(document.documentElement).getPropertyValue('--theme-background').trim();
-      setColor(themeBg || '#FAFAFA');
+      
+      // Special case: Clean Light theme uses black text
+      if (currentTheme === 'clean-light') {
+        setColor('#000000');
+      } else {
+        setColor(themeBg || '#FAFAFA');
+      }
+      setThemeId(currentTheme);
     };
     
     updateColor();
