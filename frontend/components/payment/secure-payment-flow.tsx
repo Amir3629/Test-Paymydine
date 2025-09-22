@@ -234,9 +234,9 @@ export function SecurePaymentFlow({ isOpen, onOpenChange }: SecurePaymentFlowPro
       <DialogContent
         className="p-0 max-w-md rounded-3xl overflow-hidden max-h-[85vh] flex flex-col"
         style={{
-backgroundColor: 'var(--theme-surface)',
-        borderColor: 'var(--theme-menu-item-border)',
-        color: 'var(--theme-text-primary)'
+          backgroundColor: '#222529',
+          borderColor: 'var(--theme-menu-item-border, #223042)',
+          color: 'var(--theme-text-primary, #F3F4F6)'
         }}
       >
         <DialogHeader className="p-4 pb-2" style={{ background: 'linear-gradient(90deg, rgba(231,203,169,0.10), transparent)' }}>
@@ -263,13 +263,14 @@ backgroundColor: 'var(--theme-surface)',
           <div className="flex items-center justify-between p-3 rounded-xl" style={{ backgroundColor: 'rgba(231,203,169,0.08)' }}>
             <div className="flex items-center space-x-2">
               <Users className="h-4 w-4" style={{ color: 'var(--theme-button, #E7CBA9)' }} />
-              <span className="font-medium text-xs" className="text-[var(--theme-text-primary)]">{t("splitBill")}</span>
+              <span className="font-medium text-xs" style={{ color: 'var(--theme-text-primary, #F3F4F6)' }}>{t("splitBill")}</span>
             </div>
             <Button
               variant={isSplitting ? "default" : "outline"}
               size="sm"
               onClick={() => setIsSplitting(!isSplitting)}
-              className={`text-xs ${isSplitting ? "bg-[var(--theme-button)] text-[var(--theme-text-on-accent)]" : "border-[var(--theme-menu-item-border)]"}`}
+              className="text-xs"
+              style={isSplitting ? { backgroundColor: 'var(--theme-button, #E7CBA9)', color: '#1B1F27' } : { borderColor: 'var(--theme-menu-item-border, #223042)' }}
             >
               {isSplitting ? "ON" : "OFF"}
             </Button>
@@ -283,7 +284,7 @@ backgroundColor: 'var(--theme-surface)',
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 className="rounded-2xl p-3 overflow-hidden"
-                className="bg-[var(--theme-surface)] border border-[var(--theme-menu-item-border)]"
+                style={{ backgroundColor: '#222529', border: '1px solid var(--theme-menu-item-border, #223042)' }}
               >
                 <h3 className="font-semibold text-paydine-elegant-gray mb-2 text-xs">{t("selectItemsToPay")}</h3>
                 <div className="space-y-2 max-h-24 overflow-y-auto">
@@ -318,7 +319,7 @@ backgroundColor: 'var(--theme-surface)',
 
           {/* Tip Settings */}
           {tipSettings.enabled && (
-            <div className="rounded-2xl p-3" className="bg-[var(--theme-surface)] border border-[var(--theme-menu-item-border)]">
+            <div className="rounded-2xl p-3" style={{ backgroundColor: '#222529', border: '1px solid var(--theme-menu-item-border, #223042)' }}>
               <h3 className="font-semibold text-paydine-elegant-gray mb-2 text-xs">{t("addTip")}</h3>
               <div className="flex gap-2">
                 {tipSettings.percentages.map((p) => (

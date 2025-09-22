@@ -9,8 +9,7 @@
     "dev:3001": "next dev -p 3001",
     "start": "next start",
     "start:3001": "next start -p 3001",
-    "lint": "next lint",
-    "theme:scan": "../scripts/theme-scan.sh"
+    "lint": "next lint"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",

@@ -29,7 +29,7 @@ export function FoodItemToolbar({ itemCount, onWaiterCall, onNote, onCart }: Foo
         onClick={onWaiterCall}
         aria-label={t("callWaiter")}
       >
-        <HandPlatter className="h-6 w-6" className="text-[var(--theme-icon-accent)]" />
+        <HandPlatter className="h-6 w-6" style={{ color: 'var(--theme-text-primary, #F3F4F6)' }} />
       </motion.button>
       
       <motion.button
@@ -39,7 +39,7 @@ export function FoodItemToolbar({ itemCount, onWaiterCall, onNote, onCart }: Foo
         onClick={onNote}
         aria-label={t("leaveNote")}
       >
-        <NotebookPen className="h-6 w-6" className="text-[var(--theme-icon-accent)]" />
+        <NotebookPen className="h-6 w-6" style={{ color: 'var(--theme-text-primary, #F3F4F6)' }} />
       </motion.button>
       
       <motion.button
@@ -49,10 +49,10 @@ export function FoodItemToolbar({ itemCount, onWaiterCall, onNote, onCart }: Foo
         onClick={onCart}
         aria-label={t("viewCart")}
       >
-        <ShoppingCart className="h-6 w-6 text-[var(--theme-icon-accent)]" />
+        <ShoppingCart className="h-6 w-6" style={{ color: 'var(--theme-text-primary, #F3F4F6)' }} />
         {itemCount > 0 && (
           <span className="absolute -top-1.5 -right-1.5 text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
-            className="bg-[var(--theme-button)] text-[var(--theme-text-on-accent)]"
+            style={{ backgroundColor: 'var(--theme-button, #E7CBA9)', color: '#1B1F27' }}
           >
             {itemCount}
           </span>

@@ -54,7 +54,7 @@ export default function ValetPage() {
             <motion.div 
               key="form"
               className="rounded-2xl shadow-sm p-4 sm:p-6 dark-surface"
-              className="bg-[var(--theme-surface)] border border-[var(--theme-menu-item-border)]"
+              style={{ backgroundColor: '#222529', border: '1px solid var(--theme-menu-item-border, #223042)' }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -125,7 +125,7 @@ export default function ValetPage() {
                   transition={{ duration: 0.3, delay: 0.6 }}
                 >
                   <Button 
-                    className="w-full bg-[var(--theme-button)] hover:bg-[var(--theme-button)]/90 text-[var(--theme-text-on-accent)] transition-colors"
+                    className="w-full bg-paydine-champagne hover:bg-paydine-rose-beige text-paydine-elegant-gray transition-colors"
                     size="lg"
                     type="submit"
                     disabled={isSubmitting}
@@ -139,7 +139,7 @@ export default function ValetPage() {
             <motion.div
               key="success"
               className="rounded-2xl shadow-sm p-6 sm:p-8 text-center dark-surface"
-              className="bg-[var(--theme-surface)] border border-[var(--theme-menu-item-border)]"
+              style={{ backgroundColor: '#222529', border: '1px solid var(--theme-menu-item-border, #223042)' }}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -162,7 +162,7 @@ export default function ValetPage() {
               </p>
               
               <Button
-                className="bg-[var(--theme-button)] hover:bg-[var(--theme-button)]/90 text-[var(--theme-text-on-accent)] transition-colors"
+                className="bg-paydine-champagne hover:bg-paydine-rose-beige text-paydine-elegant-gray transition-colors"
                 size="lg"
                 onClick={() => window.location.href = '/'}
               >
@@ -174,7 +174,7 @@ export default function ValetPage() {
         
         <motion.div 
           className="mt-4 text-sm text-paydine-muted-gray rounded-xl p-4 dark-surface"
-          className="bg-[var(--theme-surface)] border border-[var(--theme-menu-item-border)]"
+          style={{ backgroundColor: '#222529', border: '1px solid var(--theme-menu-item-border, #223042)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}

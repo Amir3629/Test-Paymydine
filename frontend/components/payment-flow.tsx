@@ -191,13 +191,13 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
                   height={20}
                   className="object-contain"
                 />
-                <span className="font-semibold" className="text-[var(--theme-text-primary)]">{selectedMethod.name}</span>
+                <span className="font-semibold" style={{ color: 'var(--theme-text-primary, #F3F4F6)' }}>{selectedMethod.name}</span>
               </div>
             </div>
 
             <div className="space-y-3">
               <div>
-                <Label htmlFor="cardNumber" className="text-sm font-medium" className="text-[var(--theme-text-primary)]">
+                <Label htmlFor="cardNumber" className="text-sm font-medium" style={{ color: 'var(--theme-text-primary, #F3F4F6)' }}>
                   Card Number
                 </Label>
                 <Input
@@ -208,13 +208,13 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
                   onChange={(e) => handleFormChange("cardNumber", formatCardNumber(e.target.value))}
                   maxLength={19}
                   className=""
-                  className="bg-[var(--theme-input)] border-[var(--theme-border)] text-[var(--theme-text-on-input)]"
+                  style={{ backgroundColor: 'var(--theme-input, #121923)', borderColor: 'var(--theme-border, #223042)', color: 'var(--theme-text-primary, #F3F4F6)' }}
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <Label htmlFor="expiryDate" className="text-sm font-medium" className="text-[var(--theme-text-primary)]">
+                  <Label htmlFor="expiryDate" className="text-sm font-medium" style={{ color: 'var(--theme-text-primary, #F3F4F6)' }}>
                     Expiry Date
                   </Label>
                   <Input
@@ -225,11 +225,11 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
                     onChange={(e) => handleFormChange("expiryDate", formatExpiryDate(e.target.value))}
                     maxLength={7}
                     className=""
-                    className="bg-[var(--theme-input)] border-[var(--theme-border)] text-[var(--theme-text-on-input)]"
+                    style={{ backgroundColor: 'var(--theme-input, #121923)', borderColor: 'var(--theme-border, #223042)', color: 'var(--theme-text-primary, #F3F4F6)' }}
                   />
                 </div>
                 <div>
-                  <Label htmlFor="cvv" className="text-sm font-medium" className="text-[var(--theme-text-primary)]">
+                  <Label htmlFor="cvv" className="text-sm font-medium" style={{ color: 'var(--theme-text-primary, #F3F4F6)' }}>
                     CVV
                   </Label>
                   <Input
@@ -240,13 +240,13 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
                     onChange={(e) => handleFormChange("cvv", e.target.value.replace(/\D/g, ''))}
                     maxLength={4}
                     className=""
-                    className="bg-[var(--theme-input)] border-[var(--theme-border)] text-[var(--theme-text-on-input)]"
+                    style={{ backgroundColor: 'var(--theme-input, #121923)', borderColor: 'var(--theme-border, #223042)', color: 'var(--theme-text-primary, #F3F4F6)' }}
                   />
                 </div>
               </div>
 
               <div>
-                <Label htmlFor="cardholderName" className="text-sm font-medium" className="text-[var(--theme-text-primary)]">
+                <Label htmlFor="cardholderName" className="text-sm font-medium" style={{ color: 'var(--theme-text-primary, #F3F4F6)' }}>
                   Cardholder Name
                 </Label>
                 <Input
@@ -256,7 +256,7 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
                   value={paymentFormData.cardholderName}
                   onChange={(e) => handleFormChange("cardholderName", e.target.value)}
                   className=""
-                  className="bg-[var(--theme-input)] border-[var(--theme-border)] text-[var(--theme-text-on-input)]"
+                  style={{ backgroundColor: 'var(--theme-input, #121923)', borderColor: 'var(--theme-border, #223042)', color: 'var(--theme-text-primary, #F3F4F6)' }}
                 />
               </div>
             </div>
@@ -293,7 +293,7 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
             </div>
 
             <div>
-              <Label htmlFor="email" className="text-sm font-medium" className="text-[var(--theme-text-primary)]">
+              <Label htmlFor="email" className="text-sm font-medium" style={{ color: 'var(--theme-text-primary, #F3F4F6)' }}>
                 PayPal Email
               </Label>
               <Input
@@ -303,7 +303,7 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
                 value={paymentFormData.email}
                 onChange={(e) => handleFormChange("email", e.target.value)}
                 className=""
-                className="bg-[var(--theme-input)] border-[var(--theme-border)] text-[var(--theme-text-on-input)]"
+                style={{ backgroundColor: 'var(--theme-input, #121923)', borderColor: 'var(--theme-border, #223042)', color: 'var(--theme-text-primary, #F3F4F6)' }}
               />
             </div>
           </motion.div>
@@ -340,7 +340,7 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
             </div>
 
               <div className="text-center space-y-4">
-                <div className="rounded-xl p-6" className="bg-[var(--theme-surface)] border border-[var(--theme-menu-item-border)]">
+                <div className="rounded-xl p-6" style={{ backgroundColor: '#222529', border: '1px solid var(--theme-menu-item-border, #223042)' }}>
                 <img
                   src={iconForPayment(selectedMethod.code)}
                   alt={selectedMethod.name}
@@ -348,10 +348,10 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
                   height={24}
                   className="mx-auto mb-3"
                 />
-                  <p className="text-sm mb-4" className="text-[var(--theme-text-secondary)]">
+                  <p className="text-sm mb-4" style={{ color: 'var(--theme-text-secondary, #C7CDD4)' }}>
                   You will be redirected to {selectedMethod.name} to complete your payment.
                 </p>
-                  <div className="text-lg font-bold" className="text-[var(--theme-text-primary)]">
+                  <div className="text-lg font-bold" style={{ color: 'var(--theme-text-primary, #F3F4F6)' }}>
         Total: {formatCurrency(finalTotal)}
                 </div>
               </div>
@@ -383,12 +383,12 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
             </div>
 
               <div className="text-center space-y-4">
-                <div className="rounded-xl p-6" className="bg-[var(--theme-surface)] border border-[var(--theme-menu-item-border)]">
+                <div className="rounded-xl p-6" style={{ backgroundColor: '#222529', border: '1px solid var(--theme-menu-item-border, #223042)' }}>
                 <Wallet className="h-12 w-12 text-paydine-champagne mx-auto mb-3" />
-                  <p className="text-sm mb-4" className="text-[var(--theme-text-secondary)]">
+                  <p className="text-sm mb-4" style={{ color: 'var(--theme-text-secondary, #C7CDD4)' }}>
                   A waiter will come to collect payment.
                 </p>
-                  <div className="text-lg font-bold" className="text-[var(--theme-text-primary)]">
+                  <div className="text-lg font-bold" style={{ color: 'var(--theme-text-primary, #F3F4F6)' }}>
         Total: {formatCurrency(finalTotal)}
                 </div>
               </div>
@@ -442,7 +442,7 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
         onClick={handlePayment}
         disabled={isLoading || !isFormValid()}
         className="w-full font-bold py-3 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl"
-        className="bg-[var(--theme-button)] text-[var(--theme-text-on-accent)]"
+        style={{ backgroundColor: 'var(--theme-button, #E7CBA9)', color: '#1B1F27' }}
         onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'var(--theme-button-hover, #D6B890)' }}
         onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'var(--theme-button, #E7CBA9)' }}
       >
@@ -466,9 +466,9 @@ export function PaymentFlow({ isOpen, onOpenChange }: PaymentFlowProps) {
       <DialogContent
         className="p-0 max-w-md rounded-3xl overflow-hidden max-h-[85vh] flex flex-col"
         style={{
-backgroundColor: 'var(--theme-surface)',
-        borderColor: 'var(--theme-menu-item-border)',
-        color: 'var(--theme-text-primary)'
+          backgroundColor: '#222529',
+          borderColor: 'var(--theme-menu-item-border, #223042)',
+          color: 'var(--theme-text-primary, #F3F4F6)'
         }}
       >
         <DialogHeader className="p-4 pb-2" style={{ background: 'linear-gradient(90deg, rgba(231,203,169,0.10), transparent)' }}>
@@ -478,8 +478,8 @@ backgroundColor: 'var(--theme-surface)',
         <div className="p-4 space-y-4 overflow-y-auto flex-1">
           <div className="flex items-center justify-between p-3 rounded-xl" style={{ backgroundColor: 'rgba(231,203,169,0.08)' }}>
             <div className="flex items-center space-x-2">
-              <Users className="h-4 w-4" className="text-[var(--theme-icon-accent)]" />
-              <span className="font-medium text-xs" className="text-[var(--theme-text-primary)]">{t("splitBill")}</span>
+              <Users className="h-4 w-4" style={{ color: 'var(--theme-button, #E7CBA9)' }} />
+              <span className="font-medium text-xs" style={{ color: 'var(--theme-text-primary, #F3F4F6)' }}>{t("splitBill")}</span>
             </div>
             <Button
               variant={isSplitting ? "default" : "outline"}
@@ -499,7 +499,7 @@ backgroundColor: 'var(--theme-surface)',
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 className="rounded-2xl p-3 overflow-hidden"
-                className="bg-[var(--theme-surface)] border border-[var(--theme-menu-item-border)]"
+                style={{ backgroundColor: '#222529', border: '1px solid var(--theme-menu-item-border, #223042)' }}
               >
                 <h3 className="font-semibold text-paydine-elegant-gray mb-2 text-xs">{t("selectItemsToPay")}</h3>
                 <div className="space-y-2 max-h-24 overflow-y-auto">
@@ -533,7 +533,7 @@ backgroundColor: 'var(--theme-surface)',
           </AnimatePresence>
 
           {tipSettings.enabled && (
-            <div className="rounded-2xl p-3" className="bg-[var(--theme-surface)] border border-[var(--theme-menu-item-border)]">
+            <div className="rounded-2xl p-3" style={{ backgroundColor: '#222529', border: '1px solid var(--theme-menu-item-border, #223042)' }}>
               <h3 className="font-semibold text-paydine-elegant-gray mb-2 text-xs">{t("addTip")}</h3>
               <div className="flex gap-2">
                 {tipSettings.percentages.map((p) => (
