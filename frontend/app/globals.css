@@ -572,3 +572,48 @@ html.theme-dark:root[data-theme="modern-dark"] .rounded-full.bg-paydine-rose-bei
   color: var(--theme-background, #0A0E12) !important;
   fill: var(--theme-background, #0A0E12) !important;
 }
+
+/* Target specific menu item plus buttons with multiple selectors */
+:root[data-theme="gold-luxury"] button[class*="bg-paydine-rose-beige"] svg,
+:root[data-theme="gold-luxury"] button[class*="bg-paydine-rose-beige"] span,
+:root[data-theme="gold-luxury"] button[class*="bg-paydine-rose-beige"] *,
+html.theme-dark:root[data-theme="gold-luxury"] button[class*="bg-paydine-rose-beige"] svg,
+html.theme-dark:root[data-theme="gold-luxury"] button[class*="bg-paydine-rose-beige"] span,
+html.theme-dark:root[data-theme="gold-luxury"] button[class*="bg-paydine-rose-beige"] * {
+  color: var(--theme-background, #0F0B05) !important;
+  fill: var(--theme-background, #0F0B05) !important;
+  stroke: var(--theme-background, #0F0B05) !important;
+}
+
+:root[data-theme="vibrant-colors"] button[class*="bg-paydine-rose-beige"] svg,
+:root[data-theme="vibrant-colors"] button[class*="bg-paydine-rose-beige"] span,
+:root[data-theme="vibrant-colors"] button[class*="bg-paydine-rose-beige"] *,
+html.theme-dark:root[data-theme="vibrant-colors"] button[class*="bg-paydine-rose-beige"] svg,
+html.theme-dark:root[data-theme="vibrant-colors"] button[class*="bg-paydine-rose-beige"] span,
+html.theme-dark:root[data-theme="vibrant-colors"] button[class*="bg-paydine-rose-beige"] * {
+  color: var(--theme-background, #e2ceb1) !important;
+  fill: var(--theme-background, #e2ceb1) !important;
+  stroke: var(--theme-background, #e2ceb1) !important;
+}
+
+:root[data-theme="minimal"] button[class*="bg-paydine-rose-beige"] svg,
+:root[data-theme="minimal"] button[class*="bg-paydine-rose-beige"] span,
+:root[data-theme="minimal"] button[class*="bg-paydine-rose-beige"] *,
+html.theme-dark:root[data-theme="minimal"] button[class*="bg-paydine-rose-beige"] svg,
+html.theme-dark:root[data-theme="minimal"] button[class*="bg-paydine-rose-beige"] span,
+html.theme-dark:root[data-theme="minimal"] button[class*="bg-paydine-rose-beige"] * {
+  color: var(--theme-background, #FEFCF8) !important;
+  fill: var(--theme-background, #FEFCF8) !important;
+  stroke: var(--theme-background, #FEFCF8) !important;
+}
+
+:root[data-theme="modern-dark"] button[class*="bg-paydine-rose-beige"] svg,
+:root[data-theme="modern-dark"] button[class*="bg-paydine-rose-beige"] span,
+:root[data-theme="modern-dark"] button[class*="bg-paydine-rose-beige"] *,
+html.theme-dark:root[data-theme="modern-dark"] button[class*="bg-paydine-rose-beige"] svg,
+html.theme-dark:root[data-theme="modern-dark"] button[class*="bg-paydine-rose-beige"] span,
+html.theme-dark:root[data-theme="modern-dark"] button[class*="bg-paydine-rose-beige"] * {
+  color: var(--theme-background, #0A0E12) !important;
+  fill: var(--theme-background, #0A0E12) !important;
+  stroke: var(--theme-background, #0A0E12) !important;
+}
