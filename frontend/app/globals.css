@@ -343,12 +343,12 @@ html.theme-dark [data-radix-dialog-content] button[type="button"],
 /* Gold Luxury Theme Styling */
 :root[data-theme="gold-luxury"] .category-tab.is-active,
 html.theme-dark:root[data-theme="gold-luxury"] .category-tab.is-active {
-  color: var(--theme-category-active, var(--theme-secondary));
+  color: var(--theme-category-active, #FFF8DC) !important;
 }
 
 :root[data-theme="gold-luxury"] .category-tab.is-active::after,
 html.theme-dark:root[data-theme="gold-luxury"] .category-tab.is-active::after {
-  background-color: var(--theme-category-active, var(--theme-secondary));
+  background-color: var(--theme-category-active, #FFF8DC) !important;
 }
 
 :root[data-theme="gold-luxury"] h3.font-serif,
