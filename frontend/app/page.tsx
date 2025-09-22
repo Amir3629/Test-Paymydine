@@ -39,7 +39,7 @@ function HomePageContent() {
           />
           <motion.div
             className={cardStyles}
-            style={{ backgroundColor: 'var(--theme-start-card, rgba(255,255,255,0.8))', borderColor: 'rgba(239,199,177,0.20)' }}
+            style={{ backgroundColor: 'var(--theme-background)', borderColor: 'var(--theme-border)' }}
             variants={{
               hover: { y: -8 },
               initial: { y: 0 }
@@ -47,21 +47,21 @@ function HomePageContent() {
           >
             <motion.div
               className={iconContainerStyles}
-              style={{ backgroundColor: 'rgba(231,203,169,0.10)' }}
+              style={{ backgroundColor: 'var(--theme-cart-bg, var(--theme-input))' }}
               variants={{
                 hover: { 
                   scale: 1.1,
-                  backgroundColor: "rgba(231,203,169,0.20)",
+                  backgroundColor: "var(--theme-cart-bg, var(--theme-input))",
                 },
                 initial: { 
                   scale: 1,
-                  backgroundColor: "rgba(231,203,169,0.10)",
+                  backgroundColor: "var(--theme-cart-bg, var(--theme-input))",
                 }
               }}
             >
-              <Utensils className="w-10 h-10 text-paydine-elegant-gray" />
+              <Utensils className="w-10 h-10" style={{ color: 'var(--theme-text-primary)' }} />
             </motion.div>
-            <h2 className="text-2xl font-medium text-paydine-elegant-gray">{t("menuCard")}</h2>
+            <h2 className="text-2xl font-medium" style={{ color: 'var(--theme-text-primary)' }}>{t("menuCard")}</h2>
           </motion.div>
         </MotionLink>
 
@@ -81,7 +81,7 @@ function HomePageContent() {
           />
           <motion.div
             className={cardStyles}
-            style={{ backgroundColor: 'var(--theme-start-card, rgba(255,255,255,0.8))', borderColor: 'rgba(239,199,177,0.20)' }}
+            style={{ backgroundColor: 'var(--theme-background)', borderColor: 'var(--theme-border)' }}
             variants={{
               hover: { y: -8 },
               initial: { y: 0 }
@@ -89,21 +89,21 @@ function HomePageContent() {
           >
             <motion.div
               className={iconContainerStyles}
-              style={{ backgroundColor: 'rgba(231,203,169,0.10)' }}
+              style={{ backgroundColor: 'var(--theme-cart-bg, var(--theme-input))' }}
               variants={{
                 hover: { 
                   scale: 1.1,
-                  backgroundColor: "rgba(231,203,169,0.20)",
+                  backgroundColor: "var(--theme-cart-bg, var(--theme-input))",
                 },
                 initial: { 
                   scale: 1,
-                  backgroundColor: "rgba(231,203,169,0.10)",
+                  backgroundColor: "var(--theme-cart-bg, var(--theme-input))",
                 }
               }}
             >
-              <Car className="w-10 h-10 text-paydine-elegant-gray" />
+              <Car className="w-10 h-10" style={{ color: 'var(--theme-text-primary)' }} />
             </motion.div>
-            <h2 className="text-2xl font-medium text-paydine-elegant-gray">{t("valetParking")}</h2>
+            <h2 className="text-2xl font-medium" style={{ color: 'var(--theme-text-primary)' }}>{t("valetParking")}</h2>
           </motion.div>
         </MotionLink>
       </div>
@@ -118,7 +118,7 @@ export default function HomePage() {
       <Suspense fallback={
         <div className="min-h-screen bg-theme-background flex flex-col items-center justify-center p-4">
           <div className="text-center">
-            <div className="text-lg text-paydine-elegant-gray">Loading...</div>
+            <div className="text-lg" style={{ color: 'var(--theme-text-primary)' }}>Loading...</div>
           </div>
         </div>
       }>
