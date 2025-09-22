@@ -848,35 +848,73 @@ html.theme-dark [data-radix-dialog-content],
   color: inherit !important;
 }
 
-/* Force text and icon colors to inherit from button */
-:root[data-theme="modern-dark"] button svg,
+/* Hide the ugly Lock icon from payment buttons */
+:root[data-theme="modern-dark"] button svg[data-lucide="lock"],
+:root[data-theme="modern-dark"] button svg[data-lucide="lock-closed"],
+:root[data-theme="modern-dark"] button .h-4.w-4,
+:root[data-theme="gold-luxury"] button svg[data-lucide="lock"],
+:root[data-theme="gold-luxury"] button svg[data-lucide="lock-closed"],
+:root[data-theme="gold-luxury"] button .h-4.w-4,
+:root[data-theme="vibrant-colors"] button svg[data-lucide="lock"],
+:root[data-theme="vibrant-colors"] button svg[data-lucide="lock-closed"],
+:root[data-theme="vibrant-colors"] button .h-4.w-4,
+:root[data-theme="minimal"] button svg[data-lucide="lock"],
+:root[data-theme="minimal"] button svg[data-lucide="lock-closed"],
+:root[data-theme="minimal"] button .h-4.w-4 {
+  display: none !important;
+}
+
+/* Force text colors to inherit from button */
 :root[data-theme="modern-dark"] button span,
 :root[data-theme="modern-dark"] button div {
   color: inherit !important;
-  fill: currentColor !important;
-  stroke: currentColor !important;
 }
 
-:root[data-theme="gold-luxury"] button svg,
 :root[data-theme="gold-luxury"] button span,
 :root[data-theme="gold-luxury"] button div {
   color: inherit !important;
-  fill: currentColor !important;
-  stroke: currentColor !important;
 }
 
-:root[data-theme="vibrant-colors"] button svg,
 :root[data-theme="vibrant-colors"] button span,
 :root[data-theme="vibrant-colors"] button div {
-  color: inherit !important;
-  fill: currentColor !important;
-  stroke: currentColor !important;
+  color: #FFFFFF !important;
 }
 
-:root[data-theme="minimal"] button svg,
 :root[data-theme="minimal"] button span,
 :root[data-theme="minimal"] button div {
   color: inherit !important;
+}
+
+/* Fix toolbar icons that turned black - restore proper colors */
+:root[data-theme="modern-dark"] .text-paydine-elegant-gray,
+:root[data-theme="gold-luxury"] .text-paydine-elegant-gray,
+:root[data-theme="vibrant-colors"] .text-paydine-elegant-gray,
+:root[data-theme="minimal"] .text-paydine-elegant-gray {
+  color: var(--theme-text-primary, #1A202C) !important;
+}
+
+/* Specifically fix toolbar icons */
+:root[data-theme="modern-dark"] .h-8.w-8.text-paydine-elegant-gray,
+:root[data-theme="gold-luxury"] .h-8.w-8.text-paydine-elegant-gray,
+:root[data-theme="vibrant-colors"] .h-8.w-8.text-paydine-elegant-gray,
+:root[data-theme="minimal"] .h-8.w-8.text-paydine-elegant-gray {
+  color: var(--theme-text-primary, #1A202C) !important;
+}
+
+/* Fix HandPlatter and NotebookPen icons specifically */
+:root[data-theme="modern-dark"] svg[data-lucide="hand-platter"],
+:root[data-theme="modern-dark"] svg[data-lucide="notebook-pen"],
+:root[data-theme="modern-dark"] svg[data-lucide="shopping-cart"],
+:root[data-theme="gold-luxury"] svg[data-lucide="hand-platter"],
+:root[data-theme="gold-luxury"] svg[data-lucide="notebook-pen"],
+:root[data-theme="gold-luxury"] svg[data-lucide="shopping-cart"],
+:root[data-theme="vibrant-colors"] svg[data-lucide="hand-platter"],
+:root[data-theme="vibrant-colors"] svg[data-lucide="notebook-pen"],
+:root[data-theme="vibrant-colors"] svg[data-lucide="shopping-cart"],
+:root[data-theme="minimal"] svg[data-lucide="hand-platter"],
+:root[data-theme="minimal"] svg[data-lucide="notebook-pen"],
+:root[data-theme="minimal"] svg[data-lucide="shopping-cart"] {
+  color: var(--theme-text-primary, #1A202C) !important;
   fill: currentColor !important;
   stroke: currentColor !important;
 }
