@@ -625,35 +625,27 @@ html.theme-dark [data-radix-dialog-content],
 :root[data-theme="minimal"] .fixed.inset-0.z-50 .tip-button span,
 :root[data-theme="minimal"] .fixed.inset-0.z-50 button span {
   color: #FFFFFF !important;
-  font-weight: 700 !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
 }
 
-/* NUCLEAR OPTION - TARGET EVERYTHING POSSIBLE */
-:root[data-theme="modern-dark"] button,
-:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button {
-  border: 3px solid #F0C6B1 !important;
-  outline: 2px solid #F0C6B1 !important;
-  outline-offset: 1px !important;
+/* ULTRA SPECIFIC - ONLY SELECTED TIP BUTTONS */
+:root[data-theme="modern-dark"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"]:not([class*="bg-gray"]):not([class*="bg-white"]) {
+  border: 4px solid #F0C6B1 !important;
+  outline: 3px solid #F0C6B1 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 2px #F0C6B1, inset 0 0 0 1px #F0C6B1 !important;
 }
 
-:root[data-theme="gold-luxury"] button,
-:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 button {
-  border: 3px solid #FFD700 !important;
-  outline: 2px solid #FFD700 !important;
-  outline-offset: 1px !important;
+:root[data-theme="gold-luxury"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"]:not([class*="bg-gray"]):not([class*="bg-white"]) {
+  border: 4px solid #FFD700 !important;
+  outline: 3px solid #FFD700 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 2px #FFD700, inset 0 0 0 1px #FFD700 !important;
 }
 
-:root[data-theme="minimal"] button,
-:root[data-theme="minimal"] .fixed.inset-0.z-50 button {
+:root[data-theme="minimal"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"]:not([class*="bg-gray"]):not([class*="bg-white"]) span {
   color: #FFFFFF !important;
-}
-
-:root[data-theme="minimal"] button span,
-:root[data-theme="minimal"] .fixed.inset-0.z-50 button span {
-  color: #FFFFFF !important;
-  font-weight: 700 !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+  font-weight: 800 !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5) !important;
 }
 
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
