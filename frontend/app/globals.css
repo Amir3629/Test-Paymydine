@@ -919,28 +919,40 @@ html.theme-dark [data-radix-dialog-content],
   stroke: currentColor !important;
 }
 
-/* Fix cart badge number to match icon color instead of background color */
+/* NUCLEAR: Fix cart badge number to match icon color - override inline styles */
 :root[data-theme="modern-dark"] .cart-badge-number,
 :root[data-theme="modern-dark"] .absolute.-top-1.-right-1,
-:root[data-theme="modern-dark"] .bg-paydine-champagne span {
+:root[data-theme="modern-dark"] .bg-paydine-champagne span,
+:root[data-theme="modern-dark"] span[style*="color:"] {
   color: var(--theme-text-primary, #1A202C) !important;
 }
 
 :root[data-theme="gold-luxury"] .cart-badge-number,
 :root[data-theme="gold-luxury"] .absolute.-top-1.-right-1,
-:root[data-theme="gold-luxury"] .bg-paydine-champagne span {
+:root[data-theme="gold-luxury"] .bg-paydine-champagne span,
+:root[data-theme="gold-luxury"] span[style*="color:"] {
   color: var(--theme-text-primary, #1A202C) !important;
 }
 
 :root[data-theme="vibrant-colors"] .cart-badge-number,
 :root[data-theme="vibrant-colors"] .absolute.-top-1.-right-1,
-:root[data-theme="vibrant-colors"] .bg-paydine-champagne span {
+:root[data-theme="vibrant-colors"] .bg-paydine-champagne span,
+:root[data-theme="vibrant-colors"] span[style*="color:"] {
   color: var(--theme-text-primary, #1A202C) !important;
 }
 
 :root[data-theme="minimal"] .cart-badge-number,
 :root[data-theme="minimal"] .absolute.-top-1.-right-1,
-:root[data-theme="minimal"] .bg-paydine-champagne span {
+:root[data-theme="minimal"] .bg-paydine-champagne span,
+:root[data-theme="minimal"] span[style*="color:"] {
+  color: var(--theme-text-primary, #1A202C) !important;
+}
+
+/* ULTIMATE NUCLEAR: Target any span with inline color style */
+:root[data-theme="modern-dark"] span[style*="color:"],
+:root[data-theme="gold-luxury"] span[style*="color:"],
+:root[data-theme="vibrant-colors"] span[style*="color:"],
+:root[data-theme="minimal"] span[style*="color:"] {
   color: var(--theme-text-primary, #1A202C) !important;
 }
 
