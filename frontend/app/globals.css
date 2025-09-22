@@ -100,29 +100,75 @@
 
   /* NUCLEAR OPTION: Force exact background colors on html/body for each theme */
   [data-theme="clean-light"] html,
-  [data-theme="clean-light"] body,
-  [data-theme="clean-light"] * {
+  [data-theme="clean-light"] body {
     background: #FAFAFA !important;
   }
   [data-theme="modern-dark"] html,
-  [data-theme="modern-dark"] body,
-  [data-theme="modern-dark"] * {
+  [data-theme="modern-dark"] body {
     background: #0A0E12 !important;
   }
   [data-theme="gold-luxury"] html,
-  [data-theme="gold-luxury"] body,
-  [data-theme="gold-luxury"] * {
+  [data-theme="gold-luxury"] body {
     background: #0F0B05 !important;
   }
   [data-theme="vibrant-colors"] html,
-  [data-theme="vibrant-colors"] body,
-  [data-theme="vibrant-colors"] * {
+  [data-theme="vibrant-colors"] body {
     background: #e2ceb1 !important;
   }
   [data-theme="minimal"] html,
-  [data-theme="minimal"] body,
-  [data-theme="minimal"] * {
+  [data-theme="minimal"] body {
     background: #CFEBF7 !important;
+  }
+
+  /* PROTECTION: Ensure individual elements keep their original styling */
+  [data-theme] .card,
+  [data-theme] .surface,
+  [data-theme] .surface-sub,
+  [data-theme] button,
+  [data-theme] .icon,
+  [data-theme] .logo,
+  [data-theme] h1,
+  [data-theme] h2,
+  [data-theme] h3,
+  [data-theme] p,
+  [data-theme] span,
+  [data-theme] div[class*="card"],
+  [data-theme] div[class*="surface"],
+  [data-theme] .bg-white,
+  [data-theme] .bg-gray-50,
+  [data-theme] .bg-gray-100,
+  [data-theme] .bg-gray-200,
+  [data-theme] .bg-gray-300,
+  [data-theme] .bg-gray-400,
+  [data-theme] .bg-gray-500,
+  [data-theme] .bg-gray-600,
+  [data-theme] .bg-gray-700,
+  [data-theme] .bg-gray-800,
+  [data-theme] .bg-gray-900,
+  [data-theme] .bg-black,
+  [data-theme] .bg-red-500,
+  [data-theme] .bg-blue-500,
+  [data-theme] .bg-green-500,
+  [data-theme] .bg-yellow-500,
+  [data-theme] .bg-purple-500,
+  [data-theme] .bg-pink-500,
+  [data-theme] .bg-indigo-500,
+  [data-theme] .bg-orange-500,
+  [data-theme] .bg-teal-500,
+  [data-theme] .bg-cyan-500,
+  [data-theme] .bg-lime-500,
+  [data-theme] .bg-emerald-500,
+  [data-theme] .bg-violet-500,
+  [data-theme] .bg-fuchsia-500,
+  [data-theme] .bg-rose-500,
+  [data-theme] .bg-sky-500,
+  [data-theme] .bg-amber-500,
+  [data-theme] .bg-stone-500,
+  [data-theme] .bg-neutral-500,
+  [data-theme] .bg-zinc-500,
+  [data-theme] .bg-slate-500 {
+    background: initial !important;
+    background-color: initial !important;
   }
   
   body {
@@ -130,7 +176,7 @@
   }
 
   /* HARD-LOCK: Ensure homepage and menu page backgrounds are identical */
-  /* Target the actual background divs, not the wrapper classes */
+  /* Only target the main page background divs, not individual elements */
   
   /* Clean Light Theme */
   [data-theme="clean-light"] .page--home .min-h-screen,
@@ -162,7 +208,7 @@
     background: #CFEBF7 !important;
   }
 
-  /* Additional safety: Force bg-theme-background class to use exact colors */
+  /* Additional safety: Force bg-theme-background class to use exact colors - only for page backgrounds */
   [data-theme="clean-light"] .bg-theme-background {
     background-color: #FAFAFA !important;
   }
