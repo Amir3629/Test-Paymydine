@@ -133,7 +133,7 @@
       colors: {
         // Luxurious gold and bronze palette
         primary: '#FFD700',        // Pure gold
-        secondary: '#DAA520',      // Goldenrod
+        secondary: '#FFF8DC',      // Cornsilk
         accent: '#FFF8DC',         // Cornsilk accent
         background: '#0F0B05',     // Deep warm black
 
@@ -144,7 +144,7 @@
         border: '#CD853F',         // Peru border
         input: '#1A1612',          // Dark warm surface
         button: '#FFD700',         // Gold button
-        buttonHover: '#DAA520',
+        buttonHover: '#FFF8DC',
 
         menuItemBackground: '#1A1612',
         menuItemBorder: '#CD853F',
@@ -155,7 +155,7 @@
         cartBackground: '#1A1612',
         cartBorder: '#CD853F',
         paymentButton: '#FFD700',
-        paymentButtonHover: '#DAA520',
+        paymentButtonHover: '#FFF8DC',
 
         success: '#32CD32',
         warning: '#FFD700',
@@ -171,7 +171,7 @@
       colors: {
         // Vibrant coral and turquoise palette
         primary: '#FF6B6B',        // Electric coral
-        secondary: '#FF8C42',      // Warm orange accent
+        secondary: '#6b5e4f',      // Warm orange accent
         accent: '#45B7D1',         // Sky blue accent
         background: '#e2ceb1',     // Cooler, darker warm beige with subtle gray undertones
 
@@ -188,7 +188,7 @@
         menuItemBorder: '#E8E0D5',
         categoryActive: '#FF6B6B', // Electric coral
         categoryInactive: '#94A3B8',
-        priceColor: '#FF8C42',     // Warm orange accent
+        priceColor: '#6b5e4f',     // Warm orange accent
 
         cartBackground: '#FAF7F2',
         cartBorder: '#E8E0D5',
@@ -198,7 +198,7 @@
         success: '#FF9F43',
         warning: '#F59E0B',
         error: '#EF4444',
-        info: '#FF8C42'
+        info: '#6b5e4f'
       }
     },
     

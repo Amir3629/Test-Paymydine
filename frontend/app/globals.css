@@ -353,7 +353,7 @@ html.theme-dark:root[data-theme="gold-luxury"] .category-tab.is-active::after {
 
 :root[data-theme="gold-luxury"] h3.font-serif,
 html.theme-dark:root[data-theme="gold-luxury"] h3.font-serif {
-  color: var(--theme-secondary, #DAA520);
+  color: var(--theme-secondary, #FFF8DC);
 }
 
 :root[data-theme="gold-luxury"] [data-radix-dialog-content],
@@ -461,7 +461,7 @@ html.theme-dark:root[data-theme="gold-luxury"] [class*="text-paydine-rose-beige"
 
 :root[data-theme="vibrant-colors"] .text-paydine-rose-beige,
 html.theme-dark:root[data-theme="vibrant-colors"] .text-paydine-rose-beige {
-  color: var(--theme-priceColor, #FF8C42) !important;
+  color: var(--theme-priceColor, #6b5e4f) !important;
 }
 
 :root[data-theme="minimal"] .text-paydine-rose-beige,
@@ -482,7 +482,7 @@ html.theme-dark:root[data-theme="gold-luxury"] .text-lg.font-semibold {
 
 :root[data-theme="vibrant-colors"] .text-lg.font-semibold,
 html.theme-dark:root[data-theme="vibrant-colors"] .text-lg.font-semibold {
-  color: var(--theme-priceColor, #FF8C42) !important;
+  color: var(--theme-priceColor, #6b5e4f) !important;
 }
 
 :root[data-theme="minimal"] .text-lg.font-semibold,
