@@ -1595,6 +1595,7 @@ function MenuContent() {
     console.log("data-theme:", document.documentElement.getAttribute('data-theme'));
     console.log("--theme-background:", getComputedStyle(document.documentElement).getPropertyValue('--theme-background'));
     console.log("body bg:", getComputedStyle(document.body).background);
+    console.log("menu wrapper bg:", getComputedStyle(document.querySelector('.relative.min-h-screen')).background);
   }
   const { items, toggleCart, addToCart, setTableInfo } = useCartStore()
   const themeBackgroundColor = useThemeBackgroundColor()

@@ -1,12 +1,13 @@
 "use client"
 
-import React, { Suspense } from "react"
+import React, { Suspense, useEffect } from "react"
 import { useLanguageStore } from "@/store/language-store"
 import { useCmsStore } from "@/store/cms-store"
 import { Logo } from "@/components/logo"
 import { Car, Utensils } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { applyTheme } from "@/lib/theme-system"
 
 const MotionLink = motion(Link)
 
@@ -15,13 +16,23 @@ function HomePageContent() {
   const { t } = useLanguageStore()
   const { settings } = useCmsStore()
 
-  // Debug logging for theme consistency
-  if (typeof window !== 'undefined') {
-    console.info("HOMEPAGE ACTIVE FILE ✅");
-    console.log("data-theme:", document.documentElement.getAttribute('data-theme'));
-    console.log("--theme-background:", getComputedStyle(document.documentElement).getPropertyValue('--theme-background'));
-    console.log("body bg:", getComputedStyle(document.body).background);
-  }
+  // Force theme re-application on mount to ensure consistency
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Get current theme from localStorage or default to clean-light
+      const currentTheme = localStorage.getItem('paymydine-theme') || 'clean-light';
+      
+      // Force theme re-application
+      applyTheme(currentTheme);
+      
+      // Debug logging for theme consistency
+      console.info("HOMEPAGE ACTIVE FILE ✅");
+      console.log("data-theme:", document.documentElement.getAttribute('data-theme'));
+      console.log("--theme-background:", getComputedStyle(document.documentElement).getPropertyValue('--theme-background'));
+      console.log("body bg:", getComputedStyle(document.body).background);
+      console.log("page--home bg:", getComputedStyle(document.querySelector('.page--home')).background);
+    }
+  }, []);
 
   const cardStyles = "relative flex flex-col items-center rounded-3xl p-8 sm:p-12 shadow-sm hover:shadow-xl transition duration-500 border w-72 h-56 justify-center surface-sub"
   const iconContainerStyles = "rounded-full p-6 mb-6"
