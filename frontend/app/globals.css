@@ -831,6 +831,48 @@ html.theme-dark [data-radix-dialog-content],
   display: none !important;
 }
 
+/* Fix Bestellübersicht plus/minus icons to use theme background color */
+:root[data-theme="modern-dark"] .w-3.h-3.text-paydine-elegant-gray,
+:root[data-theme="modern-dark"] button .w-3.h-3,
+:root[data-theme="modern-dark"] .rounded-full.bg-paydine-rose-beige svg {
+  color: #F0C6B1 !important;
+  fill: #F0C6B1 !important;
+  stroke: #F0C6B1 !important;
+}
+
+:root[data-theme="gold-luxury"] .w-3.h-3.text-paydine-elegant-gray,
+:root[data-theme="gold-luxury"] button .w-3.h-3,
+:root[data-theme="gold-luxury"] .rounded-full.bg-paydine-rose-beige svg {
+  color: #FFF8DC !important;
+  fill: #FFF8DC !important;
+  stroke: #FFF8DC !important;
+}
+
+:root[data-theme="vibrant-colors"] .w-3.h-3.text-paydine-elegant-gray,
+:root[data-theme="vibrant-colors"] button .w-3.h-3,
+:root[data-theme="vibrant-colors"] .rounded-full.bg-paydine-rose-beige svg {
+  color: #6b5e4f !important;
+  fill: #6b5e4f !important;
+  stroke: #6b5e4f !important;
+}
+
+:root[data-theme="minimal"] .w-3.h-3.text-paydine-elegant-gray,
+:root[data-theme="minimal"] button .w-3.h-3,
+:root[data-theme="minimal"] .rounded-full.bg-paydine-rose-beige svg {
+  color: #87CEEB !important;
+  fill: #87CEEB !important;
+  stroke: #87CEEB !important;
+}
+
+/* Clean Light keeps original */
+:root[data-theme="clean-light"] .w-3.h-3.text-paydine-elegant-gray,
+:root[data-theme="clean-light"] button .w-3.h-3,
+:root[data-theme="clean-light"] .rounded-full.bg-paydine-rose-beige svg {
+  color: #1A202C !important;
+  fill: #1A202C !important;
+  stroke: #1A202C !important;
+}
+
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-paydine-champagne"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 button[class*="bg-"],
 :root[data-theme="clean-light"] .fixed.inset-0.z-50 .tip-button,
