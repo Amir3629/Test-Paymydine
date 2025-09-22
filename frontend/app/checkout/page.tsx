@@ -750,53 +750,53 @@ export default function CheckoutPage() {
         </Button>
 
         <div className="space-y-8">
-          <div className="bg-white rounded-3xl p-6 shadow-lg border border-paydine-champagne/20">
-            <h2 className="text-2xl font-bold mb-4 text-paydine-elegant-gray">{t("orderSummary")}</h2>
+          <div className="surface rounded-3xl p-6 shadow-lg">
+            <h2 className="text-2xl font-bold mb-4">{t("orderSummary")}</h2>
             
             {allItems.map(({ item, quantity }) => {
               const itemName = t(item.nameKey as TranslationKey) || item.name
               return (
-                <div key={item.id} className="flex justify-between items-center py-2 border-b border-paydine-champagne/20 last:border-0">
+                <div key={item.id} className="flex justify-between items-center py-2 divider last:border-0">
                   <div className="flex items-center space-x-4">
-                    <span className="text-paydine-elegant-gray">{quantity}x</span>
-                    <span className="text-paydine-elegant-gray">{itemName}</span>
+                    <span>{quantity}x</span>
+                    <span>{itemName}</span>
                   </div>
-                  <span className="text-paydine-elegant-gray font-semibold">${(item.price * quantity).toFixed(2)}</span>
+                  <span className="font-semibold">${(item.price * quantity).toFixed(2)}</span>
                 </div>
               )
             })}
 
             <div className="mt-4 space-y-2">
-              <div className="flex justify-between text-paydine-elegant-gray">
+              <div className="flex justify-between">
                 <span>{t("subtotal")}</span>
                 <span className="font-semibold">${subtotal.toFixed(2)}</span>
               </div>
-              <div className="flex justify-between text-paydine-elegant-gray">
+              <div className="flex justify-between">
                 <span>{t("service")} (10%)</span>
                 <span className="font-semibold">${serviceCharge.toFixed(2)}</span>
               </div>
-              <div className="flex justify-between text-paydine-elegant-gray">
+              <div className="flex justify-between">
                 <span>{t("tip")}</span>
                 <span className="font-semibold">${tipAmount.toFixed(2)}</span>
               </div>
-              <div className="flex justify-between text-xl font-bold pt-2 border-t border-paydine-champagne/20">
-                <span className="text-paydine-elegant-gray">{t("total")}</span>
-                <span className="text-paydine-rose-beige">${finalTotal.toFixed(2)}</span>
+              <div className="flex justify-between text-xl font-bold pt-2 divider">
+                <span>{t("total")}</span>
+                <span style={{ color: 'var(--theme-secondary)' }}>${finalTotal.toFixed(2)}</span>
               </div>
             </div>
           </div>
 
           {/* Split Bill Toggle */}
-          <div className="flex items-center justify-between p-3 bg-paydine-rose-beige/10 rounded-xl">
+          <div className="flex items-center justify-between p-3 surface-sub rounded-xl">
             <div className="flex items-center space-x-2">
-              <Users className="h-4 w-4 text-paydine-champagne" />
-              <span className="font-medium text-paydine-elegant-gray text-xs">{t("splitBill")}</span>
+              <Users className="h-4 w-4" style={{ color: 'var(--theme-secondary)' }} />
+              <span className="font-medium text-xs muted">{t("splitBill")}</span>
             </div>
             <Button
               variant={isSplitting ? "default" : "outline"}
               size="sm"
               onClick={() => setIsSplitting(!isSplitting)}
-              className={isSplitting ? "bg-paydine-champagne text-paydine-elegant-gray text-xs" : "border-paydine-champagne/30 text-xs"}
+              className={isSplitting ? "icon-btn--accent text-xs" : "icon-btn text-xs"}
             >
               {isSplitting ? "ON" : "OFF"}
             </Button>
@@ -804,29 +804,29 @@ export default function CheckoutPage() {
 
           {/* Items List */}
           {isSplitting ? (
-            <div className="bg-white/50 rounded-2xl p-3 border border-paydine-champagne/20 overflow-hidden">
-              <h3 className="font-semibold text-paydine-elegant-gray mb-2 text-xs">{t("selectItemsToPay")}</h3>
+            <div className="surface-sub rounded-2xl p-3 overflow-hidden">
+              <h3 className="font-semibold mb-2 text-xs">{t("selectItemsToPay")}</h3>
               <div className="space-y-2 max-h-24 overflow-y-auto">
                 {allItemInstances.map((instance) => (
                   <div
                     key={instance.key}
-                    className="flex justify-between items-center text-xs p-2 rounded-lg cursor-pointer hover:bg-paydine-champagne/10"
+                    className="flex justify-between items-center text-xs p-2 rounded-lg cursor-pointer hover:bg-gray-100"
                     onClick={() => toggleItemSelection(instance)}
                   >
                     <div className="flex items-center gap-2">
                       <div
                         className={cn(
                           "w-4 h-4 rounded-md border-2 flex items-center justify-center transition-all",
-                          selectedItems[instance.key] ? "bg-paydine-champagne border-paydine-champagne" : "border-gray-300",
+                          selectedItems[instance.key] ? "icon-btn--accent" : "icon-btn",
                         )}
                       >
-                        {selectedItems[instance.key] && <Check className="w-3 h-3 text-paydine-elegant-gray" />}
+                        {selectedItems[instance.key] && <Check className="w-3 h-3" />}
                       </div>
-                      <span className="text-gray-600">
+                      <span className="muted">
                         {t(instance.item.nameKey as TranslationKey)}
                       </span>
                     </div>
-                    <span className="text-paydine-champagne font-medium">
+                    <span className="font-medium" style={{ color: 'var(--theme-secondary)' }}>
                       ${instance.price.toFixed(2)}
                     </span>
                   </div>
@@ -834,16 +834,16 @@ export default function CheckoutPage() {
               </div>
             </div>
           ) : (
-            <div className="bg-white/50 rounded-2xl p-3 border border-paydine-champagne/20">
-              <h3 className="font-semibold text-paydine-elegant-gray mb-2 text-xs">{t("orderSummary")}</h3>
+            <div className="surface-sub rounded-2xl p-3">
+              <h3 className="font-semibold mb-2 text-xs">{t("orderSummary")}</h3>
               <div className="space-y-2">
                 {allItems.map((cartItem) => (
                   <div key={cartItem.item.id} className="flex justify-between items-center text-xs p-2 rounded-lg">
-                    <span className="text-gray-600 min-w-[120px]">
+                    <span className="muted min-w-[120px]">
                       {cartItem.quantity}x {t(cartItem.item.nameKey as TranslationKey)}
                     </span>
                     <div className="flex items-center gap-2">
-                      <span className="text-paydine-champagne font-medium min-w-[48px] text-center">
+                      <span className="font-medium min-w-[48px] text-center" style={{ color: 'var(--theme-secondary)' }}>
                         ${(cartItem.item.price * cartItem.quantity).toFixed(2)}
                       </span>
                     </div>
@@ -855,8 +855,8 @@ export default function CheckoutPage() {
 
           {/* Tip Section */}
           {tipSettings.enabled && (
-            <div className="bg-white/50 rounded-2xl p-3 border border-paydine-champagne/20">
-              <h3 className="font-semibold text-paydine-elegant-gray mb-2 text-xs">{t("addTip")}</h3>
+            <div className="surface-sub rounded-2xl p-3">
+              <h3 className="font-semibold mb-2 text-xs">{t("addTip")}</h3>
               <div className="space-y-3">
                 <div className="flex gap-2">
                   {tipSettings.percentages.map((p) => (
@@ -870,8 +870,8 @@ export default function CheckoutPage() {
                       }}
                       className={
                         tipPercentage === p && !customTip
-                          ? "bg-paydine-champagne text-paydine-elegant-gray text-xs"
-                          : "border-paydine-champagne/30 text-xs"
+                          ? "tip-pill--active text-xs"
+                          : "tip-pill text-xs"
                       }
                     >
                       {p}%
@@ -884,24 +884,24 @@ export default function CheckoutPage() {
           )}
 
           {/* Totals */}
-          <div className="bg-paydine-rose-beige/20 rounded-2xl p-3 space-y-1 border border-paydine-champagne/20">
-            <div className="flex justify-between text-xs text-paydine-elegant-gray">
+          <div className="surface-sub rounded-2xl p-3 space-y-1">
+            <div className="flex justify-between text-xs">
               <span>{t("subtotal")}</span>
               <span className="font-semibold">${subtotal.toFixed(2)}</span>
             </div>
-            <div className="flex justify-between text-xs text-paydine-elegant-gray">
+            <div className="flex justify-between text-xs">
               <span>{t("service")}</span>
               <span className="font-semibold">${serviceCharge.toFixed(2)}</span>
             </div>
             {tipAmount > 0 && (
-              <div className="flex justify-between text-xs text-paydine-elegant-gray">
+              <div className="flex justify-between text-xs">
                 <span>{t("tip")}</span>
                 <span className="font-semibold">${tipAmount.toFixed(2)}</span>
               </div>
             )}
-            <div className="flex justify-between items-center border-t border-paydine-champagne/30 pt-2 mt-2">
-              <span className="font-serif text-base text-paydine-elegant-gray">{t("total")}</span>
-              <span className="font-bold text-base text-paydine-rose-beige">${finalTotal.toFixed(2)}</span>
+            <div className="flex justify-between items-center divider pt-2 mt-2">
+              <span className="font-serif text-base">{t("total")}</span>
+              <span className="font-bold text-base" style={{ color: 'var(--theme-secondary)' }}>${finalTotal.toFixed(2)}</span>
             </div>
           </div>
 
@@ -915,18 +915,18 @@ export default function CheckoutPage() {
                 exit={{ opacity: 0, height: 0 }}
                 className="space-y-3 pt-2"
               >
-                <h3 className="font-semibold text-paydine-elegant-gray text-center text-sm">{t("paymentMethods")}</h3>
+                <h3 className="font-semibold text-center text-sm">{t("paymentMethods")}</h3>
                 <div className="flex justify-center items-center gap-3 flex-wrap">
                   {loadingPayments ? (
-                    <div className="text-paydine-elegant-gray text-sm">Loading payment methods...</div>
+                    <div className="text-sm muted">Loading payment methods...</div>
                   ) : paymentMethods.length === 0 ? (
-                    <div className="text-paydine-elegant-gray text-sm">No payment methods available</div>
+                    <div className="text-sm muted">No payment methods available</div>
                   ) : (
                     paymentMethods.map((method) => (
                       <motion.div key={method.code} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <Button
                           variant="outline"
-                          className="h-14 w-20 bg-white hover:bg-gray-50 border-gray-200 rounded-2xl shadow-sm flex items-center justify-center"
+                          className="h-14 w-20 surface-sub hover:bg-gray-50 rounded-2xl shadow-sm flex items-center justify-center"
                           onClick={() => handlePaymentMethodSelect(method.code)}
                         >
                           <img
