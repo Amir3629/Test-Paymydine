@@ -263,13 +263,13 @@ input[type="number"] {
 }
 
 :root[data-theme="minimal"] {
-  --theme-background: #87CEEB; /* Sky Blue */
+  --theme-background: #CFEBF7; /* Light Blue */
 }
 
 :root[data-theme="minimal"] .page--home,
 :root[data-theme="minimal"] .page--menu,
 :root[data-theme="minimal"] .page--valet {
-  --page-bg: #87CEEB; /* Sky Blue */
+  --page-bg: #CFEBF7; /* Light Blue */
 }
 
 /* Only update the background color for the 3 target pages */
@@ -649,7 +649,7 @@ html.theme-dark:root[data-theme="modern-dark"] button[class*="bg-paydine-rose-be
 }
 
 :root[data-theme="minimal"] .backdrop-blur-lg {
-  background-color: rgba(135, 206, 235, 0.7) !important;
+  background-color: rgba(207, 235, 247, 0.7) !important;
 }
 
 :root[data-theme="modern-dark"] .backdrop-blur-lg {
@@ -665,7 +665,7 @@ html.theme-dark:root[data-theme="vibrant-colors"] .backdrop-blur-lg {
 }
 
 html.theme-dark:root[data-theme="minimal"] .backdrop-blur-lg {
-  background-color: rgba(135, 206, 235, 0.7) !important;
+  background-color: rgba(207, 235, 247, 0.7) !important;
 }
 
 html.theme-dark:root[data-theme="modern-dark"] .backdrop-blur-lg {
@@ -758,7 +758,7 @@ body .cart-badge-number[data-theme="vibrant-colors"] {
 html.theme-dark:root[data-theme="minimal"] .cart-badge-number,
 html .cart-badge-number[data-theme="minimal"],
 body .cart-badge-number[data-theme="minimal"] {
-  color: #87CEEB !important;
+  color: #CFEBF7 !important;
 }
 
 :root[data-theme="modern-dark"] .cart-badge-number,

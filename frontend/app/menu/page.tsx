@@ -53,7 +53,7 @@ function useThemeBackgroundColor() {
       if (currentTheme === 'clean-light') {
         setColor('#000000');
       } else if (currentTheme === 'minimal') {
-        setColor('#87CEEB'); // Sky Blue
+        setColor('#CFEBF7'); // Light Blue
       } else {
         setColor(themeBg || '#FAFAFA');
       }
