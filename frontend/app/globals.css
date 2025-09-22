@@ -97,46 +97,81 @@
   html, body {
     background: var(--theme-background);
   }
+
+  /* NUCLEAR OPTION: Force exact background colors on html/body for each theme */
+  [data-theme="clean-light"] html,
+  [data-theme="clean-light"] body {
+    background: #FAFAFA !important;
+  }
+  [data-theme="modern-dark"] html,
+  [data-theme="modern-dark"] body {
+    background: #0A0E12 !important;
+  }
+  [data-theme="gold-luxury"] html,
+  [data-theme="gold-luxury"] body {
+    background: #0F0B05 !important;
+  }
+  [data-theme="vibrant-colors"] html,
+  [data-theme="vibrant-colors"] body {
+    background: #e2ceb1 !important;
+  }
+  [data-theme="minimal"] html,
+  [data-theme="minimal"] body {
+    background: #CFEBF7 !important;
+  }
   
   body {
     @apply text-foreground;
   }
 
   /* HARD-LOCK: Ensure homepage and menu page backgrounds are identical */
+  /* Target the actual background divs, not the wrapper classes */
+  
   /* Clean Light Theme */
-  [data-theme="clean-light"] .page--home,
-  [data-theme="clean-light"] .page--menu {
+  [data-theme="clean-light"] .page--home .min-h-screen,
+  [data-theme="clean-light"] .page--menu .min-h-screen {
     background: #FAFAFA !important;
   }
   
   /* Modern Dark Theme */
-  [data-theme="modern-dark"] .page--home,
-  [data-theme="modern-dark"] .page--menu {
+  [data-theme="modern-dark"] .page--home .min-h-screen,
+  [data-theme="modern-dark"] .page--menu .min-h-screen {
     background: #0A0E12 !important;
   }
   
   /* Gold Luxury Theme */
-  [data-theme="gold-luxury"] .page--home,
-  [data-theme="gold-luxury"] .page--menu {
+  [data-theme="gold-luxury"] .page--home .min-h-screen,
+  [data-theme="gold-luxury"] .page--menu .min-h-screen {
     background: #0F0B05 !important;
   }
   
   /* Vibrant Colors Theme */
-  [data-theme="vibrant-colors"] .page--home,
-  [data-theme="vibrant-colors"] .page--menu {
+  [data-theme="vibrant-colors"] .page--home .min-h-screen,
+  [data-theme="vibrant-colors"] .page--menu .min-h-screen {
     background: #e2ceb1 !important;
   }
   
   /* Minimal Theme */
-  [data-theme="minimal"] .page--home,
-  [data-theme="minimal"] .page--menu {
+  [data-theme="minimal"] .page--home .min-h-screen,
+  [data-theme="minimal"] .page--menu .min-h-screen {
     background: #CFEBF7 !important;
   }
 
-  /* Additional safety: Force page wrappers to use theme background */
-  .page--home .min-h-screen,
-  .page--menu .min-h-screen {
-    background: var(--theme-background) !important;
+  /* Additional safety: Force bg-theme-background class to use exact colors */
+  [data-theme="clean-light"] .bg-theme-background {
+    background-color: #FAFAFA !important;
+  }
+  [data-theme="modern-dark"] .bg-theme-background {
+    background-color: #0A0E12 !important;
+  }
+  [data-theme="gold-luxury"] .bg-theme-background {
+    background-color: #0F0B05 !important;
+  }
+  [data-theme="vibrant-colors"] .bg-theme-background {
+    background-color: #e2ceb1 !important;
+  }
+  [data-theme="minimal"] .bg-theme-background {
+    background-color: #CFEBF7 !important;
   }
 }
 

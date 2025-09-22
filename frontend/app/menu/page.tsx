@@ -1921,9 +1921,31 @@ export default function ExpandingBottomToolbarMenu() {
       const currentTheme = localStorage.getItem('paymydine-theme') || 'clean-light';
       applyTheme(currentTheme);
       
+      // NUCLEAR OPTION: Directly set background colors
+      const themeColors = {
+        'clean-light': '#FAFAFA',
+        'modern-dark': '#0A0E12',
+        'gold-luxury': '#0F0B05',
+        'vibrant-colors': '#e2ceb1',
+        'minimal': '#CFEBF7'
+      };
+      
+      const bgColor = themeColors[currentTheme as keyof typeof themeColors] || '#FAFAFA';
+      
+      // Force background on body and html
+      document.body.style.background = bgColor;
+      document.documentElement.style.background = bgColor;
+      
+      // Force background on page elements
+      const pageElement = document.querySelector('.page--menu .min-h-screen');
+      if (pageElement) {
+        (pageElement as HTMLElement).style.background = bgColor;
+      }
+      
       // Debug logging for verification
       console.info("MENU PAGE THEME SAFETY NET APPLIED");
       console.log("Applied theme:", currentTheme);
+      console.log("Forced background color:", bgColor);
       console.log("--theme-background:", getComputedStyle(document.documentElement).getPropertyValue('--theme-background'));
       console.log("body background:", getComputedStyle(document.body).background);
     }

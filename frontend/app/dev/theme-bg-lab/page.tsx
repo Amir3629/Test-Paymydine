@@ -24,10 +24,25 @@ export default function ThemeBackgroundLab() {
     applyTheme(themeId)
     setCurrentTheme(themeId)
     
+    // NUCLEAR OPTION: Force background colors directly
+    const themeColors = {
+      'clean-light': '#FAFAFA',
+      'modern-dark': '#0A0E12',
+      'gold-luxury': '#0F0B05',
+      'vibrant-colors': '#e2ceb1',
+      'minimal': '#CFEBF7'
+    };
+    
+    const bgColor = themeColors[themeId as keyof typeof themeColors] || '#FAFAFA';
+    
+    // Force background on body and html
+    document.body.style.background = bgColor;
+    document.documentElement.style.background = bgColor;
+    
     // Wait for DOM update
     setTimeout(() => {
-      const homepageElement = document.querySelector('.page--home')
-      const menuPageElement = document.querySelector('.page--menu')
+      const homepageElement = document.querySelector('.page--home .min-h-screen')
+      const menuPageElement = document.querySelector('.page--menu .min-h-screen')
       const cssVar = getComputedStyle(document.documentElement).getPropertyValue('--theme-background')
       const bodyBg = getComputedStyle(document.body).background
       
@@ -38,6 +53,7 @@ export default function ThemeBackgroundLab() {
       
       console.log(`=== THEME: ${themeId} ===`)
       console.log('Expected:', themes.find(t => t.id === themeId)?.expected)
+      console.log('Forced Color:', bgColor)
       console.log('CSS Variable:', cssVar)
       console.log('Body Background:', bodyBg)
       console.log('Homepage Background:', homepageElement ? getComputedStyle(homepageElement).background : 'Not found')
