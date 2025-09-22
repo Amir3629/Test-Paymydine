@@ -433,6 +433,24 @@ input[type="number"] {
   background: var(--theme-border);
 }
 
+/* Quantity selector buttons */
+.quantity-btn {
+  background-color: var(--theme-secondary) !important;
+  color: var(--theme-background) !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 50% !important;
+}
+
+.quantity-btn:hover {
+  opacity: 0.8 !important;
+}
+
+/* Cart badge */
+.cart-badge {
+  background-color: var(--theme-secondary) !important;
+  color: var(--theme-background) !important;
+}
+
 /* Ensure the same backdrop in all themes; the card stays readable */
 html[data-theme] .radix-overlay,
 html[data-theme] [data-radix-dialog-overlay],

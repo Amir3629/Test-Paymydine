@@ -182,11 +182,7 @@ function OrderItemWithOptions({
               e.stopPropagation();
               addToCart(cartItem.item, -1);
             }}
-            className="w-5 h-5 rounded-full flex items-center justify-center transition-colors"
-            style={{ 
-              backgroundColor: 'var(--theme-secondary)',
-              color: 'var(--theme-background)'
-            }}
+            className="quantity-btn w-5 h-5 flex items-center justify-center transition-colors"
           >
             <Minus className="w-3 h-3" style={{ color: 'var(--theme-background)' }} />
           </button>
@@ -198,11 +194,7 @@ function OrderItemWithOptions({
               e.stopPropagation();
               addToCart(cartItem.item, 1);
             }}
-            className="w-5 h-5 rounded-full flex items-center justify-center transition-colors"
-            style={{ 
-              backgroundColor: 'var(--theme-secondary)',
-              color: 'var(--theme-background)'
-            }}
+            className="quantity-btn w-5 h-5 flex items-center justify-center transition-colors"
           >
             <Plus className="w-3 h-3" style={{ color: 'var(--theme-background)' }} />
           </button>
@@ -1036,13 +1028,7 @@ function ExpandingToolbarMenuItemCard({ item, onSelect, onFirstAdd }: { item: Me
           <div className="relative">
             <Button
               size="icon"
-              variant="ghost"
-              className="rounded-full w-12 h-12 font-bold text-lg"
-              style={{ 
-                backgroundColor: 'var(--theme-secondary)',
-                color: 'var(--theme-background)',
-                border: '1px solid var(--theme-border)'
-              }}
+              className="quantity-btn w-12 h-12 font-bold text-lg"
               onClick={handleAdd}
             >
               {quantity > 0 ? (
@@ -1283,12 +1269,8 @@ function ExpandingBottomToolbar({
             <ShoppingCart className="h-8 w-8 text-paydine-elegant-gray" />
             {totalItems > 0 && (
               <span 
-                className="absolute -top-2 -right-2 font-bold rounded-full h-7 w-7 flex items-center justify-center shadow-md"
-                style={{ 
-                  backgroundColor: 'var(--theme-secondary)',
-                  color: 'var(--theme-background)',
-                  fontSize: '12px' 
-                }}>
+                className="cart-badge absolute -top-2 -right-2 font-bold rounded-full h-7 w-7 flex items-center justify-center shadow-md"
+                style={{ fontSize: '12px' }}>
                 {totalItems}
               </span>
             )}
