@@ -321,7 +321,7 @@ export interface ThemeColors {
     
     // Let CSS own the background - no more JS/CSS tug-of-war
     document.body.style.background = '';
-    document.body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-background') || '#FAFAFA';
+    document.body.style.backgroundColor = '';
     
     // Store current theme in localStorage (only on client side)
     if (typeof window !== 'undefined') {

@@ -26,6 +26,10 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#E7CBA9" />
+        <style id="theme-vars-inline">{`
+          /* Let CSS variables handle all backgrounds - no overrides */
+          html, body { background: var(--theme-background); }
+        `}</style>
       </head>
       <body className={inter.className + ' text-theme'}>
         <ThemeProvider>
