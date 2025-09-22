@@ -306,73 +306,22 @@ export interface ThemeColors {
       return;
     }
     
+    // Always set the HTML data attribute for CSS targeting
+    document.documentElement.setAttribute('data-theme', themeId);
+    
+    // Set CSS variables
     const cssVars = themeToCSSVariables(theme, overrides);
     Object.entries(cssVars).forEach(([key, value]) => {
       document.documentElement.style.setProperty(key, value);
     });
-  // Toggle dark class to allow global overrides for dark designs
-  const isDark = themeId === 'modern-dark' || themeId === 'gold-luxury';
-  document.documentElement.classList.toggle('theme-dark', isDark);
-  
-  if (isDark) {
-    const bg = getComputedStyle(document.documentElement).getPropertyValue('--theme-background') || '#0B0F14';
-    let matteVignette;
     
-    if (themeId === 'modern-dark') {
-      // Modern Dark: Rose gold accents with subtle blue undertones
-      matteVignette = `radial-gradient(1200px 600px at 20% 0%, rgba(240,198,177,0.08), transparent 60%),
-        radial-gradient(900px 500px at 80% 10%, rgba(232,180,160,0.06), transparent 60%),
-        radial-gradient(1200px 800px at 50% 120%, rgba(0,0,0,0.75), transparent 70%),
-        radial-gradient(1200px 800px at -20% -20%, rgba(0,0,0,0.65), transparent 70%),
-        radial-gradient(1200px 800px at 120% -20%, rgba(0,0,0,0.65), transparent 70%), ${bg.trim()}`;
-    } else if (themeId === 'gold-luxury') {
-      // Gold Luxury: Warm gold accents with rich bronze undertones
-      matteVignette = `radial-gradient(1200px 600px at 20% 0%, rgba(255,215,0,0.12), transparent 60%),
-        radial-gradient(900px 500px at 80% 10%, rgba(218,165,32,0.08), transparent 60%),
-        radial-gradient(1200px 800px at 50% 120%, rgba(0,0,0,0.80), transparent 70%),
-        radial-gradient(1200px 800px at -20% -20%, rgba(0,0,0,0.70), transparent 70%),
-        radial-gradient(1200px 800px at 120% -20%, rgba(0,0,0,0.70), transparent 70%), ${bg.trim()}`;
-    } else {
-      // Fallback for other dark themes
-      matteVignette = bg.trim();
-    }
+    // Toggle dark class to allow global overrides for dark designs
+    const isDark = themeId === 'modern-dark' || themeId === 'gold-luxury';
+    document.documentElement.classList.toggle('theme-dark', isDark);
     
-    document.body.style.background = matteVignette;
-  } else {
-    // Enhanced backgrounds for light themes
-    const lightBg = getComputedStyle(document.documentElement).getPropertyValue('--theme-background') || '#FAFAFA';
-    
-    if (themeId === 'vibrant-colors') {
-      // Vibrant Colors: Cooler coral and turquoise gradient with darker base
-      const vibrantGradient = `linear-gradient(135deg, 
-        rgba(255,107,107,0.06) 0%, 
-        rgba(245,240,232,0.98) 25%, 
-        rgba(78,205,196,0.04) 50%, 
-        rgba(245,240,232,0.99) 75%, 
-        rgba(255,107,107,0.03) 100%), 
-        radial-gradient(circle at 20% 80%, rgba(255,107,107,0.08), transparent 60%),
-        radial-gradient(circle at 80% 20%, rgba(78,205,196,0.06), transparent 60%),
-        radial-gradient(circle at 50% 50%, rgba(69,183,209,0.03), transparent 70%),
-        ${lightBg.trim()}`;
-      document.body.style.background = vibrantGradient;
-    } else if (themeId === 'minimal') {
-      // Minimal: Elegant warm cream gradient
-      const minimalGradient = `linear-gradient(135deg, 
-        rgba(45,55,72,0.03) 0%, 
-        rgba(254,252,248,0.98) 25%, 
-        rgba(113,128,150,0.02) 50%, 
-        rgba(254,252,248,0.99) 75%, 
-        rgba(45,55,72,0.02) 100%), 
-        radial-gradient(circle at 30% 70%, rgba(45,55,72,0.04), transparent 60%),
-        radial-gradient(circle at 70% 30%, rgba(113,128,150,0.03), transparent 60%),
-        ${lightBg.trim()}`;
-      document.body.style.background = minimalGradient;
-    } else {
-      // Clean Light and other light themes: Simple background
-      document.body.style.background = '';
-      document.body.style.backgroundColor = lightBg;
-    }
-  }
+    // Let CSS own the background - no more JS/CSS tug-of-war
+    document.body.style.background = '';
+    document.body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-background') || '#FAFAFA';
     
     // Store current theme in localStorage (only on client side)
     if (typeof window !== 'undefined') {

@@ -14,13 +14,10 @@ const THEMES = [
 // Small helper that integrates with existing theme system
 function setDevTheme(themeId: string) {
   try {
-    // 1) data-attr for CSS targeting
-    document.documentElement.setAttribute('data-theme', themeId);
-    
-    // 2) existing system (variables + dark class)
+    // Apply theme (now includes data-theme attribute setting)
     applyTheme(themeId);
     
-    // 3) persist for dev-only
+    // Persist for dev-only
     localStorage.setItem('paymydine-dev-theme', themeId);
   } catch {}
 }
