@@ -828,6 +828,21 @@ html.theme-dark [data-radix-dialog-content],
   display: none !important;
 }
 
+/* NUCLEAR OPTION: Target Lock component with h-4 w-4 class */
+:root[data-theme] button .h-4.w-4,
+:root[data-theme] button svg.h-4.w-4,
+:root[data-theme] .fixed.inset-0 button .h-4.w-4,
+:root[data-theme] .fixed.inset-0 button svg.h-4.w-4 {
+  display: none !important;
+}
+
+/* ULTRA AGGRESSIVE: Target any SVG in payment button */
+:root[data-theme] button[style*="backgroundColor"] svg,
+:root[data-theme] button[style*="backgroundColor"] .h-4,
+:root[data-theme] button[style*="backgroundColor"] .w-4 {
+  display: none !important;
+}
+
 /* REMOVE BLACK BACKGROUND from payment button text container */
 :root[data-theme] button[style*="var(--theme-button"] div.flex,
 :root[data-theme] button.font-bold.py-3 div.flex {
