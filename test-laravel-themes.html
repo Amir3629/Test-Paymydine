@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laravel Theme Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        .theme-button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; }
+        .clean-light { background: #FAFAFA; color: #333; }
+        .modern-dark { background: #0A0E12; color: #fff; }
+        .gold-luxury { background: #0F0B05; color: #fff; }
+        .vibrant-colors { background: #e2ceb1; color: #333; }
+        .minimal { background: #CFEBF7; color: #333; }
+        .status { margin: 10px 0; padding: 10px; background: #f0f0f0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Laravel Server Theme Test</h1>
+    
+    <div class="test-section">
+        <h2>Test URLs</h2>
+        <p><a href="http://127.0.0.1:8000/table/6?location=1&guest=6&date=2025-09-19&time=15%3A28&qr=ms38Dm9ACe&table=6" target="_blank">Laravel Server (Table 6)</a></p>
+        <p><a href="http://localhost:3000" target="_blank">Next.js Dev Server (Direct)</a></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>Theme Buttons (Test in Laravel Server)</h2>
+        <p>Open the Laravel server URL above and click these theme buttons to test:</p>
+        <button class="theme-button clean-light" onclick="testTheme('clean-light')">Clean Light</button>
+        <button class="theme-button modern-dark" onclick="testTheme('modern-dark')">Modern Dark</button>
+        <button class="theme-button gold-luxury" onclick="testTheme('gold-luxury')">Gold Luxury</button>
+        <button class="theme-button vibrant-colors" onclick="testTheme('vibrant-colors')">Vibrant Colors</button>
+        <button class="theme-button minimal" onclick="testTheme('minimal')">Minimal</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Asset Test</h2>
+        <div class="status" id="asset-status">Testing asset loading...</div>
+        <button onclick="testAssets()">Test Asset Loading</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Instructions</h2>
+        <ol>
+            <li>Open the Laravel server URL in a new tab</li>
+            <li>Check if the page loads with proper styling (not broken CSS)</li>
+            <li>Click the theme switcher buttons in the top-right corner</li>
+            <li>Verify that the background color changes for each theme</li>
+            <li>Check the browser console for any errors</li>
+        </ol>
+    </div>
+
+    <script>
+        function testTheme(themeId) {
+            console.log('Testing theme:', themeId);
+            // This would be called from the Laravel server page
+            alert('Theme test: ' + themeId + '\n\nOpen the Laravel server URL and test the theme switcher there.');
+        }
+        
+        function testAssets() {
+            const status = document.getElementById('asset-status');
+            status.innerHTML = 'Testing asset loading...';
+            
+            // Test if CSS is accessible
+            fetch('http://127.0.0.1:8000/_next/static/css/app/layout.css')
+                .then(response => {
+                    if (response.ok) {
+                        status.innerHTML = '✅ CSS assets are loading correctly!';
+                        status.style.background = '#d4edda';
+                    } else {
+                        status.innerHTML = '❌ CSS assets failed to load: ' + response.status;
+                        status.style.background = '#f8d7da';
+                    }
+                })
+                .catch(error => {
+                    status.innerHTML = '❌ Error loading CSS assets: ' + error.message;
+                    status.style.background = '#f8d7da';
+                });
+        }
+        
+        // Auto-test assets on page load
+        window.onload = function() {
+            testAssets();
+        };
+    </script>
+</body>
+</html>
