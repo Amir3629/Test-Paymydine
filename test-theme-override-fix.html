@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Override Fix Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        .status { margin: 10px 0; padding: 10px; background: #f0f0f0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .warning { background: #fff3cd; color: #856404; }
+    </style>
+</head>
+<body>
+    <h1>Theme Override Fix Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Instructions</h2>
+        <ol>
+            <li>Open the Laravel server URL: <a href="http://127.0.0.1:8000/table/6?location=1&guest=6&date=2025-09-19&time=15%3A28&qr=ms38Dm9ACe&table=6" target="_blank">http://127.0.0.1:8000/table/6...</a></li>
+            <li>Open browser console (F12)</li>
+            <li>Click on "Gold Luxury" theme button</li>
+            <li>Check console logs - should see:
+                <ul>
+                    <li>✅ "ThemeStore: Setting theme to: gold-luxury"</li>
+                    <li>✅ "ThemeStore: Forcing background color: #0F0B05"</li>
+                    <li>✅ "ThemeStore: User has manually selected theme, skipping API override: gold-luxury"</li>
+                    <li>❌ Should NOT see "ThemeStore: Applying theme from API: clean-light"</li>
+                </ul>
+            </li>
+            <li>Verify the background stays dark (#0F0B05) and doesn't change to light</li>
+        </ol>
+    </div>
+    
+    <div class="test-section">
+        <h2>Expected Behavior</h2>
+        <div class="status success">
+            <strong>✅ SUCCESS:</strong> When you select "Gold Luxury", the background should stay dark (#0F0B05) and not be overridden by the API response.
+        </div>
+        <div class="status warning">
+            <strong>⚠️ BEFORE FIX:</strong> The API was returning "clean-light" and overriding the user's "gold-luxury" selection.
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Console Log Test</h2>
+        <button onclick="testConsoleLogs()">Test Console Logs</button>
+        <div class="status" id="console-test-result">Click the button to test console log patterns</div>
+    </div>
+
+    <script>
+        function testConsoleLogs() {
+            const result = document.getElementById('console-test-result');
+            
+            // Simulate the expected console log patterns
+            const expectedLogs = [
+                'ThemeStore: Setting theme to: gold-luxury',
+                'ThemeStore: Forcing background color: #0F0B05',
+                'ThemeStore: User has manually selected theme, skipping API override: gold-luxury'
+            ];
+            
+            const badLogs = [
+                'ThemeStore: Applying theme from API: clean-light'
+            ];
+            
+            let html = '<h3>Expected Console Logs:</h3><ul>';
+            expectedLogs.forEach(log => {
+                html += `<li style="color: green;">✅ ${log}</li>`;
+            });
+            html += '</ul>';
+            
+            html += '<h3>Should NOT appear:</h3><ul>';
+            badLogs.forEach(log => {
+                html += `<li style="color: red;">❌ ${log}</li>`;
+            });
+            html += '</ul>';
+            
+            result.innerHTML = html;
+            result.className = 'status success';
+        }
+        
+        // Auto-run test on page load
+        window.onload = function() {
+            testConsoleLogs();
+        };
+    </script>
+</body>
+</html>
