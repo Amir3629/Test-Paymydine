@@ -813,7 +813,7 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
                 {allItemInstances.map((instance) => (
                   <div
                     key={instance.key}
-                    className="flex justify-between items-center text-xs p-2 rounded-lg cursor-pointer hover:bg-gray-100"
+                    className="flex justify-between items-center text-xs p-2 rounded-lg cursor-pointer hover:opacity-90"
                     onClick={() => toggleItemSelection(instance)}
                   >
                     <div className="flex items-center gap-2">
@@ -938,7 +938,7 @@ function PaymentModal({ isOpen, onClose, items: allItems, tableInfo }: PaymentMo
                       <motion.div key={method.code} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <Button
                           variant="outline"
-                          className="h-14 w-20 surface-sub hover:bg-gray-50 rounded-2xl shadow-sm flex items-center justify-center"
+                          className="h-14 w-20 surface-sub hover:opacity-90 rounded-2xl shadow-sm flex items-center justify-center"
                           onClick={() => handlePaymentMethodSelect(method.code)}
                         >
                           <img

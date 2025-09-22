@@ -250,12 +250,14 @@ input[type="number"] {
 
 /* Base surfaces used by drawers & modals */
 .surface {
-  background-color: var(--theme-input);
+  /* Match page background so the bill blends with each theme */
+  background-color: var(--theme-background);
   color: var(--theme-text-primary);
   border-color: var(--theme-border);
 }
 
 .surface-sub {
+  /* Slightly lifted inner blocks */
   background-color: var(--theme-cart-bg, var(--theme-input));
   color: var(--theme-text-primary);
   border-color: var(--theme-border);
