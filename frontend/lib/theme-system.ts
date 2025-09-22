@@ -148,7 +148,7 @@
 
         menuItemBackground: '#1A1612',
         menuItemBorder: '#CD853F',
-        categoryActive: '#FFD700', // Bright gold active
+        categoryActive: '#FFF8DC', // Cornsilk for active category
         categoryInactive: '#8B7355',
         priceColor: '#FFF8DC',     // Cornsilk prices
 
@@ -186,7 +186,7 @@
 
         menuItemBackground: '#FAF7F2',
         menuItemBorder: '#E8E0D5',
-        categoryActive: '#FF6B6B', // Electric coral
+        categoryActive: '#6b5e4f', // Warm brown for active category
         categoryInactive: '#94A3B8',
         priceColor: '#6b5e4f',     // Warm orange accent
 
@@ -224,7 +224,7 @@
 
         menuItemBackground: '#FFFFFF',
         menuItemBorder: '#F7FAFC',
-        categoryActive: '#2D3748', // Charcoal
+        categoryActive: '#4A5568', // Slate for active category
         categoryInactive: '#A0AEC0',
         priceColor: '#4A5568',     // Slate
 
