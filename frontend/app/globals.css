@@ -532,35 +532,70 @@ button.quantity-btn:focus,
   box-shadow: 0 0 0 2px var(--theme-secondary) !important;
 }
 
-/* Cart badge - HARDCODED COLORS BY THEME */
+/* Cart badge - CORRECT BUTTON COLORS BY THEME - MAXIMUM SPECIFICITY */
 /* Clean Light Theme */
-[data-theme="clean-light"] .cart-badge {
-  background-color: #EFC7B1 !important; /* paydine-rose-beige */
+html[data-theme="clean-light"] .cart-badge,
+html[data-theme="clean-light"] span.cart-badge,
+[data-theme="clean-light"] .cart-badge,
+[data-theme="clean-light"] span.cart-badge {
+  background-color: #E7CBA9 !important; /* paydine-champagne (button color) */
   color: #FAFAFA !important; /* paydine-soft-white */
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  z-index: 9999999 !important;
 }
 
 /* Modern Dark Theme */
-[data-theme="modern-dark"] .cart-badge {
-  background-color: #E8B4A0 !important; /* rose gold */
+html[data-theme="modern-dark"] .cart-badge,
+html[data-theme="modern-dark"] span.cart-badge,
+[data-theme="modern-dark"] .cart-badge,
+[data-theme="modern-dark"] span.cart-badge {
+  background-color: #E8B4A0 !important; /* secondary color (rose gold) */
   color: #0A0E12 !important; /* dark background */
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  z-index: 9999999 !important;
 }
 
 /* Gold Luxury Theme */
-[data-theme="gold-luxury"] .cart-badge {
-  background-color: #FFF8DC !important; /* cornsilk */
+html[data-theme="gold-luxury"] .cart-badge,
+html[data-theme="gold-luxury"] span.cart-badge,
+[data-theme="gold-luxury"] .cart-badge,
+[data-theme="gold-luxury"] span.cart-badge {
+  background-color: #FFF8DC !important; /* cornsilk (updated as requested) */
   color: #0F0B05 !important; /* dark background */
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  z-index: 9999999 !important;
 }
 
 /* Vibrant Colors Theme */
-[data-theme="vibrant-colors"] .cart-badge {
-  background-color: #FF6B6B !important; /* coral */
+html[data-theme="vibrant-colors"] .cart-badge,
+html[data-theme="vibrant-colors"] span.cart-badge,
+[data-theme="vibrant-colors"] .cart-badge,
+[data-theme="vibrant-colors"] span.cart-badge {
+  background-color: #FF6B6B !important; /* electric coral (button color) */
   color: #e2ceb1 !important; /* warm beige */
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  z-index: 9999999 !important;
 }
 
 /* Minimal Theme */
-[data-theme="minimal"] .cart-badge {
-  background-color: #4A90E2 !important; /* blue */
+html[data-theme="minimal"] .cart-badge,
+html[data-theme="minimal"] span.cart-badge,
+[data-theme="minimal"] .cart-badge,
+[data-theme="minimal"] span.cart-badge {
+  background-color: #4B8FE2 !important; /* nice blue color */
   color: #CFEBF7 !important; /* light blue */
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  z-index: 9999999 !important;
 }
 
 /* Ensure the same backdrop in all themes; the card stays readable */
@@ -568,4 +603,133 @@ html[data-theme] .radix-overlay,
 html[data-theme] [data-radix-dialog-overlay],
 html[data-theme] [data-radix-sheet-overlay] {
   background: rgba(0,0,0,0.42);
+}
+
+/* FOOD ITEM MODAL CARD FIX - PERMANENT CSS SOLUTION */
+/* Clean Light Theme */
+html[data-theme="clean-light"] .surface.rounded-3xl.shadow-2xl,
+html[data-theme="clean-light"] [class*="surface"][class*="rounded-3xl"],
+html[data-theme="clean-light"] div[class*="relative"][class*="surface"][class*="rounded"] {
+  background-color: #FAFAFA !important;
+  color: #3B3B3B !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Modern Dark Theme */
+html[data-theme="modern-dark"] .surface.rounded-3xl.shadow-2xl,
+html[data-theme="modern-dark"] [class*="surface"][class*="rounded-3xl"],
+html[data-theme="modern-dark"] div[class*="relative"][class*="surface"][class*="rounded"] {
+  background-color: #0A0E12 !important;
+  color: #F8FAFC !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Gold Luxury Theme */
+html[data-theme="gold-luxury"] .surface.rounded-3xl.shadow-2xl,
+html[data-theme="gold-luxury"] [class*="surface"][class*="rounded-3xl"],
+html[data-theme="gold-luxury"] div[class*="relative"][class*="surface"][class*="rounded"] {
+  background-color: #0F0B05 !important;
+  color: #FFF8DC !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Vibrant Colors Theme */
+html[data-theme="vibrant-colors"] .surface.rounded-3xl.shadow-2xl,
+html[data-theme="vibrant-colors"] [class*="surface"][class*="rounded-3xl"],
+html[data-theme="vibrant-colors"] div[class*="relative"][class*="surface"][class*="rounded"] {
+  background-color: #e2ceb1 !important;
+  color: #1E293B !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Minimal Theme */
+html[data-theme="minimal"] .surface.rounded-3xl.shadow-2xl,
+html[data-theme="minimal"] [class*="surface"][class*="rounded-3xl"],
+html[data-theme="minimal"] div[class*="relative"][class*="surface"][class*="rounded"] {
+  background-color: #CFEBF7 !important;
+  color: #1A202C !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Modal backdrop - keep blurry and dark */
+html[data-theme] div[class*="fixed"][class*="inset-0"][class*="z-50"][class*="flex"][class*="items-center"][class*="justify-center"] {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+  opacity: 1 !important;
+}
+
+/* MODAL INFO CARDS FIX - PERMANENT CSS SOLUTION */
+/* Clean Light Theme */
+html[data-theme="clean-light"] [class*="bg-paydine-rose-beige/10"],
+html[data-theme="clean-light"] [class*="backdrop-blur-sm"][class*="rounded-2xl"],
+html[data-theme="clean-light"] div[class*="backdrop-blur-sm"][class*="rounded-2xl"][class*="p-4"],
+html[data-theme="clean-light"] div[class*="backdrop-blur"][class*="rounded-2xl"] {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #3B3B3B !important;
+  border-color: #EDEDED !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid #EDEDED !important;
+}
+
+/* Modern Dark Theme */
+html[data-theme="modern-dark"] [class*="bg-paydine-rose-beige/10"],
+html[data-theme="modern-dark"] [class*="backdrop-blur-sm"][class*="rounded-2xl"],
+html[data-theme="modern-dark"] div[class*="backdrop-blur-sm"][class*="rounded-2xl"][class*="p-4"],
+html[data-theme="modern-dark"] div[class*="backdrop-blur"][class*="rounded-2xl"] {
+  background-color: rgba(30, 41, 59, 0.9) !important;
+  color: #F8FAFC !important;
+  border-color: #334155 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid #334155 !important;
+}
+
+/* Gold Luxury Theme */
+html[data-theme="gold-luxury"] [class*="bg-paydine-rose-beige/10"],
+html[data-theme="gold-luxury"] [class*="backdrop-blur-sm"][class*="rounded-2xl"],
+html[data-theme="gold-luxury"] div[class*="backdrop-blur-sm"][class*="rounded-2xl"][class*="p-4"],
+html[data-theme="gold-luxury"] div[class*="backdrop-blur"][class*="rounded-2xl"] {
+  background-color: rgba(26, 22, 18, 0.9) !important;
+  color: #FFF8DC !important;
+  border-color: #CD853F !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid #CD853F !important;
+}
+
+/* Vibrant Colors Theme */
+html[data-theme="vibrant-colors"] [class*="bg-paydine-rose-beige/10"],
+html[data-theme="vibrant-colors"] [class*="backdrop-blur-sm"][class*="rounded-2xl"],
+html[data-theme="vibrant-colors"] div[class*="backdrop-blur-sm"][class*="rounded-2xl"][class*="p-4"],
+html[data-theme="vibrant-colors"] div[class*="backdrop-blur"][class*="rounded-2xl"] {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: #1E293B !important;
+  border-color: #E8E0D5 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid #E8E0D5 !important;
+}
+
+/* Minimal Theme */
+html[data-theme="minimal"] [class*="bg-paydine-rose-beige/10"],
+html[data-theme="minimal"] [class*="backdrop-blur-sm"][class*="rounded-2xl"],
+html[data-theme="minimal"] div[class*="backdrop-blur-sm"][class*="rounded-2xl"][class*="p-4"],
+html[data-theme="minimal"] div[class*="backdrop-blur"][class*="rounded-2xl"] {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: #1A202C !important;
+  border-color: #E2E8F0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid #E2E8F0 !important;
 }

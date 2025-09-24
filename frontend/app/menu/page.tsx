@@ -1026,18 +1026,17 @@ function ExpandingToolbarMenuItemCard({ item, onSelect, onFirstAdd }: { item: Me
         <div className="flex justify-between items-center mt-2">
         <p className="text-lg font-semibold text-paydine-rose-beige">{formatCurrency(item.price || 0)}</p>
           <div className="relative">
-            <Button
-              size="icon"
+            <button
               className="quantity-btn w-12 h-12 font-bold text-lg"
               onClick={handleAdd}
             >
               {quantity > 0 ? (
-                <span className="text-lg font-bold" style={{ color: 'var(--theme-background)' }}>{quantity}</span>
+                <span className="text-lg font-bold">{quantity}</span>
               ) : (
-                <Plus className="h-5 w-5" style={{ color: 'var(--theme-background)' }} />
+                <Plus className="h-5 w-5" />
               )}
               <span className="sr-only">Add to cart</span>
-            </Button>
+            </button>
             {quantity > 0 && (
               <span className="absolute -top-2 -right-2 text-base font-bold" style={{ color: 'var(--theme-secondary)' }}>
                 +
@@ -1074,6 +1073,58 @@ function ExpandingBottomToolbar({
   if (toolbarState === "preview") height = previewHeight
   if (toolbarState === "expanded") height = expandedHeight
 
+  // Safety net: Ensure toolbar background is applied correctly
+  useEffect(() => {
+    const applyToolbarBackground = () => {
+      const toolbarElement = document.querySelector('.toolbar-inner-fixed') || 
+                            document.querySelector('div[class*="backdrop-blur-lg"][class*="rounded-[2.5rem]"]')
+      
+      if (toolbarElement) {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'clean-light'
+        const themeColors = {
+          'clean-light': 'rgba(250, 250, 250, 0.95)',
+          'modern-dark': 'rgba(10, 14, 18, 0.95)',
+          'gold-luxury': 'rgba(15, 11, 5, 0.95)',
+          'vibrant-colors': 'rgba(226, 206, 177, 0.95)',
+          'minimal': 'rgba(207, 235, 247, 0.95)'
+        }
+        
+        const bgColor = themeColors[currentTheme as keyof typeof themeColors] || themeColors['clean-light']
+        
+        // Apply theme-aware background
+        const htmlElement = toolbarElement as HTMLElement
+        htmlElement.style.background = bgColor
+        htmlElement.style.backgroundColor = bgColor
+        htmlElement.style.opacity = '0.95'
+        
+        // Add ID for future targeting
+        toolbarElement.id = 'toolbar-inner-fixed'
+      }
+    }
+
+    // Apply immediately
+    applyToolbarBackground()
+
+    // Watch for theme changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+          setTimeout(applyToolbarBackground, 100)
+        }
+      })
+    })
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    })
+
+    // Cleanup
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
   return (
     <motion.div
       className="fixed bottom-[1.35rem] left-1/2 -translate-x-1/2 w-full max-w-[23.04rem] z-40 px-2"
@@ -1088,10 +1139,16 @@ function ExpandingBottomToolbar({
       <div
         className="
           relative flex flex-col w-full h-full
-          bg-white/70 backdrop-blur-lg
+          backdrop-blur-lg
           rounded-[2.5rem] shadow-2xl border border-white/30 ring-1 ring-paydine-champagne/10
         "
-        style={{ minHeight: 76, height: "100%" }}
+        style={{ 
+          minHeight: 76, 
+          height: "100%",
+          background: "var(--theme-background)",
+          backgroundColor: "var(--theme-background)",
+          opacity: 0.95
+        }}
       >
         {/* Arrow for expanding/collapsing bill */}
         {showBillArrow && (
