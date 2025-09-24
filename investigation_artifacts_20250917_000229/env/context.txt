@@ -1,9 +1,0 @@
-pwd: /Users/amir/13 sep 5
-node: v24.4.1
-npm:  11.4.2
-php:  PHP 8.1.33 (cli) (built: Jul  1 2025 21:17:52) (NTS)
-mysql: mysql  Ver 9.4.0 for macos14.7 on arm64 (Homebrew)
-curl: curl 8.7.1 (x86_64-apple-darwin23.0) libcurl/8.7.1 (SecureTransport) LibreSSL/3.3.6 zlib/1.2.12 nghttp2/1.61.0
-
-BACKEND_URL=http://127.0.0.1:8000
-FRONTEND_URL=http://127.0.0.1:3001

@@ -1,2 +1,0 @@
-Table	Create Table
-ti_locationables	CREATE TABLE `ti_locationables` (\n  `location_id` int NOT NULL,\n  `locationable_id` int NOT NULL,\n  `locationable_type` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,\n  `options` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
