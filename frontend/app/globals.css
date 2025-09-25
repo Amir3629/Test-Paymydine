@@ -733,3 +733,151 @@ html[data-theme="minimal"] div[class*="backdrop-blur"][class*="rounded-2xl"] {
   backdrop-filter: blur(8px) !important;
   border: 1px solid #E2E8F0 !important;
 }
+
+/* WAITER AND NOTE MODALS FIX - PERMANENT CSS SOLUTION */
+/* Clean Light Theme */
+html[data-theme="clean-light"] .rounded-3xl.shadow-2xl:not(.surface),
+html[data-theme="clean-light"] .backdrop-blur-lg.rounded-3xl.shadow-2xl:not(.surface),
+html[data-theme="clean-light"] div[class*="rounded-3xl"][class*="shadow-2xl"]:not([class*="surface"]) {
+  background-color: #FAFAFA !important;
+  color: #3B3B3B !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid #EDEDED !important;
+}
+
+/* Modern Dark Theme */
+html[data-theme="modern-dark"] .rounded-3xl.shadow-2xl:not(.surface),
+html[data-theme="modern-dark"] .backdrop-blur-lg.rounded-3xl.shadow-2xl:not(.surface),
+html[data-theme="modern-dark"] div[class*="rounded-3xl"][class*="shadow-2xl"]:not([class*="surface"]) {
+  background-color: #0A0E12 !important;
+  color: #F8FAFC !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid #334155 !important;
+}
+
+/* Gold Luxury Theme */
+html[data-theme="gold-luxury"] .rounded-3xl.shadow-2xl:not(.surface),
+html[data-theme="gold-luxury"] .backdrop-blur-lg.rounded-3xl.shadow-2xl:not(.surface),
+html[data-theme="gold-luxury"] div[class*="rounded-3xl"][class*="shadow-2xl"]:not([class*="surface"]) {
+  background-color: #0F0B05 !important;
+  color: #FFF8DC !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid #CD853F !important;
+}
+
+/* Vibrant Colors Theme */
+html[data-theme="vibrant-colors"] .rounded-3xl.shadow-2xl:not(.surface),
+html[data-theme="vibrant-colors"] .backdrop-blur-lg.rounded-3xl.shadow-2xl:not(.surface),
+html[data-theme="vibrant-colors"] div[class*="rounded-3xl"][class*="shadow-2xl"]:not([class*="surface"]) {
+  background-color: #e2ceb1 !important;
+  color: #1E293B !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid #E8E0D5 !important;
+}
+
+/* Minimal Theme */
+html[data-theme="minimal"] .rounded-3xl.shadow-2xl:not(.surface),
+html[data-theme="minimal"] .backdrop-blur-lg.rounded-3xl.shadow-2xl:not(.surface),
+html[data-theme="minimal"] div[class*="rounded-3xl"][class*="shadow-2xl"]:not([class*="surface"]) {
+  background-color: #CFEBF7 !important;
+  color: #1A202C !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid #E2E8F0 !important;
+}
+
+/* WAITER AND NOTE MODAL ICONS - COLOR ONLY (NO BACKGROUND) */
+/* Clean Light Theme */
+html[data-theme="clean-light"] .rounded-3xl.shadow-2xl svg,
+html[data-theme="clean-light"] .rounded-3xl.shadow-2xl i,
+html[data-theme="clean-light"] .backdrop-blur-lg.rounded-3xl.shadow-2xl svg,
+html[data-theme="clean-light"] .backdrop-blur-lg.rounded-3xl.shadow-2xl i {
+  color: #E7CBA9 !important;
+  fill: #E7CBA9 !important;
+  stroke: #E7CBA9 !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Modern Dark Theme */
+html[data-theme="modern-dark"] .rounded-3xl.shadow-2xl svg,
+html[data-theme="modern-dark"] .rounded-3xl.shadow-2xl i,
+html[data-theme="modern-dark"] .backdrop-blur-lg.rounded-3xl.shadow-2xl svg,
+html[data-theme="modern-dark"] .backdrop-blur-lg.rounded-3xl.shadow-2xl i {
+  color: #F0C6B1 !important;
+  fill: #F0C6B1 !important;
+  stroke: #F0C6B1 !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Gold Luxury Theme */
+html[data-theme="gold-luxury"] .rounded-3xl.shadow-2xl svg,
+html[data-theme="gold-luxury"] .rounded-3xl.shadow-2xl i,
+html[data-theme="gold-luxury"] .backdrop-blur-lg.rounded-3xl.shadow-2xl svg,
+html[data-theme="gold-luxury"] .backdrop-blur-lg.rounded-3xl.shadow-2xl i {
+  color: #FFD700 !important;
+  fill: #FFD700 !important;
+  stroke: #FFD700 !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Vibrant Colors Theme */
+html[data-theme="vibrant-colors"] .rounded-3xl.shadow-2xl svg,
+html[data-theme="vibrant-colors"] .rounded-3xl.shadow-2xl i,
+html[data-theme="vibrant-colors"] .backdrop-blur-lg.rounded-3xl.shadow-2xl svg,
+html[data-theme="vibrant-colors"] .backdrop-blur-lg.rounded-3xl.shadow-2xl i {
+  color: #FF6B6B !important;
+  fill: #FF6B6B !important;
+  stroke: #FF6B6B !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Minimal Theme */
+html[data-theme="minimal"] .rounded-3xl.shadow-2xl svg,
+html[data-theme="minimal"] .rounded-3xl.shadow-2xl i,
+html[data-theme="minimal"] .backdrop-blur-lg.rounded-3xl.shadow-2xl svg,
+html[data-theme="minimal"] .backdrop-blur-lg.rounded-3xl.shadow-2xl i {
+  color: #2D3748 !important;
+  fill: #2D3748 !important;
+  stroke: #2D3748 !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* WAITER AND NOTE MODAL ICON CONTAINERS - REMOVE BACKGROUNDS */
+html[data-theme] .rounded-3xl.shadow-2xl div[class*="rounded-full"],
+html[data-theme] .rounded-3xl.shadow-2xl div[class*="w-16"][class*="h-16"],
+html[data-theme] .rounded-3xl.shadow-2xl div[class*="w-20"][class*="h-20"],
+html[data-theme] .rounded-3xl.shadow-2xl div[class*="w-24"][class*="h-24"],
+html[data-theme] .backdrop-blur-lg.rounded-3xl.shadow-2xl div[class*="rounded-full"],
+html[data-theme] .backdrop-blur-lg.rounded-3xl.shadow-2xl div[class*="w-16"][class*="h-16"],
+html[data-theme] .backdrop-blur-lg.rounded-3xl.shadow-2xl div[class*="w-20"][class*="h-20"],
+html[data-theme] .backdrop-blur-lg.rounded-3xl.shadow-2xl div[class*="w-24"][class*="h-24"] {
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+}

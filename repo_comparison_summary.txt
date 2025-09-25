@@ -1,0 +1,81 @@
+REPOSITORY COMPARISON SUMMARY
+============================
+
+Amir's Repository: amir-test/app/main/
+Server-Deployment Repository: server-deploy/
+
+RESULTS:
+--------
+🔄 Files changed: 2
+➕ Files only in Amir's repo: 72  
+➖ Files only in Server-Deployment repo: 2212
+📊 Total differences: 2286
+
+CHANGED FILES (2):
+-----------------
+1. composer.json (Amir: 7f5cf0cb, Server: 0f02f00c)
+2. routes.php (Amir: cf60fe5b, Server: 582e42d2)
+
+FILES ONLY IN AMIR'S REPO (72):
+-------------------------------
+- ServiceProvider.php
+- classes/ChainFileSource.php
+- classes/Customer.php
+- classes/MainController.php
+- classes/MediaItem.php
+- classes/MediaLibrary.php
+- classes/Router.php
+- classes/Template.php
+- classes/Theme.php
+- classes/ThemeManager.php
+- components/ThemeSwitcher.php
+- components/ThemeSwitcherWidget.php
+- facades/Theme.php
+- formwidgets/ThemeSwitcher.php
+- formwidgets/ThemeSwitcherWidget.php
+- language/en/theme_switcher.php
+- language/en/theme_switcher_widget.php
+- models/Theme.php
+- models/ThemeSetting.php
+- requests/ThemeSwitcherRequest.php
+- traits/ThemeSwitcherTrait.php
+- views/theme_switcher.php
+- views/theme_switcher_widget.php
+- widgets/ThemeSwitcher.php
+- widgets/ThemeSwitcherWidget.php
+- (and 47 more files...)
+
+FILES ONLY IN SERVER-DEPLOYMENT REPO (2212):
+--------------------------------------------
+- About
+- LICENSE.txt
+- README.md
+- admin-api-multi-tenant.php
+- api-server-multi-tenant.php
+- api-server.php
+- api-server2.php
+- api-server3.php
+- app/Http/Controllers/Api/ (multiple files)
+- app/Http/Middleware/ (multiple files)
+- app/admin/ (extensive admin interface)
+- frontend/ (Next.js application)
+- themes/ (multiple theme directories)
+- (and 2200+ more files...)
+
+ANALYSIS:
+---------
+The Server-Deployment repository is significantly larger and contains:
+- Complete admin interface
+- API controllers and middleware
+- Frontend Next.js application
+- Multiple themes
+- Database files
+- Deployment configurations
+
+Amir's repository contains only the main app module with:
+- Theme switching functionality
+- Core classes and components
+- Language files
+- Widgets and form widgets
+
+The two repositories appear to be different parts of the same system, with Server-Deployment being the complete application and Amir's repo being a specific module.

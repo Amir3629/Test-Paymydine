@@ -1,4 +1,0 @@
-
-- frontend/lib/multi-tenant-config.ts
-- frontend/next.config.mjs
-- frontend/lib/data.ts

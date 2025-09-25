@@ -217,6 +217,92 @@ export default function RootLayout({
               // Run modal info cards fix immediately and periodically
               fixModalInfoCards();
               setInterval(fixModalInfoCards, 500); // Check every 500ms for faster response
+              
+              // WAITER AND NOTE MODALS FIX - Ensures waiter and note modals have correct theme colors
+              function fixWaiterNoteModals() {
+                const theme = document.documentElement.getAttribute('data-theme') || 'clean-light';
+                const modalColors = {
+                  'clean-light': { bg: '#FAFAFA', text: '#3B3B3B', border: '#EDEDED' },
+                  'modern-dark': { bg: '#0A0E12', text: '#F8FAFC', border: '#334155' },
+                  'gold-luxury': { bg: '#0F0B05', text: '#FFF8DC', border: '#CD853F' },
+                  'vibrant-colors': { bg: '#e2ceb1', text: '#1E293B', border: '#E8E0D5' },
+                  'minimal': { bg: '#CFEBF7', text: '#1A202C', border: '#E2E8F0' }
+                };
+                
+                const iconColors = {
+                  'clean-light': { iconColor: '#E7CBA9', buttonBg: '#EFC7B1', buttonText: '#3B3B3B' },
+                  'modern-dark': { iconColor: '#F0C6B1', buttonBg: '#E8B4A0', buttonText: '#0A0E12' },
+                  'gold-luxury': { iconColor: '#FFD700', buttonBg: '#FFF8DC', buttonText: '#0F0B05' },
+                  'vibrant-colors': { iconColor: '#FF6B6B', buttonBg: '#6b5e4f', buttonText: '#1E293B' },
+                  'minimal': { iconColor: '#2D3748', buttonBg: '#4A5568', buttonText: '#CFEBF7' }
+                };
+                
+                const modalColor = modalColors[theme] || modalColors['clean-light'];
+                const iconColor = iconColors[theme] || iconColors['clean-light'];
+                
+                // Target waiter and note modals (exclude food item modals)
+                const modalSelectors = [
+                  '.rounded-3xl.shadow-2xl:not(.surface)',
+                  '.backdrop-blur-lg.rounded-3xl.shadow-2xl:not(.surface)',
+                  'div[class*="rounded-3xl"][class*="shadow-2xl"]:not([class*="surface"])'
+                ];
+                
+                modalSelectors.forEach(selector => {
+                  const modals = document.querySelectorAll(selector);
+                  modals.forEach(modal => {
+                    const rect = modal.getBoundingClientRect();
+                    // Check if it's a waiter/note modal (reasonable size)
+                    if (rect.width > 300 && rect.width < 600 && rect.height > 200 && rect.height < 500) {
+                      // Fix modal background
+                      modal.style.setProperty('background-color', modalColor.bg, 'important');
+                      modal.style.setProperty('color', modalColor.text, 'important');
+                      modal.style.setProperty('border', \`1px solid \${modalColor.border}\`, 'important');
+                      modal.style.setProperty('opacity', '1', 'important');
+                      modal.style.setProperty('visibility', 'visible', 'important');
+                      
+                      // Fix icons (color only, no background)
+                      const icons = modal.querySelectorAll('svg, i');
+                      icons.forEach(icon => {
+                        icon.style.setProperty('color', iconColor.iconColor, 'important');
+                        icon.style.setProperty('fill', iconColor.iconColor, 'important');
+                        icon.style.setProperty('stroke', iconColor.iconColor, 'important');
+                        icon.style.setProperty('background-color', 'transparent', 'important');
+                        icon.style.setProperty('background', 'transparent', 'important');
+                        icon.style.setProperty('box-shadow', 'none', 'important');
+                        icon.style.setProperty('border', 'none', 'important');
+                      });
+                      
+                      // Remove backgrounds from icon containers
+                      const iconContainers = modal.querySelectorAll('div[class*="rounded-full"], div[class*="w-16"], div[class*="w-20"], div[class*="w-24"]');
+                      iconContainers.forEach(container => {
+                        container.style.setProperty('background-color', 'transparent', 'important');
+                        container.style.setProperty('background', 'transparent', 'important');
+                        container.style.setProperty('box-shadow', 'none', 'important');
+                        container.style.setProperty('border', 'none', 'important');
+                        container.style.setProperty('border-radius', '0', 'important');
+                      });
+                      
+                      // Fix buttons
+                      const buttons = modal.querySelectorAll('button, [role="button"]');
+                      buttons.forEach(button => {
+                        const buttonRect = button.getBoundingClientRect();
+                        if (buttonRect.width > 50 && buttonRect.width < 200 && buttonRect.height > 30 && buttonRect.height < 60) {
+                          button.style.setProperty('background-color', iconColor.buttonBg, 'important');
+                          button.style.setProperty('color', iconColor.buttonText, 'important');
+                          button.style.setProperty('border', \`1px solid \${iconColor.buttonBg}\`, 'important');
+                          button.style.setProperty('border-radius', '8px', 'important');
+                          button.style.setProperty('padding', '8px 16px', 'important');
+                          button.style.setProperty('font-weight', '500', 'important');
+                        }
+                      });
+                    }
+                  });
+                });
+              }
+              
+              // Run waiter and note modals fix immediately and periodically
+              fixWaiterNoteModals();
+              setInterval(fixWaiterNoteModals, 1000); // Check every second
             })();
           `
         }} />
