@@ -1,5 +1,0 @@
-table_id	table_no	table_name	qr_code
-29	NULL	Table 5	ms01995a68-22a6-712a-90e9-5fe5
-28	NULL	Table 4	ms28AeaKPP
-27	NULL	Cashier	cashier
-26	NULL	Table 8	ms1sKhQ2m
