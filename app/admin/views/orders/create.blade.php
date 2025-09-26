@@ -270,11 +270,9 @@ $total_price = $total_option_price + $total_price;
 }
 ?>
     @php
-        $tableData = DB::table('tables')
-            ->select('table_id','table_no','table_name','min_capacity','max_capacity','table_status','qr_code')
-            ->where('table_status', 1)
+        $tableData = \Admin\Models\Tables_model::where('table_status', 1)
             ->orderBy('table_no', 'asc')
-            ->get();
+            ->get(['table_id','table_no','table_name','min_capacity','max_capacity','table_status','qr_code']);
         //$menuData = DB::table('menus')->get();
         $menuData = \Admin\Models\Menus_model::with('media')->get();
         $menuOptions = DB::table('menu_item_options')

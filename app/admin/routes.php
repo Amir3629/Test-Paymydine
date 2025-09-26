@@ -22,7 +22,7 @@ App::before(function () {
             function resolveCashierTableId($locationId = 1) {
             try {
                 // Look for existing Cashier table
-                $cashierTable = DB::table('tables')->where('table_name', 'Cashier')->first();
+                $cashierTable = DB::table('ti_tables')->where('table_name', 'Cashier')->first();
                 
                 if ($cashierTable) {
                     // Check if it's linked to the location
@@ -45,7 +45,7 @@ App::before(function () {
                     return $cashierTable->table_id;
                 } else {
                     // Create Cashier table if it doesn't exist
-                    $cashierTableId = DB::table('tables')->insertGetId([
+                    $cashierTableId = DB::table('ti_tables')->insertGetId([
                         'table_name' => 'Cashier',
                         'min_capacity' => 1,
                         'max_capacity' => 1,
@@ -84,7 +84,7 @@ App::before(function () {
                 }
 
                 // Get table_no for the cashier table
-                $cashierTable = DB::table('tables')->where('table_id', $cashierTableId)->first();
+                $cashierTable = DB::table('ti_tables')->where('table_id', $cashierTableId)->first();
                 if (!$cashierTable) {
                     return null;
                 }
@@ -302,7 +302,7 @@ Route::get('/superadmin/signout', [SuperAdminController::class, 'signOut'])
                 }
 
                 // Get table data
-                $table = DB::table('tables')->where('table_id', $tableId)->first();
+                $table = DB::table('ti_tables')->where('table_id', $tableId)->first();
                 if (!$table) {
                     return response()->json([
                         'success' => false,
@@ -584,7 +584,7 @@ Route::group([
             
             // Also check if this is a cashier table order
             if (!$isCashier && $request->has('table_id')) {
-                $cashierTable = DB::table('tables')->where('table_name', 'Cashier')->first();
+                $cashierTable = DB::table('ti_tables')->where('table_name', 'Cashier')->first();
                 if ($cashierTable && $request->table_id == $cashierTable->table_id) {
                     $isCashier = true;
                 }
@@ -842,7 +842,7 @@ Route::group([
         }
 
         try {
-            $table = DB::table('tables')
+            $table = DB::table('ti_tables')
                 ->where('table_id', $tableId)
                 ->first();
 
@@ -886,7 +886,7 @@ Route::group([
             }
 
             // Verify table exists in database
-            $table = DB::table('tables')
+            $table = DB::table('ti_tables')
                 ->where('table_id', $tableId)
                 ->first();
 
@@ -1059,18 +1059,18 @@ Route::group(['prefix' => 'api/v1', 'middleware' => ['web']], function () {
 // === Admin Notifications API (JSON) ===
 // Place AFTER the closing brace of the large Route::group([...]) in this file.
 Route::group(['prefix' => 'admin/notifications-api'], function () {
-    Route::get('count', [NotificationsApiController::class, 'count']);
-    Route::get('/',     [NotificationsApiController::class, 'index']);
-    Route::patch('{id}',[NotificationsApiController::class, 'update']);
-    Route::patch('mark-all-seen', [NotificationsApiController::class, 'markAllSeen']);
+    Route::get('count', [\Admin\Controllers\NotificationsApi::class, 'count']);
+    Route::get('/',     [\Admin\Controllers\NotificationsApi::class, 'index']);
+    Route::patch('{id}',[\Admin\Controllers\NotificationsApi::class, 'update']);
+    Route::patch('mark-all-seen', [\Admin\Controllers\NotificationsApi::class, 'markAllSeen']);
 });
 
 }); // Close App::before function
 
 // Back-compat for admin bell widget (no api/v1 prefix)
 Route::middleware(['web'])->prefix('admin/notifications-api')->group(function () {
-    Route::get('count', [NotificationsApiController::class, 'count']);
-    Route::get('/',     [NotificationsApiController::class, 'index']);
-    Route::patch('{id}', [NotificationsApiController::class, 'update']);
-    Route::patch('mark-all-seen', [NotificationsApiController::class, 'markAllSeen']);
+    Route::get('count', [\Admin\Controllers\NotificationsApi::class, 'count']);
+    Route::get('/',     [\Admin\Controllers\NotificationsApi::class, 'index']);
+    Route::patch('{id}', [\Admin\Controllers\NotificationsApi::class, 'update']);
+    Route::patch('mark-all-seen', [\Admin\Controllers\NotificationsApi::class, 'markAllSeen']);
 });

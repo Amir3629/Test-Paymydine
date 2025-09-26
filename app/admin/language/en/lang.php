@@ -293,6 +293,7 @@ return [
         'label_parent' => 'Parent',
         'label_image' => 'Image',
         'label_priority' => 'Priority',
+        'label_frontend_visible' => 'Frontend Visible',
 
         'help_photo' => 'Select a file to update category image, otherwise leave blank.',
     ],

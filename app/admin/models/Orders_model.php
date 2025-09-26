@@ -135,7 +135,7 @@ class Orders_model extends Model
         session_start();
             if (isset($_SESSION['table'])) {
                 $tableId = $_SESSION['table'];
-                $tableData = DB::table('tables')->where('table_id', $tableId)->first();
+                $tableData = DB::table('ti_tables')->where('table_id', $tableId)->first();
                 if ($tableData) {
                     $this->order_type = $tableData->table_name;
                 } else {

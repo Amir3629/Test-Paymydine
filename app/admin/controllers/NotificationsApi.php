@@ -2,59 +2,50 @@
 
 namespace Admin\Controllers;
 
+use Illuminate\Routing\Controller;
+use Admin\Models\Notifications_model;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Response;
 
-class NotificationsApi extends BaseController
+class NotificationsApi extends Controller
 {
-    // GET /admin/api/notifications?status=new|all&limit=20
-    public function index(Request $request)
-    {
-        $status = $request->query('status', 'new');
-        $limit  = (int)$request->query('limit', 20);
-
-        $q = DB::table('notifications')->orderByDesc('created_at'); // no prefix here
-        if ($status === 'new') $q->where('status', 'new');
-
-        $items = $q->limit($limit)->get([
-            'id','type','title','table_id','table_name','payload','status','created_at'
-        ]);
-
-        return Response::json(['ok'=>true,'items'=>$items], 200);
-    }
-
-    // GET /admin/api/notifications/count
     public function count()
     {
-        $new = DB::table('notifications')->where('status', 'new')->count();
-        return Response::json(['ok'=>true,'new'=>$new], 200);
+        try {
+            $new = Notifications_model::where('is_read', 0)->count(); // adjust column if different
+            return response()->json(['ok' => true, 'new' => $new]);
+        } catch (\Throwable $e) {
+            return response()->json(['ok' => false, 'error' => $e->getMessage()], 500);
+        }
     }
 
-    // PATCH /admin/api/notifications/{id}   {status: seen|in_progress|resolved}
-    public function update($id, Request $request)
+    public function index()
     {
-        $data = $request->validate([
-            'status' => 'required|in:seen,in_progress,resolved'
-        ]);
-
-        DB::table('notifications')->where('id', $id)->update([
-            'status' => $data['status'],
-            'updated_at' => now(),
-        ]);
-
-        return Response::json(['ok'=>true,'id'=>(int)$id,'status'=>$data['status']], 200);
+        try {
+            $notifications = Notifications_model::orderBy('created_at', 'desc')->get();
+            return response()->json(['ok' => true, 'data' => $notifications]);
+        } catch (\Throwable $e) {
+            return response()->json(['ok' => false, 'error' => $e->getMessage()], 500);
+        }
     }
 
-    // PATCH /admin/api/notifications/mark-all-seen
+    public function update(Request $request, $id)
+    {
+        try {
+            $notification = Notifications_model::findOrFail($id);
+            $notification->update($request->all());
+            return response()->json(['ok' => true, 'data' => $notification]);
+        } catch (\Throwable $e) {
+            return response()->json(['ok' => false, 'error' => $e->getMessage()], 500);
+        }
+    }
+
     public function markAllSeen()
     {
-        DB::table('notifications')->where('status', 'new')->update([
-            'status' => 'seen',
-            'updated_at' => now(),
-        ]);
-
-        return Response::json(['ok'=>true], 200);
+        try {
+            Notifications_model::where('is_read', 0)->update(['is_read' => 1]);
+            return response()->json(['ok' => true]);
+        } catch (\Throwable $e) {
+            return response()->json(['ok' => false, 'error' => $e->getMessage()], 500);
+        }
     }
 }
